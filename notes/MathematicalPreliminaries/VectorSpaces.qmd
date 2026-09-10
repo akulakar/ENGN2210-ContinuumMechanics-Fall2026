@@ -109,10 +109,10 @@ A vector space equipped with a norm is called a normed vector space. To be more 
 ## Euclidean Space {#sec-euclidean_space}
 
 ::: {#def-euclidean_vector_space}
-An **[Euclidean vector space]{style="color: red;"}** $\b{E}$ is a finite dimensional real inner product space, whose inner product is the dot product. 
+An **[Euclidean vector space]{style="color: red;"}** $\b{E}$ is a finite dimensional real inner product space. 
 :::
 
-We denote an $n$ dimensional Euclidean space by $\b{E}^{n}$. The Euclidean norm is induced by the dot product. 
+We denote an $n$ dimensional Euclidean space by $\b{E}^{n}$. The Euclidean norm is induced by the inner product. 
 
 ::: {#def-affine_point_space}
 An **[affine point space]{style="color: red;"}** $\mc{E}$ is a set of points on which the addition of two points is *not* defined, there is no unique zero element, and the difference between two points belongs to the Euclidean space associated with it.
@@ -128,7 +128,7 @@ We denote the pair $\pr{\mc{E}^{n}, \b{E}^{n}}$ as an *Euclidean space*, to mean
 
 ## Components of Vectors {#sec-components_of_vectors}
 
-To manipulate and work with vectors, we would like to assign them components. Let $\mc{F}= (1,\dots,n)$. Let a list of vectors $\pr{\bs{e}_{i}}_{i \in \mc{F}} \in \b{E}^{n}$ form a basis for $\b{E}^{n}$. Then for a vector $\bs{x} \in \b{E}^{n}$, we can write $\bs{x} = \sum_{i \in \mc{F}} x_{i} \bs{e}_{i}$. The *components* of $\bs{x}$ w.r.t. to the basis $\pr{\bs{e}_{i}}_{i \in \mc{F}}$ are the real numbers $(x_{i})_{i \in \mc{F}}$. We give the components a column matrix representation. For example, the components of a vector $\bs{x} \in \b{E}^{3}$ w.r.t a basis $\pr{\bs{e}_{1},\bs{e}_{2},\bs{e}_{3}}$ may be written as
+To manipulate and work with vectors, we would like to assign them components. Let $\mc{F}= (1,\dots,n)$. Let a list of vectors $\bs{e}_{i}, \dots, \bs{e}_{n} \in \b{E}^{n}$ form a basis for $\b{E}^{n}$. Then for a vector $\bs{x} \in \b{E}^{n}$, we can write $\bs{x} = \sum_{i \in \mc{F}} x_{i} \bs{e}_{i}$. The *components* of $\bs{x}$ w.r.t. to the basis $\bs{e}_{i}, \dots, \bs{e}_{n}$ are the real numbers $x_{i},\dots,x_{n}$. We give the components a column matrix representation. For example, the components of a vector $\bs{x} \in \b{E}^{3}$ w.r.t a basis $\bs{e}_{1},\bs{e}_{2},\bs{e}_{3}$ may be written as
 $$
     \begin{bmatrix}
     a \\ b \\ c
@@ -148,3 +148,5 @@ Instead, we write
 $$
     \bs{x} = \sum_{i=1}^{3} x_{i} \bs{e}_{i}
 $$
+
+The column matrix representation of the components is only meaningful after an appropriate basis has been chosen, not otherwise.
