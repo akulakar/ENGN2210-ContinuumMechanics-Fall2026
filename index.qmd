@@ -1,0 +1,5 @@
+# Preface
+
+Course notes for **ENGN2210 — Continuum Mechanics**, Fall 2026.
+
+These notes are being organized from scratch. It will be continuously updated.

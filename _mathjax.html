@@ -1,0 +1,84 @@
+<!--
+  Global MathJax configuration for the ENGN2210 notes.
+
+  This is the ONE place LaTeX macros are defined. Do NOT put \newcommand \renewcommand blocks inside individual .qmd pages, add them here instead, in MathJax's macro format:
+
+      zeroArg:  "replacement"
+      nArg:     ["replacement with #1 ... #n", n]
+
+  `tags: 'ams'` auto-numbers equations in align/gather/etc. environments, which
+  is what makes in-page \label{...} / \eqref{...} work. For references that must
+  survive a restructure, prefer Quarto cross-refs instead:
+      $$ ... $$ {#eq-name}      and      @eq-name
+-->
+<script>
+window.MathJax = {
+  tex: {
+    tags: 'ams',
+    inlineMath:  [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    macros: {
+      // --- guards: exotic font commands that would otherwise error ---
+      mathbscr: ['\\mathscr{#1}', 1],
+      mathpzc:  ['\\mathcal{#1}', 1],
+
+      // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
+      bs:    ['\\boldsymbol{#1}', 1],
+      u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
+      usf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
+      dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
+      tu:    ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
+      tusf:  ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
+      btusf: ['\\bar{\\tilde{\\boldsymbol{\\mathsf{#1}}}}', 1],
+      busf:  ['\\bar{\\boldsymbol{\\mathsf{#1}}}', 1],
+      rtple: ['\\boldsymbol{#1}', 1],
+
+      // --- single-letter shortcuts.
+      //     These deliberately override the built-in text accents \t \b \c,
+      //     which are not useful inside math anyway. ---
+      t: ['\\tilde{#1}', 1],
+      b: ['\\mathbb{#1}', 1],
+      c: ['\\mathcal{#1}', 1],
+      m: ['\\mathbb{#1}', 1],
+
+      // --- delimiters / operators ---
+      pr:   ['\\left(#1\\right)', 1],
+      tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
+      tpsb: ['\\left.#1\\right.^{\\mathsf{T}}', 1],
+      norm: ['\\lVert #1 \\rVert', 1],
+      set:  ['\\left\\{#1\\,\\middle|\\,#2\\right\\}', 2],
+
+      // --- named objects ---
+      conf:     '\\boldsymbol{\\kappa}',
+      confp:    '\\tilde{\\boldsymbol{\\kappa}}',
+      forcemag: 'f',
+      OriginRefEucldPtSpace:        'O_{\\mathrm{R}}',
+      MapManifoldToRefEucldPtSpace: '\\kappa_{\\mathrm{R}}',
+
+      // --- rate / material-derivative family ---
+      D:   ['D\\hspace{-.1em}#1', 1],
+      Da:  '\\dot{a}',        Dam: '\\dot{a}^{-}',
+      Df:  '\\dot{f}',        DF:  '\\dot{F}',
+      Dl:  '\\dot{l}',        Dlm: '\\dot{l}^{-}',   Dlp: '\\dot{l}^{+}',
+      Dr:  'D\\hspace{-.1em}\\varrho',
+      Drm: 'D\\hspace{-.1em}\\varrho^{-}',
+      Drp: 'D\\hspace{-.1em}\\varrho^{+}',
+      Dro: '\\dot{\\rho}',    Drom: '\\dot{\\rho}^{-}', Drop: '\\dot{\\rho}^{+}',
+      DDf: '\\ddot{f}',       DDF:  '\\ddot{F}',
+      DDl: '\\ddot{l}',       DDro: '\\ddot{\\rho}',
+      Deq:   '\\mathcal{D}^{\\circ}',
+      Dnt:   '\\mathcal{D}^{\\odot}',
+      Dst:   '\\mathcal{D}^{\\star}',
+      Dunst: '\\mathcal{D}^{\\otimes}',
+
+      // --- thin-film "phys" symbols; adjust the fonts when you get to those notes ---
+      physB: '\\mathscr{b}', physE: '\\mathcal{E}',  physe: '\\mathscr{e}',
+      physF: '\\boldsymbol{\\mathfrak{f}}',
+      physf: '\\boldsymbol{\\mathfrak{f}}',
+      physh: '\\mathscr{h}', physm: '\\mathscr{m}',
+      physu: '\\mathscr{u}', physw: '\\mathscr{w}'
+    }
+  }
+};
+</script>

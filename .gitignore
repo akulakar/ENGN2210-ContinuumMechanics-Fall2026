@@ -1,0 +1,13 @@
+# Quarto
+/_book/
+/.quarto/
+/_freeze/
+
+# Notes
+/notes/sample.qmd
+
+# OS / editor
+.DS_Store
+*~
+
+**/*.quarto_ipynb

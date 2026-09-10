@@ -1,0 +1,49 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "ENGN2210 — Continuum Mechanics"
+  subtitle: "Course Notes, Fall 2026"
+  author: "Aashutosh Kulakarni Prachet"
+  date: 2026-09-09
+  search: true
+  # Front-matter files sit at the top level; group the rest under parts.
+  chapters:
+    - index.qmd
+    - part: "Mathematical Preliminaries"
+      chapters:
+        - notes/MathematicalPreliminaries/VectorSpaces.qmd
+        - notes/MathematicalPreliminaries/LinearMapsTensors.qmd
+        # - notes/MathematicalPreliminaries/ComponentsEinsteinNotation.qmd
+        # - notes/MathematicalPreliminaries/TensorAnalysis.qmd
+        # - notes/MathematicalPreliminaries/IntegralTheorems.qmd
+    # - part: "Kinematics"
+    #   chapters:
+    #     - notes/Kinematics/Motion.qmd
+    #     - notes/kinematics/Deformation.qmd
+    # - part: "Stress"
+    #   chapters:
+    # - part: "Balnce Laws"
+
+
+
+crossref:
+  eq-prefix: "Eq."
+  thm-prefix: "Thrm."
+  lem-prefix: "Lem."
+
+format:
+  html:
+    theme: yeti
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    html-math-method: mathjax
+    include-in-header: _mathjax.html
+    css: styles.css
+  # To also produce a PDF, install TinyTeX (`quarto install tinytex`) and
+  # uncomment. LaTeX macros below would then need a parallel definition via
+  # `include-in-header` with a .tex partial.
+  # pdf:
+  #   documentclass: scrreprt
