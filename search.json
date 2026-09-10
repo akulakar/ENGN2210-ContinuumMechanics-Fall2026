@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "ENGN2210 — Continuum Mechanics",
     "section": "",
-    "text": "1 Preface\nCourse notes for ENGN2210 — Continuum Mechanics, Fall 2026.\nThese notes are being organized from scratch. It will be continuously updated.",
+    "text": "1 Preface\nThese notes are being organized and will be continuously updated. Content covered in class and potentially some additional material will be published here.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
     ]
@@ -14,7 +14,51 @@
     "href": "notes/MathematicalPreliminaries/VectorSpaces.html",
     "title": "2  Vector Spaces",
     "section": "",
-    "text": "Vector spaces satisfy the following axioms.",
+    "text": "2.1 Real Vector Spaces\nWe can show identities such as \\(-1 * \\b{v}=\\b{v}'\\) and \\(0 * \\b{v}=\\b{0}\\) from the above axioms.\n\\[\n\\begin{align}\n\\pr{1+(-1)}\\b{v}&=1*\\b{v}+(-1)*\\b{v}\\\\\n\\pr{0}\\b{v}&=1*\\b{v}+(-1)*\\b{v}\\\\\n\\b{0}&=1*\\b{v}+(-1)*\\b{v}\\\\\n\\b{0}&=\\b{v}+(-1)*\\b{v}\\\\\n(-1) * \\b{v}&=\\b{v}'\n\\end{align}\n\\]\n\\[\n\\begin{align}\n\\pr{1+0} * \\b{v}&=1 * \\b{v}+(0) * \\b{v}\\\\\n\\pr{1} * \\b{v}&=1 * \\b{v}+(0) * \\b{v}\\\\\n\\b{v}&=\\b{v}+(0) * \\b{v}\\\\\n\\b{0}&=(0)*\\b{v}\\\\\n\\end{align}\n\\]\nWhen there is no confusion we will skip explicity writing \\(*\\), so expressions such as \\(a * \\pr{b \\b{v}}=\\pr{ab}  *  \\b{v}\\) will appears as \\(a\\pr{b \\b{v}}=\\pr{ab}  \\b{v}\\)\nExamples of real vector spaces include the set of real numbers \\(\\b{R}\\) itself and the set of polynomials of order \\(k\\).",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vector Spaces</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-real_vector_spaces",
+    "href": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-real_vector_spaces",
+    "title": "2  Vector Spaces",
+    "section": "",
+    "text": "Definition 2.1 Real vector space\nA real vector space is a set \\(\\b{V}\\) on which the two operations of \\(\\cdot + \\cdot : \\b{V}\\times \\b{V} \\to \\b{V}\\) (addition) and \\(\\cdot * \\cdot: \\b{V}\\times \\b{R}\\to \\b{V}\\) (scalar multiplication) are defined and satisfies the following properties: {#def-vector_space}\n\n\n\\(\\b{u}+\\b{v}=\\b{v}+\\b{u}\\) for all \\(\\b{u},\\b{v} \\in \\b{V}\\)\n\\(\\b{u}+(\\b{v}+\\b{z})= (\\b{u}+\\b{v})+\\b{z}\\) for all \\(\\b{u}, \\b{v}, \\b{z} \\in \\b{V}\\)\n\\((ab)\\b{v} = a(b\\b{v})\\) for all \\(v \\in \\b{V}\\) and all \\(a,b \\in \\b{R}\\)\nThere exists a zero element \\(\\bs{0}_{\\b{V}}\\) or simply \\(\\bs{0}\\) when there is no risk of confusion, such that \\(\\bs{0} + \\b{v} = \\b{v}\\) for all \\(\\b{0}, \\b{v} \\in \\b{V}\\)\nFor every \\(\\b{v} \\in \\b{V}\\), there exists \\(\\b{v}' \\in \\b{V}\\) such that \\(\\b{v} + \\b{v}' = \\bs{0}\\)\n\\(1\\b{v} = \\b{v}\\) for all \\(\\b{v} \\in \\b{V}\\)\n\\(a(\\b{u}+\\b{v}) = a\\b{u} + a\\b{v}\\) for all \\(a,b \\in \\b{R}\\) and all \\(\\b{u},\\b{v} \\in \\b{V}\\)\n\\((a+b)\\b{v} = a\\b{v} + b\\b{v}\\) for all \\(a,b \\in \\b{R}\\) and all \\(\\b{u},\\b{v} \\in \\b{V}\\)\n\n\n\n\n\n\n\nDefinition 2.2 Subspace\nA subset \\(\\b{U}\\) of \\(\\b{V}\\) is a subspace of \\(\\b{V}\\) if it is also a vector space using the same addition and scalar operation as on \\(\\b{V}\\). Namely, \\(\\b{U}\\) only if it satisfies, \\(\\b{0} \\in \\b{U}\\), \\(\\b{u} + \\b{v} \\in \\b{U}\\) for all \\(\\b{u}, \\in \\b{U}\\) and \\(a \\b{u} \\in \\b{U}\\) for all \\(a \\in \\b{R}\\) and \\(\\b{u} \\in \\b{U}\\).",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vector Spaces</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-Finite_dimensional_vector_space",
+    "href": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-Finite_dimensional_vector_space",
+    "title": "2  Vector Spaces",
+    "section": "2.2 Finite Dimensional Vector Spaces",
+    "text": "2.2 Finite Dimensional Vector Spaces\nA list of length \\(n\\) is an ordered collection of \\(n\\) elements. We denote lists without parenthesis as \\(\\bs{v}_{1},...,\\bs{v}_{n}\\). By definition, a list has finite length.\nA linear combination of a list of vectors \\(\\bs{v}_{1},...,\\bs{v}_{n} \\in \\b{V}\\) is a vector of the form \\(a_{1} \\bs{v}_{1} + ... + a_{n} \\bs{v}_{n}\\) where \\(a_{1},...,a_{n} \\in \\b{R}\\).\nThe span of a list of vectors \\(\\bs{v}_{1},...,\\bs{v}_{n} \\in \\b{V}\\) is the set of all linear combinations of the form \\(a_{1} \\bs{v}_{1} + ... + a_{n} \\bs{v}_{n}\\) where \\(a_{1},...,a_{n} \\in \\b{R}\\) and is denoted by \\(\\text{span}\\pr{\\bs{v}_{1},...,\\bs{v}_{n}}\\). If \\(\\bs{v}_{1},...,\\bs{v}_{n}\\) spans \\(\\b{V}\\), then \\(\\text{span}\\pr{\\bs{v}_{1},...,\\bs{v}_{n}} = \\b{V}\\)\n\nDefinition 2.3 Finite dimensional vector space\nA vector space \\(\\b{V}\\) is finite dimensional if some list of vectors \\(\\bs{v}_{1},...,\\bs{v}_{n} \\in \\b{V}\\) spans the space.\n\nA list of vectors \\(\\bs{v}_{1},...,\\bs{v}_{n} \\in \\b{V}\\) is said to be linearly independent if its linear combination is \\(\\bs{0}\\) iff the scalars \\(a_{1},...,a_{n}\\) are all \\(0\\). On the contrary, a list is linearly dependent if a linear combination is \\(\\bs{0}\\) for some list of scalars \\(a_{1},...,a_{n}\\) where not all are \\(0\\). In a finite-dimensional vector space, the length of each linearly independent list of vectors is less than or equal to the length of every spanning list of vectors.\n\nDefinition 2.4 Basis\nA basis of \\(\\b{V}\\) is a linearly independent list of vectors \\(\\bs{v}_{1},...,\\bs{v}_{n} \\in \\b{V}\\) that spans \\(\\b{V}\\). An equivalent definition is that the list \\(\\bs{v}_{1},...,\\bs{v}_{n} \\in \\b{V}\\) is basis of \\(\\b{V}\\) iff every \\(\\bs{v} \\in \\b{V}\\) can be written as a unique linear combination of the list.\n\nEvery finite dimensional vector space \\(\\b{V}\\) has a basis. The dimension of \\(\\b{V}\\) is given by the length of any of its basis. All bases of a finite dimensional vector space have the same length. A proper subspace always has a smaller dimension than the larger space. We will denote finite dimensional vector spaces with a superscript to indicate the dimension, for example, \\(\\b{V}^{n}\\) or \\(P^{k}\\).",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vector Spaces</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-inner_prod_normed_spaces",
+    "href": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-inner_prod_normed_spaces",
+    "title": "2  Vector Spaces",
+    "section": "2.3 Real Inner Products and Norms",
+    "text": "2.3 Real Inner Products and Norms\n\nDefinition 2.5 Inner product\nAn inner product on \\(\\b{V}\\) is an operation \\(\\apr{\\cdot, \\cdot} : \\b{V} \\times \\b{V} \\rightarrow \\b{R}\\) such that for all \\(\\bs{u}, \\bs{v}, \\bs{z} \\in \\b{V}\\) and for \\(a \\in \\b{R}\\), we have\n\n\\(\\apr{\\bs{u}, \\bs v} = \\apr{\\bs v, \\bs u}\\)\n\\(\\apr{\\bs u, \\bs v + a \\bs z} = \\apr{\\bs u, \\bs v} + a \\apr{\\bs u, \\bs z}\\)\n\\(\\inpd{\\bs u}{\\bs u} \\geq 0\\)\n\\(\\inpd{\\bs u}{\\bs u} = 0\\) iff \\(\\bs{u} = \\bs{0}\\)\n\n\nAn real inner product space is a real vector space on which an inner product is defined.\n\nDefinition 2.6 Norm\nA norm on \\(\\b{V}\\) is an operation \\(\\norm{\\cdot} : \\b{V} \\rightarrow \\b{R}_{\\geq 0}\\) such that such that for all \\(\\bs{u}, \\bs{v} \\in \\b{V}\\) and for \\(a \\in \\b{R}\\), we have\n\n\\(\\norm{a \\bs u} = \\abs{a} \\norm{\\bs u}\\)\n\\(\\norm{\\bs u + \\bs v} \\leq \\norm{\\bs u} + \\norm{\\bs v}\\)\n\\(\\norm{\\bs u} = 0\\) iff \\(\\bs u = \\bs 0\\)\n\n\nA vector space equipped with a norm is called a normed vector space. To be more precise, we denote a norm of vector space \\(\\b{V}\\) as \\(\\norm{\\cdot}_{\\b{V}}\\) and similarly for norms of other vector spaces. Every inner product induces a norm. The induced norm is given by \\(\\norm{\\bs u} = \\sqrt{\\inpd{\\bs u}{\\bs u}}\\).",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vector Spaces</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-euclidean_space",
+    "href": "notes/MathematicalPreliminaries/VectorSpaces.html#sec-euclidean_space",
+    "title": "2  Vector Spaces",
+    "section": "2.5 Real Euclidean Space",
+    "text": "2.5 Real Euclidean Space",
     "crumbs": [
       "Mathematical Preliminaries",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vector Spaces</span>"

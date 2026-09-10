@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0bc7111ffd210a9452064bd0ad40fbf7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1863ba1fd308c4e2ed246a7f7244b87d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,9 +120,12 @@ window.MathJax = {
 
       // --- delimiters / operators ---
       pr:   ['\\left(#1\\right)', 1],
+      apr:  ['\\left\\langle#1\\right\\rangle', 1],
       tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
       tpsb: ['\\left.#1\\right.^{\\mathsf{T}}', 1],
       norm: ['\\lVert #1 \\rVert', 1],
+      abs:  ['\\vert #1 \\vert', 1],
+      inpd: ['\\left\\langle #1, #2 \\right\\rangle', 2],
       set:  ['\\left\\{#1\\,\\middle|\\,#2\\right\\}', 2],
 
       // --- named objects ---
@@ -159,6 +162,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -225,8 +257,18 @@ window.MathJax = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-real_vector_spaces" id="toc-sec-real_vector_spaces" class="nav-link active" data-scroll-target="#sec-real_vector_spaces"><span class="header-section-number">2.1</span> Real Vector Spaces</a></li>
+  <li><a href="#sec-Finite_dimensional_vector_space" id="toc-sec-Finite_dimensional_vector_space" class="nav-link" data-scroll-target="#sec-Finite_dimensional_vector_space"><span class="header-section-number">2.2</span> Finite Dimensional Vector Spaces</a></li>
+  <li><a href="#sec-inner_prod_normed_spaces" id="toc-sec-inner_prod_normed_spaces" class="nav-link" data-scroll-target="#sec-inner_prod_normed_spaces"><span class="header-section-number">2.3</span> Real Inner Products and Norms</a></li>
+  <li><a href="#sec-euclidean_space" id="toc-sec-euclidean_space" class="nav-link" data-scroll-target="#sec-euclidean_space"><span class="header-section-number">2.4</span> Real Euclidean Space</a></li>
+  <li><a href="#sec-euclidean_space" id="toc-sec-euclidean_space" class="nav-link" data-scroll-target="#sec-euclidean_space"><span class="header-section-number">2.5</span> Real Euclidean Space</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -250,9 +292,99 @@ window.MathJax = {
 </header>
 
 
-<p>Vector spaces satisfy the following axioms.</p>
+<section id="sec-real_vector_spaces" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-real_vector_spaces"><span class="header-section-number">2.1</span> Real Vector Spaces</h2>
+<div id="def-vectorspace" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.1</strong></span> <strong><span style="color: red;">Real vector space</span></strong></p>
+<p>A real vector space is a set <span class="math inline">\(\b{V}\)</span> on which the two operations of <span class="math inline">\(\cdot + \cdot : \b{V}\times \b{V} \to \b{V}\)</span> (addition) and <span class="math inline">\(\cdot * \cdot: \b{V}\times \b{R}\to \b{V}\)</span> (scalar multiplication) are defined and satisfies the following properties: {#def-vector_space}</p>
+</div>
+<ol type="1">
+<li><span class="math inline">\(\b{u}+\b{v}=\b{v}+\b{u}\)</span> for all <span class="math inline">\(\b{u},\b{v} \in \b{V}\)</span></li>
+<li><span class="math inline">\(\b{u}+(\b{v}+\b{z})= (\b{u}+\b{v})+\b{z}\)</span> for all <span class="math inline">\(\b{u}, \b{v}, \b{z} \in \b{V}\)</span></li>
+<li><span class="math inline">\((ab)\b{v} = a(b\b{v})\)</span> for all <span class="math inline">\(v \in \b{V}\)</span> and all <span class="math inline">\(a,b \in \b{R}\)</span></li>
+<li>There exists a zero element <span class="math inline">\(\bs{0}_{\b{V}}\)</span> or simply <span class="math inline">\(\bs{0}\)</span> when there is no risk of confusion, such that <span class="math inline">\(\bs{0} + \b{v} = \b{v}\)</span> for all <span class="math inline">\(\b{0}, \b{v} \in \b{V}\)</span></li>
+<li>For every <span class="math inline">\(\b{v} \in \b{V}\)</span>, there exists <span class="math inline">\(\b{v}' \in \b{V}\)</span> such that <span class="math inline">\(\b{v} + \b{v}' = \bs{0}\)</span></li>
+<li><span class="math inline">\(1\b{v} = \b{v}\)</span> for all <span class="math inline">\(\b{v} \in \b{V}\)</span></li>
+<li><span class="math inline">\(a(\b{u}+\b{v}) = a\b{u} + a\b{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\b{u},\b{v} \in \b{V}\)</span></li>
+<li><span class="math inline">\((a+b)\b{v} = a\b{v} + b\b{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\b{u},\b{v} \in \b{V}\)</span></li>
+</ol>
+<p>We can show identities such as <span class="math inline">\(-1 * \b{v}=\b{v}'\)</span> and <span class="math inline">\(0 * \b{v}=\b{0}\)</span> from the above axioms.</p>
+<p><span class="math display">\[
+\begin{align}
+\pr{1+(-1)}\b{v}&amp;=1*\b{v}+(-1)*\b{v}\\
+\pr{0}\b{v}&amp;=1*\b{v}+(-1)*\b{v}\\
+\b{0}&amp;=1*\b{v}+(-1)*\b{v}\\
+\b{0}&amp;=\b{v}+(-1)*\b{v}\\
+(-1) * \b{v}&amp;=\b{v}'
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\pr{1+0} * \b{v}&amp;=1 * \b{v}+(0) * \b{v}\\
+\pr{1} * \b{v}&amp;=1 * \b{v}+(0) * \b{v}\\
+\b{v}&amp;=\b{v}+(0) * \b{v}\\
+\b{0}&amp;=(0)*\b{v}\\
+\end{align}
+\]</span></p>
+<p>When there is no confusion we will skip explicity writing <span class="math inline">\(*\)</span>, so expressions such as <span class="math inline">\(a * \pr{b \b{v}}=\pr{ab}  *  \b{v}\)</span> will appears as <span class="math inline">\(a\pr{b \b{v}}=\pr{ab}  \b{v}\)</span></p>
+<p>Examples of real vector spaces include the set of real numbers <span class="math inline">\(\b{R}\)</span> itself and the set of polynomials of order <span class="math inline">\(k\)</span>.</p>
+<div id="def-subspace" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.2</strong></span> <strong><span style="color: red;">Subspace</span></strong></p>
+<p>A subset <span class="math inline">\(\b{U}\)</span> of <span class="math inline">\(\b{V}\)</span> is a <em>subspace</em> of <span class="math inline">\(\b{V}\)</span> if it is also a vector space using the same addition and scalar operation as on <span class="math inline">\(\b{V}\)</span>. Namely, <span class="math inline">\(\b{U}\)</span> only if it satisfies, <span class="math inline">\(\b{0} \in \b{U}\)</span>, <span class="math inline">\(\b{u} + \b{v} \in \b{U}\)</span> for all <span class="math inline">\(\b{u}, \in \b{U}\)</span> and <span class="math inline">\(a \b{u} \in \b{U}\)</span> for all <span class="math inline">\(a \in \b{R}\)</span> and <span class="math inline">\(\b{u} \in \b{U}\)</span>.</p>
+</div>
+</section>
+<section id="sec-Finite_dimensional_vector_space" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-Finite_dimensional_vector_space"><span class="header-section-number">2.2</span> Finite Dimensional Vector Spaces</h2>
+<p>A <em>list</em> of length <span class="math inline">\(n\)</span> is an ordered collection of <span class="math inline">\(n\)</span> elements. We denote lists without parenthesis as <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n}\)</span>. By definition, a list has finite length.</p>
+<p>A <em>linear combination</em> of a list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is a vector of the form <span class="math inline">\(a_{1} \bs{v}_{1} + ... + a_{n} \bs{v}_{n}\)</span> where <span class="math inline">\(a_{1},...,a_{n} \in \b{R}\)</span>.</p>
+<p>The <em>span</em> of a list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is the set of all linear combinations of the form <span class="math inline">\(a_{1} \bs{v}_{1} + ... + a_{n} \bs{v}_{n}\)</span> where <span class="math inline">\(a_{1},...,a_{n} \in \b{R}\)</span> and is denoted by <span class="math inline">\(\text{span}\pr{\bs{v}_{1},...,\bs{v}_{n}}\)</span>. If <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n}\)</span> spans <span class="math inline">\(\b{V}\)</span>, then <span class="math inline">\(\text{span}\pr{\bs{v}_{1},...,\bs{v}_{n}} = \b{V}\)</span></p>
+<div id="def-Finite_dimensional_vector_space" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.3</strong></span> <strong><span style="color: red;">Finite dimensional vector space</span></strong></p>
+<p>A vector space <span class="math inline">\(\b{V}\)</span> is <em>finite dimensional</em> if some list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> spans the space.</p>
+</div>
+<p>A list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is said to be <em>linearly independent</em> if its linear combination is <span class="math inline">\(\bs{0}\)</span> iff the scalars <span class="math inline">\(a_{1},...,a_{n}\)</span> are all <span class="math inline">\(0\)</span>. On the contrary, a list is linearly dependent if a linear combination is <span class="math inline">\(\bs{0}\)</span> for some list of scalars <span class="math inline">\(a_{1},...,a_{n}\)</span> where not all are <span class="math inline">\(0\)</span>. In a finite-dimensional vector space, the length of each linearly independent list of vectors is less than or equal to the length of every spanning list of vectors.</p>
+<div id="def-basis" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.4</strong></span> <strong><span style="color: red;">Basis</span></strong></p>
+<p>A <em>basis</em> of <span class="math inline">\(\b{V}\)</span> is a linearly independent list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> that spans <span class="math inline">\(\b{V}\)</span>. An equivalent definition is that the list <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is <em>basis</em> of <span class="math inline">\(\b{V}\)</span> iff every <span class="math inline">\(\bs{v} \in \b{V}\)</span> can be written as a unique linear combination of the list.</p>
+</div>
+<p>Every finite dimensional vector space <span class="math inline">\(\b{V}\)</span> has a basis. The <em>dimension</em> of <span class="math inline">\(\b{V}\)</span> is given by the length of any of its basis. All bases of a finite dimensional vector space have the same length. A proper subspace always has a smaller dimension than the larger space. We will denote finite dimensional vector spaces with a superscript to indicate the dimension, for example, <span class="math inline">\(\b{V}^{n}\)</span> or <span class="math inline">\(P^{k}\)</span>.</p>
+</section>
+<section id="sec-inner_prod_normed_spaces" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-inner_prod_normed_spaces"><span class="header-section-number">2.3</span> Real Inner Products and Norms</h2>
+<div id="def-inner_prod" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.5</strong></span> <strong><span style="color: red;">Inner product</span></strong></p>
+<p>An <em>inner product</em> on <span class="math inline">\(\b{V}\)</span> is an operation <span class="math inline">\(\apr{\cdot, \cdot} : \b{V} \times \b{V} \rightarrow \b{R}\)</span> such that for all <span class="math inline">\(\bs{u}, \bs{v}, \bs{z} \in \b{V}\)</span> and for <span class="math inline">\(a \in \b{R}\)</span>, we have</p>
+<ol type="1">
+<li><span class="math inline">\(\apr{\bs{u}, \bs v} = \apr{\bs v, \bs u}\)</span></li>
+<li><span class="math inline">\(\apr{\bs u, \bs v + a \bs z} = \apr{\bs u, \bs v} + a \apr{\bs u, \bs z}\)</span></li>
+<li><span class="math inline">\(\inpd{\bs u}{\bs u} \geq 0\)</span></li>
+<li><span class="math inline">\(\inpd{\bs u}{\bs u} = 0\)</span> iff <span class="math inline">\(\bs{u} = \bs{0}\)</span></li>
+</ol>
+</div>
+<p>An real inner product space is a real vector space on which an inner product is defined.</p>
+<div id="def-norm" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.6</strong></span> <strong><span style="color: red;">Norm</span></strong></p>
+<p>A <em>norm</em> on <span class="math inline">\(\b{V}\)</span> is an operation <span class="math inline">\(\norm{\cdot} : \b{V} \rightarrow \b{R}_{\geq 0}\)</span> such that such that for all <span class="math inline">\(\bs{u}, \bs{v} \in \b{V}\)</span> and for <span class="math inline">\(a \in \b{R}\)</span>, we have</p>
+<ol type="1">
+<li><span class="math inline">\(\norm{a \bs u} = \abs{a} \norm{\bs u}\)</span></li>
+<li><span class="math inline">\(\norm{\bs u + \bs v} \leq \norm{\bs u} + \norm{\bs v}\)</span></li>
+<li><span class="math inline">\(\norm{\bs u} = 0\)</span> iff <span class="math inline">\(\bs u = \bs 0\)</span></li>
+</ol>
+</div>
+<p>A vector space equipped with a norm is called a normed vector space. To be more precise, we denote a norm of vector space <span class="math inline">\(\b{V}\)</span> as <span class="math inline">\(\norm{\cdot}_{\b{V}}\)</span> and similarly for norms of other vector spaces. Every inner product induces a norm. The induced norm is given by <span class="math inline">\(\norm{\bs u} = \sqrt{\inpd{\bs u}{\bs u}}\)</span>.</p>
+</section>
+<section id="sec-euclidean_space" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-euclidean_space"><span class="header-section-number">2.4</span> Real Euclidean Space</h2>
+<div id="def-euclidean_vector_space" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.7</strong></span> An <strong><span style="color: red;">Euclidean vector space</span></strong> is a finite dimensional real inner product space, whose inner product is the dot product.</p>
+</div>
+<p>The Euclidean norm is induced by the dot product.</p>
+</section>
+<section id="sec-euclidean_space" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-euclidean_space"><span class="header-section-number">2.5</span> Real Euclidean Space</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
