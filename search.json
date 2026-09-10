@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ENGN2210 — Continuum Mechanics",
+    "section": "",
+    "text": "1 Preface\nCourse notes for ENGN2210 — Continuum Mechanics, Fall 2026.\nThese notes are being organized from scratch. It will be continuously updated.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/VectorSpaces.html",
+    "href": "notes/MathematicalPreliminaries/VectorSpaces.html",
+    "title": "2  Vector Spaces",
+    "section": "",
+    "text": "Vector spaces satisfy the following axioms.",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vector Spaces</span>"
+    ]
+  }
+]
