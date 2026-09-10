@@ -5,8 +5,8 @@ project:
 book:
   title: "ENGN2210 — Continuum Mechanics"
   subtitle: "Course Notes, Fall 2026"
-  author: "Aashutosh Kulakarni Prachet"
-  date: 2026-09-09
+  # author: "Aashutosh Kulakarni Prachet"
+  date: today
   search: true
   # Front-matter files sit at the top level; group the rest under parts.
   chapters:
@@ -35,7 +35,7 @@ crossref:
 
 format:
   html:
-    theme: yeti
+    theme: simplex
     toc: true
     toc-depth: 3
     number-sections: true

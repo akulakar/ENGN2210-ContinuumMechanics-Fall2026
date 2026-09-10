@@ -44,9 +44,12 @@ window.MathJax = {
 
       // --- delimiters / operators ---
       pr:   ['\\left(#1\\right)', 1],
+      apr:  ['\\left\\langle#1\\right\\rangle', 1],
       tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
       tpsb: ['\\left.#1\\right.^{\\mathsf{T}}', 1],
       norm: ['\\lVert #1 \\rVert', 1],
+      abs:  ['\\vert #1 \\vert', 1],
+      inpd: ['\\left\\langle #1, #2 \\right\\rangle', 2],
       set:  ['\\left\\{#1\\,\\middle|\\,#2\\right\\}', 2],
 
       // --- named objects ---
