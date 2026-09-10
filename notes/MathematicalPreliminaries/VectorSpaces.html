@@ -101,6 +101,7 @@ window.MathJax = {
 
       // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
       bs:    ['\\boldsymbol{#1}', 1],
+      mc:    ['\\mathcal{#1}', 1],
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       usf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
@@ -120,6 +121,7 @@ window.MathJax = {
 
       // --- delimiters / operators ---
       pr:   ['\\left(#1\\right)', 1],
+      cpr:  ['\\left\\{#1\\right\\}', 1],
       apr:  ['\\left\\langle#1\\right\\rangle', 1],
       tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
       tpsb: ['\\left.#1\\right.^{\\mathsf{T}}', 1],
@@ -127,6 +129,9 @@ window.MathJax = {
       abs:  ['\\vert #1 \\vert', 1],
       inpd: ['\\left\\langle #1, #2 \\right\\rangle', 2],
       set:  ['\\left\\{#1\\,\\middle|\\,#2\\right\\}', 2],
+
+      // --- symbols ---
+      ra:   ['\\rightarrow'],
 
       // --- named objects ---
       conf:     '\\boldsymbol{\\kappa}',
@@ -265,8 +270,8 @@ window.Quarto = {
   <li><a href="#sec-real_vector_spaces" id="toc-sec-real_vector_spaces" class="nav-link active" data-scroll-target="#sec-real_vector_spaces"><span class="header-section-number">2.1</span> Real Vector Spaces</a></li>
   <li><a href="#sec-Finite_dimensional_vector_space" id="toc-sec-Finite_dimensional_vector_space" class="nav-link" data-scroll-target="#sec-Finite_dimensional_vector_space"><span class="header-section-number">2.2</span> Finite Dimensional Vector Spaces</a></li>
   <li><a href="#sec-inner_prod_normed_spaces" id="toc-sec-inner_prod_normed_spaces" class="nav-link" data-scroll-target="#sec-inner_prod_normed_spaces"><span class="header-section-number">2.3</span> Real Inner Products and Norms</a></li>
-  <li><a href="#sec-euclidean_space" id="toc-sec-euclidean_space" class="nav-link" data-scroll-target="#sec-euclidean_space"><span class="header-section-number">2.4</span> Real Euclidean Space</a></li>
-  <li><a href="#sec-euclidean_space" id="toc-sec-euclidean_space" class="nav-link" data-scroll-target="#sec-euclidean_space"><span class="header-section-number">2.5</span> Real Euclidean Space</a></li>
+  <li><a href="#sec-euclidean_space" id="toc-sec-euclidean_space" class="nav-link" data-scroll-target="#sec-euclidean_space"><span class="header-section-number">2.4</span> Euclidean Space</a></li>
+  <li><a href="#sec-components_of_vectors" id="toc-sec-components_of_vectors" class="nav-link" data-scroll-target="#sec-components_of_vectors"><span class="header-section-number">2.5</span> Components of Vectors</a></li>
   </ul>
 </nav>
     </div>
@@ -296,64 +301,70 @@ window.Quarto = {
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-real_vector_spaces"><span class="header-section-number">2.1</span> Real Vector Spaces</h2>
 <div id="def-vectorspace" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.1</strong></span> <strong><span style="color: red;">Real vector space</span></strong></p>
-<p>A real vector space is a set <span class="math inline">\(\b{V}\)</span> on which the two operations of <span class="math inline">\(\cdot + \cdot : \b{V}\times \b{V} \to \b{V}\)</span> (addition) and <span class="math inline">\(\cdot * \cdot: \b{V}\times \b{R}\to \b{V}\)</span> (scalar multiplication) are defined and satisfies the following properties: {#def-vector_space}</p>
+<p>A real vector space is a set <span class="math inline">\(\mc{V}\)</span> over the real numbers <span class="math inline">\(\b{R}\)</span> on which the two operations of <span class="math inline">\(\cdot + \cdot : \mc{V}\times \mc{V} \to \mc{V}\)</span> (addition) and <span class="math inline">\(\cdot * \cdot: \mc{V}\times \b{R}\to \mc{V}\)</span> (scalar multiplication) are defined and satisfies the following properties:</p>
 </div>
 <ol type="1">
-<li><span class="math inline">\(\b{u}+\b{v}=\b{v}+\b{u}\)</span> for all <span class="math inline">\(\b{u},\b{v} \in \b{V}\)</span></li>
-<li><span class="math inline">\(\b{u}+(\b{v}+\b{z})= (\b{u}+\b{v})+\b{z}\)</span> for all <span class="math inline">\(\b{u}, \b{v}, \b{z} \in \b{V}\)</span></li>
-<li><span class="math inline">\((ab)\b{v} = a(b\b{v})\)</span> for all <span class="math inline">\(v \in \b{V}\)</span> and all <span class="math inline">\(a,b \in \b{R}\)</span></li>
-<li>There exists a zero element <span class="math inline">\(\bs{0}_{\b{V}}\)</span> or simply <span class="math inline">\(\bs{0}\)</span> when there is no risk of confusion, such that <span class="math inline">\(\bs{0} + \b{v} = \b{v}\)</span> for all <span class="math inline">\(\b{0}, \b{v} \in \b{V}\)</span></li>
-<li>For every <span class="math inline">\(\b{v} \in \b{V}\)</span>, there exists <span class="math inline">\(\b{v}' \in \b{V}\)</span> such that <span class="math inline">\(\b{v} + \b{v}' = \bs{0}\)</span></li>
-<li><span class="math inline">\(1\b{v} = \b{v}\)</span> for all <span class="math inline">\(\b{v} \in \b{V}\)</span></li>
-<li><span class="math inline">\(a(\b{u}+\b{v}) = a\b{u} + a\b{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\b{u},\b{v} \in \b{V}\)</span></li>
-<li><span class="math inline">\((a+b)\b{v} = a\b{v} + b\b{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\b{u},\b{v} \in \b{V}\)</span></li>
+<li><span class="math inline">\(\bs{u}+\bs{v}=\bs{v}+\bs{u}\)</span> for all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
+<li><span class="math inline">\(\bs{u}+(\bs{v}+\bs{z})= (\bs{u}+\bs{v})+\bs{z}\)</span> for all <span class="math inline">\(\bs{u}, \bs{v}, \bs{z} \in \mc{V}\)</span></li>
+<li><span class="math inline">\((ab)\bs{v} = a(b\bs{v})\)</span> for all <span class="math inline">\(v \in \mc{V}\)</span> and all <span class="math inline">\(a,b \in \b{R}\)</span></li>
+<li>There exists a zero element <span class="math inline">\(\bs{0}_{\mc{V}}\)</span> or simply <span class="math inline">\(\bs{0}\)</span> when there is no risk of confusion, such that <span class="math inline">\(\bs{0} + \bs{v} = \bs{v}\)</span> for all <span class="math inline">\(\bs{v} \in \mc{V}\)</span></li>
+<li>For every <span class="math inline">\(\bs{v} \in \mc{V}\)</span>, there exists <span class="math inline">\(\bs{v}' \in \mc{V}\)</span> such that <span class="math inline">\(\bs{v} + \bs{v}' = \bs{0}\)</span></li>
+<li><span class="math inline">\(1\bs{v} = \bs{v}\)</span> for all <span class="math inline">\(\bs{v} \in \mc{V}\)</span></li>
+<li><span class="math inline">\(a(\bs{u}+\bs{v}) = a\bs{u} + a\bs{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
+<li><span class="math inline">\((a+b)\bs{v} = a\bs{v} + b\bs{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
 </ol>
-<p>We can show identities such as <span class="math inline">\(-1 * \b{v}=\b{v}'\)</span> and <span class="math inline">\(0 * \b{v}=\b{0}\)</span> from the above axioms.</p>
+<p>We can show identities such as <span class="math inline">\(-1 * \bs{v}=\bs{v}'\)</span> and <span class="math inline">\(0 * \bs{v}=\bs{0}\)</span> from the above axioms.</p>
 <p><span class="math display">\[
 \begin{align}
-\pr{1+(-1)}\b{v}&amp;=1*\b{v}+(-1)*\b{v}\\
-\pr{0}\b{v}&amp;=1*\b{v}+(-1)*\b{v}\\
-\b{0}&amp;=1*\b{v}+(-1)*\b{v}\\
-\b{0}&amp;=\b{v}+(-1)*\b{v}\\
-(-1) * \b{v}&amp;=\b{v}'
+\pr{1+(-1)}\bs{v}&amp;=1*\bs{v}+(-1)*\bs{v}\\
+\pr{0}\bs{v}&amp;=1*\bs{v}+(-1)*\bs{v}\\
+\bs{0}&amp;=1*\bs{v}+(-1)*\bs{v}\\
+\bs{0}&amp;=\bs{v}+(-1)*\bs{v}\\
+(-1) * \bs{v}&amp;=\bs{v}'
 \end{align}
 \]</span></p>
 <p><span class="math display">\[
 \begin{align}
-\pr{1+0} * \b{v}&amp;=1 * \b{v}+(0) * \b{v}\\
-\pr{1} * \b{v}&amp;=1 * \b{v}+(0) * \b{v}\\
-\b{v}&amp;=\b{v}+(0) * \b{v}\\
-\b{0}&amp;=(0)*\b{v}\\
+\pr{1+0} * \bs{v}&amp;=1 * \bs{v}+(0) * \bs{v}\\
+\pr{1} * \bs{v}&amp;=1 * \bs{v}+(0) * \bs{v}\\
+\bs{v}&amp;=\bs{v}+(0) * \bs{v}\\
+\bs{0}&amp;=(0)*\bs{v}\\
 \end{align}
 \]</span></p>
-<p>When there is no confusion we will skip explicity writing <span class="math inline">\(*\)</span>, so expressions such as <span class="math inline">\(a * \pr{b \b{v}}=\pr{ab}  *  \b{v}\)</span> will appears as <span class="math inline">\(a\pr{b \b{v}}=\pr{ab}  \b{v}\)</span></p>
-<p>Examples of real vector spaces include the set of real numbers <span class="math inline">\(\b{R}\)</span> itself and the set of polynomials of order <span class="math inline">\(k\)</span>.</p>
+<p>When there is no confusion we will skip explicitly writing <span class="math inline">\(*\)</span>, so expressions such as <span class="math inline">\(a * \pr{b \bs{v}}=\pr{ab}  *  \bs{v}\)</span> will appear as <span class="math inline">\(a\pr{b \bs{v}}=\pr{ab}  \bs{v}\)</span></p>
+<!-- Examples of real vector spaces include the set of real numbers $\b{R}$ itself and the set of polynomials of order $k$. -->
+<p>Examples:</p>
+<ol type="1">
+<li><span class="math inline">\(\b{R}^{1} = \b{R}\)</span></li>
+<li><span class="math inline">\(\b{R}^{2} = \cpr{\pr{a, b} : a, b \in \b{R}}\)</span></li>
+<li><span class="math inline">\(\b{P}^{k}= \cpr{p : \b{R} \ra \b{R} ~\vert~ p(x) = a_{0}+a_{1}x+\dots+a_{k}x^{k}}\)</span></li>
+</ol>
 <div id="def-subspace" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.2</strong></span> <strong><span style="color: red;">Subspace</span></strong></p>
-<p>A subset <span class="math inline">\(\b{U}\)</span> of <span class="math inline">\(\b{V}\)</span> is a <em>subspace</em> of <span class="math inline">\(\b{V}\)</span> if it is also a vector space using the same addition and scalar operation as on <span class="math inline">\(\b{V}\)</span>. Namely, <span class="math inline">\(\b{U}\)</span> only if it satisfies, <span class="math inline">\(\b{0} \in \b{U}\)</span>, <span class="math inline">\(\b{u} + \b{v} \in \b{U}\)</span> for all <span class="math inline">\(\b{u}, \in \b{U}\)</span> and <span class="math inline">\(a \b{u} \in \b{U}\)</span> for all <span class="math inline">\(a \in \b{R}\)</span> and <span class="math inline">\(\b{u} \in \b{U}\)</span>.</p>
+<p>A subset <span class="math inline">\(\mc{U}\)</span> of <span class="math inline">\(\mc{V}\)</span> is a <em>subspace</em> of <span class="math inline">\(\mc{V}\)</span> if it is also a vector space using the same addition and scalar operation as on <span class="math inline">\(\mc{V}\)</span>. Namely, <span class="math inline">\(\mc{U}\)</span> is a subspace only if it satisfies, <span class="math inline">\(\bs{0} \in \mc{U}\)</span>, <span class="math inline">\(\bs{u} + \bs{v} \in \mc{U}\)</span> for all <span class="math inline">\(\bs{u} \in \mc{U}\)</span> and <span class="math inline">\(a \bs{u} \in \mc{U}\)</span> for all <span class="math inline">\(a \in \b{R}\)</span> and <span class="math inline">\(\bs{u} \in \mc{U}\)</span>.</p>
 </div>
 </section>
 <section id="sec-Finite_dimensional_vector_space" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="sec-Finite_dimensional_vector_space"><span class="header-section-number">2.2</span> Finite Dimensional Vector Spaces</h2>
 <p>A <em>list</em> of length <span class="math inline">\(n\)</span> is an ordered collection of <span class="math inline">\(n\)</span> elements. We denote lists without parenthesis as <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n}\)</span>. By definition, a list has finite length.</p>
-<p>A <em>linear combination</em> of a list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is a vector of the form <span class="math inline">\(a_{1} \bs{v}_{1} + ... + a_{n} \bs{v}_{n}\)</span> where <span class="math inline">\(a_{1},...,a_{n} \in \b{R}\)</span>.</p>
-<p>The <em>span</em> of a list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is the set of all linear combinations of the form <span class="math inline">\(a_{1} \bs{v}_{1} + ... + a_{n} \bs{v}_{n}\)</span> where <span class="math inline">\(a_{1},...,a_{n} \in \b{R}\)</span> and is denoted by <span class="math inline">\(\text{span}\pr{\bs{v}_{1},...,\bs{v}_{n}}\)</span>. If <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n}\)</span> spans <span class="math inline">\(\b{V}\)</span>, then <span class="math inline">\(\text{span}\pr{\bs{v}_{1},...,\bs{v}_{n}} = \b{V}\)</span></p>
+<p>A <em>linear combination</em> of a list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \mc{V}\)</span> is a vector of the form <span class="math inline">\(a_{1} \bs{v}_{1} + ... + a_{n} \bs{v}_{n}\)</span> where <span class="math inline">\(a_{1},...,a_{n} \in \b{R}\)</span>.</p>
+<p>The <em>span</em> of a list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \mc{V}\)</span> is the set of all linear combinations of the form <span class="math inline">\(a_{1} \bs{v}_{1} + ... + a_{n} \bs{v}_{n}\)</span> where <span class="math inline">\(a_{1},...,a_{n} \in \b{R}\)</span> and is denoted by <span class="math inline">\(\text{span}\pr{\bs{v}_{1},...,\bs{v}_{n}}\)</span>. If <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n}\)</span> spans <span class="math inline">\(\mc{V}\)</span>, then <span class="math inline">\(\text{span}\pr{\bs{v}_{1},...,\bs{v}_{n}} = \mc{V}\)</span></p>
 <div id="def-Finite_dimensional_vector_space" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.3</strong></span> <strong><span style="color: red;">Finite dimensional vector space</span></strong></p>
-<p>A vector space <span class="math inline">\(\b{V}\)</span> is <em>finite dimensional</em> if some list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> spans the space.</p>
+<p>A vector space <span class="math inline">\(\mc{V}\)</span> is <em>finite dimensional</em> if some list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \mc{V}\)</span> spans the space.</p>
 </div>
-<p>A list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is said to be <em>linearly independent</em> if its linear combination is <span class="math inline">\(\bs{0}\)</span> iff the scalars <span class="math inline">\(a_{1},...,a_{n}\)</span> are all <span class="math inline">\(0\)</span>. On the contrary, a list is linearly dependent if a linear combination is <span class="math inline">\(\bs{0}\)</span> for some list of scalars <span class="math inline">\(a_{1},...,a_{n}\)</span> where not all are <span class="math inline">\(0\)</span>. In a finite-dimensional vector space, the length of each linearly independent list of vectors is less than or equal to the length of every spanning list of vectors.</p>
+<p>A list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \mc{V}\)</span> is said to be <em>linearly independent</em> if its linear combination is <span class="math inline">\(\bs{0}\)</span> iff the scalars <span class="math inline">\(a_{1},...,a_{n}\)</span> are all <span class="math inline">\(0\)</span>. On the contrary, a list is linearly dependent if a linear combination is <span class="math inline">\(\bs{0}\)</span> for some list of scalars <span class="math inline">\(a_{1},...,a_{n}\)</span> where not all are <span class="math inline">\(0\)</span>. In a finite-dimensional vector space, the length of each linearly independent list of vectors is less than or equal to the length of every spanning list of vectors.</p>
 <div id="def-basis" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.4</strong></span> <strong><span style="color: red;">Basis</span></strong></p>
-<p>A <em>basis</em> of <span class="math inline">\(\b{V}\)</span> is a linearly independent list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> that spans <span class="math inline">\(\b{V}\)</span>. An equivalent definition is that the list <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \b{V}\)</span> is <em>basis</em> of <span class="math inline">\(\b{V}\)</span> iff every <span class="math inline">\(\bs{v} \in \b{V}\)</span> can be written as a unique linear combination of the list.</p>
+<p>A <em>basis</em> of <span class="math inline">\(\mc{V}\)</span> is a linearly independent list of vectors <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \mc{V}\)</span> that spans <span class="math inline">\(\mc{V}\)</span>. An equivalent definition is that the list <span class="math inline">\(\bs{v}_{1},...,\bs{v}_{n} \in \mc{V}\)</span> is <em>basis</em> of <span class="math inline">\(\mc{V}\)</span> iff every <span class="math inline">\(\bs{v} \in \mc{V}\)</span> can be written as a unique linear combination of the list.</p>
 </div>
-<p>Every finite dimensional vector space <span class="math inline">\(\b{V}\)</span> has a basis. The <em>dimension</em> of <span class="math inline">\(\b{V}\)</span> is given by the length of any of its basis. All bases of a finite dimensional vector space have the same length. A proper subspace always has a smaller dimension than the larger space. We will denote finite dimensional vector spaces with a superscript to indicate the dimension, for example, <span class="math inline">\(\b{V}^{n}\)</span> or <span class="math inline">\(P^{k}\)</span>.</p>
+<p>Every finite dimensional vector space <span class="math inline">\(\mc{V}\)</span> has a basis. The <em>dimension</em> of <span class="math inline">\(\mc{V}\)</span> is given by the length of any of its basis. All bases of a finite dimensional vector space have the same length. A proper subspace always has a smaller dimension than the larger space. We will denote finite dimensional vector spaces with a superscript to indicate the dimension, for example, <span class="math inline">\(\mc{V}^{n}\)</span> or <span class="math inline">\(P^{k}\)</span>.</p>
 </section>
 <section id="sec-inner_prod_normed_spaces" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="sec-inner_prod_normed_spaces"><span class="header-section-number">2.3</span> Real Inner Products and Norms</h2>
 <div id="def-inner_prod" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.5</strong></span> <strong><span style="color: red;">Inner product</span></strong></p>
-<p>An <em>inner product</em> on <span class="math inline">\(\b{V}\)</span> is an operation <span class="math inline">\(\apr{\cdot, \cdot} : \b{V} \times \b{V} \rightarrow \b{R}\)</span> such that for all <span class="math inline">\(\bs{u}, \bs{v}, \bs{z} \in \b{V}\)</span> and for <span class="math inline">\(a \in \b{R}\)</span>, we have</p>
+<p>An <em>inner product</em> on <span class="math inline">\(\mc{V}\)</span> is an operation <span class="math inline">\(\apr{\cdot, \cdot} : \mc{V} \times \mc{V} \rightarrow \b{R}\)</span> such that for all <span class="math inline">\(\bs{u}, \bs{v}, \bs{z} \in \mc{V}\)</span> and for <span class="math inline">\(a \in \b{R}\)</span>, we have</p>
 <ol type="1">
 <li><span class="math inline">\(\apr{\bs{u}, \bs v} = \apr{\bs v, \bs u}\)</span></li>
 <li><span class="math inline">\(\apr{\bs u, \bs v + a \bs z} = \apr{\bs u, \bs v} + a \apr{\bs u, \bs z}\)</span></li>
@@ -361,27 +372,50 @@ window.Quarto = {
 <li><span class="math inline">\(\inpd{\bs u}{\bs u} = 0\)</span> iff <span class="math inline">\(\bs{u} = \bs{0}\)</span></li>
 </ol>
 </div>
-<p>An real inner product space is a real vector space on which an inner product is defined.</p>
+<p>An real inner product space is a real vector space on which an inner product is defined. An inner product is not a requirement of a vector space.</p>
 <div id="def-norm" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.6</strong></span> <strong><span style="color: red;">Norm</span></strong></p>
-<p>A <em>norm</em> on <span class="math inline">\(\b{V}\)</span> is an operation <span class="math inline">\(\norm{\cdot} : \b{V} \rightarrow \b{R}_{\geq 0}\)</span> such that such that for all <span class="math inline">\(\bs{u}, \bs{v} \in \b{V}\)</span> and for <span class="math inline">\(a \in \b{R}\)</span>, we have</p>
+<p>A <em>norm</em> on <span class="math inline">\(\mc{V}\)</span> is an operation <span class="math inline">\(\norm{\cdot} : \mc{V} \rightarrow \b{R}_{\geq 0}\)</span> such that such that for all <span class="math inline">\(\bs{u}, \bs{v} \in \mc{V}\)</span> and for <span class="math inline">\(a \in \b{R}\)</span>, we have</p>
 <ol type="1">
 <li><span class="math inline">\(\norm{a \bs u} = \abs{a} \norm{\bs u}\)</span></li>
 <li><span class="math inline">\(\norm{\bs u + \bs v} \leq \norm{\bs u} + \norm{\bs v}\)</span></li>
 <li><span class="math inline">\(\norm{\bs u} = 0\)</span> iff <span class="math inline">\(\bs u = \bs 0\)</span></li>
 </ol>
 </div>
-<p>A vector space equipped with a norm is called a normed vector space. To be more precise, we denote a norm of vector space <span class="math inline">\(\b{V}\)</span> as <span class="math inline">\(\norm{\cdot}_{\b{V}}\)</span> and similarly for norms of other vector spaces. Every inner product induces a norm. The induced norm is given by <span class="math inline">\(\norm{\bs u} = \sqrt{\inpd{\bs u}{\bs u}}\)</span>.</p>
+<p>A vector space equipped with a norm is called a normed vector space. To be more precise, we denote a norm of vector space <span class="math inline">\(\mc{V}\)</span> as <span class="math inline">\(\norm{\cdot}_{\mc{V}}\)</span> and similarly for norms of other vector spaces. Every inner product induces a norm. The induced norm is given by <span class="math inline">\(\norm{\bs u} = \sqrt{\inpd{\bs u}{\bs u}}\)</span>.</p>
 </section>
 <section id="sec-euclidean_space" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="sec-euclidean_space"><span class="header-section-number">2.4</span> Real Euclidean Space</h2>
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-euclidean_space"><span class="header-section-number">2.4</span> Euclidean Space</h2>
 <div id="def-euclidean_vector_space" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2.7</strong></span> An <strong><span style="color: red;">Euclidean vector space</span></strong> is a finite dimensional real inner product space, whose inner product is the dot product.</p>
+<p><span class="theorem-title"><strong>Definition 2.7</strong></span> An <strong><span style="color: red;">Euclidean vector space</span></strong> <span class="math inline">\(\b{E}\)</span> is a finite dimensional real inner product space, whose inner product is the dot product.</p>
 </div>
-<p>The Euclidean norm is induced by the dot product.</p>
+<p>We denote an <span class="math inline">\(n\)</span> dimensional Euclidean space by <span class="math inline">\(\b{E}^{n}\)</span>. The Euclidean norm is induced by the dot product.</p>
+<div id="def-affine_point_space" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.8</strong></span> An <strong><span style="color: red;">affine point space</span></strong> <span class="math inline">\(\mc{E}\)</span> is a set of points on which the addition of two points is <em>not</em> defined, there is no unique zero element, and the difference between two points belongs to the Euclidean space associated with it.</p>
+</div>
+<p>We denote an <span class="math inline">\(n\)</span> dimensional affine point space by <span class="math inline">\(\mc{E}^{n}\)</span>. The term <em>point</em> is reserved for elements of <span class="math inline">\(\mc{E}\)</span> and the term <em>vector</em> for elements of <span class="math inline">\(\b{E}\)</span>.</p>
+<div id="def-euclidean_space" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.9</strong></span> <strong><span style="color: red;">Euclidean space</span></strong></p>
+<p>We denote the pair <span class="math inline">\(\pr{\mc{E}^{n}, \b{E}^{n}}\)</span> as an <em>Euclidean space</em>, to mean an affine point space such that the associated vector space is an Euclidean vector space. Choosing a point <span class="math inline">\(o \in \mc{E}^{n}\)</span> which we call the origin in <span class="math inline">\(\mc{E}^{n}\)</span>, a point <span class="math inline">\(x \in \mc{E}^{n}\)</span> corresponds to a vector <span class="math inline">\(\bs{x} \in \b{E}^{n}\)</span> iff <span class="math inline">\(o + \bs{x} = x\)</span>. We are particularly interested in the Euclidean space <span class="math inline">\(\pr{\mc{E}^{3}, \b{E}^{3}}\)</span>. We formally define the vectors in <span class="math inline">\(\b{E}^{n}\)</span> to have units of length.</p>
+</div>
 </section>
-<section id="sec-euclidean_space" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="sec-euclidean_space"><span class="header-section-number">2.5</span> Real Euclidean Space</h2>
+<section id="sec-components_of_vectors" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-components_of_vectors"><span class="header-section-number">2.5</span> Components of Vectors</h2>
+<p>To manipulate and work with vectors, we would like to assign them components. Let <span class="math inline">\(\mc{F}= (1,\dots,n)\)</span>. Let a list of vectors <span class="math inline">\(\pr{\bs{e}_{i}}_{i \in \mc{F}} \in \b{E}^{n}\)</span> form a basis for <span class="math inline">\(\b{E}^{n}\)</span>. Then for a vector <span class="math inline">\(\bs{x} \in \b{E}^{n}\)</span>, we can write <span class="math inline">\(\bs{x} = \sum_{i \in \mc{F}} x_{i} \bs{e}_{i}\)</span>. The <em>components</em> of <span class="math inline">\(\bs{x}\)</span> w.r.t. to the basis <span class="math inline">\(\pr{\bs{e}_{i}}_{i \in \mc{F}}\)</span> are the real numbers <span class="math inline">\((x_{i})_{i \in \mc{F}}\)</span>. We give the components a column matrix representation. For example, the components of a vector <span class="math inline">\(\bs{x} \in \b{E}^{3}\)</span> w.r.t a basis <span class="math inline">\(\pr{\bs{e}_{1},\bs{e}_{2},\bs{e}_{3}}\)</span> may be written as <span class="math display">\[
+    \begin{bmatrix}
+    a \\ b \\ c
+    \end{bmatrix}
+\]</span></p>
+<p>where <span class="math inline">\(a, b, c \in \b{R}\)</span>. The following is <em>not</em> a meaningful statement: <span class="math display">\[
+\bs{x} =
+    \begin{bmatrix}
+    a \\ b \\ c
+    \end{bmatrix}
+\]</span></p>
+<p>Instead, we write</p>
+<p><span class="math display">\[
+    \bs{x} = \sum_{i=1}^{3} x_{i} \bs{e}_{i}
+\]</span></p>
 
 
 </section>
