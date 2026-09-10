@@ -25,6 +25,7 @@ window.MathJax = {
 
       // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
       bs:    ['\\boldsymbol{#1}', 1],
+      mc:    ['\\mathcal{#1}', 1],
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       usf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
@@ -44,6 +45,7 @@ window.MathJax = {
 
       // --- delimiters / operators ---
       pr:   ['\\left(#1\\right)', 1],
+      cpr:  ['\\left\\{#1\\right\\}', 1],
       apr:  ['\\left\\langle#1\\right\\rangle', 1],
       tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
       tpsb: ['\\left.#1\\right.^{\\mathsf{T}}', 1],
@@ -51,6 +53,9 @@ window.MathJax = {
       abs:  ['\\vert #1 \\vert', 1],
       inpd: ['\\left\\langle #1, #2 \\right\\rangle', 2],
       set:  ['\\left\\{#1\\,\\middle|\\,#2\\right\\}', 2],
+
+      // --- symbols ---
+      ra:   ['\\rightarrow'],
 
       // --- named objects ---
       conf:     '\\boldsymbol{\\kappa}',
