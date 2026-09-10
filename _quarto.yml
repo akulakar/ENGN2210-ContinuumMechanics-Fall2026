@@ -14,7 +14,7 @@ book:
     - part: "Mathematical Preliminaries"
       chapters:
         - notes/MathematicalPreliminaries/VectorSpaces.qmd
-        - notes/MathematicalPreliminaries/LinearMapsTensors.qmd
+        # - notes/MathematicalPreliminaries/LinearMapsTensors.qmd
         # - notes/MathematicalPreliminaries/ComponentsEinsteinNotation.qmd
         # - notes/MathematicalPreliminaries/TensorAnalysis.qmd
         # - notes/MathematicalPreliminaries/IntegralTheorems.qmd

@@ -1,3 +1,0 @@
-# Mathematical Preliminaries {#sec-mathematical_preliminaries}
-
-This chapter provides necessary background on some basic mathematical machinery that drives the study of continuum bodies. Namely, vector spaces, linear maps and operators, inner product spaces, normed inner product spaces, Euclidean spaces, tensors, tensor algebra, components of vectors and tensors, change of basis, tensor analysis, integral theorems.
