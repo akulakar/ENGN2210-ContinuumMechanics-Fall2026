@@ -74,5 +74,71 @@
       "Mathematical Preliminaries",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vector Spaces</span>"
     ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/Maps.html",
+    "href": "notes/MathematicalPreliminaries/Maps.html",
+    "title": "3  Maps",
+    "section": "",
+    "text": "3.1 Maps\nTypically, a map \\(f : \\mc{D} \\subset \\b{R} \\ra \\b{R}\\) that returns a real number on being fed a real number is referred to as a function. Sometimes, int ca be defined by a formula, for example, as\n\\[\n    y=f(x)\n\\]\nwhere \\(x \\in \\mc{D} \\subset \\b{R}\\) and \\(y \\in \\b{R}\\). A distinction is made between the function \\(f\\) and the functions value \\(f(x)\\). Some examples of functions include\n\\[\n\\begin{align*}\n    y &= \\sin(x), ~x \\in \\b{R} \\\\\n    y &= 1/x, ~x \\in \\b{R} - \\{0\\}\n\\end{align*}\n\\]\nWe will refer more general operations as maps whose input and output are more general mathematical objects. Examples, of general mathematical objects can be complex numbers, plane geometric objects (triangle, circles, etc.), 3D geometric objects (cubes, spheres, ect.), digital images, and of course the main focus of this course, vectors. The only requirements on a map is that it should be well defined. That is, we should clearly know the domain of the mapping, and for each element of the domain the mapping should always return a well defined, unique object.\nExamples\nNon examples",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Maps</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/Maps.html#sec-maps",
+    "href": "notes/MathematicalPreliminaries/Maps.html#sec-maps",
+    "title": "3  Maps",
+    "section": "",
+    "text": "Definition 3.1 Map\nA map (or function) \\(f : X \\ra Y\\) assigns each element of the set \\(X\\) to exactly one element of the set \\(Y\\). In other words, it returns a single, unique output when operated on an input.\n\n\n\n\n\n\n\n\n\\(A : \\mc{D} \\ra \\b{R}^{+}\\), where \\(\\mc{D}\\) is the set of all triangles and for each \\(x \\in \\mc D\\), \\(A(x)\\) returns the area of the triangle.\n\\(V : \\mc{D} \\ra \\b{R}^{+}\\), where \\(\\mc{D}\\) is the set of all cubes and for each \\(x \\in \\mc D\\), \\(V(x)\\) returns the volume of the cube.\n\\(D : \\mc{D} \\ra \\cpr{\\text{Mon,Tu,Wed,Th,Fri,Sat,Sun}}\\), where \\(\\mc{D}\\) is the set of all dates and for each \\(x \\in \\mc D\\), \\(D(x)\\) returns the corresponding day of the week for a particular date.\n\\(\\text{Col}: \\mc{D} \\ra \\cpr{\\text{Red,Blue,Green}}\\), where \\(\\mc{D}\\) is the set of all pixels on a well defined digital image and for each \\(x \\in \\mc D\\), \\(\\text{Col}(x)\\) returns the pixel’s color.\nNorms\nInner products\n\n\n\n\\(V : \\mc{D} \\ra \\b{R}^{+}\\), where \\(\\mc D\\) is the set of all words in the English language and for each \\(x \\in \\mc D, \\, V(x)\\) returns to us the volume of the word. (Concept of volume is ill defined for words).\n\\(\\text{Age} : \\mc D \\ra \\b{R}^{+}\\), where \\(\\mc D\\) is the set of all people on Earth and for each \\(x \\in \\mc D, \\, \\text{Age}(x)\\) returns to use the age of a person’s child. (A person may have more than one child or no child at all).\n\n\nDefinition 3.2 Map between Euclidean spaces\nThe map \\(\\bs T : \\b E^{n} \\ra \\b F^{n}\\) assigns a vector \\(\\bs v \\in \\b E^n\\) the unique vector \\(\\bs{T}(\\bs{v}) \\in \\b{F}^n\\). It is called a map between Euclidean spaces.",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Maps</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/Maps.html#sec-linear_maps",
+    "href": "notes/MathematicalPreliminaries/Maps.html#sec-linear_maps",
+    "title": "3  Maps",
+    "section": "3.2 Linear Maps",
+    "text": "3.2 Linear Maps\n\nDefinition 3.3 Linear map\nA linear map \\(\\bs{T} : \\mc V \\ra  \\mc W\\) is a map from \\(\\mc V \\ra \\mc W\\) with the following properties:\n\n\\(\\bs{T}(\\bs u + \\bs v) = \\bs{T}\\bs{u} + \\bs{T}\\bs{v}\\) for all \\(\\bs{u}, \\bs{v} \\in \\mc{V}\\)\n\\(\\bs{T}(a \\bs u) = a (\\bs{T}\\bs{u})\\) for all \\(a \\in \\b{R}\\) and \\(\\bs{u} \\in \\mc{V}\\)\n\n\n\\(\\mc V\\) and \\(\\mc{W}\\) are called the domain and codomain of \\(\\bs{T}\\) respectively. Linear maps are also referred to as linear transformations. Note, the definition of the addition and scalar multiplication operations may be different int the two vector spaces \\(\\mc{V}\\) and \\(\\mc{W}\\). We usually denote vectors by lowercase bold symbols and linear maps by uppercase bold symbols.\nThe set of all linear maps from \\(\\mc{V}\\) to \\(\\mc{W}\\) is denoted by \\(\\mc{L}\\pr{\\mc{V}, \\mc{W}}\\).\nExamples\n\nIdentity: \\(\\bs{I} \\bs{v} = \\bs{v}\\)\nMultiplication by a scalar: \\(\\bs{T} \\bs{v} = a \\bs{v}\\)\nDifferentiation: \\(D f = f'\\)\n\n\n\nDefinition 3.4 Addition and scalar multiplication on \\(\\mc{L}\\pr{\\mc{V}, \\mc{W}}\\)\nLet \\(\\bs S, \\bs T \\in \\mc{L}\\pr{\\mc{V}, \\mc{W}}\\) and \\(a \\in \\b{R}\\). Then \\[\n    \\pr{\\bs S + \\bs T}\\bs v = \\bs S \\bs v + \\bs T \\bs v ~~\\text{and}~~ (a \\bs T)\\bs v = a (\\bs T \\bs v)\n\\] for all \\(\\bs v \\in \\mc{V}\\)\n\nYou should now be able to prove that the space of linear maps \\(\\mc{L}\\pr{\\mc{V}, \\mc{W}}\\) is a vector space! Therefore linear maps are also vectors! This is the reason we try to steer clear of the notion that vectors are quantities with direction and magnitude, since in reality, a vector a much more general mathematical object.\nProperties of linear maps\nIf \\(\\bs{S} \\in \\mc{L}\\pr{\\mc{U}, \\mc{V}}\\) and \\(\\bs{T} \\in \\mc{L}\\pr{\\mc{V}, \\mc{W}}\\), then the product \\(\\bs{T}\\bs{S} \\in \\mc{L}\\pr{\\mc{U}, \\mc{W}}\\), defined by \\[\n    \\pr{\\bs{T}\\bs{S}}\\bs{u} = \\bs{T}\\pr{\\bs{S}\\bs{u}}\n\\] for all \\(\\bs{u} \\in \\mc{U}\\).\nLinear maps obey the associative, distributive and identity properties.\nLinear maps of the type \\(\\bs{T} : \\mc{V} \\ra \\mc{V}\\) are called linear operators, that is domain and codomain are the exact same vector space. Linear maps of the type \\(\\bs{T} : \\mc{V} \\ra \\b{R}\\) are called linear forms or linear functionals.",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Maps</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/Tensors.html",
+    "href": "notes/MathematicalPreliminaries/Tensors.html",
+    "title": "4  Tensors",
+    "section": "",
+    "text": "4.1 Tensors as Linear Maps\nFor the time being, we forgo a more precise and thorough discussion of tensors and identify them as linear maps between Euclidean vector spaces for our purposes.\nConsequentially, the previous discussion on linear maps is applicable to tensors. Important tensors that we will study in continuum mechanics include the deformation gradient tensor, velocity gradient tensor, strain tensors, stress tensors, stiffness tensors, and many more. Since tensors are linear maps, the set of all tensors between two vector spaces is also a vector space.\nSome Important Tensors\nThe identity tensor (previously defined as the identity map) maps every vector to itself.\nProperties of Transposes\n\\[  \n\\begin{array}{ll}\n\\pr{i} & \\tp{\\pr{\\tp{\\bs A}}} = \\bs A \\\\\n\\pr{ii} & \\tp{\\pr{\\bs A \\bs B}} = \\tp{\\bs B} \\tp{\\bs A} \\\\\n\\pr{iii} & \\tps{\\bs A + \\bs B} = \\tp{\\bs A} + \\tp{\\bs B} \\\\\n\\pr{iv} & \\tps{\\alpha \\bs A} = \\alpha \\tp{\\bs A}\n\\end{array}\n\\]\nEvery tensor can be expressed as the sum of a symmetric and skew symmetric tensor. Specifically, the symmetric part of a tensor is given by \\[\n    \\text{sym}\\pr{\\bs T} = \\frac{1}{2}\\pr{\\bs T + \\bs{T}^{\\msf T}}\n\\] and the skew-symmetric part is given by \\[\n    \\text{skew}\\pr{\\bs T} = \\frac{1}{2}\\pr{\\bs T - \\bs{T}^{\\msf T}}\n\\]",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tensors</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/Tensors.html#sec-tensors_def",
+    "href": "notes/MathematicalPreliminaries/Tensors.html#sec-tensors_def",
+    "title": "4  Tensors",
+    "section": "",
+    "text": "Definition 4.1 Tensors\nWe refer to linear maps \\(\\bs{T} \\in \\mc{L}\\pr{\\b{E}^{n}, \\b{F}^n}\\) as tensors, where \\(\\b{E}^{n}\\) and \\(\\b{F}^{n}\\) are Euclidean vector spaces.\n\n\n\n\nDefinition 4.2 Identity tensor\nLet \\(\\bs I : \\b{E}^n \\ra \\b{E}^n\\) be such that \\[\n    \\bs{I} \\bs{v} = \\bs{v}\n\\] for all \\(\\bs v \\in \\b{E}^n\\). Then \\(\\bs I\\) is called the identity tensor.\n\n\n\nDefinition 4.3 Null tensor\nLet \\(\\bs 0 : \\b{E}^n \\ra \\b{F}^n\\) be such that \\[\n    \\bs{0} \\bs{v} = \\bs{0}_{\\b F}\n\\] for all \\(\\bs v \\in \\b{E}^n\\). Then \\(\\bs 0\\) is called the null tensor.\n\n\nDefinition 4.4 Transpose of a tensor\nThe transpose of a tensor \\(\\bs{T}\\) is the tensor \\(\\bs{T}^{\\msf{T}}\\) that obeys the following rule \\[\n\\bs{u}\\cdot\\pr{\\bs{T} \\bs{v}} = \\pr{\\bs{T}^{\\msf T} \\bs{u}} \\cdot \\bs{v}\n\\] for all \\(\\bs u, \\bs v \\in \\b E^{n}\\)\n\n\n\n\nDefinition 4.5 Symmetric tensor\nA tensor \\(\\bs{T}\\) is symmetric if \\(\\bs{T} = \\bs{T}^{\\msf{T}}\\).\n\n\nDefinition 4.6 Skew-symmetric tensor\nA tensor \\(\\bs{T}\\) is skew symmetric if \\(\\bs{T} = -\\bs{T}^{\\msf{T}}\\).",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tensors</span>"
+    ]
+  },
+  {
+    "objectID": "notes/MathematicalPreliminaries/Tensors.html#sec-dyadic_product",
+    "href": "notes/MathematicalPreliminaries/Tensors.html#sec-dyadic_product",
+    "title": "4  Tensors",
+    "section": "4.2 Dyadic product",
+    "text": "4.2 Dyadic product\nAgain, forgoing a more rigorous discussion of the dyadic or tensor product, we assign the following definition to it.\n\nDefinition 4.7 Dyadic product\nThe dyadic or tensor product between two vectors \\(\\bs a\\) and \\(\\bs{b}\\) is the tensor \\(\\bs a \\otimes \\bs b\\) such that given any vector \\(\\bs c\\) \\[\n    \\pr{\\bs a \\otimes \\bs b} \\bs c = \\pr{\\bs b \\cdot \\bs c} \\bs a\n\\] A tensor of the type \\(\\bs a \\otimes \\bs b\\) is sometimes referred to as a dyad.\n\nProperties of dyads\nLet \\(\\bs A\\) be a tensor. Then, \\[\n\\begin{align}\n    \\pr{\\bs a \\otimes \\bs b}^{\\mathsf T} &= \\bs b \\otimes \\bs a \\\\\n    \\pr{\\bs a \\otimes \\bs b}\\pr{\\bs c \\otimes \\bs d} &= \\pr{\\bs b \\cdot \\bs c} \\bs a \\otimes \\bs d \\\\\n    \\pr{\\bs a \\otimes \\bs b} \\bs A &= \\bs a \\otimes \\pr{\\bs{A}^{\\msf{T}} \\bs b} \\\\\n    \\bs A \\pr{\\bs a \\otimes \\bs b} &= \\pr{\\bs{A}\\bs{a}} \\otimes \\bs b\n\\end{align}\n\\]\nThe last two properties are proved. Let \\(\\bs c\\) be an arbitrary vector. Then, \\[\n    \\begin{align}\n    \\pr{\\bs a \\otimes \\bs b} \\bs A \\bs c &= \\bs a \\pr{\\bs b \\cdot \\bs A \\bs c} \\\\\n    &= \\bs a \\pr{\\bs c \\cdot \\pr{\\tp{\\bs A} \\bs b}} \\\\\n    &= \\bs a \\pr{\\pr{\\bs c \\cdot \\tp{\\bs A} \\bs b}} \\\\\n    &= \\pr{\\bs a \\otimes \\pr{\\tp{\\bs A} \\bs b}}\\bs c\n    \\end{align}\n\\] \\[\n\\begin{align}\n    \\bs A \\pr{\\bs a \\otimes \\bs b} \\bs c &= \\bs A \\bs a \\pr{\\bs b \\cdot \\bs c} \\\\\n    &= \\pr{\\bs A \\bs a \\otimes \\bs b} \\bs c\n\\end{align}\n\\]\nThe dyadic product \\(\\bs a \\otimes \\bs a\\) acts as a projection map. That is, \\[\n    \\pr{\\bs a \\otimes \\bs a} \\bs v = \\pr{\\bs a \\cdot \\bs v} \\bs a\n\\] The new vector is the projection of \\(\\bs v\\) in the direction \\(\\bs a\\). On the contrary, \\[\n    \\pr{\\bs I - \\bs a \\otimes \\bs a} \\bs v = \\bs v - \\pr{\\bs a \\cdot \\bs v} \\bs a\n\\] the tensor \\(\\bs I - \\bs a \\otimes \\bs a\\) projects the vector \\(\\bs v\\) onto the plane perpendicular to \\(\\bs a\\).",
+    "crumbs": [
+      "Mathematical Preliminaries",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tensors</span>"
+    ]
   }
 ]
