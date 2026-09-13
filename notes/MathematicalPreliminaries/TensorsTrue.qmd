@@ -1,0 +1,51 @@
+# Tensors done properly
+
+## Tensor Product {#sec-tensor_product}
+
+We would like form a product between two vectors $\bs{v} \in \mc{V}$ and $\bs{w} \in \mc{W}$. We denote this product by the symbol $\bs{v} \otimes \bs{w}$ pronounced '$\bs{v}$ tensor $\bs{w}$'. We attach to this tensor product some distributive properties:
+
+$$
+    \begin{align*}
+    \text{For } \bs{v}_{1}, \bs{v}_{2} \in \mc{V}&, \bs{w}_{1}, \bs{w}_{2} \in \mc{W}, a \in \b{R}, \\
+    \pr{\bs{v}_{1} + \bs{v}_{2}} \otimes \bs{w}_1 &= \bs{v}_{1} \otimes \bs{w} + \bs{v}_{2} \otimes \bs{w}_2 \\
+    \bs{v}_{1} \otimes \pr{\bs{w}_1 + \bs{w}_2} &= \bs{v}_{1} \otimes \bs{w}_2 + \bs{v}_{1} \otimes \bs{w}_2 \\
+    a \pr{\bs{v}_{1} \otimes \bs{w}_{1}} &= \pr{a \bs{v}_{1}} \otimes \bs{w}_{1} = \bs{v}_{1} \otimes \pr{a \bs{w}_{1}} 
+    \end{align*}
+$$
+
+The formal definition of a tensor product is the following.
+
+::: {#def-tensor_product_def}
+**[Tensor product]{style="color: red;"}**
+
+A *tensor product* $\bs{v} \otimes \bs{w}$ is an element of the tensor product space $\mc{V} \otimes \mc{W}$ where $\bs{v} \in \mc{V}, \bs{w} \in \mc{W}$ and $\mc{V} \otimes \mc{W}$ is the space of bilinear functionals $\mc{B}\pr{\mc{V}', \mc{W}'}$. Specifically, 
+$$
+    \pr{\bs{v} \otimes \bs{w}}\pr{\bs{\varphi},\bs{\tau}} = \bs{\varphi}(\bs{v}) \bs{\tau}(\bs{w})
+$$
+for all $\bs{\varphi} \in \mc{V}', \bs{\tau} \in \mc{W}'$
+:::
+
+There exists an isomorphism between a finite dimensional inner product space and its dual space. This result is formalized through the Riesz representation theorem, which states that every continuous linear functional acting on a finite dimensional inner product space can be given by an inner product with a unique vector in that space. Then through the Riesz representation theorem, there exists a flat map the maps vectors to its covectors or dual vectors. That is, 
+$$
+    \flat : \mc{V} \ra \mc{V}'
+$$
+
+Hence, consider the following for an Euclidean vector space $\b{E}$ and two vectors $\bs{u}, \bs{v}, \bs{w} \in \b{E}$:
+
+$$
+    \begin{align*}
+    \pr{\bs{u} \otimes \bs{v}}\pr{\cdot,\bs{w}^{\flat}} &= \bs{w}^{\flat}\pr{\bs{v}} \bs{u} = \apr{\bs{w}, \bs{v}} \bs{u} \\
+    \apr{\bs{w}, \bs{v}} \bs{u} \in \mc{L}\pr{\b{E}',\b{R}}, &\text{ implying } \apr{\bs{w}, \bs{v}} \bs{u} \in \pr{\b{E}'}' = \b{E}
+    \end{align*}
+$$
+
+Ultimately, we want to point out that the definition of a tensor product does not require the vector spaces to be inner product spaces. However, if they are equipped with an inner product, then there is a nice isomorphism to the dual space, known as the musical isomorphism, consisting of the flat and sharp maps that are inverses of each other.
+
+::: {#def-dyad_product_def}
+A **[Dyadic product]{style="color: red;"}** is a specific type of tensor product. Specifically, it is an element on the space $\mc{V} \otimes \mc{V}'$.
+:::
+
+A dyadic product can also be thought of as a linear map from $\mc{V}$ to $\mc{V}$. Let $\mc{V}$ be an inner product space. Further, let $\bs{u}, \bs{v} \in \mc{V}$ and $\bs{w}^{\flat} \in \mc{V}'$. Then,
+$$
+    \pr{\bs{v} \otimes \bs{w}^\flat} \pr{\cdot, \bs u} = \pr{\bs{w}^\flat (\bs u)} \bs{v} = \inpd{\bs{w}}{\bs u} \bs v
+$$

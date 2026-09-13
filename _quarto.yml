@@ -14,8 +14,9 @@ book:
     - part: "Mathematical Preliminaries"
       chapters:
         - notes/MathematicalPreliminaries/VectorSpaces.qmd
-        # - notes/MathematicalPreliminaries/LinearMapsTensors.qmd
-        # - notes/MathematicalPreliminaries/ComponentsEinsteinNotation.qmd
+        - notes/MathematicalPreliminaries/Maps.qmd
+        # - notes/MathematicalPreliminaries/TensorsTrue.qmd
+        - notes/MathematicalPreliminaries/Tensors.qmd
         # - notes/MathematicalPreliminaries/TensorAnalysis.qmd
         # - notes/MathematicalPreliminaries/IntegralTheorems.qmd
     # - part: "Kinematics"
@@ -35,7 +36,9 @@ crossref:
 
 format:
   html:
-    theme: simplex
+    theme: 
+      - simplex
+      # - custom.scss
     toc: true
     toc-depth: 3
     number-sections: true

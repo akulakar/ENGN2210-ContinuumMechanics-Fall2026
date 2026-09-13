@@ -1,0 +1,131 @@
+# Tensors {#sec-tensors}
+
+## Tensors as Linear Maps {#sec-tensors_def}
+For the time being, we forgo a more precise and thorough discussion of tensors and identify them as linear maps between Euclidean vector spaces for our purposes.
+
+::: {#def-tensors_simple_def}
+**[Tensors]{style="color: red;"}**
+
+We refer to linear maps $\bs{T} \in \mc{L}\pr{\b{E}^{n}, \b{F}^n}$ as *tensors*, where $\b{E}^{n}$ and $\b{F}^{n}$ are Euclidean vector spaces.
+:::
+
+Consequentially, the previous discussion on linear maps is applicable to tensors. Important tensors that we will study in continuum mechanics include the deformation gradient tensor, velocity gradient tensor, strain tensors, stress tensors, stiffness tensors, and many more. Since tensors are linear maps, the set of all tensors between two vector spaces is also a vector space.
+
+**Some Important Tensors**
+
+::: {#def-identity_tensor_def}
+**[Identity tensor]{style="color: red;"}**
+ 
+Let $\bs I : \b{E}^n \ra \b{E}^n$ be such that 
+$$
+    \bs{I} \bs{v} = \bs{v}
+$$
+for all $\bs v \in \b{E}^n$. Then $\bs I$ is called the identity tensor.
+:::
+
+The identity tensor (previously defined as the identity map) maps every vector to itself.
+
+::: {#def-null_tensor_def}
+**[Null tensor]{style="color: red;"}**
+
+Let $\bs 0 : \b{E}^n \ra \b{F}^n$ be such that
+$$
+    \bs{0} \bs{v} = \bs{0}_{\b F}
+$$
+for all $\bs v \in \b{E}^n$. Then $\bs 0$ is called the null tensor.
+:::
+
+::: {#def-transpose_tensor_def}
+**[Transpose of a tensor]{style="color: red;"}**
+
+The transpose of a tensor $\bs{T}$ is the tensor $\bs{T}^{\msf{T}}$ that obeys the following rule
+$$
+\bs{u}\cdot\pr{\bs{T} \bs{v}} = \pr{\bs{T}^{\msf T} \bs{u}} \cdot \bs{v}
+$$
+for all $\bs u, \bs v \in \b E^{n}$
+:::
+
+**Properties of Transposes**
+
+$$  
+\begin{array}{ll}
+\pr{i} & \tp{\pr{\tp{\bs A}}} = \bs A \\
+\pr{ii} & \tp{\pr{\bs A \bs B}} = \tp{\bs B} \tp{\bs A} \\
+\pr{iii} & \tps{\bs A + \bs B} = \tp{\bs A} + \tp{\bs B} \\
+\pr{iv} & \tps{\alpha \bs A} = \alpha \tp{\bs A}
+\end{array}
+$$
+
+::: {#def-symmetric_tensor_def}
+**[Symmetric tensor]{style="color: red;"}**
+
+A tensor $\bs{T}$ is symmetric if $\bs{T} = \bs{T}^{\msf{T}}$.
+:::
+
+::: {#def-skew-symmetric_tensor_def}
+**[Skew-symmetric tensor]{style="color: red;"}**
+
+A tensor $\bs{T}$ is skew symmetric if $\bs{T} = -\bs{T}^{\msf{T}}$.
+:::
+
+Every tensor can be expressed as the sum of a symmetric and skew symmetric tensor. Specifically, the symmetric part of a tensor is given by
+$$
+    \text{sym}\pr{\bs T} = \frac{1}{2}\pr{\bs T + \bs{T}^{\msf T}}
+$$
+and the skew-symmetric part is given by
+$$
+    \text{skew}\pr{\bs T} = \frac{1}{2}\pr{\bs T - \bs{T}^{\msf T}}
+$$
+
+## Dyadic product {#sec-dyadic_product}
+
+Again, forgoing a more rigorous discussion of the dyadic or tensor product, we assign the following definition to it.
+
+::: {#def-dyadic_product}
+**[Dyadic product]{style="color: red;"}**
+
+The dyadic or tensor product between two vectors $\bs a$ and $\bs{b}$ is the tensor $\bs a \otimes \bs b$ such that given any vector $\bs c$
+$$
+    \pr{\bs a \otimes \bs b} \bs c = \pr{\bs b \cdot \bs c} \bs a
+$$
+A tensor of the type $\bs a \otimes \bs b$ is sometimes referred to as a dyad.
+:::
+
+**Properties of dyads**
+
+Let $\bs A$ be a tensor. Then,
+$$
+\begin{align}
+    \pr{\bs a \otimes \bs b}^{\mathsf T} &= \bs b \otimes \bs a \\
+    \pr{\bs a \otimes \bs b}\pr{\bs c \otimes \bs d} &= \pr{\bs b \cdot \bs c} \bs a \otimes \bs d \\
+    \pr{\bs a \otimes \bs b} \bs A &= \bs a \otimes \pr{\bs{A}^{\msf{T}} \bs b} \\
+    \bs A \pr{\bs a \otimes \bs b} &= \pr{\bs{A}\bs{a}} \otimes \bs b
+\end{align}
+$$
+
+The last two properties are proved. Let $\bs c$ be an arbitrary vector. Then,
+$$
+    \begin{align}
+    \pr{\bs a \otimes \bs b} \bs A \bs c &= \bs a \pr{\bs b \cdot \bs A \bs c} \\
+    &= \bs a \pr{\bs c \cdot \pr{\tp{\bs A} \bs b}} \\
+    &= \bs a \pr{\pr{\bs c \cdot \tp{\bs A} \bs b}} \\
+    &= \pr{\bs a \otimes \pr{\tp{\bs A} \bs b}}\bs c
+    \end{align}
+$$
+$$
+\begin{align}
+    \bs A \pr{\bs a \otimes \bs b} \bs c &= \bs A \bs a \pr{\bs b \cdot \bs c} \\
+    &= \pr{\bs A \bs a \otimes \bs b} \bs c
+\end{align}
+$$
+
+
+The dyadic product $\bs a \otimes \bs a$ acts as a projection map. That is,
+$$
+    \pr{\bs a \otimes \bs a} \bs v = \pr{\bs a \cdot \bs v} \bs a
+$$
+The new vector is the projection of $\bs v$ in the direction $\bs a$. On the contrary,
+$$
+    \pr{\bs I - \bs a \otimes \bs a} \bs v = \bs v - \pr{\bs a \cdot \bs v} \bs a
+$$
+the tensor $\bs I - \bs a \otimes \bs a$ projects the vector $\bs v$ onto the plane perpendicular to $\bs a$.

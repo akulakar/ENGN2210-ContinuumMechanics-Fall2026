@@ -1,0 +1,93 @@
+# Maps {#sec-linear_maps_main} 
+
+## Maps {#sec-maps} 
+
+::: {#def-map}
+**[Map]{style="color: red;"}**
+
+A *map* (or function) $f : X \ra Y$ assigns each element of the set $X$ to exactly one element of the set $Y$. In other words, it returns a single, unique output when operated on an input.
+:::
+
+Typically, a map $f : \mc{D} \subset \b{R} \ra \b{R}$ that returns a real number on being fed a real number is referred to as a *function*. Sometimes, int ca be defined by a formula, for example, as
+
+$$
+    y=f(x)
+$$
+
+where $x \in \mc{D} \subset \b{R}$ and $y \in \b{R}$. A distinction is made between the function $f$ and the functions value $f(x)$. Some examples of functions include
+
+$$
+\begin{align*}
+    y &= \sin(x), ~x \in \b{R} \\
+    y &= 1/x, ~x \in \b{R} - \{0\}
+\end{align*}
+$$
+
+We will refer more general operations as *maps* whose input and output are more general mathematical objects. Examples, of general mathematical objects can be complex numbers, plane geometric objects (triangle, circles, etc.), 3D geometric objects (cubes, spheres, ect.), digital images, and of course the main focus of this course, vectors. The only requirements on a map is that it should be well defined. That is, we should clearly know the domain of the mapping, and for each element of the domain the mapping should always return a well defined, unique object.
+
+**Examples**
+
+- $A : \mc{D} \ra \b{R}^{+}$, where $\mc{D}$ is the set of all triangles and for each $x \in \mc D$, $A(x)$ returns the area of the triangle.
+- $V : \mc{D} \ra \b{R}^{+}$, where $\mc{D}$ is the set of all cubes and for each $x \in \mc D$, $V(x)$ returns the volume of the cube.
+- $D : \mc{D} \ra \cpr{\text{Mon,Tu,Wed,Th,Fri,Sat,Sun}}$, where $\mc{D}$ is the set of all dates and for each $x \in \mc D$, $D(x)$ returns the corresponding day of the week for a particular date.
+- $\text{Col}: \mc{D} \ra \cpr{\text{Red,Blue,Green}}$, where $\mc{D}$ is the set of all pixels on a well defined digital image and for each $x \in \mc D$, $\text{Col}(x)$ returns the pixel's color.
+- Norms
+- Inner products
+
+**Non examples**
+
+- $V : \mc{D} \ra \b{R}^{+}$, where $\mc D$ is the set of all words in the English language and for each $x \in \mc D, \, V(x)$ returns to us the volume of the word. (Concept of volume is ill defined for words).
+- $\text{Age} : \mc D \ra \b{R}^{+}$, where $\mc D$ is the set of all people on Earth and for each $x \in \mc D, \, \text{Age}(x)$ returns to use the age of a person's child. (A person may have more than one child or no child at all).
+
+::: {#def-map_between_Euc_spaces}
+**[Map between Euclidean spaces]{style="color: red;"}**
+
+The map $\bs T : \b E^{n} \ra \b F^{n}$ assigns a vector $\bs v \in \b E^n$ the unique vector $\bs{T}(\bs{v}) \in \b{F}^n$. It is called a map between Euclidean spaces. 
+:::
+
+## Linear Maps {#sec-linear_maps}
+
+::: {#def-linear_map}
+**[Linear map]{style="color: red;"}**
+
+A *linear map* $\bs{T} : \mc V \ra  \mc W$ is a map from $\mc V \ra \mc W$ with the following properties:
+
+1. $\bs{T}(\bs u + \bs v) = \bs{T}\bs{u} + \bs{T}\bs{v}$ for all $\bs{u}, \bs{v} \in \mc{V}$
+2. $\bs{T}(a \bs u) = a (\bs{T}\bs{u})$ for all $a \in \b{R}$ and $\bs{u} \in \mc{V}$
+:::
+
+$\mc V$ and $\mc{W}$ are called the *domain* and *codomain* of $\bs{T}$ respectively. Linear maps are also referred to as linear transformations. Note, the definition of the addition and scalar multiplication operations may be different int the two vector spaces $\mc{V}$ and $\mc{W}$. We usually denote vectors by lowercase bold symbols and linear maps by uppercase bold symbols.
+
+The **set of all linear maps** from $\mc{V}$ to $\mc{W}$ is denoted by $\mc{L}\pr{\mc{V}, \mc{W}}$.
+
+**Examples**
+
+- Identity: $\bs{I} \bs{v} = \bs{v}$
+- Multiplication by a scalar: $\bs{T} \bs{v} = a \bs{v}$
+- Differentiation: $D f = f'$
+
+<!-- **Non examples** -->
+
+::: {#def-linear_map_add_mult}
+**[Addition and scalar multiplication on $\mc{L}\pr{\mc{V}, \mc{W}}$]{style="color: red;"}**
+
+Let $\bs S, \bs T \in \mc{L}\pr{\mc{V}, \mc{W}}$ and $a \in \b{R}$. Then
+$$
+    \pr{\bs S + \bs T}\bs v = \bs S \bs v + \bs T \bs v ~~\text{and}~~ (a \bs T)\bs v = a (\bs T \bs v)
+$$
+for all $\bs v \in \mc{V}$
+:::
+
+You should now be able to prove that the space of linear maps [$\mc{L}\pr{\mc{V}, \mc{W}}$ is a vector space!]{style="color: red;"} Therefore linear maps are also vectors! This is the reason we try to steer clear of the notion that vectors are quantities with direction and magnitude, since in reality, a vector a much more general mathematical object.
+
+**Properties of linear maps**
+
+If $\bs{S} \in \mc{L}\pr{\mc{U}, \mc{V}}$ and $\bs{T} \in \mc{L}\pr{\mc{V}, \mc{W}}$, then the *product* $\bs{T}\bs{S} \in \mc{L}\pr{\mc{U}, \mc{W}}$, defined by
+$$
+    \pr{\bs{T}\bs{S}}\bs{u} = \bs{T}\pr{\bs{S}\bs{u}}
+$$
+for all $\bs{u} \in \mc{U}$.
+
+Linear maps obey the associative, distributive and identity properties.
+
+Linear maps of the type $\bs{T} : \mc{V} \ra \mc{V}$ are called *linear operators*, that is domain and codomain are the exact same vector space. Linear maps of the type  $\bs{T} : \mc{V} \ra \b{R}$ are called *linear forms* or *linear functionals*.
