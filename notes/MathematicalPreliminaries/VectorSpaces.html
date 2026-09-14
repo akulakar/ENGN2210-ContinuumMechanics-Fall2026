@@ -321,14 +321,22 @@ window.Quarto = {
 <p>A real vector space is a set <span class="math inline">\(\mc{V}\)</span> over the real numbers <span class="math inline">\(\b{R}\)</span> on which the two operations of <span class="math inline">\(\cdot + \cdot : \mc{V}\times \mc{V} \to \mc{V}\)</span> (addition) and <span class="math inline">\(\cdot * \cdot: \mc{V}\times \b{R}\to \mc{V}\)</span> (scalar multiplication) are defined and satisfies the following properties:</p>
 </div>
 <ol type="1">
-<li><span class="math inline">\(\bs{u}+\bs{v}=\bs{v}+\bs{u}\)</span> for all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
-<li><span class="math inline">\(\bs{u}+(\bs{v}+\bs{z})= (\bs{u}+\bs{v})+\bs{z}\)</span> for all <span class="math inline">\(\bs{u}, \bs{v}, \bs{z} \in \mc{V}\)</span></li>
-<li><span class="math inline">\((ab)\bs{v} = a(b\bs{v})\)</span> for all <span class="math inline">\(v \in \mc{V}\)</span> and all <span class="math inline">\(a,b \in \b{R}\)</span></li>
-<li>There exists a zero element <span class="math inline">\(\bs{0}_{\mc{V}}\)</span> or simply <span class="math inline">\(\bs{0}\)</span> when there is no risk of confusion, such that <span class="math inline">\(\bs{0} + \bs{v} = \bs{v}\)</span> for all <span class="math inline">\(\bs{v} \in \mc{V}\)</span></li>
-<li>For every <span class="math inline">\(\bs{v} \in \mc{V}\)</span>, there exists <span class="math inline">\(\bs{v}' \in \mc{V}\)</span> such that <span class="math inline">\(\bs{v} + \bs{v}' = \bs{0}\)</span></li>
-<li><span class="math inline">\(1\bs{v} = \bs{v}\)</span> for all <span class="math inline">\(\bs{v} \in \mc{V}\)</span></li>
-<li><span class="math inline">\(a(\bs{u}+\bs{v}) = a\bs{u} + a\bs{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
-<li><span class="math inline">\((a+b)\bs{v} = a\bs{v} + b\bs{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
+<li><em><span style="color: blue;">Additive commutativity</span></em><br>
+<span class="math inline">\(\bs{u}+\bs{v}=\bs{v}+\bs{u}\)</span> for all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
+<li><em><span style="color: blue;">Additive associativity</span></em><br>
+<span class="math inline">\(\bs{u}+(\bs{v}+\bs{z})= (\bs{u}+\bs{v})+\bs{z}\)</span> for all <span class="math inline">\(\bs{u}, \bs{v}, \bs{z} \in \mc{V}\)</span></li>
+<li><em><span style="color: blue;">Scalar multiplicative associativity</span></em><br>
+<span class="math inline">\((ab)\bs{v} = a(b\bs{v})\)</span> for all <span class="math inline">\(v \in \mc{V}\)</span> and all <span class="math inline">\(a,b \in \b{R}\)</span></li>
+<li><em><span style="color: blue;">Zero (null) element</span></em><br>
+There exists a zero element <span class="math inline">\(\bs{0}_{\mc{V}}\)</span> or simply <span class="math inline">\(\bs{0}\)</span> when there is no risk of confusion, such that <span class="math inline">\(\bs{0} + \bs{v} = \bs{v}\)</span> for all <span class="math inline">\(\bs{v} \in \mc{V}\)</span></li>
+<li><em><span style="color: blue;">Additive inverse</span></em><br>
+For every <span class="math inline">\(\bs{v} \in \mc{V}\)</span>, there exists <span class="math inline">\(\bs{v}' \in \mc{V}\)</span> such that <span class="math inline">\(\bs{v} + \bs{v}' = \bs{0}\)</span></li>
+<li><em><span style="color: blue;">Scalar multiplicative identity</span></em><br>
+<span class="math inline">\(1\bs{v} = \bs{v}\)</span> for all <span class="math inline">\(\bs{v} \in \mc{V}\)</span></li>
+<li><em><span style="color: blue;">Distributivity of scalar over vector addition</span></em><br>
+<span class="math inline">\(a(\bs{u}+\bs{v}) = a\bs{u} + a\bs{v}\)</span> for all <span class="math inline">\(a \in \b{R}\)</span> and all <span class="math inline">\(\bs{u},\bs{v} \in \mc{V}\)</span></li>
+<li><em><span style="color: blue;">Distributivity of scalar addition over vector</span></em><br>
+<span class="math inline">\((a+b)\bs{v} = a\bs{v} + b\bs{v}\)</span> for all <span class="math inline">\(a,b \in \b{R}\)</span> and all <span class="math inline">\(\bs{v} \in \mc{V}\)</span></li>
 </ol>
 <p>We can show identities such as <span class="math inline">\(-1 * \bs{v}=\bs{v}'\)</span> and <span class="math inline">\(0 * \bs{v}=\bs{0}\)</span> from the above axioms.</p>
 <p><span class="math display">\[
@@ -406,14 +414,14 @@ window.Quarto = {
 <div id="def-euclidean_vector_space" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.7</strong></span> An <strong><span style="color: red;">Euclidean vector space</span></strong> <span class="math inline">\(\b{E}\)</span> is a finite dimensional real inner product space.</p>
 </div>
-<p>We denote an <span class="math inline">\(n\)</span> dimensional Euclidean space by <span class="math inline">\(\b{E}^{n}\)</span>. The Euclidean norm is induced by the inner product.</p>
+<p>We denote an <span class="math inline">\(n\)</span> dimensional Euclidean space by <span class="math inline">\(\b{E}^{n}\)</span>. We denote the Euclidean inner product between two vectors <span class="math inline">\(\bs{a}, \bs{b}\)</span> by <span class="math inline">\(\bs{a} \cdot \bs{b}\)</span>.</p>
 <div id="def-affine_point_space" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2.8</strong></span> An <strong><span style="color: red;">affine point space</span></strong> <span class="math inline">\(\mc{E}\)</span> is a set of points on which the addition of two points is <em>not</em> defined, there is no unique zero element, and the difference between two points belongs to the Euclidean space associated with it.</p>
+<p><span class="theorem-title"><strong>Definition 2.8</strong></span> An <strong><span style="color: red;">affine point space</span></strong> <span class="math inline">\(\mc{E}\)</span> is a set of points on which the addition of two points is <em>not</em> defined, there is no unique zero element, and the difference between two points belongs to the associated Euclidean vector space.</p>
 </div>
 <p>We denote an <span class="math inline">\(n\)</span> dimensional affine point space by <span class="math inline">\(\mc{E}^{n}\)</span>. The term <em>point</em> is reserved for elements of <span class="math inline">\(\mc{E}\)</span> and the term <em>vector</em> for elements of <span class="math inline">\(\b{E}\)</span>.</p>
 <div id="def-euclidean_space" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.9</strong></span> <strong><span style="color: red;">Euclidean space</span></strong></p>
-<p>We denote the pair <span class="math inline">\(\pr{\mc{E}^{n}, \b{E}^{n}}\)</span> as an <em>Euclidean space</em>, to mean an affine point space such that the associated vector space is an Euclidean vector space. Choosing a point <span class="math inline">\(o \in \mc{E}^{n}\)</span> which we call the origin in <span class="math inline">\(\mc{E}^{n}\)</span>, a point <span class="math inline">\(x \in \mc{E}^{n}\)</span> corresponds to a vector <span class="math inline">\(\bs{x} \in \b{E}^{n}\)</span> iff <span class="math inline">\(o + \bs{x} = x\)</span>. We are particularly interested in the Euclidean space <span class="math inline">\(\pr{\mc{E}^{3}, \b{E}^{3}}\)</span>. We formally define the vectors in <span class="math inline">\(\b{E}^{n}\)</span> to have units of length.</p>
+<p>We denote the pair <span class="math inline">\(\pr{\mc{E}^{n}, \b{E}^{n}}\)</span> as an <em>Euclidean space</em>, to mean an affine point space such that the associated vector space is an Euclidean vector space. Choosing a point <span class="math inline">\(o \in \mc{E}^{n}\)</span> which we call the origin in <span class="math inline">\(\mc{E}^{n}\)</span>, a point <span class="math inline">\(x \in \mc{E}^{n}\)</span> corresponds to a vector <span class="math inline">\(\bs{x} \in \b{E}^{n}\)</span> iff <span class="math inline">\(o + \bs{x} = x\)</span>.</p>
 </div>
 </section>
 <section id="sec-components_of_vectors" class="level2" data-number="2.5">
