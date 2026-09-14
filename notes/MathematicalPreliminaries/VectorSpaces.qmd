@@ -8,14 +8,22 @@
 A real vector space is a set $\mc{V}$ over the real numbers $\b{R}$ on which the two operations of $\cdot + \cdot : \mc{V}\times \mc{V} \to \mc{V}$ (addition) and $\cdot * \cdot: \mc{V}\times \b{R}\to \mc{V}$ (scalar multiplication) are defined and satisfies the following properties:
 :::
 
-1.  $\bs{u}+\bs{v}=\bs{v}+\bs{u}$ for all $\bs{u},\bs{v} \in \mc{V}$
-2.  $\bs{u}+(\bs{v}+\bs{z})= (\bs{u}+\bs{v})+\bs{z}$ for all $\bs{u}, \bs{v}, \bs{z} \in \mc{V}$
-3.  $(ab)\bs{v} = a(b\bs{v})$ for all $v \in \mc{V}$ and all $a,b \in \b{R}$
-4.  There exists a zero element $\bs{0}_{\mc{V}}$ or simply $\bs{0}$ when there is no risk of confusion, such that $\bs{0} + \bs{v} = \bs{v}$ for all $\bs{v} \in \mc{V}$
-5.  For every $\bs{v} \in \mc{V}$, there exists $\bs{v}' \in \mc{V}$ such that $\bs{v} + \bs{v}' = \bs{0}$
-6.  $1\bs{v} = \bs{v}$ for all $\bs{v} \in \mc{V}$
-7.  $a(\bs{u}+\bs{v}) = a\bs{u} + a\bs{v}$ for all $a,b \in \b{R}$ and all $\bs{u},\bs{v} \in \mc{V}$
-8.  $(a+b)\bs{v} = a\bs{v} + b\bs{v}$ for all $a,b \in \b{R}$ and all $\bs{u},\bs{v} \in \mc{V}$
+1.  *[Additive commutativity]{style="color: blue;"}* \
+    $\bs{u}+\bs{v}=\bs{v}+\bs{u}$ for all $\bs{u},\bs{v} \in \mc{V}$
+2.  *[Additive associativity]{style="color: blue;"}* \
+    $\bs{u}+(\bs{v}+\bs{z})= (\bs{u}+\bs{v})+\bs{z}$ for all $\bs{u}, \bs{v}, \bs{z} \in \mc{V}$
+3.  *[Scalar multiplicative associativity]{style="color: blue;"}*\
+    $(ab)\bs{v} = a(b\bs{v})$ for all $v \in \mc{V}$ and all $a,b \in \b{R}$
+4.  *[Zero (null) element]{style="color: blue;"}* \
+    There exists a zero element $\bs{0}_{\mc{V}}$ or simply $\bs{0}$ when there is no risk of confusion, such that $\bs{0} + \bs{v} = \bs{v}$ for all $\bs{v} \in \mc{V}$
+5.  *[Additive inverse]{style="color: blue;"}* \
+    For every $\bs{v} \in \mc{V}$, there exists $\bs{v}' \in \mc{V}$ such that $\bs{v} + \bs{v}' = \bs{0}$
+6.  *[Scalar multiplicative identity]{style="color: blue;"}* \
+    $1\bs{v} = \bs{v}$ for all $\bs{v} \in \mc{V}$
+7.  *[Distributivity of scalar over vector addition]{style="color: blue;"}* \
+    $a(\bs{u}+\bs{v}) = a\bs{u} + a\bs{v}$ for all $a \in \b{R}$ and all $\bs{u},\bs{v} \in \mc{V}$
+8.  *[Distributivity of scalar addition over vector]{style="color: blue;"}* \
+    $(a+b)\bs{v} = a\bs{v} + b\bs{v}$ for all $a,b \in \b{R}$ and all $\bs{v} \in \mc{V}$
 
 We can show identities such as $-1 * \bs{v}=\bs{v}'$ and $0 * \bs{v}=\bs{0}$ from the above axioms.
 
@@ -112,10 +120,10 @@ A vector space equipped with a norm is called a normed vector space. To be more 
 An **[Euclidean vector space]{style="color: red;"}** $\b{E}$ is a finite dimensional real inner product space. 
 :::
 
-We denote an $n$ dimensional Euclidean space by $\b{E}^{n}$. The Euclidean norm is induced by the inner product. 
+We denote an $n$ dimensional Euclidean space by $\b{E}^{n}$. We denote the Euclidean inner product between two vectors $\bs{a}, \bs{b}$ by $\bs{a} \cdot \bs{b}$.
 
 ::: {#def-affine_point_space}
-An **[affine point space]{style="color: red;"}** $\mc{E}$ is a set of points on which the addition of two points is *not* defined, there is no unique zero element, and the difference between two points belongs to the Euclidean space associated with it.
+An **[affine point space]{style="color: red;"}** $\mc{E}$ is a set of points on which the addition of two points is *not* defined, there is no unique zero element, and the difference between two points belongs to the associated Euclidean vector space.
 :::
 
 We denote an $n$ dimensional affine point space by $\mc{E}^{n}$. The term *point* is reserved for elements of $\mc{E}$ and the term *vector* for elements of $\b{E}$.
@@ -123,7 +131,7 @@ We denote an $n$ dimensional affine point space by $\mc{E}^{n}$. The term *point
 ::: {#def-euclidean_space}
 **[Euclidean space]{style="color: red;"}**
 
-We denote the pair $\pr{\mc{E}^{n}, \b{E}^{n}}$ as an *Euclidean space*, to mean an affine point space such that the associated vector space is an Euclidean vector space. Choosing a point $o \in \mc{E}^{n}$ which we call the origin in $\mc{E}^{n}$, a point $x \in \mc{E}^{n}$ corresponds to a vector $\bs{x} \in \b{E}^{n}$ iff $o + \bs{x} = x$. We are particularly interested in the Euclidean space $\pr{\mc{E}^{3}, \b{E}^{3}}$. We formally define the vectors in $\b{E}^{n}$ to have units of length.
+We denote the pair $\pr{\mc{E}^{n}, \b{E}^{n}}$ as an *Euclidean space*, to mean an affine point space such that the associated vector space is an Euclidean vector space. Choosing a point $o \in \mc{E}^{n}$ which we call the origin in $\mc{E}^{n}$, a point $x \in \mc{E}^{n}$ corresponds to a vector $\bs{x} \in \b{E}^{n}$ iff $o + \bs{x} = x$.
 :::
 
 ## Components of Vectors {#sec-components_of_vectors}
