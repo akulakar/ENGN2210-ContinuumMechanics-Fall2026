@@ -8,13 +8,13 @@
 A *map* (or function) $f : X \ra Y$ assigns each element of the set $X$ to exactly one element of the set $Y$. In other words, it returns a single, unique output when operated on an input.
 :::
 
-Typically, a map $f : \mc{D} \subset \b{R} \ra \b{R}$ that returns a real number on being fed a real number is referred to as a *function*. Sometimes, int ca be defined by a formula, for example, as
+Typically, a map $f : \mc{D} \subset \b{R} \ra \b{R}$ that returns a real number on being fed a real number is referred to as a *function*. Sometimes, it can be defined by a formula, for example, as
 
 $$
     y=f(x)
 $$
 
-where $x \in \mc{D} \subset \b{R}$ and $y \in \b{R}$. A distinction is made between the function $f$ and the functions value $f(x)$. Some examples of functions include
+where $x \in \mc{D} \subset \b{R}$ and $y \in \b{R}$. A distinction is made between the function $f$ and the function's value $f(x)$. Some examples of functions include
 
 $$
 \begin{align*}
@@ -42,7 +42,7 @@ We will refer more general operations as *maps* whose input and output are more 
 ::: {#def-map_between_Euc_spaces}
 **[Map between Euclidean spaces]{style="color: red;"}**
 
-The map $\bs T : \b E^{n} \ra \b F^{n}$ assigns a vector $\bs v \in \b E^n$ the unique vector $\bs{T}(\bs{v}) \in \b{F}^n$. It is called a map between Euclidean spaces. 
+The map $\bs{T} : \b E^{n} \ra \b F^{n}$ assigns a vector $\bs v \in \b E^n$ the unique vector $\bs{T}(\bs{v}) \in \b{F}^n$. It is called a map between Euclidean spaces. 
 :::
 
 ## Linear Maps {#sec-linear_maps}
@@ -71,9 +71,9 @@ The **set of all linear maps** from $\mc{V}$ to $\mc{W}$ is denoted by $\mc{L}\p
 ::: {#def-linear_map_add_mult}
 **[Addition and scalar multiplication on $\mc{L}\pr{\mc{V}, \mc{W}}$]{style="color: red;"}**
 
-Let $\bs S, \bs T \in \mc{L}\pr{\mc{V}, \mc{W}}$ and $a \in \b{R}$. Then
+Let $\bs{S}, \bs{T} \in \mc{L}\pr{\mc{V}, \mc{W}}$ and $a \in \b{R}$. Then
 $$
-    \pr{\bs S + \bs T}\bs v = \bs S \bs v + \bs T \bs v ~~\text{and}~~ (a \bs T)\bs v = a (\bs T \bs v)
+    \pr{\bs{S} + \bs{T}}\bs v = \bs{S} \bs v + \bs{T} \bs v ~~\text{and}~~ (a \bs{T})\bs v = a (\bs{T} \bs v)
 $$
 for all $\bs v \in \mc{V}$
 :::
