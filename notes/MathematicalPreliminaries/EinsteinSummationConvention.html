@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Maps – ENGN2210 — Continuum Mechanics</title>
+<title>5&nbsp; Einstein Summation Convention – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/MathematicalPreliminaries/Tensors.html" rel="next">
-<link href="../../notes/MathematicalPreliminaries/VectorSpaces.html" rel="prev">
+<link href="../../notes/MathematicalPreliminaries/VectorComponents.html" rel="next">
+<link href="../../notes/MathematicalPreliminaries/Tensors.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -214,7 +214,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/Maps.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Maps</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -262,7 +262,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Maps</span></span></a>
   </div>
 </li>
@@ -274,7 +274,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></span></a>
   </div>
 </li>
@@ -296,17 +296,20 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-maps" id="toc-sec-maps" class="nav-link active" data-scroll-target="#sec-maps"><span class="header-section-number">3.1</span> Maps</a></li>
-  <li><a href="#sec-linear_maps" id="toc-sec-linear_maps" class="nav-link" data-scroll-target="#sec-linear_maps"><span class="header-section-number">3.2</span> Linear Maps</a></li>
+  <li><a href="#expression-terms-indices" id="toc-expression-terms-indices" class="nav-link active" data-scroll-target="#expression-terms-indices"><span class="header-section-number">5.1</span> Expression, Terms, Indices</a>
+  <ul class="collapse">
+  <li><a href="#free-and-dummy-indices" id="toc-free-and-dummy-indices" class="nav-link" data-scroll-target="#free-and-dummy-indices"><strong>Free and dummy indices</strong></a></li>
+  </ul></li>
+  <li><a href="#kronecker-delta-symbol" id="toc-kronecker-delta-symbol" class="nav-link" data-scroll-target="#kronecker-delta-symbol"><span class="header-section-number">5.2</span> Kronecker-Delta symbol</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/Maps.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Maps</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-linear_maps_main" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Maps</span></span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></h1>
 </div>
 
 
@@ -323,77 +326,389 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-maps" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="sec-maps"><span class="header-section-number">3.1</span> Maps</h2>
-<div id="def-map" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3.1</strong></span> <strong><span style="color: red;">Map</span></strong></p>
-<p>A <em>map</em> (or function) <span class="math inline">\(f : X \ra Y\)</span> assigns each element of the set <span class="math inline">\(X\)</span> to exactly one element of the set <span class="math inline">\(Y\)</span>. In other words, it returns a single, unique output when operated on an input.</p>
-</div>
-<p>Typically, a map <span class="math inline">\(f : \mc{D} \subset \b{R} \ra \b{R}\)</span> that returns a real number on being fed a real number is referred to as a <em>function</em>. Sometimes, it can be defined by a formula, for example, as</p>
+<section id="expression-terms-indices" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="expression-terms-indices"><span class="header-section-number">5.1</span> Expression, Terms, Indices</h2>
 <p><span class="math display">\[
-    y=f(x)
+\begin{equation}
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+\end{equation}
 \]</span></p>
-<p>where <span class="math inline">\(x \in \mc{D} \subset \b{R}\)</span> and <span class="math inline">\(y \in \b{R}\)</span>. A distinction is made between the function <span class="math inline">\(f\)</span> and the function’s value <span class="math inline">\(f(x)\)</span>. Some examples of functions include</p>
-<p><span class="math display">\[
-\begin{align*}
-    y &amp;= \sin(x), ~x \in \b{R} \\
-    y &amp;= 1/x, ~x \in \b{R} - \{0\}
-\end{align*}
+<p>The expression above contains three terms. The symbols <span class="math inline">\(i,m,k,q\)</span> denote indices. They typically run from one to number of space dimensions, i.e., two or three.</p>
+<p>The complexity of the terms can be indefinitely increased. <span class="math display">\[
+\begin{equation}
+a_{ij} x_ix_jx_k
+\end{equation}
 \]</span></p>
-<p>We will refer more general operations as <em>maps</em> whose input and output are more general mathematical objects. Examples, of general mathematical objects can be complex numbers, plane geometric objects (triangle, circles, etc.), 3D geometric objects (cubes, spheres, ect.), digital images, and of course the main focus of this course, vectors. The only requirements on a map is that it should be well defined. That is, we should clearly know the domain of the mapping, and for each element of the domain the mapping should always return a well defined, unique object.</p>
-<p><strong>Examples</strong></p>
-<ul>
-<li><span class="math inline">\(A : \mc{D} \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all triangles and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(A(x)\)</span> returns the area of the triangle.</li>
-<li><span class="math inline">\(V : \mc{D} \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all cubes and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(V(x)\)</span> returns the volume of the cube.</li>
-<li><span class="math inline">\(D : \mc{D} \ra \cpr{\text{Mon,Tu,Wed,Th,Fri,Sat,Sun}}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all dates and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(D(x)\)</span> returns the corresponding day of the week for a particular date.</li>
-<li><span class="math inline">\(\text{Col}: \mc{D} \ra \cpr{\text{Red,Blue,Green}}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all pixels on a well defined digital image and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(\text{Col}(x)\)</span> returns the pixel’s color.</li>
-<li>Norms</li>
-<li>Inner products</li>
-</ul>
-<p><strong>Non examples</strong></p>
-<ul>
-<li><span class="math inline">\(V : \mc{D} \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc D\)</span> is the set of all words in the English language and for each <span class="math inline">\(x \in \mc D, \, V(x)\)</span> returns to us the volume of the word. (Concept of volume is ill defined for words).</li>
-<li><span class="math inline">\(\text{Age} : \mc D \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc D\)</span> is the set of all people on Earth and for each <span class="math inline">\(x \in \mc D, \, \text{Age}(x)\)</span> returns to use the age of a person’s child. (A person may have more than one child or no child at all).</li>
-</ul>
-<div id="def-map_between_Euc_spaces" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3.2</strong></span> <strong><span style="color: red;">Map between Euclidean spaces</span></strong></p>
-<p>The map <span class="math inline">\(\bs{T} : \b E^{n} \ra \b F^{n}\)</span> assigns a vector <span class="math inline">\(\bs v \in \b E^n\)</span> the unique vector <span class="math inline">\(\bs{T}(\bs{v}) \in \b{F}^n\)</span>. It is called a map between Euclidean spaces.</p>
+<section id="free-and-dummy-indices" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="free-and-dummy-indices"><strong>Free and dummy indices</strong></h3>
+<div id="def-free_indices" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.1</strong></span> A <strong><span style="color: red;">free index</span></strong> is an index that appears only once.</p>
 </div>
-</section>
-<section id="sec-linear_maps" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="sec-linear_maps"><span class="header-section-number">3.2</span> Linear Maps</h2>
-<div id="def-linear_map" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3.3</strong></span> <strong><span style="color: red;">Linear map</span></strong></p>
-<p>A <em>linear map</em> <span class="math inline">\(\bs{T} : \mc V \ra  \mc W\)</span> is a map from <span class="math inline">\(\mc V \ra \mc W\)</span> with the following properties:</p>
+<div id="def-dummy_indices" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.2</strong></span> A <strong><span style="color: red;">dummy index</span></strong> is an index that appears exactly twice.</p>
+</div>
+<p><span class="math display">\[
+\begin{equation}
+\underbrace
+{
+A_{im}x_{m}
+}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{m\}
+}
++\underbrace{
+b_i}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{k,q\}
+}
+\end{equation}
+\]</span></p>
+<section id="rules" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="rules"><strong>Rules</strong></h4>
+<p><span style="color: red;">Rule 1.1:</span> <em>A dummy index implies a sum w.r.t that index.</em></p>
+<p><span style="color: red;">Rule 1.2:</span> <em>In Einstein summation convention, an index cannot appear more than twice</em></p>
+<section id="examples" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="examples"><strong>Examples</strong></h6>
 <ol type="1">
-<li><span class="math inline">\(\bs{T}(\bs u + \bs v) = \bs{T}\bs{u} + \bs{T}\bs{v}\)</span> for all <span class="math inline">\(\bs{u}, \bs{v} \in \mc{V}\)</span></li>
-<li><span class="math inline">\(\bs{T}(a \bs u) = a (\bs{T}\bs{u})\)</span> for all <span class="math inline">\(a \in \b{R}\)</span> and <span class="math inline">\(\bs{u} \in \mc{V}\)</span></li>
+<li><span class="math display">\[\begin{align} x_{i}y_{i} &amp; = x_1y_1+ x_2 y_2+ x_3 y_3 \end{align}\]</span></li>
+<li><span class="math display">\[\begin{align} m^{j}v_{j} &amp; = m^{1}v_{1}+m^{2}v_{2}+m^{3}v_{3} \end{align}\]</span></li>
+<li><span class="math display">\[
+\begin{align} a_{ij}x_i y_j&amp;=x_ia_{i1} y_1+x_ia_{i2} y_2+x_ia_{i3} y_3\\
+          &amp;=(x_1a_{11}+x_2a_{21}+x_3a_{31}) y_1
+          +(x_1a_{12}+x_2a_{22}+x_3a_{32}) y_2+
+          (x_1a_{13}+x_2a_{23}+x_3a_{33}) y_3\\
+          &amp;=(a_{11}x_1y_1+a_{21}x_2y_1+a_{31}x_3y_1
+           +a_{12}x_1y_2+a_{22}x_2y_2+a_{32}x_3y_2
+           +a_{13}x_1y_3+a_{23}x_2y_3+a_{33}x_3y_3)
+\end{align}
+\]</span></li>
+<li><span class="math display">\[\begin{align}a_{ijk}x_ix_j x_k&amp;=\sum_{i=1}^{3}
+                \sum_{j=1}^{3}
+                \sum_{k=1}^{3} a_{ijk}x_ix_j x_k
+  \end{align}
+\]</span></li>
+<li><span class="math display">\[
+\begin{align}
+   x_i a_j x_j a_i&amp;=\sum_{i=1}^{3}
+                 \sum_{j=1}^{3} x_i a_j x_j a_i\\
+                 &amp;= \sum_{i=1}^{3}x_i a_i \sum_{j=1}^{3}  x_j a_j
+   \end{align}
+\]</span></li>
 </ol>
-</div>
-<p><span class="math inline">\(\mc V\)</span> and <span class="math inline">\(\mc{W}\)</span> are called the <em>domain</em> and <em>codomain</em> of <span class="math inline">\(\bs{T}\)</span> respectively. Linear maps are also referred to as linear transformations. Note, the definition of the addition and scalar multiplication operations may be different int the two vector spaces <span class="math inline">\(\mc{V}\)</span> and <span class="math inline">\(\mc{W}\)</span>. We usually denote vectors by lowercase bold symbols and linear maps by uppercase bold symbols.</p>
-<p>The <strong>set of all linear maps</strong> from <span class="math inline">\(\mc{V}\)</span> to <span class="math inline">\(\mc{W}\)</span> is denoted by <span class="math inline">\(\mc{L}\pr{\mc{V}, \mc{W}}\)</span>.</p>
-<p><strong>Examples</strong></p>
-<ul>
-<li>Identity: <span class="math inline">\(\bs{I} \bs{v} = \bs{v}\)</span></li>
-<li>Multiplication by a scalar: <span class="math inline">\(\bs{T} \bs{v} = a \bs{v}\)</span></li>
-<li>Differentiation: <span class="math inline">\(D f = f'\)</span></li>
-</ul>
-<!-- **Non examples** -->
-<div id="def-linear_map_add_mult" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3.4</strong></span> <strong><span style="color: red;">Addition and scalar multiplication on <span class="math inline">\(\mc{L}\pr{\mc{V}, \mc{W}}\)</span></span></strong></p>
-<p>Let <span class="math inline">\(\bs{S}, \bs{T} \in \mc{L}\pr{\mc{V}, \mc{W}}\)</span> and <span class="math inline">\(a \in \b{R}\)</span>. Then <span class="math display">\[
-    \pr{\bs{S} + \bs{T}}\bs v = \bs{S} \bs v + \bs{T} \bs v ~~\text{and}~~ (a \bs{T})\bs v = a (\bs{T} \bs v)
-\]</span> for all <span class="math inline">\(\bs v \in \mc{V}\)</span></p>
-</div>
-<p>You should now be able to prove that the space of linear maps <span style="color: red;"><span class="math inline">\(\mc{L}\pr{\mc{V}, \mc{W}}\)</span> is a vector space!</span> Therefore linear maps are also vectors! This is the reason we try to steer clear of the notion that vectors are quantities with direction and magnitude, since in reality, a vector a much more general mathematical object.</p>
-<p><strong>Properties of linear maps</strong></p>
-<p>If <span class="math inline">\(\bs{S} \in \mc{L}\pr{\mc{U}, \mc{V}}\)</span> and <span class="math inline">\(\bs{T} \in \mc{L}\pr{\mc{V}, \mc{W}}\)</span>, then the <em>product</em> <span class="math inline">\(\bs{T}\bs{S} \in \mc{L}\pr{\mc{U}, \mc{W}}\)</span>, defined by <span class="math display">\[
-    \pr{\bs{T}\bs{S}}\bs{u} = \bs{T}\pr{\bs{S}\bs{u}}
-\]</span> for all <span class="math inline">\(\bs{u} \in \mc{U}\)</span>.</p>
-<p>Linear maps obey the associative, distributive and identity properties.</p>
-<p>Linear maps of the type <span class="math inline">\(\bs{T} : \mc{V} \ra \mc{V}\)</span> are called <em>linear operators</em>, that is domain and codomain are the exact same vector space. Linear maps of the type <span class="math inline">\(\bs{T} : \mc{V} \ra \b{R}\)</span> are called <em>linear forms</em> or <em>linear functionals</em>.</p>
+</section>
+<section id="non-examples" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="non-examples"><strong>Non-examples</strong></h6>
+<p><span class="math display">\[
+\begin{equation}
+x_{jj}y_j
+\quad \text{(Not okay; j repeated thrice)}
+\end{equation}
+\]</span></p>
+<p><span style="color: red;">Rule 2.a (Renaming of dummy indices):</span> <em>A dummy index can be renamed, as long as the new name does not conflict with the names of the other dummy or free indices in the same term</em></p>
+</section>
+<section id="examples-1" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="examples-1"><strong>Examples</strong></h6>
+<p><span class="math display">\[
+\begin{align}
+x_iy_i&amp;\Rightarrow x_j y_j\\
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+a_ix_jy_j&amp;\Rightarrow a_ix_k y_k, \quad (\text{OK, no conflict with free index}) \\
+a_ix_jy_j&amp;\not\Rightarrow a_ix_i y_i \quad (\text{conflict with free index})\\
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               &amp; \Rightarrow
+                                A_{im}x_{m}+b_i+C_{ipq}x_{p}y_{q}\quad (\text{OK, no conflict}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               &amp; \Rightarrow
+                                A_{im}x_{m}+b_i+C_{imq}x_{m}y_{q}\quad (\text{OK, no conflict}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               &amp; \not\Rightarrow
+                                A_{im}x_{m}+b_i+C_{iiq}x_{i}y_{q}\quad (\text{conflict with free index}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               &amp; \not\Rightarrow
+                                A_{im}x_{m}+b_i+C_{iqq}x_{q}y_{q}\quad (\text{conflict with dummy index}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                                &amp;\not \Rightarrow
+                                 A_{ii}x_{i}+b_i+C_{ikq}x_{k}y_{q}\quad (\text{conflict with free index}) \\
+\end{align}
+\]</span></p>
+<p><span style="color: red;">Rule 2.b:</span> <em>Different terms can have same dummy indices.</em></p>
+</section>
+<section id="examples-2" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="examples-2"><strong>Examples</strong></h6>
+<p><span class="math display">\[
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\{i\}\\
+\{k,q\}
+}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\{i\}\\
+\{k \rightarrow m,q\}
+}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{imq} x_{m} y_{q}}_{
+\{i\}\\
+\{m,q\}
+}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{imq} x_{m} y_{q}}_{
+\{i\}\\
+\{m \rightarrow i,q\}
+}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{iiq} x_{i} y_{q}}_{
+  \{i\}\\
+\{i,q\}
+}
+\end{equation}
+\]</span> (Not okay - conflict with free index)</p>
+<p><span style="color: red;">Rule 3 (Free Indices):</span> <em>A free index denotes a set of</em> <span class="math inline">\(n_{\rm{sd}}\)</span> <em>terms</em></p>
+</section>
+<section id="examples-3" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="examples-3"><strong>Examples</strong></h6>
+<p><span class="math display">\[
+\begin{align}
+a_{i}&amp;\Rightarrow\{a_1,a_2,a_3\}\\
+a_{i}=b_{i}&amp;\Rightarrow\{a_1=b_1,a_2=b_2,a_3=b_3\}\\
+a_{i}+b_{i}&amp;\Rightarrow\{a_1+b_1,a_2+b_2,a_3+b_3\}\\
+\end{align}
+\]</span></p>
+<!-- Removed equation: A_{ij}&\Rightarrow\{A_{11},A_{12},A_{13},A_{21},A_{22},A_{23},A_{31},A_{32},A_{33},\}\\  ZZ, 20230208-->
+</section>
+<section id="denoting-ordered-sets" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="denoting-ordered-sets">Denoting ordered sets</h5>
+<p><span class="math display">\[(\left(A_{ij})_{j\in \mathcal{I}}\right)_{i\in \mathcal{I}}=(A_{ij})_{i,~j\in \mathcal{I}}\]</span></p>
+<p><span class="math display">\[\left(\left(A_{1j}\right)_{j \in \mathcal{I}},
+\left(A_{2j}\right)_{j\in \mathcal{I}},
+\left(A_{3j}\right)_{j\in \mathcal{I}}\right)
+\]</span></p>
+<!-- % &=
+% (\left(A_{1j}\right)_{j\in \mathcal{I}},
+% \left( A_{2j}\right)_{j\in \mathcal{I}},
+% \left( A_{2j} \right)_{j\in \mathcal{I}}) -->
+<p>Notice that in each expression, all terms have the same set of free indices. That is, take a look at the expression,</p>
+<p><span class="math display">\[
+\begin{equation}
+\underbrace
+{
+A_{im}x_{m}
+}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{m\}
+}
++\underbrace{
+b_i}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{k,q\}
+}
+\end{equation}
+\]</span></p>
+<p>This is a consequence of the following rule:</p>
+<p><span style="color: red;">Rule 4:</span> <em>All terms in an expression should have the same set of free indices.</em></p>
+<section id="examples-4" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="examples-4"><strong>Examples</strong></h6>
+<p><span class="math display">\[
+\begin{align}
+a_i +b_i\quad (\text{OK})\\
+a_j +b_j\quad (\text{OK})\\
+a_i +b_j\quad (\text{Not OK})\\
+M_i =C_{mi}b_m\quad (\text{OK})\\
+M_i =C_{mj}b_m\quad (\text{Not OK})\\
+\end{align}
+\]</span></p>
+<p><span style="color: red;">Rule 5:</span> <em>All terms in an expression should have the same set of free indices.</em></p>
+<!-- (the power of computers) - Viola Mathematica -->
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="kronecker-delta-symbol" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="kronecker-delta-symbol"><span class="header-section-number">5.2</span> Kronecker-Delta symbol</h2>
+<p>Kronecker delta, denoted by <span class="math inline">\(\delta_{ij}\)</span>, is defined as:</p>
+<p>$$ <span class="math display">\[\begin{equation}
+\delta_{ij} =
+\begin{cases}
+  1 &amp; i=j \\
+  0 &amp; i \neq j
+\end{cases}
+\end{equation}\]</span></p>
+<p>$$</p>
+<p>That is,</p>
+<p><span class="math inline">\(\delta_{11}=1\)</span> <span class="math inline">\(\delta_{12}=0\)</span> <span class="math inline">\(\delta_{13}=0\)</span> <span class="math inline">\(\delta_{21}=0\)</span> <span class="math inline">\(\delta_{22}=1\)</span> <span class="math inline">\(\delta_{23}=0\)</span> <span class="math inline">\(\delta_{31}=0\)</span> <span class="math inline">\(\delta_{32}=0\)</span> <span class="math inline">\(\delta_{33}=1\)</span></p>
+<p>For example, <span class="math inline">\(\delta_{12}=0\)</span> and <span class="math inline">\(\delta_{33}=1\)</span>.</p>
+<section id="identity-matrix" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="identity-matrix"><strong>Identity Matrix</strong></h4>
+<p><span class="math display">\[
+\mathbb{\mathsf{I}}
+=
+\left(\delta_{ij}\right)= \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{pmatrix}\\
+\text{Read paranthesis as ``matrix representation of the Kronecker-delta symbol``}
+\]</span> <span class="math display">\[\left[\delta_{ij}\right]= \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</span></p>
+</section>
+<section id="properties-of-the-kronecker-delta" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="properties-of-the-kronecker-delta"><strong>Properties of the Kronecker Delta</strong></h4>
+<ol type="1">
+<li>Replacement Property:</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+\delta_{1m}a_m
+=\delta_{11}a_1+\delta_{12}a_2+\delta_{13}a_3\ \\
+=1a_1+0a_2+0a_3\ \\
+=a_1 \end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\delta_{2m}a_m = \delta_{21}a_1+\delta_{22}a_2+0a_3\ \\ =a_2
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align} \delta_{3m}a_m &amp; = \delta_{31}a_1+\delta_{32}a_2+\delta_{33}a_3\ \\
+=0a_1+0a_2+a_3\ \\
+=a_3
+\end{align}
+\]</span></p>
+<p>So, <span class="math inline">\(\delta_{im}a_m = a_i\)</span>, <span class="math inline">\((\delta_{1m}a_m, \delta_{2m}a_m , \delta_{3m}a_m) = (a_1, a_2, a_3)\)</span>, <span class="math inline">\(\delta_{1m}a_m = a_i\)</span>.</p>
+<p><span class="math display">\[
+\begin{align}
+\delta_{1m}T_{mj} &amp; = \delta_{11}T_{1j}+ \delta_{12}T_{2j}+\delta_{13}T_{3j} =T_{1j} \\
+\delta_{2m}T_{mj} &amp; = \delta_{21}T_{1j}+ \delta_{22}T_{2j}+\delta_{23}T_{3j} =T_{2j} \\
+\delta_{3m}T_{mj} &amp; = \delta_{31}T_{1j}+ \delta_{32}T_{2j}+\delta_{33}T_{3j} =T_{3j}
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\delta_{1m}T_{mj} = T_{1j} \\
+\delta_{2m}T_{mj} = T_{2j} \\
+\delta_{3m}T_{mj} = T_{3j}
+\end{bmatrix}
+\]</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{1m}T_{mj} = T_{1j},  \delta_{2m}T_{mj} = T_{2j}, \delta_{3m}T_{mj}=T_{3j}\)</span>. <span class="math display">\[\delta_{im}T_{mj} = T_{ij}\]</span></p>
+<p><strong>We can generalize the last two results.</strong> If, in a term, the Kronecker delta and another symbol share an index, the index in that symbol can be replaced by the Kronecker delta’s other index in its symbol. <em>For example:</em></p>
+<ol type="1">
+<li><span class="math inline">\(\delta_{im}a_{mb}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ib}\)</span></li>
+<li><span class="math inline">\(\delta_{mi}a_{mb}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a_{ib}\)</span></li>
+<li><span class="math inline">\(\delta_{im}a_{pqms}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a_{pqis}\)</span></li>
+<li><span class="math inline">\(\delta_{im}\delta_{mj}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ij}\)</span></li>
+<li><span class="math inline">\(\delta_{im}\delta_{mn}\delta_{nj}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{in}\delta_nj\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ij}\)</span></li>
+</ol>
+<!-- <br /> -->
+<p><span class="math display">\[
+\begin{align}
+\delta_{m1}T_{mj} &amp;= \delta_{11}T_{1j} + \delta_{21}T_{2j}+ \delta_{31}T_{3j} = T_{1j} \\
+\delta_{m2}T_{mj} &amp;= \delta_{12}T_{1j} + \delta_{22}T_{2j}+ \delta_{32}T_{3j} = T_{2j} \\
+\delta_{m3}T_{mj} &amp;= \delta_{13}T_{1j} + \delta_{23}T_{2j}+ \delta_{33}T_{3j} = T_{3j}
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\delta_{m1}T_{mj} &amp;= T_{1j} \\
+\delta_{m2}T_{mj} &amp;= T_{2j} \\
+\delta_{m3}T_{mj} &amp;= T_{3j} \\
+\delta_{mi}T_{mj} &amp;= T_{ij}
+\end{align}
+\]</span></p>
+<!-- [<span style="color:gray; opacity:0.2"> [edit] </span>](https://github.com/AppliedMechanicsLab/appliedmechanicslab/blob/master/course_notes/ENGN1370/ESC.md) -->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -799,13 +1114,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="pagination-link" aria-label="Vector Spaces">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Vector Spaces</span></span>
+      <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="pagination-link" aria-label="Tensors">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tensors</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="pagination-link" aria-label="Tensors">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tensors</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/MathematicalPreliminaries/VectorComponents.html" class="pagination-link" aria-label="Vector Components">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector Components</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
