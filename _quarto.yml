@@ -17,6 +17,8 @@ book:
         - notes/MathematicalPreliminaries/Maps.qmd
         # - notes/MathematicalPreliminaries/TensorsTrue.qmd
         - notes/MathematicalPreliminaries/Tensors.qmd
+        - notes/MathematicalPreliminaries/EinsteinSummationConvention.qmd
+        - notes/MathematicalPreliminaries/VectorComponents.qmd
         # - notes/MathematicalPreliminaries/TensorAnalysis.qmd
         # - notes/MathematicalPreliminaries/IntegralTheorems.qmd
     # - part: "Kinematics"

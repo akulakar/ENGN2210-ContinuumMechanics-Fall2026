@@ -1,0 +1,432 @@
+# Einstein Summation Convention
+## Expression, Terms, Indices
+$$
+\begin{equation}
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+\end{equation}
+$$
+
+The expression above contains three terms. The symbols $i,m,k,q$ denote indices. They typically run from one to number of space dimensions, i.e., two or three.
+
+The complexity of the terms can be indefinitely increased.
+$$
+\begin{equation}
+a_{ij} x_ix_jx_k
+\end{equation}
+$$
+
+### **Free and dummy indices** {-}
+
+::: {#def-free_indices}
+A **[free index]{style="color: red;"}** is an index that appears only once.
+:::
+
+::: {#def-dummy_indices}
+A **[dummy index]{style="color: red;"}** is an index that appears exactly twice.
+:::
+
+$$
+\begin{equation}
+\underbrace
+{
+A_{im}x_{m}
+}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{m\}
+}
++\underbrace{
+b_i}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{k,q\}
+}
+\end{equation}
+$$
+
+
+#### **Rules** {-}
+
+[Rule 1.1:]{style="color: red;"} _A dummy index implies a sum w.r.t that index._
+
+[Rule 1.2:]{style="color: red;"} _In Einstein summation convention, an index cannot appear more than twice_
+
+###### **Examples** {-}
+1. $$\begin{align} x_{i}y_{i} & = x_1y_1+ x_2 y_2+ x_3 y_3 \end{align}$$
+1. $$\begin{align} m^{j}v_{j} & = m^{1}v_{1}+m^{2}v_{2}+m^{3}v_{3} \end{align}$$
+1. $$ 
+    \begin{align} a_{ij}x_i y_j&=x_ia_{i1} y_1+x_ia_{i2} y_2+x_ia_{i3} y_3\\
+             &=(x_1a_{11}+x_2a_{21}+x_3a_{31}) y_1
+             +(x_1a_{12}+x_2a_{22}+x_3a_{32}) y_2+
+             (x_1a_{13}+x_2a_{23}+x_3a_{33}) y_3\\
+             &=(a_{11}x_1y_1+a_{21}x_2y_1+a_{31}x_3y_1
+              +a_{12}x_1y_2+a_{22}x_2y_2+a_{32}x_3y_2
+              +a_{13}x_1y_3+a_{23}x_2y_3+a_{33}x_3y_3)
+    \end{align}
+    $$
+1. $$\begin{align}a_{ijk}x_ix_j x_k&=\sum_{i=1}^{3}
+                   \sum_{j=1}^{3}
+                   \sum_{k=1}^{3} a_{ijk}x_ix_j x_k
+     \end{align}
+   $$
+1. $$
+    \begin{align}
+      x_i a_j x_j a_i&=\sum_{i=1}^{3}
+                    \sum_{j=1}^{3} x_i a_j x_j a_i\\
+                    &= \sum_{i=1}^{3}x_i a_i \sum_{j=1}^{3}  x_j a_j
+      \end{align}
+    $$
+
+###### **Non-examples** {-}
+$$
+\begin{equation}
+x_{jj}y_j
+\quad \text{(Not okay; j repeated thrice)}
+\end{equation}
+$$
+
+[Rule 2.a (Renaming of dummy indices):]{style="color: red;"} _A dummy index can be renamed, as long as the new name does not conflict with the names of the other dummy or free indices in the same term_
+
+###### **Examples** {-}
+$$
+\begin{align}
+x_iy_i&\Rightarrow x_j y_j\\
+\end{align}
+$$
+
+$$
+\begin{align}
+a_ix_jy_j&\Rightarrow a_ix_k y_k, \quad (\text{OK, no conflict with free index}) \\
+a_ix_jy_j&\not\Rightarrow a_ix_i y_i \quad (\text{conflict with free index})\\
+\end{align}
+$$
+
+$$
+\begin{align}
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               & \Rightarrow
+                                A_{im}x_{m}+b_i+C_{ipq}x_{p}y_{q}\quad (\text{OK, no conflict}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               & \Rightarrow
+                                A_{im}x_{m}+b_i+C_{imq}x_{m}y_{q}\quad (\text{OK, no conflict}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               & \not\Rightarrow
+                                A_{im}x_{m}+b_i+C_{iiq}x_{i}y_{q}\quad (\text{conflict with free index}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                               & \not\Rightarrow
+                                A_{im}x_{m}+b_i+C_{iqq}x_{q}y_{q}\quad (\text{conflict with dummy index}) \\
+A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
+                                &\not \Rightarrow
+                                 A_{ii}x_{i}+b_i+C_{ikq}x_{k}y_{q}\quad (\text{conflict with free index}) \\
+\end{align}
+$$
+
+[Rule 2.b:]{style="color: red;"} _Different terms can have same dummy indices._
+
+###### **Examples** {-}
+
+$$
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\{i\}\\
+\{k,q\}
+}
+\end{equation}
+$$
+
+$\Rightarrow$
+
+$$
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\{i\}\\
+\{k \rightarrow m,q\}
+}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{imq} x_{m} y_{q}}_{
+\{i\}\\
+\{m,q\}
+}
+\end{equation}
+$$
+
+$\Rightarrow$
+
+$$
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}
+_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{imq} x_{m} y_{q}}_{
+\{i\}\\
+\{m \rightarrow i,q\}
+}
+\end{equation}
+$$
+
+$\Rightarrow$
+
+$$
+\begin{equation}
+\underbrace
+{
+A_{im}x_m
+}_{
+\{i\}\\
+\{m\}
+}
++\underbrace{
+b_i}
+_{
+\{i\}\\
+\emptyset
+}+\underbrace{C_{iiq} x_{i} y_{q}}_{
+  \{i\}\\
+\{i,q\}
+}
+\end{equation}
+$$
+(Not okay - conflict with free index)
+
+[Rule 3 (Free Indices):]{style="color: red;"} _A free index denotes a set of_ $n_{\rm{sd}}$ _terms_
+
+###### **Examples** {-}
+
+$$
+\begin{align}
+a_{i}&\Rightarrow\{a_1,a_2,a_3\}\\
+a_{i}=b_{i}&\Rightarrow\{a_1=b_1,a_2=b_2,a_3=b_3\}\\
+a_{i}+b_{i}&\Rightarrow\{a_1+b_1,a_2+b_2,a_3+b_3\}\\
+\end{align}
+$$
+
+<!-- Removed equation: A_{ij}&\Rightarrow\{A_{11},A_{12},A_{13},A_{21},A_{22},A_{23},A_{31},A_{32},A_{33},\}\\  ZZ, 20230208-->
+
+##### Denoting ordered sets {-}
+
+$$(\left(A_{ij})_{j\in \mathcal{I}}\right)_{i\in \mathcal{I}}=(A_{ij})_{i,~j\in \mathcal{I}}$$
+
+
+$$\left(\left(A_{1j}\right)_{j \in \mathcal{I}},
+\left(A_{2j}\right)_{j\in \mathcal{I}},
+\left(A_{3j}\right)_{j\in \mathcal{I}}\right)
+$$
+
+<!-- % &=
+% (\left(A_{1j}\right)_{j\in \mathcal{I}},
+% \left( A_{2j}\right)_{j\in \mathcal{I}},
+% \left( A_{2j} \right)_{j\in \mathcal{I}}) -->
+
+Notice that in each expression, all terms have the same set of free indices. That is, take a look at the expression,
+
+$$
+\begin{equation}
+\underbrace
+{
+A_{im}x_{m}
+}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{m\}
+}
++\underbrace{
+b_i}
+_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\emptyset
+}+\underbrace{C_{ikq} x_{k} y_{q}}_{
+\text{Free}=\{i\}\\
+\text{Dummy}=\{k,q\}
+}
+\end{equation}
+$$
+
+This is a consequence of the following rule:
+
+[Rule 4:]{style="color: red;"} _All terms in an expression should have the same set of free indices._
+
+
+###### **Examples** {-}
+$$
+\begin{align}
+a_i +b_i\quad (\text{OK})\\
+a_j +b_j\quad (\text{OK})\\
+a_i +b_j\quad (\text{Not OK})\\
+M_i =C_{mi}b_m\quad (\text{OK})\\
+M_i =C_{mj}b_m\quad (\text{Not OK})\\
+\end{align}
+$$
+
+[Rule 5:]{style="color: red;"} _All terms in an expression should have the same set of free indices._
+
+<!-- (the power of computers) - Viola Mathematica -->
+
+## Kronecker-Delta symbol
+
+Kronecker delta, denoted by $\delta_{ij}$, is defined as:
+
+$$
+\begin{equation}
+\delta_{ij} =
+\begin{cases}
+  1 & i=j \\
+  0 & i \neq j
+\end{cases}
+\end{equation}
+
+$$
+
+That is,
+
+$\delta_{11}=1$
+$\delta_{12}=0$
+$\delta_{13}=0$
+$\delta_{21}=0$
+$\delta_{22}=1$
+$\delta_{23}=0$
+$\delta_{31}=0$
+$\delta_{32}=0$
+$\delta_{33}=1$
+
+For example, $\delta_{12}=0$ and $\delta_{33}=1$.
+
+#### **Identity Matrix** {-}
+
+$$
+\mathbb{\mathsf{I}}
+=
+\left(\delta_{ij}\right)= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0\\ 0 & 0 & 1 \end{pmatrix}\\
+\text{Read paranthesis as ``matrix representation of the Kronecker-delta symbol``}
+$$
+$$\left[\delta_{ij}\right]= \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0\\ 0 & 0 & 1 \end{bmatrix}$$
+
+#### **Properties of the Kronecker Delta** {-}
+
+1. Replacement Property:
+
+$$
+\begin{align}
+\delta_{1m}a_m
+=\delta_{11}a_1+\delta_{12}a_2+\delta_{13}a_3\ \\
+=1a_1+0a_2+0a_3\ \\
+=a_1 \end{align}
+$$
+
+$$
+\begin{align}
+\delta_{2m}a_m = \delta_{21}a_1+\delta_{22}a_2+0a_3\ \\ =a_2
+\end{align}
+$$
+
+$$
+\begin{align} \delta_{3m}a_m & = \delta_{31}a_1+\delta_{32}a_2+\delta_{33}a_3\ \\
+=0a_1+0a_2+a_3\ \\
+=a_3
+\end{align}
+$$
+
+So, $\delta_{im}a_m = a_i$, $(\delta_{1m}a_m, \delta_{2m}a_m , \delta_{3m}a_m) = (a_1, a_2, a_3)$, $\delta_{1m}a_m = a_i$.
+
+$$
+\begin{align}
+\delta_{1m}T_{mj} & = \delta_{11}T_{1j}+ \delta_{12}T_{2j}+\delta_{13}T_{3j} =T_{1j} \\
+\delta_{2m}T_{mj} & = \delta_{21}T_{1j}+ \delta_{22}T_{2j}+\delta_{23}T_{3j} =T_{2j} \\
+\delta_{3m}T_{mj} & = \delta_{31}T_{1j}+ \delta_{32}T_{2j}+\delta_{33}T_{3j} =T_{3j}
+\end{align}
+$$
+
+$$
+\begin{bmatrix}
+\delta_{1m}T_{mj} = T_{1j} \\
+\delta_{2m}T_{mj} = T_{2j} \\
+\delta_{3m}T_{mj} = T_{3j}
+\end{bmatrix}
+$$
+$\Rightarrow$
+$\delta_{1m}T_{mj} = T_{1j},  \delta_{2m}T_{mj} = T_{2j}, \delta_{3m}T_{mj}=T_{3j}$.
+$$\delta_{im}T_{mj} = T_{ij}$$
+
+**We can generalize the last two results.** If, in a term, the Kronecker delta and another symbol share an index, the index in that symbol can be replaced by the Kronecker delta's other index in its symbol. *For example:*
+
+1. $\delta_{im}a_{mb}$ $\Rightarrow$ $\delta_{ib}$
+2. $\delta_{mi}a_{mb}$ $\Rightarrow$ $a_{ib}$
+3. $\delta_{im}a_{pqms}$ $\Rightarrow$ $a_{pqis}$
+4. $\delta_{im}\delta_{mj}$ $\Rightarrow$ $\delta_{ij}$
+5. $\delta_{im}\delta_{mn}\delta_{nj}$ $\Rightarrow$ $\delta_{in}\delta_nj$ $\Rightarrow$ $\delta_{ij}$
+
+<!-- <br /> -->
+
+$$
+\begin{align}
+\delta_{m1}T_{mj} &= \delta_{11}T_{1j} + \delta_{21}T_{2j}+ \delta_{31}T_{3j} = T_{1j} \\
+\delta_{m2}T_{mj} &= \delta_{12}T_{1j} + \delta_{22}T_{2j}+ \delta_{32}T_{3j} = T_{2j} \\
+\delta_{m3}T_{mj} &= \delta_{13}T_{1j} + \delta_{23}T_{2j}+ \delta_{33}T_{3j} = T_{3j}
+\end{align}
+$$
+
+$$
+\begin{align}
+\delta_{m1}T_{mj} &= T_{1j} \\
+\delta_{m2}T_{mj} &= T_{2j} \\
+\delta_{m3}T_{mj} &= T_{3j} \\
+\delta_{mi}T_{mj} &= T_{ij}
+\end{align}
+$$
+
+<!-- [<span style="color:gray; opacity:0.2"> [edit] </span>](https://github.com/AppliedMechanicsLab/appliedmechanicslab/blob/master/course_notes/ENGN1370/ESC.md) -->

@@ -1,0 +1,284 @@
+# Vector Components {#sec-vec_components}
+
+## Components of Vectors {#sec-vector_components}
+
+These vectors span $\b{E}^{3}$. That is any vector $\bs{u} \in \b{E}^{3}$ can be written as a linear combination of these basis vectors.
+
+$$
+\begin{align}
+\bs{x}&=x_1 \hat{\bs{E}}_1+ x_2 \hat{\bs{E}}_2+ x_3 \hat{\bs{E}}_3\\
+\bs{x}&=x_i \hat{\bs{E}}_i
+\end{align}
+$$
+
+
+$$
+\begin{align}
+[\bs{x}]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&=
+\left[
+\begin{array}{c}
+x_1\\
+x_2\\
+x_3
+\end{array}
+\right]
+\end{align}
+$$
+
+
+However if we are given a new basis, a basis different from $\{\hat{\bs{E}}\}_{i=1,2,3}$, say $\{\hat{\bs{F}}\}_{i=1,2,3}$. Would the components of $\bs{x}$ in $\{\hat{\bs{F}}\}_{i=1,2,3}$ be the same as in $\{\hat{\bs{E}}\}_{i=1,2,3}$. That is, would
+
+$$
+\begin{equation}
+\bs{x}\stackrel{?}{=}x_i \hat{\bs{F}}_i
+\end{equation}
+$$
+
+The answer is no. Typically, in a different basis the components of $\bs{x}$ will be different. This is same as measuring the size of an object using a scale that in centimeter unit and another scale which is units of inches. Thus, we will have
+
+$$
+\begin{align}
+\bs{x}&=y_1 \hat{\bs{F}}_1+y_2 \hat{\bs{F}}_2+y_3 \hat{\bs{F}}_3\\
+\bs{x}&=y_i \hat{\bs{F}}_i,
+\end{align}
+$$
+i.e.,
+
+
+$$
+\begin{align}
+[\bs{x}]_{\{\hat{\bs{F}}\}_{i=1,2,3}}&=
+\left[
+\begin{array}{c}
+y_1\\
+y_2\\
+y_3
+\end{array}
+\right]
+\end{align}
+$$
+
+and typically $x_i \not= y_i$.
+
+
+The question now arrises, if we know $x_i$ how do we find $y_i$? The answer to this question involves the transformation matrix $[Q]$, such that,
+
+Since $\{\hat{\bs{E}}\}_{i=1,2,3}$ is a basis, and hence each of $\hat{\bs{F}}_j$ can be written as a linear combination of $\{\hat{\bs{E}}\}_{i=1,2,3}$.
+
+$$
+\begin{align}
+\hat{\bs{F}}_1
+&=
+Q_{11}\hat{\bs{E}}_1+
+Q_{21}\hat{\bs{E}}_2+
+Q_{31}\hat{\bs{E}}_3
+\\
+\hat{\bs{F}}_2
+&=
+Q_{12}\hat{\bs{E}}_1+
+Q_{22}\hat{\bs{E}}_2+
+Q_{32}\hat{\bs{E}}_3
+\\
+\hat{\bs{F}}_3
+&=
+Q_{13}\hat{\bs{E}}_1+
+Q_{23}\hat{\bs{E}}_2+
+Q_{33}\hat{\bs{E}}_3
+\end{align}
+$$
+
+The above set of equations can be compactly be written as:
+
+$$
+\begin{align}
+\hat{\bs{F}}_j&=Q_{ij}\hat{\bs{E}}_i
+\end{align}
+$$
+
+$$
+\begin{align}
+\left[\hat{\bs{F}}_1\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&
+&=
+\left[
+\begin{array}{c}
+Q_{11}\\
+Q_{21}\\
+Q_{31}
+\end{array}
+\right]
+\end{align}
+$$
+
+
+$$
+\begin{align}
+\left[\hat{\bs{F}}_2\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&
+&=
+\left[
+\begin{array}{c}
+Q_{12}\\
+Q_{22}\\
+Q_{32}
+\end{array}
+\right]
+\end{align}
+$$
+
+$$
+\begin{align}
+\left[\hat{\bs{F}}_3\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&
+&=
+\left[
+\begin{array}{c}
+Q_{13}\\
+Q_{23}\\
+Q_{33}
+\end{array}
+\right]
+\end{align}
+$$
+
+
+In summary we can write,
+$$
+\begin{align}
+Q=
+\left[
+\begin{array}{lcr}
+\left[\hat{\bs{F}}_1\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}} &
+\left[\hat{\bs{F}}_2\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}
+&
+\left[\hat{\bs{F}}_3\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}
+\end{array}
+\right]
+\end{align}
+$$
+
+Now let's try to find the components $x_i$ from $y_i$ of a general vector $\bs{x}$.
+
+**Derivation 1**
+
+$$ \begin{align}
+\bs{x}&=x_i \hat{\bs{E}}_i\\
+\bs{x}&=y_i \hat{\bs{F}}_i\\
+\hat{\bs{F}}_i&=
+Q_{ji}\hat{\bs{E}}_j\\
+\bs{x}&=y_i Q_{ji}\hat{\bs{E}}_j\\
+x_j&=y_iQ_{ji}\\
+x_j&=Q_{ji}y_i\\
+x_i&=Q_{ij}y_j\\
+\end{align}
+$$
+
+$$ \begin{align}
+\left[
+\begin{array}{c}
+x_1\\
+x_2\\
+x_3
+\end{array}
+\right]
+=
+\left[
+\begin{array}{lcr}
+Q_{11} & Q_{12} & Q_{13} \\
+Q_{21} & Q_{22} & Q_{23} \\
+Q_{31} & Q_{32} & Q_{33} \\
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+y_1\\
+y_2\\
+y_3
+\end{array}
+\right]
+\end{align}
+$$
+
+
+**Derivation 2**
+
+$$ \begin{align}
+\bs{x}&=x_i \hat{\bs{E}}_i\\
+\bs{x}&=y_i \hat{\bs{F}}_i\\
+\hat{\bs{F}}_i&=
+Q_{ji}\hat{\bs{E}}_j\\
+\bs{x}&=y_i Q_{ji}\hat{\bs{E}}_j\\
+\end{align}
+$$
+
+Recall that $\bs{x}=x_1 \hat{\bs{E}}_1+x_2 \hat{\bs{E}}_2+x_3 \hat{\bs{E}}_3$, which can be compactly be written as $\bs{x}=x_p \hat{\bs{E}}_p$. Thus, we have
+
+$$ 
+\begin{align}
+x_p \hat{\bs{E}}_p&= Q_{ji} y_i\hat{\bs{E}}_j\\
+x_p \hat{\bs{E}}_p&= Q_{ij} y_j\hat{\bs{E}}_i\\
+(x_p \hat{\bs{E}}_p)\cdot \hat{\bs{E}}_q&= (Q_{ij} y_j\hat{\bs{E}}_i)\cdot \hat{\bs{E}}_q\\
+(x_p \hat{\bs{E}}_p\cdot  \hat{\bs{E}}_q)&= (Q_{ij} y_j)\hat{\bs{E}}_i\cdot \hat{\bs{E}}_q\\
+(x_p \delta_{pq})&= (Q_{ij} y_j)\delta_{iq}\\
+x_q &= Q_{qj} y_j\\
+x_i &= Q_{ij} y_j\\
+\end{align}
+$$
+
+
+Examples from AL notes. 
+Now let's assume that
+
+$$
+\begin{align}
+\hat{\bs{E}}_i=P_{ji}\hat{\bs{F}}_j
+\end{align}
+$$
+
+
+Following the same steps as before we arrive at the equation,
+$$
+\begin{align}
+y_i &= P_{ij} x_j\\
+\end{align}
+$$
+
+
+Combining the results, $y_i = P_{ij} x_j$ and  $x_i = Q_{ij} x_j$ we have that,
+
+$$
+\begin{align}
+y_i &= P_{ij} Q_{jk}y_k\\
+\delta_{im}y_m &= P_{ij} Q_{jk}y_k\\
+\delta_{im}y_m -P_{ij} Q_{jk}y_k&=0\\
+(\delta_{ik} -P_{ij} Q_{jk})y_{k}&=0\\
+\delta_{ik} -P_{ij} Q_{jk}&=0\\
+\end{align}
+$$
+
+The last equation can be written as
+$$
+\begin{align}
+[P][Q]&=[I],
+\end{align}
+$$
+
+which implies that $[P]$ is the left inverse of $[Q]$.
+
+
+
+$$
+\begin{align}
+x_i &= Q_{ij} P_{jk}x_k\\
+\delta_{ik}x_k &= Q_{ij} P_{jk}x_k\\
+\delta_{ik}x_k -P_{ij} Q_{jk}x_k&=0\\
+(\delta_{ik} -Q_{ij} P_{jk})x_{k}&=0\\
+\delta_{ik} -Q_{ij} P_{jk}&=0\\
+\end{align}
+$$
+
+The last equation can be written as
+$$
+\begin{align}
+[Q][P]&=[I],
+\end{align}
+$$
+
+which implies that $[P]$ is also the right inverse of $[Q]$.
