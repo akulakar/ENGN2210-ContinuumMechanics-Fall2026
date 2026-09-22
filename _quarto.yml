@@ -18,9 +18,9 @@ book:
         # - notes/MathematicalPreliminaries/TensorsTrue.qmd
         - notes/MathematicalPreliminaries/Tensors.qmd
         - notes/MathematicalPreliminaries/EinsteinSummationConvention.qmd
-        - notes/MathematicalPreliminaries/VectorComponents.qmd
-        # - notes/MathematicalPreliminaries/TensorAnalysis.qmd
-        # - notes/MathematicalPreliminaries/IntegralTheorems.qmd
+        - notes/MathematicalPreliminaries/VectorTensorComponents.qmd
+        - notes/MathematicalPreliminaries/TraceDeterminant.qmd
+        - notes/MathematicalPreliminaries/ChangeOfBasis.qmd
     # - part: "Kinematics"
     #   chapters:
     #     - notes/Kinematics/Motion.qmd

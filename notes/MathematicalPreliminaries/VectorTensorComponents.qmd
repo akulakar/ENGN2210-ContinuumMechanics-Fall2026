@@ -1,0 +1,560 @@
+# Vector and Tensor Components {#sec-vec_components}
+
+Henceforth, the Einstein summation convention will be employed.
+
+## Vector Components {#sec-vector_components}
+
+A vector can be written as a linear combination of a basis, that is a list of linearly independent vectors the span the space. We are typically interested in vectors that belong to $\b{E}^{n}$. 
+
+::: {#def-orthogonality}
+**[Orthogonal vectors]{style="color: red;"}**
+
+Two vectors $\bs{u}, \bs{v} \in \b{E}^n$ are *orthogonal* if $\bs{u} \cdot \bs{v} = 0$. 
+:::
+
+::: {#def-orthonormal-basis}
+**[Orthonormal basis]{style="color: red;"}**
+
+An *orthonormal basis* is a basis whose elements are mutually orthogonal and have a unit norm.
+:::
+We typically denote orthonormal basis vectors with a tophat, for example $\{\hat{\bs{E}}_{i}\}_{i=1,2,3}$. Further, we will typically make use of orthonormal basis vectors unless specified otherwise.
+
+Let $\{\hat{\bs{E}}_{i}\}_{i=1,2,3}$ form an orthonormal basis for $\b{E}^{3}$. That is any vector $\bs{u} \in \b{E}^{3}$ can be written as a linear combination of these basis vectors.
+
+$$
+\begin{align}
+\bs{x}&=x_1 \hat{\bs{E}}_1+ x_2 \hat{\bs{E}}_2+ x_3 \hat{\bs{E}}_3\\
+\bs{x}&=x_i \hat{\bs{E}}_i
+\end{align}
+$$
+
+
+$$
+\begin{align}
+[\bs{x}]_{\{\hat{\bs{E}}_{i}\}_{i=1,2,3}}&=
+\left[
+\begin{array}{c}
+x_1\\
+x_2\\
+x_3
+\end{array}
+\right]
+\end{align}
+$$
+
+Let $\{\hat{\bs{F}}_{i}\}_{i=1,2,3}$ form another orthonormal basis for $\b{E}^{3}$. Then,
+
+$$
+\begin{align}
+\bs{x}&=\tilde{x}_1 \hat{\bs{F}}_1+ \tilde{x}_2 \hat{\bs{F}}_2+ \tilde{x}_3 \hat{\bs{F}}_3\\
+\bs{x}&=\tilde{x}_i \hat{\bs{F}}_i
+\end{align}
+$$
+
+
+$$
+\begin{align}
+[\bs{x}]_{\{\hat{\bs{F}}_{i}\}_{i=1,2,3}}&=
+\left[
+\begin{array}{c}
+\tilde{x}_1\\
+\tilde{x}_2\\
+\tilde{x}_3
+\end{array}
+\right]
+\end{align}
+$$
+
+Notice that the components differ when the chosen basis differs. Additionally, for clarity, the matrix representation of the components may include a subscript denoting the basis. The following are equivalent representations of the vector:
+
+$$
+\begin{align}
+\bs{x} = x_{i} \hat{\bs{E}}_{i} = \tilde{x}_{i} \hat{\bs{F}}_{i}
+\end{align}
+$$
+
+The question is, are the components $x_{i}$ and $\tilde{x}_i$ the same? In general no. However, a relation between the two represenation can be determined using a change of basis, which will be discussed in a later section.
+
+## Tensor Components {#sec-tensor_components}
+
+Say $\bs{T} : \b{E}^{n} \ra \b{E}^n$ is a tensor. Then we define its components $T_{ij}$ w.r.t. to the two bases $\hat{\bs{E}}_i$ and $\hat{\bs{F}}_i$ as
+
+$$
+\begin{align}
+T_{ij}=\hat{\bs{F}}_i\cdot(\bs{T} \hat{\bs{E}}_j)
+\end{align}
+$$
+
+Typically, we chose both bases to be the same to simplify our study. That is, the components of $\bs{T}$ w.r.t the basis $\hat{\bs{E}}_i$ is given by
+$$
+\begin{align}
+T_{ij}=\hat{\bs{E}}_i\cdot(\bs{T} \hat{\bs{E}}_j)
+\end{align}
+$$
+
+Let $\bs{T} : \b{E}^{3} \ra \b{E}^3$ be a tensor. We define the matrix representation of $\bs{T}$ as the $3\times 3$ matrix that we denote as $\left[\bs{T}\right]$ that satisfies the following equation
+$$\begin{align}
+\left[ \bs{T}\right]
+\left[ \bs{a}\right]&=\left[ \bs{T}\bs{a}\right]
+\end{align}
+$$
+
+for all $\bs{a}\in \mathbb{E}^3$. Let $\bs{T}\bs{a}=\bs{b}$, where $\bs b = b_i \hat{\bs{E}}_i$. The matrix representation of  $\bs{b}$ is,
+
+$$
+\begin{equation}
+\left[\bs{b}\right]=
+\left[
+\begin{array}{c}
+b_1\\
+b_2\\
+b_3\\
+\end{array}
+\right]
+\end{equation}
+$$
+
+Then we have that,
+$$
+\begin{align}
+\left[ \bs{T}\right]
+\left[ \bs{a}\right]&=\left[ \bs{b}\right]\\
+\end{align}
+$$
+
+Let $T_{ij}$ be the $i-j^{\text{th}}$ component of the matrix $\left[\bs{T}\right]$, i.e., $T_{ij}=\left[\bs{T}\right]_{ij}$. More explicitly,
+$$
+\begin{align}
+\left[\bs{T}\right]&=
+\left[
+\begin{array}{ccc}
+T_{11} && T_{12} && T_{13} \\
+T_{21} && T_{22} && T_{23} \\
+T_{31} && T_{32} && T_{33} \\
+\end{array}
+\right]
+\end{align}
+$$
+
+$$
+\begin{align}
+\left[
+\begin{array}{ccc}
+T_{11} && T_{12} && T_{13} \\
+T_{21} && T_{22} && T_{23} \\
+T_{31} && T_{32} && T_{33} \\
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+a_1\\
+a_2\\
+a_3\\
+\end{array}
+\right]
+&=
+\left[
+\begin{array}{c}
+b_1\\
+b_2\\
+b_3\\
+\end{array}
+\right]
+\end{align}
+$$
+
+or equivalently,
+$$
+\begin{align}
+T_{11}a_1 + T_{12}a_2 + T_{13}a_3 = b_1\\
+T_{21}a_1 + T_{22}a_2 + T_{23}a_3 = b_2\\
+T_{31}a_1 + T_{32}a_2 + T_{33}a_3 = b_3\\
+\end{align}
+$$
+
+### Computing the matrix representation of a tensor {#sec-tensor_matrix_representation}
+
+**Motivating example**
+
+Let $\bs{T}$ be a tensor that transforms the specific vectors $\bs{a}$ and $\bs{b}$ as follows:
+
+$$
+\begin{align}
+\bs{T}\bs{a} = \bs{a} + 2\bs{b}, \\
+\bs{T}\bs{b} = \bs{a} - \bs{b}.
+\end{align}
+$$
+
+Given a vector $\bs{c} = 2\bs{a} + \bs{b}$, find $\bs{T}\bs{c}$.
+
+***Solution***
+
+Using the linearity property of tensors, we have
+$$
+\begin{align}
+\bs{T}\bs{c} = \bs{T}(2\bs{a} + \bs{b})=2\bs{T}\bs{a} + \bs{T}\bs{b} = 2(\bs{a} + 2\bs{b}) + (\bs{a} - \bs{b}) = 3\bs{a} + 3\bs{b}.
+\end{align}
+$$
+
+
+So let us start by defining the Matrix
+$$
+\begin{align}
+\left[Q\right]
+&=
+\left[
+\begin{array}{ccc}
+Q_{11} && Q_{12} && Q_{13}  \\
+Q_{21} && Q_{22} && Q_{23}  \\
+Q_{31} && Q_{32} && Q_{33}
+\end{array}
+\right]
+\end{align}
+$$
+
+$$
+\begin{align}
+\bs{T}\hat{\bs{E}}_1&=Q_{11}\hat{\bs{E}}_1+Q_{21}\hat{\bs{E}}_2+Q_{31}\hat{\bs{E}}_3\\
+\bs{T}\hat{\bs{E}}_2&=Q_{12}\hat{\bs{E}}_1+Q_{22}\hat{\bs{E}}_2+Q_{32}\hat{\bs{E}}_3\\
+\bs{T}\hat{\bs{E}}_3&=Q_{13}\hat{\bs{E}}_1+Q_{23}\hat{\bs{E}}_2+Q_{33}\hat{\bs{E}}_3\\
+\end{align}
+$$
+
+$$
+\begin{align}
+\bs{T}\bs{a}&=\bs{T}\left(a_1\hat{\bs{E}}_1+a_2\hat{\bs{E}}_2+a_3\hat{\bs{E}}_3\right)\\
+&=\bs{T}\left(a_1\hat{\bs{E}}_1\right)+\bs{T}\left(a_2\hat{\bs{E}}_2\right)+\bs{T}\left(a_3\hat{\bs{E}}_3\right)\\
+&=a_1\left(\bs{T}\hat{\bs{E}}_1\right)+a_2 \left(\bs{T}\hat{\bs{E}}_2\right)+a_3\left(\bs{T}\hat{\bs{E}}_3\right)\\
+\end{align} 
+$$
+
+$$
+\begin{align}
+\bs{T}\bs{a}
+&=a_1\left(\bs{T}\hat{\bs{E}}_1\right)+a_2 \left(\bs{T}\hat{\bs{E}}_2\right)+a_3\left(\bs{T}\hat{\bs{E}}_3\right)\\
+&=a_1\left(Q_{11}\hat{\bs{E}}_1+Q_{21}\hat{\bs{E}}_2+Q_{31}\hat{\bs{E}}_3\right)+a_2 \left(Q_{12}\hat{\bs{E}}_1+Q_{22}\hat{\bs{E}}_2+Q_{32}\hat{\bs{E}}_3\right)+a_3\left(Q_{13}\hat{\bs{E}}_1+Q_{23}\hat{\bs{E}}_2+Q_{33}\hat{\bs{E}}_3\right)
+\end{align}
+$$
+
+$$
+\begin{align}
+\bs{T}\bs{a}
+&=\left(Q_{11}a_1\hat{\bs{E}}_1+Q_{21}a_1\hat{\bs{E}}_2+Q_{31}a_1\hat{\bs{E}}_3\right)+ \left(Q_{12}a_2\hat{\bs{E}}_1+Q_{22}a_2\hat{\bs{E}}_2+Q_{32}a_2\hat{\bs{E}}_3\right)+\left(Q_{13}a_3\hat{\bs{E}}_1+Q_{23}a_3\hat{\bs{E}}_2+Q_{33}a_3\hat{\bs{E}}_3\right)
+\\
+&=
+\left(
+Q_{11}a_1+
+Q_{12}a_2+
+Q_{13}a_3\right)\hat{\bs{E}}_1
++
+\left(
+Q_{21}a_1+
+Q_{22}a_2+
+Q_{23}a_3\right)\hat{\bs{E}}_2
++
+\left(
+Q_{31}a_1+
+Q_{32}a_2+
+Q_{33}a_3
+\right)\hat{\bs{E}}_3
+\end{align}
+$$
+
+$$\begin{align}
+\left[\bs{T}\bs{a}\right]
+&=
+\left[
+  \begin{array}{c}
+  Q_{11}a_1+Q_{12}a_2+Q_{13}a_3\\
+  Q_{21}a_1+Q_{22}a_2+Q_{23}a_3\\
+  Q_{31}a_1+Q_{32}a_2+Q_{33}a_3
+  \end{array}
+\right]
+\\
+\left[\bs{b}\right]&=
+\left[
+  \begin{array}{ccc}
+    Q_{11} && Q_{12} && Q_{13} \\
+    Q_{21} && Q_{22} && Q_{23} \\
+    Q_{31} && Q_{32} && Q_{33}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+    a_1\\
+    a_2\\
+    a_3
+  \end{array}
+\right]
+\\
+\left[
+\begin{array}{c}
+b_1\\
+b_2\\
+b_3\\
+\end{array}
+\right]&=
+\left[
+  \begin{array}{ccc}
+    Q_{11} && Q_{12} && Q_{13} \\
+    Q_{21} && Q_{22} && Q_{23} \\
+    Q_{31} && Q_{32} && Q_{33}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+    a_1\\
+    a_2\\
+    a_3
+  \end{array}
+\right]
+\end{align}
+$$
+
+which proves That
+$$
+\begin{equation}
+\left[
+\bs{T}
+\right]=
+\left[Q\right]
+\end{equation}
+$$
+
+
+**Example**
+
+Obtain the matrix for the tensor $\bs{T}$ that transforms the base vectors as follows
+
+$$
+\begin{align}
+\bs{T}\bs{e}_1 &= 4\bs{e}_1 + \bs{e}_2, \\
+\bs{T}\bs{e}_2 &= 2\bs{e}_1 + 3\bs{e}_3,  \\
+\bs{T}\bs{e}_3 &= -\bs{e}_1 + 3\bs{e}_2 + \bs{e}_3,
+\end{align}
+$$
+
+***Solution***
+
+By the definition above,
+
+$$
+\begin{align}
+\left[\bs{T}\right]
+&=
+\left[
+\begin{array}{ccc}
+4 && 2 && -1  \\
+1 && 0 && 3  \\
+0 && 3 && 1
+\end{array}
+\right]
+\end{align}
+$$
+
+---
+
+**Example**
+
+Obtain the matrix for the tensor \bs{T} that transforms the base vectors as follows:
+
+$$
+\begin{align}
+\bs{T}\bs{e}_1 &= \bs{e}_1 + 2\bs{e}_2 + 3\bs{e}_3,  \\
+\bs{T}\bs{e}_2 &= 4\bs{e}_1 + 5\bs{e}_2 + 6\bs{e}_3,  \\
+\bs{T}\bs{e}_3 &= 7\bs{e}_1 + 8\bs{e}_2 + 9\bs{e}_3.   
+\end{align}
+$$
+
+***Solution***
+
+By inspection,
+
+$$
+\begin{align}
+\left[\bs{T}\right]
+&=
+\left[
+\begin{array}{ccc}
+1 && 2 && 3  \\
+4 && 5 && 6  \\
+7 && 8 && 9
+\end{array}
+\right]
+\end{align}
+$$
+
+This example emphasizes again the convention we use to write the matrix of a tensor: The component of $\bs{T}\bs{e}_{1}$ fills the first column, the component of $\bs{T}\bs{e}_{2}$ fills the second column, and so on. The reason for this choice of convention will become obvious in the next section.
+
+---
+
+**Example: Reflection across a plane**
+
+Let $\bs{T}$ transform every vector into its mirror image with respect to a fixed plane; if $\bs{e}_1$ is normal to the reflection plane ($\bs{e}_{2}$ and $\bs{e}_{3}$ are parallel to this plane), find a matrix of $\bs{T}$.
+
+***Solution***
+
+Because the normal to the reflection plane is transformed into its negative, and vectors parallel to the place are not altered, we have
+
+$$
+\begin{align}
+\bs{T}\bs{e}_1 = -\bs{e}_1, \bs{T}\bs{e}_2 = \bs{e}_2, \bs{T}\bs{e}_3 = \bs{e}_3
+\end{align}
+$$
+
+which corresponds to
+
+$$
+\begin{align}
+\left[\bs{T}\right]
+&=
+\left[
+\begin{array}{ccc}
+-1 && 0 && 0  \\
+0 && 1 && 0  \\
+0 && 0 && 1
+\end{array}
+\right]_{\bs{e}_i}.
+\end{align}
+$$
+
+---
+
+**Example: 2D Rotation**
+
+Let $\bs{R}$ correspond to a right-hand rotation of a rigid body about the $x_3$-axis by an angle $\theta$. Find a matrix of $\bs{R}$.
+
+***Solution***
+
+From the figure, it is clear that
+
+$$
+\begin{align}
+\bs{R}\bs{e}_1 &= \cos\theta\bs{e}_1 + \sin\theta\bs{e}_2, \\
+\bs{R}\bs{e}_2 &= -\sin\theta\bs{e}_1 + \cos\theta\bs{e}_2, \\
+\bs{R}\bs{e}_3 &= \bs{e}_3.
+\end{align}
+$$
+
+which corresponds to
+
+$$
+\begin{align}
+\left[\bs{R}\right]
+&=
+\left[
+\begin{array}{ccc}
+\cos\theta && \sin\theta && 0  \\
+\sin\theta && \cos\theta && 0  \\
+0 && 0 && 1
+\end{array}
+\right]_{\bs{e}_i}.
+\end{align}
+$$
+
+---
+
+**Example: Stretching**
+
+Write the tensor $\bs{T}$, defined by the equation $\bs{T}\bs{a} = \alpha\bs{a}$, where $\alpha$ is a constant and $\bs{a}$ is arbitrary, in terms of the identity tensor, and find its components.
+
+***Solution***
+
+Using the identity tensor, we can write $\alpha\bs{a}$ as $\alpha\bs{I}\bs{a}$, so that
+
+$$
+\begin{align}
+\bs{T}\bs{a} = \alpha\bs{a} = \alpha\bs{I}\bs{a}.
+\end{align}
+$$
+
+Since $\bs{a}$ is arbitrary, therefore,
+
+$$
+\begin{align}
+\bs{T} = \alpha\bs{I}
+\end{align}
+$$
+
+The components of this tensor are clearly $T_{ij} = \alpha\delta_{ij}$.
+
+### Representation of tensors as a sum of dyadics products {#sec-tensor_dyadic_components}
+
+If $\hat{\bs{E}}_i$ is an orthonormal basis, it can be shown that
+
+$$
+\begin{align}
+\bs{T}&=T_{ij} \, \hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j}
+\tag{Dyadic basis}
+\end{align}
+$$
+
+Let
+$$
+\begin{align}
+\bs{T}\bs{c}&=\bs{d}\\
+(T_{ij} \, \hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})\bs{c}&=\bs{e}
+\end{align}
+$$
+
+We are going to find the components of $\bs{e}$ and $\bs{d}$ and show that they are one and the same. Since $\bs{c}$ is arbitrary this goes to prove that $\bs{T}$ and $T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j}$ are one and the same.
+
+
+**Components of $\bs{e}$**
+$$
+\begin{align}
+\bs{e}&=(T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})\bs{c}\\
+&=
+(T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})(c_k\hat{\bs{E}}_k)\\
+&=
+T_{ij} c_k(\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})\hat{\bs{E}}_k\\
+&=
+T_{ij} c_k(\hat{\bs{E}}_{i}( \hat{\bs{E}}_{j}\cdot\hat{\bs{E}}_k))\\
+&=
+T_{ij} c_k(\hat{\bs{E}}_{i}\delta_{jk})\\
+&=
+T_{ij} c_j\hat{\bs{E}}_{i}
+\end{align}
+$$
+
+
+From the last equation it follows that
+
+$$
+\begin{align}
+\bs{e}\cdot\hat{\bs{E}}_j&=T_{ik}c_k\hat{\bs{E}}_i\cdot\hat{\bs{E}}_j\\
+e_j&=T_{ik}c_k\delta_{ij}\\
+e_j&=T_{jk}c_k\label{eq:eComponents}\\
+\end{align}
+$$
+
+**Components of $\bs{d}$**
+
+
+From the definition of the matrix definition of $\bs{T}$, which is $[\bs{T}]$ it follows that
+
+$$
+\begin{align}
+\left[\bs{T}\right]\left[\bs{c}\right]&=\left[\bs{d}\right] \label{eq:MatrixFrom}
+\end{align}
+$$
+
+where
+$$
+\begin{align}
+\left[\bs{c}\right]_{i}&=c_{i}=\bs{c}\cdot \hat{\bs{E}}_i\\
+\left[\bs{d}\right]_{j}&=d_{j}=\bs{d}\cdot \hat{\bs{E}}_j
+\end{align}
+$$
+
+In Einstein notation $\eqref{eq:MatrixFrom}$ reads,
+
+$$
+\begin{align}
+d_i&=T_{ij}c_j\label{eq:dComponents}
+\end{align}
+$$
+
+
+If follows from $\eqref{eq:eComponents}$ and $\eqref{eq:dComponents}$ that $\bs{e}$ and $\bs{d}$ are the same, from which it follows that $\bs{T}$ and $T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j}$ are one and the same.
+

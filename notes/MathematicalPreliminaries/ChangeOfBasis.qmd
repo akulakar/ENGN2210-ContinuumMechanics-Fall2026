@@ -1,40 +1,17 @@
-# Vector Components {#sec-vec_components}
+# Change of basis {#sec-change_of_basis}
 
-## Components of Vectors {#sec-vector_components}
+## Representations of Vectors {#sec-vector_representation}
 
-These vectors span $\b{E}^{3}$. That is any vector $\bs{u} \in \b{E}^{3}$ can be written as a linear combination of these basis vectors.
-
-$$
-\begin{align}
-\bs{x}&=x_1 \hat{\bs{E}}_1+ x_2 \hat{\bs{E}}_2+ x_3 \hat{\bs{E}}_3\\
-\bs{x}&=x_i \hat{\bs{E}}_i
-\end{align}
-$$
-
+Let $\bs{x} \in \b{E}^{3}$ and let $\{\hat{\bs{E}}_{i}\}_{i=1,2,3}$ and $\{\hat{\bs{F}}_{i}\}_{i=1,2,3}$ be two orthornal bases for $\b{E}^{3}$. The question is, would the components of $\bs{x}$ w.r.t the bases be the same? That is, would
 
 $$
 \begin{align}
-[\bs{x}]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&=
-\left[
-\begin{array}{c}
-x_1\\
-x_2\\
-x_3
-\end{array}
-\right]
+\bs{x} &= x_i \hat{\bs{E}}_i = \tilde{x}_i \hat{\bs{F}}_i \\
+x_{i}&\stackrel{?}{=}\tilde{x}_{i}
 \end{align}
 $$
 
-
-However if we are given a new basis, a basis different from $\{\hat{\bs{E}}\}_{i=1,2,3}$, say $\{\hat{\bs{F}}\}_{i=1,2,3}$. Would the components of $\bs{x}$ in $\{\hat{\bs{F}}\}_{i=1,2,3}$ be the same as in $\{\hat{\bs{E}}\}_{i=1,2,3}$. That is, would
-
-$$
-\begin{equation}
-\bs{x}\stackrel{?}{=}x_i \hat{\bs{F}}_i
-\end{equation}
-$$
-
-The answer is no. Typically, in a different basis the components of $\bs{x}$ will be different. This is same as measuring the size of an object using a scale that in centimeter unit and another scale which is units of inches. Thus, we will have
+In general, the answer is no. Typically, in a different basis the components of $\bs{x}$ will be different. This is same as measuring the size of an object using a scale that in centimeter unit and another scale which is units of inches. Thus, we will have
 
 $$
 \begin{align}
@@ -60,8 +37,7 @@ $$
 
 and typically $x_i \not= y_i$.
 
-
-The question now arrises, if we know $x_i$ how do we find $y_i$? The answer to this question involves the transformation matrix $[Q]$, such that,
+The question now arrises, if we know $x_i$ how do we find $y_i$? The answer to this question involves the change of basis matrix $[Q]$, such that,
 
 Since $\{\hat{\bs{E}}\}_{i=1,2,3}$ is a basis, and hence each of $\hat{\bs{F}}_j$ can be written as a linear combination of $\{\hat{\bs{E}}\}_{i=1,2,3}$.
 
@@ -261,8 +237,6 @@ $$
 $$
 
 which implies that $[P]$ is the left inverse of $[Q]$.
-
-
 
 $$
 \begin{align}

@@ -1,0 +1,61 @@
+# Trace and determinant {#sec-trace_determinant}
+
+## Trace {#sec-trace}
+
+The *trace* is a map that maps a tensor to a real number and obeys the following rules: For any tensor $\bs T$ and $\bs S$ and any vectors $\bs a, \bs b$,
+$$
+    \begin{align}
+        \rm{tr}\pr{\bs T + \bs S} &= \rm{tr} \bs T + \rm{tr} \bs S \\
+        \rm{tr}\pr{\alpha \bs T} &= \alpha ~\rm{tr} \bs T \\
+        \rm{tr}\pr{\bs{a} \otimes \bs{b}} &= \bs a \cdot \bs b
+    \end{align}
+$$
+
+The first two properties of the trace show that the trace is a linear map. 
+
+In terms of tensor components,
+
+$$
+\begin{align}
+\text{tr} \, \bs{T} = \text{tr}({T_{ij}}\bs{e}_i\bs{e}_j) = {T_{ij}}\text{tr}(\bs{e}_i\bs{e}_j) = {T_{ij}}\bs{e}_i\bs{e}_j = {T_{ij}}{\delta_{ij}} = {T_{ii}}.
+\end{align}
+$$
+
+That is, 
+
+$$
+\begin{align}
+\text{tr} \, \bs{T} = {T_{11}} + {T_{22}} + {T_{33}} = \text{sum of diagonal elements}. 
+\end{align}
+$$
+
+It is, therefore, obvious that 
+
+$$
+\begin{align}
+\text{tr} \, \bs{T}^T = \text{tr} \, \bs{T}
+\end{align}
+$$
+
+## Determinant {#sec-determinant}
+
+The *determinant* is also a map that maps a tensor to a real number. Here, we give a definition of the determinant that is relevant and useful in the study of continuum mechanics. Let $\bs T$ be a tensor that maps the three vectors $\bs a, \bs b, \bs c$. The scalar triple product of the vectors $\bs a, \bs b, \bs c$ is given by
+$$
+\begin{align}
+\abs{\bs a \cdot (\bs b \times \bs c)}
+\end{align}
+$$
+
+which represents the volume of a parallelopiped constructed by the three vectors. Then the determinant of $\bs{T}$, denoted $\text{det} \, \bs T$ is given by
+$$
+\begin{align}
+\text{det} \, \bs T &= \frac{\abs{\bs T \bs a \cdot (\bs T \bs b \times \bs T \bs c)}}{\abs{\bs a \cdot (\bs b \times \bs c)}} .
+\end{align}
+$$
+
+In component form, the determinant of $\bs{T}$ is the determinant of the matrix of $\bs{T}$.
+$$
+\begin{align}
+\text{det} \, \bs T &= \text{det} \, [\bs T]
+\end{align}
+$$
