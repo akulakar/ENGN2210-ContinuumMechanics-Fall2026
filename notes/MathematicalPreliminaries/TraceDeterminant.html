@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Einstein Summation Convention – ENGN2210 — Continuum Mechanics</title>
+<title>7&nbsp; Trace and determinant – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" rel="next">
-<link href="../../notes/MathematicalPreliminaries/Tensors.html" rel="prev">
+<link href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" rel="next">
+<link href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -214,7 +214,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -274,7 +274,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></span></a>
   </div>
 </li>
@@ -286,7 +286,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span></a>
   </div>
 </li>
@@ -308,20 +308,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#expression-terms-indices" id="toc-expression-terms-indices" class="nav-link active" data-scroll-target="#expression-terms-indices"><span class="header-section-number">5.1</span> Expression, Terms, Indices</a>
-  <ul class="collapse">
-  <li><a href="#free-and-dummy-indices" id="toc-free-and-dummy-indices" class="nav-link" data-scroll-target="#free-and-dummy-indices"><strong>Free and dummy indices</strong></a></li>
-  </ul></li>
-  <li><a href="#kronecker-delta-symbol" id="toc-kronecker-delta-symbol" class="nav-link" data-scroll-target="#kronecker-delta-symbol"><span class="header-section-number">5.2</span> Kronecker-Delta symbol</a></li>
+  <li><a href="#sec-trace" id="toc-sec-trace" class="nav-link active" data-scroll-target="#sec-trace"><span class="header-section-number">7.1</span> Trace</a></li>
+  <li><a href="#sec-determinant" id="toc-sec-determinant" class="nav-link" data-scroll-target="#sec-determinant"><span class="header-section-number">7.2</span> Determinant</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></h1>
+<h1 class="title"><span id="sec-trace_determinant" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span></h1>
 </div>
 
 
@@ -338,389 +335,54 @@ window.Quarto = {
 </header>
 
 
-<section id="expression-terms-indices" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="expression-terms-indices"><span class="header-section-number">5.1</span> Expression, Terms, Indices</h2>
-<p><span class="math display">\[
-\begin{equation}
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-\end{equation}
+<section id="sec-trace" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-trace"><span class="header-section-number">7.1</span> Trace</h2>
+<p>The <em>trace</em> is a map that maps a tensor to a real number and obeys the following rules: For any tensor <span class="math inline">\(\bs T\)</span> and <span class="math inline">\(\bs S\)</span> and any vectors <span class="math inline">\(\bs a, \bs b\)</span>, <span class="math display">\[
+    \begin{align}
+        \rm{tr}\pr{\bs T + \bs S} &amp;= \rm{tr} \bs T + \rm{tr} \bs S \\
+        \rm{tr}\pr{\alpha \bs T} &amp;= \alpha ~\rm{tr} \bs T \\
+        \rm{tr}\pr{\bs{a} \otimes \bs{b}} &amp;= \bs a \cdot \bs b
+    \end{align}
 \]</span></p>
-<p>The expression above contains three terms. The symbols <span class="math inline">\(i,m,k,q\)</span> denote indices. They typically run from one to number of space dimensions, i.e., two or three.</p>
-<p>The complexity of the terms can be indefinitely increased. <span class="math display">\[
-\begin{equation}
-a_{ij} x_ix_jx_k
-\end{equation}
-\]</span></p>
-<section id="free-and-dummy-indices" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="free-and-dummy-indices"><strong>Free and dummy indices</strong></h3>
-<div id="def-free_indices" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5.1</strong></span> A <strong><span style="color: red;">free index</span></strong> is an index that appears only once.</p>
-</div>
-<div id="def-dummy_indices" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5.2</strong></span> A <strong><span style="color: red;">dummy index</span></strong> is an index that appears exactly twice.</p>
-</div>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_{m}
-}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{k,q\}
-}
-\end{equation}
-\]</span></p>
-<section id="rules" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="rules"><strong>Rules</strong></h4>
-<p><span style="color: red;">Rule 1.1:</span> <em>A dummy index implies a sum w.r.t that index.</em></p>
-<p><span style="color: red;">Rule 1.2:</span> <em>In Einstein summation convention, an index cannot appear more than twice</em></p>
-<section id="examples" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples"><strong>Examples</strong></h6>
-<ol type="1">
-<li><span class="math display">\[\begin{align} x_{i}y_{i} &amp; = x_1y_1+ x_2 y_2+ x_3 y_3 \end{align}\]</span></li>
-<li><span class="math display">\[\begin{align} m^{j}v_{j} &amp; = m^{1}v_{1}+m^{2}v_{2}+m^{3}v_{3} \end{align}\]</span></li>
-<li><span class="math display">\[
-\begin{align} a_{ij}x_i y_j&amp;=x_ia_{i1} y_1+x_ia_{i2} y_2+x_ia_{i3} y_3\\
-          &amp;=(x_1a_{11}+x_2a_{21}+x_3a_{31}) y_1
-          +(x_1a_{12}+x_2a_{22}+x_3a_{32}) y_2+
-          (x_1a_{13}+x_2a_{23}+x_3a_{33}) y_3\\
-          &amp;=(a_{11}x_1y_1+a_{21}x_2y_1+a_{31}x_3y_1
-           +a_{12}x_1y_2+a_{22}x_2y_2+a_{32}x_3y_2
-           +a_{13}x_1y_3+a_{23}x_2y_3+a_{33}x_3y_3)
-\end{align}
-\]</span></li>
-<li><span class="math display">\[\begin{align}a_{ijk}x_ix_j x_k&amp;=\sum_{i=1}^{3}
-                \sum_{j=1}^{3}
-                \sum_{k=1}^{3} a_{ijk}x_ix_j x_k
-  \end{align}
-\]</span></li>
-<li><span class="math display">\[
-\begin{align}
-   x_i a_j x_j a_i&amp;=\sum_{i=1}^{3}
-                 \sum_{j=1}^{3} x_i a_j x_j a_i\\
-                 &amp;= \sum_{i=1}^{3}x_i a_i \sum_{j=1}^{3}  x_j a_j
-   \end{align}
-\]</span></li>
-</ol>
-</section>
-<section id="non-examples" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="non-examples"><strong>Non-examples</strong></h6>
-<p><span class="math display">\[
-\begin{equation}
-x_{jj}y_j
-\quad \text{(Not okay; j repeated thrice)}
-\end{equation}
-\]</span></p>
-<p><span style="color: red;">Rule 2.a (Renaming of dummy indices):</span> <em>A dummy index can be renamed, as long as the new name does not conflict with the names of the other dummy or free indices in the same term</em></p>
-</section>
-<section id="examples-1" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-1"><strong>Examples</strong></h6>
+<p>The first two properties of the trace show that the trace is a linear map.</p>
+<p>In terms of tensor components,</p>
 <p><span class="math display">\[
 \begin{align}
-x_iy_i&amp;\Rightarrow x_j y_j\\
+\text{tr} \, \bs{T} = \text{tr}({T_{ij}}\bs{e}_i\bs{e}_j) = {T_{ij}}\text{tr}(\bs{e}_i\bs{e}_j) = {T_{ij}}\bs{e}_i\bs{e}_j = {T_{ij}}{\delta_{ij}} = {T_{ii}}.
 \end{align}
 \]</span></p>
-<p><span class="math display">\[
-\begin{align}
-a_ix_jy_j&amp;\Rightarrow a_ix_k y_k, \quad (\text{OK, no conflict with free index}) \\
-a_ix_jy_j&amp;\not\Rightarrow a_ix_i y_i \quad (\text{conflict with free index})\\
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \Rightarrow
-                                A_{im}x_{m}+b_i+C_{ipq}x_{p}y_{q}\quad (\text{OK, no conflict}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \Rightarrow
-                                A_{im}x_{m}+b_i+C_{imq}x_{m}y_{q}\quad (\text{OK, no conflict}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \not\Rightarrow
-                                A_{im}x_{m}+b_i+C_{iiq}x_{i}y_{q}\quad (\text{conflict with free index}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \not\Rightarrow
-                                A_{im}x_{m}+b_i+C_{iqq}x_{q}y_{q}\quad (\text{conflict with dummy index}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                                &amp;\not \Rightarrow
-                                 A_{ii}x_{i}+b_i+C_{ikq}x_{k}y_{q}\quad (\text{conflict with free index}) \\
-\end{align}
-\]</span></p>
-<p><span style="color: red;">Rule 2.b:</span> <em>Different terms can have same dummy indices.</em></p>
-</section>
-<section id="examples-2" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-2"><strong>Examples</strong></h6>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\{i\}\\
-\{k,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\{i\}\\
-\{k \rightarrow m,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{imq} x_{m} y_{q}}_{
-\{i\}\\
-\{m,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{imq} x_{m} y_{q}}_{
-\{i\}\\
-\{m \rightarrow i,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{iiq} x_{i} y_{q}}_{
-  \{i\}\\
-\{i,q\}
-}
-\end{equation}
-\]</span> (Not okay - conflict with free index)</p>
-<p><span style="color: red;">Rule 3 (Free Indices):</span> <em>A free index denotes a set of</em> <span class="math inline">\(n_{\rm{sd}}\)</span> <em>terms</em></p>
-</section>
-<section id="examples-3" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-3"><strong>Examples</strong></h6>
-<p><span class="math display">\[
-\begin{align}
-a_{i}&amp;\Rightarrow\{a_1,a_2,a_3\}\\
-a_{i}=b_{i}&amp;\Rightarrow\{a_1=b_1,a_2=b_2,a_3=b_3\}\\
-a_{i}+b_{i}&amp;\Rightarrow\{a_1+b_1,a_2+b_2,a_3+b_3\}\\
-\end{align}
-\]</span></p>
-<!-- Removed equation: A_{ij}&\Rightarrow\{A_{11},A_{12},A_{13},A_{21},A_{22},A_{23},A_{31},A_{32},A_{33},\}\\  ZZ, 20230208-->
-</section>
-<section id="denoting-ordered-sets" class="level5 unnumbered">
-<h5 class="unnumbered anchored" data-anchor-id="denoting-ordered-sets">Denoting ordered sets</h5>
-<p><span class="math display">\[(\left(A_{ij})_{j\in \mathcal{I}}\right)_{i\in \mathcal{I}}=(A_{ij})_{i,~j\in \mathcal{I}}\]</span></p>
-<p><span class="math display">\[\left(\left(A_{1j}\right)_{j \in \mathcal{I}},
-\left(A_{2j}\right)_{j\in \mathcal{I}},
-\left(A_{3j}\right)_{j\in \mathcal{I}}\right)
-\]</span></p>
-<!-- % &=
-% (\left(A_{1j}\right)_{j\in \mathcal{I}},
-% \left( A_{2j}\right)_{j\in \mathcal{I}},
-% \left( A_{2j} \right)_{j\in \mathcal{I}}) -->
-<p>Notice that in each expression, all terms have the same set of free indices. That is, take a look at the expression,</p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_{m}
-}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{k,q\}
-}
-\end{equation}
-\]</span></p>
-<p>This is a consequence of the following rule:</p>
-<p><span style="color: red;">Rule 4:</span> <em>All terms in an expression should have the same set of free indices.</em></p>
-<section id="examples-4" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-4"><strong>Examples</strong></h6>
-<p><span class="math display">\[
-\begin{align}
-a_i +b_i\quad (\text{OK})\\
-a_j +b_j\quad (\text{OK})\\
-a_i +b_j\quad (\text{Not OK})\\
-M_i =C_{mi}b_m\quad (\text{OK})\\
-M_i =C_{mj}b_m\quad (\text{Not OK})\\
-\end{align}
-\]</span></p>
-<p><span style="color: red;">Rule 5:</span> <em>All terms in an expression should have the same set of free indices.</em></p>
-<!-- (the power of computers) - Viola Mathematica -->
-</section>
-</section>
-</section>
-</section>
-</section>
-<section id="kronecker-delta-symbol" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="kronecker-delta-symbol"><span class="header-section-number">5.2</span> Kronecker-Delta symbol</h2>
-<p>Kronecker delta, denoted by <span class="math inline">\(\delta_{ij}\)</span>, is defined as:</p>
-<p>$$ <span class="math display">\[\begin{equation}
-\delta_{ij} =
-\begin{cases}
-  1 &amp; i=j \\
-  0 &amp; i \neq j
-\end{cases}
-\end{equation}\]</span></p>
-<p>$$</p>
 <p>That is,</p>
-<p><span class="math inline">\(\delta_{11}=1\)</span> <span class="math inline">\(\delta_{12}=0\)</span> <span class="math inline">\(\delta_{13}=0\)</span> <span class="math inline">\(\delta_{21}=0\)</span> <span class="math inline">\(\delta_{22}=1\)</span> <span class="math inline">\(\delta_{23}=0\)</span> <span class="math inline">\(\delta_{31}=0\)</span> <span class="math inline">\(\delta_{32}=0\)</span> <span class="math inline">\(\delta_{33}=1\)</span></p>
-<p>For example, <span class="math inline">\(\delta_{12}=0\)</span> and <span class="math inline">\(\delta_{33}=1\)</span>.</p>
-<section id="identity-matrix" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="identity-matrix"><strong>Identity Matrix</strong></h4>
 <p><span class="math display">\[
-\mathbb{\mathsf{I}}
-=
-\left(\delta_{ij}\right)= \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{pmatrix}\\
-\text{Read paranthesis as ``matrix representation of the Kronecker-delta symbol``}
-\]</span> <span class="math display">\[\left[\delta_{ij}\right]= \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</span></p>
+\begin{align}
+\text{tr} \, \bs{T} = {T_{11}} + {T_{22}} + {T_{33}} = \text{sum of diagonal elements}.
+\end{align}
+\]</span></p>
+<p>It is, therefore, obvious that</p>
+<p><span class="math display">\[
+\begin{align}
+\text{tr} \, \bs{T}^T = \text{tr} \, \bs{T}
+\end{align}
+\]</span></p>
 </section>
-<section id="properties-of-the-kronecker-delta" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="properties-of-the-kronecker-delta"><strong>Properties of the Kronecker Delta</strong></h4>
-<ol type="1">
-<li>Replacement Property:</li>
-</ol>
-<p><span class="math display">\[
+<section id="sec-determinant" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-determinant"><span class="header-section-number">7.2</span> Determinant</h2>
+<p>The <em>determinant</em> is also a map that maps a tensor to a real number. Here, we give a definition of the determinant that is relevant and useful in the study of continuum mechanics. Let <span class="math inline">\(\bs T\)</span> be a tensor that maps the three vectors <span class="math inline">\(\bs a, \bs b, \bs c\)</span>. The scalar triple product of the vectors <span class="math inline">\(\bs a, \bs b, \bs c\)</span> is given by <span class="math display">\[
 \begin{align}
-\delta_{1m}a_m
-=\delta_{11}a_1+\delta_{12}a_2+\delta_{13}a_3\ \\
-=1a_1+0a_2+0a_3\ \\
-=a_1 \end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-\delta_{2m}a_m = \delta_{21}a_1+\delta_{22}a_2+0a_3\ \\ =a_2
+\abs{\bs a \cdot (\bs b \times \bs c)}
 \end{align}
 \]</span></p>
-<p><span class="math display">\[
-\begin{align} \delta_{3m}a_m &amp; = \delta_{31}a_1+\delta_{32}a_2+\delta_{33}a_3\ \\
-=0a_1+0a_2+a_3\ \\
-=a_3
-\end{align}
-\]</span></p>
-<p>So, <span class="math inline">\(\delta_{im}a_m = a_i\)</span>, <span class="math inline">\((\delta_{1m}a_m, \delta_{2m}a_m , \delta_{3m}a_m) = (a_1, a_2, a_3)\)</span>, <span class="math inline">\(\delta_{1m}a_m = a_i\)</span>.</p>
-<p><span class="math display">\[
+<p>which represents the volume of a parallelopiped constructed by the three vectors. Then the determinant of <span class="math inline">\(\bs{T}\)</span>, denoted <span class="math inline">\(\text{det} \, \bs T\)</span> is given by <span class="math display">\[
 \begin{align}
-\delta_{1m}T_{mj} &amp; = \delta_{11}T_{1j}+ \delta_{12}T_{2j}+\delta_{13}T_{3j} =T_{1j} \\
-\delta_{2m}T_{mj} &amp; = \delta_{21}T_{1j}+ \delta_{22}T_{2j}+\delta_{23}T_{3j} =T_{2j} \\
-\delta_{3m}T_{mj} &amp; = \delta_{31}T_{1j}+ \delta_{32}T_{2j}+\delta_{33}T_{3j} =T_{3j}
+\text{det} \, \bs T &amp;= \frac{\abs{\bs T \bs a \cdot (\bs T \bs b \times \bs T \bs c)}}{\abs{\bs a \cdot (\bs b \times \bs c)}} .
 \end{align}
 \]</span></p>
-<p><span class="math display">\[
-\begin{bmatrix}
-\delta_{1m}T_{mj} = T_{1j} \\
-\delta_{2m}T_{mj} = T_{2j} \\
-\delta_{3m}T_{mj} = T_{3j}
-\end{bmatrix}
-\]</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{1m}T_{mj} = T_{1j},  \delta_{2m}T_{mj} = T_{2j}, \delta_{3m}T_{mj}=T_{3j}\)</span>. <span class="math display">\[\delta_{im}T_{mj} = T_{ij}\]</span></p>
-<p><strong>We can generalize the last two results.</strong> If, in a term, the Kronecker delta and another symbol share an index, the index in that symbol can be replaced by the Kronecker delta’s other index in its symbol. <em>For example:</em></p>
-<ol type="1">
-<li><span class="math inline">\(\delta_{im}a_{mb}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ib}\)</span></li>
-<li><span class="math inline">\(\delta_{mi}a_{mb}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a_{ib}\)</span></li>
-<li><span class="math inline">\(\delta_{im}a_{pqms}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a_{pqis}\)</span></li>
-<li><span class="math inline">\(\delta_{im}\delta_{mj}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ij}\)</span></li>
-<li><span class="math inline">\(\delta_{im}\delta_{mn}\delta_{nj}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{in}\delta_nj\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ij}\)</span></li>
-</ol>
-<!-- <br /> -->
-<p><span class="math display">\[
+<p>In component form, the determinant of <span class="math inline">\(\bs{T}\)</span> is the determinant of the matrix of <span class="math inline">\(\bs{T}\)</span>. <span class="math display">\[
 \begin{align}
-\delta_{m1}T_{mj} &amp;= \delta_{11}T_{1j} + \delta_{21}T_{2j}+ \delta_{31}T_{3j} = T_{1j} \\
-\delta_{m2}T_{mj} &amp;= \delta_{12}T_{1j} + \delta_{22}T_{2j}+ \delta_{32}T_{3j} = T_{2j} \\
-\delta_{m3}T_{mj} &amp;= \delta_{13}T_{1j} + \delta_{23}T_{2j}+ \delta_{33}T_{3j} = T_{3j}
+\text{det} \, \bs T &amp;= \text{det} \, [\bs T]
 \end{align}
 \]</span></p>
-<p><span class="math display">\[
-\begin{align}
-\delta_{m1}T_{mj} &amp;= T_{1j} \\
-\delta_{m2}T_{mj} &amp;= T_{2j} \\
-\delta_{m3}T_{mj} &amp;= T_{3j} \\
-\delta_{mi}T_{mj} &amp;= T_{ij}
-\end{align}
-\]</span></p>
-<!-- [<span style="color:gray; opacity:0.2"> [edit] </span>](https://github.com/AppliedMechanicsLab/appliedmechanicslab/blob/master/course_notes/ENGN1370/ESC.md) -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1126,13 +788,13 @@ M_i =C_{mj}b_m\quad (\text{Not OK})\\
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="pagination-link" aria-label="Tensors">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tensors</span></span>
+      <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="pagination-link" aria-label="Vector and Tensor Components">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="pagination-link" aria-label="Vector and Tensor Components">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="pagination-link" aria-label="Change of basis">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

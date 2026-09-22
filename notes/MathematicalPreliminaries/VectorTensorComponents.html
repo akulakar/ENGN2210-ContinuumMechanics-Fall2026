@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Vector Components – ENGN2210 — Continuum Mechanics</title>
+<title>6&nbsp; Vector and Tensor Components – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" rel="next">
 <link href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -213,7 +214,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorComponents.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector Components</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -279,8 +280,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/VectorComponents.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector Components</span></span></a>
+  <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></span></a>
   </div>
 </li>
       </ul>
@@ -295,16 +308,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-vector_components" id="toc-sec-vector_components" class="nav-link active" data-scroll-target="#sec-vector_components"><span class="header-section-number">6.1</span> Components of Vectors</a></li>
+  <li><a href="#sec-vector_components" id="toc-sec-vector_components" class="nav-link active" data-scroll-target="#sec-vector_components"><span class="header-section-number">6.1</span> Vector Components</a></li>
+  <li><a href="#sec-tensor_components" id="toc-sec-tensor_components" class="nav-link" data-scroll-target="#sec-tensor_components"><span class="header-section-number">6.2</span> Tensor Components</a>
+  <ul class="collapse">
+  <li><a href="#sec-tensor_matrix_representation" id="toc-sec-tensor_matrix_representation" class="nav-link" data-scroll-target="#sec-tensor_matrix_representation"><span class="header-section-number">6.2.1</span> Computing the matrix representation of a tensor</a></li>
+  <li><a href="#sec-tensor_dyadic_components" id="toc-sec-tensor_dyadic_components" class="nav-link" data-scroll-target="#sec-tensor_dyadic_components"><span class="header-section-number">6.2.2</span> Representation of tensors as a sum of dyadics products</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorComponents.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector Components</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-vec_components" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector Components</span></span></h1>
+<h1 class="title"><span id="sec-vec_components" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span></h1>
 </div>
 
 
@@ -321,9 +339,20 @@ window.Quarto = {
 </header>
 
 
+<p>Henceforth, the Einstein summation convention will be employed.</p>
 <section id="sec-vector_components" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="sec-vector_components"><span class="header-section-number">6.1</span> Components of Vectors</h2>
-<p>These vectors span <span class="math inline">\(\b{E}^{3}\)</span>. That is any vector <span class="math inline">\(\bs{u} \in \b{E}^{3}\)</span> can be written as a linear combination of these basis vectors.</p>
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-vector_components"><span class="header-section-number">6.1</span> Vector Components</h2>
+<p>A vector can be written as a linear combination of a basis, that is a list of linearly independent vectors the span the space. We are typically interested in vectors that belong to <span class="math inline">\(\b{E}^{n}\)</span>.</p>
+<div id="def-orthogonality" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6.1</strong></span> <strong><span style="color: red;">Orthogonal vectors</span></strong></p>
+<p>Two vectors <span class="math inline">\(\bs{u}, \bs{v} \in \b{E}^n\)</span> are <em>orthogonal</em> if <span class="math inline">\(\bs{u} \cdot \bs{v} = 0\)</span>.</p>
+</div>
+<div id="def-orthonormal-basis" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6.2</strong></span> <strong><span style="color: red;">Orthonormal basis</span></strong></p>
+<p>An <em>orthonormal basis</em> is a basis whose elements are mutually orthogonal and have a unit norm.</p>
+</div>
+<p>We typically denote orthonormal basis vectors with a tophat, for example <span class="math inline">\(\{\hat{\bs{E}}_{i}\}_{i=1,2,3}\)</span>. Further, we will typically make use of orthonormal basis vectors unless specified otherwise.</p>
+<p>Let <span class="math inline">\(\{\hat{\bs{E}}_{i}\}_{i=1,2,3}\)</span> form an orthonormal basis for <span class="math inline">\(\b{E}^{3}\)</span>. That is any vector <span class="math inline">\(\bs{u} \in \b{E}^{3}\)</span> can be written as a linear combination of these basis vectors.</p>
 <p><span class="math display">\[
 \begin{align}
 \bs{x}&amp;=x_1 \hat{\bs{E}}_1+ x_2 \hat{\bs{E}}_2+ x_3 \hat{\bs{E}}_3\\
@@ -332,7 +361,7 @@ window.Quarto = {
 \]</span></p>
 <p><span class="math display">\[
 \begin{align}
-[\bs{x}]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&amp;=
+[\bs{x}]_{\{\hat{\bs{E}}_{i}\}_{i=1,2,3}}&amp;=
 \left[
 \begin{array}{c}
 x_1\\
@@ -342,216 +371,427 @@ x_3
 \right]
 \end{align}
 \]</span></p>
-<p>However if we are given a new basis, a basis different from <span class="math inline">\(\{\hat{\bs{E}}\}_{i=1,2,3}\)</span>, say <span class="math inline">\(\{\hat{\bs{F}}\}_{i=1,2,3}\)</span>. Would the components of <span class="math inline">\(\bs{x}\)</span> in <span class="math inline">\(\{\hat{\bs{F}}\}_{i=1,2,3}\)</span> be the same as in <span class="math inline">\(\{\hat{\bs{E}}\}_{i=1,2,3}\)</span>. That is, would</p>
+<p>Let <span class="math inline">\(\{\hat{\bs{F}}_{i}\}_{i=1,2,3}\)</span> form another orthonormal basis for <span class="math inline">\(\b{E}^{3}\)</span>. Then,</p>
+<p><span class="math display">\[
+\begin{align}
+\bs{x}&amp;=\tilde{x}_1 \hat{\bs{F}}_1+ \tilde{x}_2 \hat{\bs{F}}_2+ \tilde{x}_3 \hat{\bs{F}}_3\\
+\bs{x}&amp;=\tilde{x}_i \hat{\bs{F}}_i
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+[\bs{x}]_{\{\hat{\bs{F}}_{i}\}_{i=1,2,3}}&amp;=
+\left[
+\begin{array}{c}
+\tilde{x}_1\\
+\tilde{x}_2\\
+\tilde{x}_3
+\end{array}
+\right]
+\end{align}
+\]</span></p>
+<p>Notice that the components differ when the chosen basis differs. Additionally, for clarity, the matrix representation of the components may include a subscript denoting the basis. The following are equivalent representations of the vector:</p>
+<p><span class="math display">\[
+\begin{align}
+\bs{x} = x_{i} \hat{\bs{E}}_{i} = \tilde{x}_{i} \hat{\bs{F}}_{i}
+\end{align}
+\]</span></p>
+<p>The question is, are the components <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(\tilde{x}_i\)</span> the same? In general no. However, a relation between the two represenation can be determined using a change of basis, which will be discussed in a later section.</p>
+</section>
+<section id="sec-tensor_components" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-tensor_components"><span class="header-section-number">6.2</span> Tensor Components</h2>
+<p>Say <span class="math inline">\(\bs{T} : \b{E}^{n} \ra \b{E}^n\)</span> is a tensor. Then we define its components <span class="math inline">\(T_{ij}\)</span> w.r.t. to the two bases <span class="math inline">\(\hat{\bs{E}}_i\)</span> and <span class="math inline">\(\hat{\bs{F}}_i\)</span> as</p>
+<p><span class="math display">\[
+\begin{align}
+T_{ij}=\hat{\bs{F}}_i\cdot(\bs{T} \hat{\bs{E}}_j)
+\end{align}
+\]</span></p>
+<p>Typically, we chose both bases to be the same to simplify our study. That is, the components of <span class="math inline">\(\bs{T}\)</span> w.r.t the basis <span class="math inline">\(\hat{\bs{E}}_i\)</span> is given by <span class="math display">\[
+\begin{align}
+T_{ij}=\hat{\bs{E}}_i\cdot(\bs{T} \hat{\bs{E}}_j)
+\end{align}
+\]</span></p>
+<p>Let <span class="math inline">\(\bs{T} : \b{E}^{3} \ra \b{E}^3\)</span> be a tensor. We define the matrix representation of <span class="math inline">\(\bs{T}\)</span> as the <span class="math inline">\(3\times 3\)</span> matrix that we denote as <span class="math inline">\(\left[\bs{T}\right]\)</span> that satisfies the following equation <span class="math display">\[\begin{align}
+\left[ \bs{T}\right]
+\left[ \bs{a}\right]&amp;=\left[ \bs{T}\bs{a}\right]
+\end{align}
+\]</span></p>
+<p>for all <span class="math inline">\(\bs{a}\in \mathbb{E}^3\)</span>. Let <span class="math inline">\(\bs{T}\bs{a}=\bs{b}\)</span>, where <span class="math inline">\(\bs b = b_i \hat{\bs{E}}_i\)</span>. The matrix representation of <span class="math inline">\(\bs{b}\)</span> is,</p>
 <p><span class="math display">\[
 \begin{equation}
-\bs{x}\stackrel{?}{=}x_i \hat{\bs{F}}_i
+\left[\bs{b}\right]=
+\left[
+\begin{array}{c}
+b_1\\
+b_2\\
+b_3\\
+\end{array}
+\right]
 \end{equation}
 \]</span></p>
-<p>The answer is no. Typically, in a different basis the components of <span class="math inline">\(\bs{x}\)</span> will be different. This is same as measuring the size of an object using a scale that in centimeter unit and another scale which is units of inches. Thus, we will have</p>
-<p><span class="math display">\[
+<p>Then we have that, <span class="math display">\[
 \begin{align}
-\bs{x}&amp;=y_1 \hat{\bs{F}}_1+y_2 \hat{\bs{F}}_2+y_3 \hat{\bs{F}}_3\\
-\bs{x}&amp;=y_i \hat{\bs{F}}_i,
+\left[ \bs{T}\right]
+\left[ \bs{a}\right]&amp;=\left[ \bs{b}\right]\\
 \end{align}
-\]</span> i.e.,</p>
-<p><span class="math display">\[
+\]</span></p>
+<p>Let <span class="math inline">\(T_{ij}\)</span> be the <span class="math inline">\(i-j^{\text{th}}\)</span> component of the matrix <span class="math inline">\(\left[\bs{T}\right]\)</span>, i.e., <span class="math inline">\(T_{ij}=\left[\bs{T}\right]_{ij}\)</span>. More explicitly, <span class="math display">\[
 \begin{align}
-[\bs{x}]_{\{\hat{\bs{F}}\}_{i=1,2,3}}&amp;=
+\left[\bs{T}\right]&amp;=
 \left[
-\begin{array}{c}
-y_1\\
-y_2\\
-y_3
+\begin{array}{ccc}
+T_{11} &amp;&amp; T_{12} &amp;&amp; T_{13} \\
+T_{21} &amp;&amp; T_{22} &amp;&amp; T_{23} \\
+T_{31} &amp;&amp; T_{32} &amp;&amp; T_{33} \\
 \end{array}
 \right]
 \end{align}
 \]</span></p>
-<p>and typically <span class="math inline">\(x_i \not= y_i\)</span>.</p>
-<p>The question now arrises, if we know <span class="math inline">\(x_i\)</span> how do we find <span class="math inline">\(y_i\)</span>? The answer to this question involves the transformation matrix <span class="math inline">\([Q]\)</span>, such that,</p>
-<p>Since <span class="math inline">\(\{\hat{\bs{E}}\}_{i=1,2,3}\)</span> is a basis, and hence each of <span class="math inline">\(\hat{\bs{F}}_j\)</span> can be written as a linear combination of <span class="math inline">\(\{\hat{\bs{E}}\}_{i=1,2,3}\)</span>.</p>
 <p><span class="math display">\[
 \begin{align}
-\hat{\bs{F}}_1
+\left[
+\begin{array}{ccc}
+T_{11} &amp;&amp; T_{12} &amp;&amp; T_{13} \\
+T_{21} &amp;&amp; T_{22} &amp;&amp; T_{23} \\
+T_{31} &amp;&amp; T_{32} &amp;&amp; T_{33} \\
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+a_1\\
+a_2\\
+a_3\\
+\end{array}
+\right]
 &amp;=
-Q_{11}\hat{\bs{E}}_1+
-Q_{21}\hat{\bs{E}}_2+
-Q_{31}\hat{\bs{E}}_3
+\left[
+\begin{array}{c}
+b_1\\
+b_2\\
+b_3\\
+\end{array}
+\right]
+\end{align}
+\]</span></p>
+<p>or equivalently, <span class="math display">\[
+\begin{align}
+T_{11}a_1 + T_{12}a_2 + T_{13}a_3 = b_1\\
+T_{21}a_1 + T_{22}a_2 + T_{23}a_3 = b_2\\
+T_{31}a_1 + T_{32}a_2 + T_{33}a_3 = b_3\\
+\end{align}
+\]</span></p>
+<section id="sec-tensor_matrix_representation" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-tensor_matrix_representation"><span class="header-section-number">6.2.1</span> Computing the matrix representation of a tensor</h3>
+<p><strong>Motivating example</strong></p>
+<p>Let <span class="math inline">\(\bs{T}\)</span> be a tensor that transforms the specific vectors <span class="math inline">\(\bs{a}\)</span> and <span class="math inline">\(\bs{b}\)</span> as follows:</p>
+<p><span class="math display">\[
+\begin{align}
+\bs{T}\bs{a} = \bs{a} + 2\bs{b}, \\
+\bs{T}\bs{b} = \bs{a} - \bs{b}.
+\end{align}
+\]</span></p>
+<p>Given a vector <span class="math inline">\(\bs{c} = 2\bs{a} + \bs{b}\)</span>, find <span class="math inline">\(\bs{T}\bs{c}\)</span>.</p>
+<p><strong><em>Solution</em></strong></p>
+<p>Using the linearity property of tensors, we have <span class="math display">\[
+\begin{align}
+\bs{T}\bs{c} = \bs{T}(2\bs{a} + \bs{b})=2\bs{T}\bs{a} + \bs{T}\bs{b} = 2(\bs{a} + 2\bs{b}) + (\bs{a} - \bs{b}) = 3\bs{a} + 3\bs{b}.
+\end{align}
+\]</span></p>
+<p>So let us start by defining the Matrix <span class="math display">\[
+\begin{align}
+\left[Q\right]
+&amp;=
+\left[
+\begin{array}{ccc}
+Q_{11} &amp;&amp; Q_{12} &amp;&amp; Q_{13}  \\
+Q_{21} &amp;&amp; Q_{22} &amp;&amp; Q_{23}  \\
+Q_{31} &amp;&amp; Q_{32} &amp;&amp; Q_{33}
+\end{array}
+\right]
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\bs{T}\hat{\bs{E}}_1&amp;=Q_{11}\hat{\bs{E}}_1+Q_{21}\hat{\bs{E}}_2+Q_{31}\hat{\bs{E}}_3\\
+\bs{T}\hat{\bs{E}}_2&amp;=Q_{12}\hat{\bs{E}}_1+Q_{22}\hat{\bs{E}}_2+Q_{32}\hat{\bs{E}}_3\\
+\bs{T}\hat{\bs{E}}_3&amp;=Q_{13}\hat{\bs{E}}_1+Q_{23}\hat{\bs{E}}_2+Q_{33}\hat{\bs{E}}_3\\
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\bs{T}\bs{a}&amp;=\bs{T}\left(a_1\hat{\bs{E}}_1+a_2\hat{\bs{E}}_2+a_3\hat{\bs{E}}_3\right)\\
+&amp;=\bs{T}\left(a_1\hat{\bs{E}}_1\right)+\bs{T}\left(a_2\hat{\bs{E}}_2\right)+\bs{T}\left(a_3\hat{\bs{E}}_3\right)\\
+&amp;=a_1\left(\bs{T}\hat{\bs{E}}_1\right)+a_2 \left(\bs{T}\hat{\bs{E}}_2\right)+a_3\left(\bs{T}\hat{\bs{E}}_3\right)\\
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\bs{T}\bs{a}
+&amp;=a_1\left(\bs{T}\hat{\bs{E}}_1\right)+a_2 \left(\bs{T}\hat{\bs{E}}_2\right)+a_3\left(\bs{T}\hat{\bs{E}}_3\right)\\
+&amp;=a_1\left(Q_{11}\hat{\bs{E}}_1+Q_{21}\hat{\bs{E}}_2+Q_{31}\hat{\bs{E}}_3\right)+a_2 \left(Q_{12}\hat{\bs{E}}_1+Q_{22}\hat{\bs{E}}_2+Q_{32}\hat{\bs{E}}_3\right)+a_3\left(Q_{13}\hat{\bs{E}}_1+Q_{23}\hat{\bs{E}}_2+Q_{33}\hat{\bs{E}}_3\right)
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\bs{T}\bs{a}
+&amp;=\left(Q_{11}a_1\hat{\bs{E}}_1+Q_{21}a_1\hat{\bs{E}}_2+Q_{31}a_1\hat{\bs{E}}_3\right)+ \left(Q_{12}a_2\hat{\bs{E}}_1+Q_{22}a_2\hat{\bs{E}}_2+Q_{32}a_2\hat{\bs{E}}_3\right)+\left(Q_{13}a_3\hat{\bs{E}}_1+Q_{23}a_3\hat{\bs{E}}_2+Q_{33}a_3\hat{\bs{E}}_3\right)
 \\
-\hat{\bs{F}}_2
 &amp;=
-Q_{12}\hat{\bs{E}}_1+
-Q_{22}\hat{\bs{E}}_2+
-Q_{32}\hat{\bs{E}}_3
+\left(
+Q_{11}a_1+
+Q_{12}a_2+
+Q_{13}a_3\right)\hat{\bs{E}}_1
++
+\left(
+Q_{21}a_1+
+Q_{22}a_2+
+Q_{23}a_3\right)\hat{\bs{E}}_2
++
+\left(
+Q_{31}a_1+
+Q_{32}a_2+
+Q_{33}a_3
+\right)\hat{\bs{E}}_3
+\end{align}
+\]</span></p>
+<p><span class="math display">\[\begin{align}
+\left[\bs{T}\bs{a}\right]
+&amp;=
+\left[
+  \begin{array}{c}
+  Q_{11}a_1+Q_{12}a_2+Q_{13}a_3\\
+  Q_{21}a_1+Q_{22}a_2+Q_{23}a_3\\
+  Q_{31}a_1+Q_{32}a_2+Q_{33}a_3
+  \end{array}
+\right]
 \\
-\hat{\bs{F}}_3
+\left[\bs{b}\right]&amp;=
+\left[
+  \begin{array}{ccc}
+    Q_{11} &amp;&amp; Q_{12} &amp;&amp; Q_{13} \\
+    Q_{21} &amp;&amp; Q_{22} &amp;&amp; Q_{23} \\
+    Q_{31} &amp;&amp; Q_{32} &amp;&amp; Q_{33}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+    a_1\\
+    a_2\\
+    a_3
+  \end{array}
+\right]
+\\
+\left[
+\begin{array}{c}
+b_1\\
+b_2\\
+b_3\\
+\end{array}
+\right]&amp;=
+\left[
+  \begin{array}{ccc}
+    Q_{11} &amp;&amp; Q_{12} &amp;&amp; Q_{13} \\
+    Q_{21} &amp;&amp; Q_{22} &amp;&amp; Q_{23} \\
+    Q_{31} &amp;&amp; Q_{32} &amp;&amp; Q_{33}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+    a_1\\
+    a_2\\
+    a_3
+  \end{array}
+\right]
+\end{align}
+\]</span></p>
+<p>which proves That <span class="math display">\[
+\begin{equation}
+\left[
+\bs{T}
+\right]=
+\left[Q\right]
+\end{equation}
+\]</span></p>
+<p><strong>Example</strong></p>
+<p>Obtain the matrix for the tensor <span class="math inline">\(\bs{T}\)</span> that transforms the base vectors as follows</p>
+<p><span class="math display">\[
+\begin{align}
+\bs{T}\bs{e}_1 &amp;= 4\bs{e}_1 + \bs{e}_2, \\
+\bs{T}\bs{e}_2 &amp;= 2\bs{e}_1 + 3\bs{e}_3,  \\
+\bs{T}\bs{e}_3 &amp;= -\bs{e}_1 + 3\bs{e}_2 + \bs{e}_3,
+\end{align}
+\]</span></p>
+<p><strong><em>Solution</em></strong></p>
+<p>By the definition above,</p>
+<p><span class="math display">\[
+\begin{align}
+\left[\bs{T}\right]
 &amp;=
-Q_{13}\hat{\bs{E}}_1+
-Q_{23}\hat{\bs{E}}_2+
-Q_{33}\hat{\bs{E}}_3
+\left[
+\begin{array}{ccc}
+4 &amp;&amp; 2 &amp;&amp; -1  \\
+1 &amp;&amp; 0 &amp;&amp; 3  \\
+0 &amp;&amp; 3 &amp;&amp; 1
+\end{array}
+\right]
 \end{align}
 \]</span></p>
-<p>The above set of equations can be compactly be written as:</p>
+<hr>
+<p><strong>Example</strong></p>
+<p>Obtain the matrix for the tensor that transforms the base vectors as follows:</p>
 <p><span class="math display">\[
 \begin{align}
-\hat{\bs{F}}_j&amp;=Q_{ij}\hat{\bs{E}}_i
+\bs{T}\bs{e}_1 &amp;= \bs{e}_1 + 2\bs{e}_2 + 3\bs{e}_3,  \\
+\bs{T}\bs{e}_2 &amp;= 4\bs{e}_1 + 5\bs{e}_2 + 6\bs{e}_3,  \\
+\bs{T}\bs{e}_3 &amp;= 7\bs{e}_1 + 8\bs{e}_2 + 9\bs{e}_3.   
 \end{align}
 \]</span></p>
+<p><strong><em>Solution</em></strong></p>
+<p>By inspection,</p>
 <p><span class="math display">\[
 \begin{align}
-\left[\hat{\bs{F}}_1\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&amp;
+\left[\bs{T}\right]
 &amp;=
 \left[
-\begin{array}{c}
-Q_{11}\\
-Q_{21}\\
-Q_{31}
+\begin{array}{ccc}
+1 &amp;&amp; 2 &amp;&amp; 3  \\
+4 &amp;&amp; 5 &amp;&amp; 6  \\
+7 &amp;&amp; 8 &amp;&amp; 9
 \end{array}
 \right]
 \end{align}
 \]</span></p>
+<p>This example emphasizes again the convention we use to write the matrix of a tensor: The component of <span class="math inline">\(\bs{T}\bs{e}_{1}\)</span> fills the first column, the component of <span class="math inline">\(\bs{T}\bs{e}_{2}\)</span> fills the second column, and so on. The reason for this choice of convention will become obvious in the next section.</p>
+<hr>
+<p><strong>Example: Reflection across a plane</strong></p>
+<p>Let <span class="math inline">\(\bs{T}\)</span> transform every vector into its mirror image with respect to a fixed plane; if <span class="math inline">\(\bs{e}_1\)</span> is normal to the reflection plane (<span class="math inline">\(\bs{e}_{2}\)</span> and <span class="math inline">\(\bs{e}_{3}\)</span> are parallel to this plane), find a matrix of <span class="math inline">\(\bs{T}\)</span>.</p>
+<p><strong><em>Solution</em></strong></p>
+<p>Because the normal to the reflection plane is transformed into its negative, and vectors parallel to the place are not altered, we have</p>
 <p><span class="math display">\[
 \begin{align}
-\left[\hat{\bs{F}}_2\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&amp;
+\bs{T}\bs{e}_1 = -\bs{e}_1, \bs{T}\bs{e}_2 = \bs{e}_2, \bs{T}\bs{e}_3 = \bs{e}_3
+\end{align}
+\]</span></p>
+<p>which corresponds to</p>
+<p><span class="math display">\[
+\begin{align}
+\left[\bs{T}\right]
 &amp;=
 \left[
-\begin{array}{c}
-Q_{12}\\
-Q_{22}\\
-Q_{32}
+\begin{array}{ccc}
+-1 &amp;&amp; 0 &amp;&amp; 0  \\
+0 &amp;&amp; 1 &amp;&amp; 0  \\
+0 &amp;&amp; 0 &amp;&amp; 1
 \end{array}
-\right]
+\right]_{\bs{e}_i}.
 \end{align}
 \]</span></p>
+<hr>
+<p><strong>Example: 2D Rotation</strong></p>
+<p>Let <span class="math inline">\(\bs{R}\)</span> correspond to a right-hand rotation of a rigid body about the <span class="math inline">\(x_3\)</span>-axis by an angle <span class="math inline">\(\theta\)</span>. Find a matrix of <span class="math inline">\(\bs{R}\)</span>.</p>
+<p><strong><em>Solution</em></strong></p>
+<p>From the figure, it is clear that</p>
 <p><span class="math display">\[
 \begin{align}
-\left[\hat{\bs{F}}_3\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&amp;
+\bs{R}\bs{e}_1 &amp;= \cos\theta\bs{e}_1 + \sin\theta\bs{e}_2, \\
+\bs{R}\bs{e}_2 &amp;= -\sin\theta\bs{e}_1 + \cos\theta\bs{e}_2, \\
+\bs{R}\bs{e}_3 &amp;= \bs{e}_3.
+\end{align}
+\]</span></p>
+<p>which corresponds to</p>
+<p><span class="math display">\[
+\begin{align}
+\left[\bs{R}\right]
 &amp;=
 \left[
-\begin{array}{c}
-Q_{13}\\
-Q_{23}\\
-Q_{33}
+\begin{array}{ccc}
+\cos\theta &amp;&amp; \sin\theta &amp;&amp; 0  \\
+\sin\theta &amp;&amp; \cos\theta &amp;&amp; 0  \\
+0 &amp;&amp; 0 &amp;&amp; 1
 \end{array}
-\right]
+\right]_{\bs{e}_i}.
 \end{align}
 \]</span></p>
-<p>In summary we can write, <span class="math display">\[
-\begin{align}
-Q=
-\left[
-\begin{array}{lcr}
-\left[\hat{\bs{F}}_1\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}} &amp;
-\left[\hat{\bs{F}}_2\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}
-&amp;
-\left[\hat{\bs{F}}_3\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p>Now let’s try to find the components <span class="math inline">\(x_i\)</span> from <span class="math inline">\(y_i\)</span> of a general vector <span class="math inline">\(\bs{x}\)</span>.</p>
-<p><strong>Derivation 1</strong></p>
-<p><span class="math display">\[ \begin{align}
-\bs{x}&amp;=x_i \hat{\bs{E}}_i\\
-\bs{x}&amp;=y_i \hat{\bs{F}}_i\\
-\hat{\bs{F}}_i&amp;=
-Q_{ji}\hat{\bs{E}}_j\\
-\bs{x}&amp;=y_i Q_{ji}\hat{\bs{E}}_j\\
-x_j&amp;=y_iQ_{ji}\\
-x_j&amp;=Q_{ji}y_i\\
-x_i&amp;=Q_{ij}y_j\\
-\end{align}
-\]</span></p>
-<p><span class="math display">\[ \begin{align}
-\left[
-\begin{array}{c}
-x_1\\
-x_2\\
-x_3
-\end{array}
-\right]
-=
-\left[
-\begin{array}{lcr}
-Q_{11} &amp; Q_{12} &amp; Q_{13} \\
-Q_{21} &amp; Q_{22} &amp; Q_{23} \\
-Q_{31} &amp; Q_{32} &amp; Q_{33} \\
-\end{array}
-\right]
-\left[
-\begin{array}{c}
-y_1\\
-y_2\\
-y_3
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p><strong>Derivation 2</strong></p>
-<p><span class="math display">\[ \begin{align}
-\bs{x}&amp;=x_i \hat{\bs{E}}_i\\
-\bs{x}&amp;=y_i \hat{\bs{F}}_i\\
-\hat{\bs{F}}_i&amp;=
-Q_{ji}\hat{\bs{E}}_j\\
-\bs{x}&amp;=y_i Q_{ji}\hat{\bs{E}}_j\\
-\end{align}
-\]</span></p>
-<p>Recall that <span class="math inline">\(\bs{x}=x_1 \hat{\bs{E}}_1+x_2 \hat{\bs{E}}_2+x_3 \hat{\bs{E}}_3\)</span>, which can be compactly be written as <span class="math inline">\(\bs{x}=x_p \hat{\bs{E}}_p\)</span>. Thus, we have</p>
+<hr>
+<p><strong>Example: Stretching</strong></p>
+<p>Write the tensor <span class="math inline">\(\bs{T}\)</span>, defined by the equation <span class="math inline">\(\bs{T}\bs{a} = \alpha\bs{a}\)</span>, where <span class="math inline">\(\alpha\)</span> is a constant and <span class="math inline">\(\bs{a}\)</span> is arbitrary, in terms of the identity tensor, and find its components.</p>
+<p><strong><em>Solution</em></strong></p>
+<p>Using the identity tensor, we can write <span class="math inline">\(\alpha\bs{a}\)</span> as <span class="math inline">\(\alpha\bs{I}\bs{a}\)</span>, so that</p>
 <p><span class="math display">\[
 \begin{align}
-x_p \hat{\bs{E}}_p&amp;= Q_{ji} y_i\hat{\bs{E}}_j\\
-x_p \hat{\bs{E}}_p&amp;= Q_{ij} y_j\hat{\bs{E}}_i\\
-(x_p \hat{\bs{E}}_p)\cdot \hat{\bs{E}}_q&amp;= (Q_{ij} y_j\hat{\bs{E}}_i)\cdot \hat{\bs{E}}_q\\
-(x_p \hat{\bs{E}}_p\cdot  \hat{\bs{E}}_q)&amp;= (Q_{ij} y_j)\hat{\bs{E}}_i\cdot \hat{\bs{E}}_q\\
-(x_p \delta_{pq})&amp;= (Q_{ij} y_j)\delta_{iq}\\
-x_q &amp;= Q_{qj} y_j\\
-x_i &amp;= Q_{ij} y_j\\
+\bs{T}\bs{a} = \alpha\bs{a} = \alpha\bs{I}\bs{a}.
 \end{align}
 \]</span></p>
-<p>Examples from AL notes. Now let’s assume that</p>
+<p>Since <span class="math inline">\(\bs{a}\)</span> is arbitrary, therefore,</p>
 <p><span class="math display">\[
 \begin{align}
-\hat{\bs{E}}_i=P_{ji}\hat{\bs{F}}_j
+\bs{T} = \alpha\bs{I}
 \end{align}
 \]</span></p>
-<p>Following the same steps as before we arrive at the equation, <span class="math display">\[
-\begin{align}
-y_i &amp;= P_{ij} x_j\\
-\end{align}
-\]</span></p>
-<p>Combining the results, <span class="math inline">\(y_i = P_{ij} x_j\)</span> and <span class="math inline">\(x_i = Q_{ij} x_j\)</span> we have that,</p>
+<p>The components of this tensor are clearly <span class="math inline">\(T_{ij} = \alpha\delta_{ij}\)</span>.</p>
+</section>
+<section id="sec-tensor_dyadic_components" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="sec-tensor_dyadic_components"><span class="header-section-number">6.2.2</span> Representation of tensors as a sum of dyadics products</h3>
+<p>If <span class="math inline">\(\hat{\bs{E}}_i\)</span> is an orthonormal basis, it can be shown that</p>
 <p><span class="math display">\[
 \begin{align}
-y_i &amp;= P_{ij} Q_{jk}y_k\\
-\delta_{im}y_m &amp;= P_{ij} Q_{jk}y_k\\
-\delta_{im}y_m -P_{ij} Q_{jk}y_k&amp;=0\\
-(\delta_{ik} -P_{ij} Q_{jk})y_{k}&amp;=0\\
-\delta_{ik} -P_{ij} Q_{jk}&amp;=0\\
+\bs{T}&amp;=T_{ij} \, \hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j}
+\tag{Dyadic basis}
 \end{align}
 \]</span></p>
-<p>The last equation can be written as <span class="math display">\[
+<p>Let <span class="math display">\[
 \begin{align}
-[P][Q]&amp;=[I],
+\bs{T}\bs{c}&amp;=\bs{d}\\
+(T_{ij} \, \hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})\bs{c}&amp;=\bs{e}
 \end{align}
 \]</span></p>
-<p>which implies that <span class="math inline">\([P]\)</span> is the left inverse of <span class="math inline">\([Q]\)</span>.</p>
+<p>We are going to find the components of <span class="math inline">\(\bs{e}\)</span> and <span class="math inline">\(\bs{d}\)</span> and show that they are one and the same. Since <span class="math inline">\(\bs{c}\)</span> is arbitrary this goes to prove that <span class="math inline">\(\bs{T}\)</span> and <span class="math inline">\(T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j}\)</span> are one and the same.</p>
+<p><strong>Components of <span class="math inline">\(\bs{e}\)</span></strong> <span class="math display">\[
+\begin{align}
+\bs{e}&amp;=(T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})\bs{c}\\
+&amp;=
+(T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})(c_k\hat{\bs{E}}_k)\\
+&amp;=
+T_{ij} c_k(\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j})\hat{\bs{E}}_k\\
+&amp;=
+T_{ij} c_k(\hat{\bs{E}}_{i}( \hat{\bs{E}}_{j}\cdot\hat{\bs{E}}_k))\\
+&amp;=
+T_{ij} c_k(\hat{\bs{E}}_{i}\delta_{jk})\\
+&amp;=
+T_{ij} c_j\hat{\bs{E}}_{i}
+\end{align}
+\]</span></p>
+<p>From the last equation it follows that</p>
 <p><span class="math display">\[
 \begin{align}
-x_i &amp;= Q_{ij} P_{jk}x_k\\
-\delta_{ik}x_k &amp;= Q_{ij} P_{jk}x_k\\
-\delta_{ik}x_k -P_{ij} Q_{jk}x_k&amp;=0\\
-(\delta_{ik} -Q_{ij} P_{jk})x_{k}&amp;=0\\
-\delta_{ik} -Q_{ij} P_{jk}&amp;=0\\
+\bs{e}\cdot\hat{\bs{E}}_j&amp;=T_{ik}c_k\hat{\bs{E}}_i\cdot\hat{\bs{E}}_j\\
+e_j&amp;=T_{ik}c_k\delta_{ij}\\
+e_j&amp;=T_{jk}c_k\label{eq:eComponents}\\
 \end{align}
 \]</span></p>
-<p>The last equation can be written as <span class="math display">\[
+<p><strong>Components of <span class="math inline">\(\bs{d}\)</span></strong></p>
+<p>From the definition of the matrix definition of <span class="math inline">\(\bs{T}\)</span>, which is <span class="math inline">\([\bs{T}]\)</span> it follows that</p>
+<p><span class="math display">\[
 \begin{align}
-[Q][P]&amp;=[I],
+\left[\bs{T}\right]\left[\bs{c}\right]&amp;=\left[\bs{d}\right] \label{eq:MatrixFrom}
 \end{align}
 \]</span></p>
-<p>which implies that <span class="math inline">\([P]\)</span> is also the right inverse of <span class="math inline">\([Q]\)</span>.</p>
+<p>where <span class="math display">\[
+\begin{align}
+\left[\bs{c}\right]_{i}&amp;=c_{i}=\bs{c}\cdot \hat{\bs{E}}_i\\
+\left[\bs{d}\right]_{j}&amp;=d_{j}=\bs{d}\cdot \hat{\bs{E}}_j
+\end{align}
+\]</span></p>
+<p>In Einstein notation <span class="math inline">\(\eqref{eq:MatrixFrom}\)</span> reads,</p>
+<p><span class="math display">\[
+\begin{align}
+d_i&amp;=T_{ij}c_j\label{eq:dComponents}
+\end{align}
+\]</span></p>
+<p>If follows from <span class="math inline">\(\eqref{eq:eComponents}\)</span> and <span class="math inline">\(\eqref{eq:dComponents}\)</span> that <span class="math inline">\(\bs{e}\)</span> and <span class="math inline">\(\bs{d}\)</span> are the same, from which it follows that <span class="math inline">\(\bs{T}\)</span> and <span class="math inline">\(T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j}\)</span> are one and the same.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -962,6 +1202,9 @@ x_i &amp;= Q_{ij} P_{jk}x_k\\
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="pagination-link" aria-label="Trace and determinant">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
