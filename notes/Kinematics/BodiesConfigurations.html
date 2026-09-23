@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Change of basis – ENGN2210 — Continuum Mechanics</title>
+<title>9&nbsp; Bodies and Configurations – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/Kinematics/BodiesConfigurations.html" rel="next">
-<link href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" rel="prev">
+<link href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -214,7 +213,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/BodiesConfigurations.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/BodiesConfigurations.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -292,7 +291,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></span></a>
   </div>
 </li>
@@ -309,7 +308,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></span></a>
   </div>
 </li>
@@ -325,16 +324,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-vector_representation" id="toc-sec-vector_representation" class="nav-link active" data-scroll-target="#sec-vector_representation"><span class="header-section-number">8.1</span> Representations of Vectors</a></li>
+  <li><a href="#sec-kinematics_intro" id="toc-sec-kinematics_intro" class="nav-link active" data-scroll-target="#sec-kinematics_intro"><span class="header-section-number">9.1</span> Introduction to Kinematics</a></li>
+  <li><a href="#sec-bodies" id="toc-sec-bodies" class="nav-link" data-scroll-target="#sec-bodies"><span class="header-section-number">9.2</span> Bodies</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/BodiesConfigurations.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/BodiesConfigurations.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-change_of_basis" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></span></h1>
+<h1 class="title"><span id="sec-bodies_configurations" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></span></h1>
 </div>
 
 
@@ -351,217 +351,20 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-vector_representation" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="sec-vector_representation"><span class="header-section-number">8.1</span> Representations of Vectors</h2>
-<p>Let <span class="math inline">\(\bs{x} \in \b{E}^{3}\)</span> and let <span class="math inline">\(\{\hat{\bs{E}}_{i}\}_{i=1,2,3}\)</span> and <span class="math inline">\(\{\hat{\bs{F}}_{i}\}_{i=1,2,3}\)</span> be two orthornal bases for <span class="math inline">\(\b{E}^{3}\)</span>. The question is, would the components of <span class="math inline">\(\bs{x}\)</span> w.r.t the bases be the same? That is, would</p>
-<p><span class="math display">\[
-\begin{align}
-\bs{x} &amp;= x_i \hat{\bs{E}}_i = \tilde{x}_i \hat{\bs{F}}_i \\
-x_{i}&amp;\stackrel{?}{=}\tilde{x}_{i}
-\end{align}
-\]</span></p>
-<p>In general, the answer is no. Typically, in a different basis the components of <span class="math inline">\(\bs{x}\)</span> will be different. This is same as measuring the size of an object using a scale that in centimeter unit and another scale which is units of inches. Thus, we will have</p>
-<p><span class="math display">\[
-\begin{align}
-\bs{x}&amp;=y_1 \hat{\bs{F}}_1+y_2 \hat{\bs{F}}_2+y_3 \hat{\bs{F}}_3\\
-\bs{x}&amp;=y_i \hat{\bs{F}}_i,
-\end{align}
-\]</span> i.e.,</p>
-<p><span class="math display">\[
-\begin{align}
-[\bs{x}]_{\{\hat{\bs{F}}\}_{i=1,2,3}}&amp;=
-\left[
-\begin{array}{c}
-y_1\\
-y_2\\
-y_3
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p>and typically <span class="math inline">\(x_i \not= y_i\)</span>.</p>
-<p>The question now arrises, if we know <span class="math inline">\(x_i\)</span> how do we find <span class="math inline">\(y_i\)</span>? The answer to this question involves the change of basis matrix <span class="math inline">\([Q]\)</span>, such that,</p>
-<p>Since <span class="math inline">\(\{\hat{\bs{E}}\}_{i=1,2,3}\)</span> is a basis, and hence each of <span class="math inline">\(\hat{\bs{F}}_j\)</span> can be written as a linear combination of <span class="math inline">\(\{\hat{\bs{E}}\}_{i=1,2,3}\)</span>.</p>
-<p><span class="math display">\[
-\begin{align}
-\hat{\bs{F}}_1
-&amp;=
-Q_{11}\hat{\bs{E}}_1+
-Q_{21}\hat{\bs{E}}_2+
-Q_{31}\hat{\bs{E}}_3
-\\
-\hat{\bs{F}}_2
-&amp;=
-Q_{12}\hat{\bs{E}}_1+
-Q_{22}\hat{\bs{E}}_2+
-Q_{32}\hat{\bs{E}}_3
-\\
-\hat{\bs{F}}_3
-&amp;=
-Q_{13}\hat{\bs{E}}_1+
-Q_{23}\hat{\bs{E}}_2+
-Q_{33}\hat{\bs{E}}_3
-\end{align}
-\]</span></p>
-<p>The above set of equations can be compactly be written as:</p>
-<p><span class="math display">\[
-\begin{align}
-\hat{\bs{F}}_j&amp;=Q_{ij}\hat{\bs{E}}_i
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-\left[\hat{\bs{F}}_1\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&amp;
-&amp;=
-\left[
-\begin{array}{c}
-Q_{11}\\
-Q_{21}\\
-Q_{31}
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-\left[\hat{\bs{F}}_2\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&amp;
-&amp;=
-\left[
-\begin{array}{c}
-Q_{12}\\
-Q_{22}\\
-Q_{32}
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-\left[\hat{\bs{F}}_3\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}&amp;
-&amp;=
-\left[
-\begin{array}{c}
-Q_{13}\\
-Q_{23}\\
-Q_{33}
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p>In summary we can write, <span class="math display">\[
-\begin{align}
-Q=
-\left[
-\begin{array}{lcr}
-\left[\hat{\bs{F}}_1\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}} &amp;
-\left[\hat{\bs{F}}_2\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}
-&amp;
-\left[\hat{\bs{F}}_3\right]_{\{\hat{\bs{E}}\}_{i=1,2,3}}
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p>Now let’s try to find the components <span class="math inline">\(x_i\)</span> from <span class="math inline">\(y_i\)</span> of a general vector <span class="math inline">\(\bs{x}\)</span>.</p>
-<p><strong>Derivation 1</strong></p>
-<p><span class="math display">\[ \begin{align}
-\bs{x}&amp;=x_i \hat{\bs{E}}_i\\
-\bs{x}&amp;=y_i \hat{\bs{F}}_i\\
-\hat{\bs{F}}_i&amp;=
-Q_{ji}\hat{\bs{E}}_j\\
-\bs{x}&amp;=y_i Q_{ji}\hat{\bs{E}}_j\\
-x_j&amp;=y_iQ_{ji}\\
-x_j&amp;=Q_{ji}y_i\\
-x_i&amp;=Q_{ij}y_j\\
-\end{align}
-\]</span></p>
-<p><span class="math display">\[ \begin{align}
-\left[
-\begin{array}{c}
-x_1\\
-x_2\\
-x_3
-\end{array}
-\right]
-=
-\left[
-\begin{array}{lcr}
-Q_{11} &amp; Q_{12} &amp; Q_{13} \\
-Q_{21} &amp; Q_{22} &amp; Q_{23} \\
-Q_{31} &amp; Q_{32} &amp; Q_{33} \\
-\end{array}
-\right]
-\left[
-\begin{array}{c}
-y_1\\
-y_2\\
-y_3
-\end{array}
-\right]
-\end{align}
-\]</span></p>
-<p><strong>Derivation 2</strong></p>
-<p><span class="math display">\[ \begin{align}
-\bs{x}&amp;=x_i \hat{\bs{E}}_i\\
-\bs{x}&amp;=y_i \hat{\bs{F}}_i\\
-\hat{\bs{F}}_i&amp;=
-Q_{ji}\hat{\bs{E}}_j\\
-\bs{x}&amp;=y_i Q_{ji}\hat{\bs{E}}_j\\
-\end{align}
-\]</span></p>
-<p>Recall that <span class="math inline">\(\bs{x}=x_1 \hat{\bs{E}}_1+x_2 \hat{\bs{E}}_2+x_3 \hat{\bs{E}}_3\)</span>, which can be compactly be written as <span class="math inline">\(\bs{x}=x_p \hat{\bs{E}}_p\)</span>. Thus, we have</p>
-<p><span class="math display">\[
-\begin{align}
-x_p \hat{\bs{E}}_p&amp;= Q_{ji} y_i\hat{\bs{E}}_j\\
-x_p \hat{\bs{E}}_p&amp;= Q_{ij} y_j\hat{\bs{E}}_i\\
-(x_p \hat{\bs{E}}_p)\cdot \hat{\bs{E}}_q&amp;= (Q_{ij} y_j\hat{\bs{E}}_i)\cdot \hat{\bs{E}}_q\\
-(x_p \hat{\bs{E}}_p\cdot  \hat{\bs{E}}_q)&amp;= (Q_{ij} y_j)\hat{\bs{E}}_i\cdot \hat{\bs{E}}_q\\
-(x_p \delta_{pq})&amp;= (Q_{ij} y_j)\delta_{iq}\\
-x_q &amp;= Q_{qj} y_j\\
-x_i &amp;= Q_{ij} y_j\\
-\end{align}
-\]</span></p>
-<p>Examples from AL notes. Now let’s assume that</p>
-<p><span class="math display">\[
-\begin{align}
-\hat{\bs{E}}_i=P_{ji}\hat{\bs{F}}_j
-\end{align}
-\]</span></p>
-<p>Following the same steps as before we arrive at the equation, <span class="math display">\[
-\begin{align}
-y_i &amp;= P_{ij} x_j\\
-\end{align}
-\]</span></p>
-<p>Combining the results, <span class="math inline">\(y_i = P_{ij} x_j\)</span> and <span class="math inline">\(x_i = Q_{ij} x_j\)</span> we have that,</p>
-<p><span class="math display">\[
-\begin{align}
-y_i &amp;= P_{ij} Q_{jk}y_k\\
-\delta_{im}y_m &amp;= P_{ij} Q_{jk}y_k\\
-\delta_{im}y_m -P_{ij} Q_{jk}y_k&amp;=0\\
-(\delta_{ik} -P_{ij} Q_{jk})y_{k}&amp;=0\\
-\delta_{ik} -P_{ij} Q_{jk}&amp;=0\\
-\end{align}
-\]</span></p>
-<p>The last equation can be written as <span class="math display">\[
-\begin{align}
-[P][Q]&amp;=[I],
-\end{align}
-\]</span></p>
-<p>which implies that <span class="math inline">\([P]\)</span> is the left inverse of <span class="math inline">\([Q]\)</span>.</p>
-<p><span class="math display">\[
-\begin{align}
-x_i &amp;= Q_{ij} P_{jk}x_k\\
-\delta_{ik}x_k &amp;= Q_{ij} P_{jk}x_k\\
-\delta_{ik}x_k -P_{ij} Q_{jk}x_k&amp;=0\\
-(\delta_{ik} -Q_{ij} P_{jk})x_{k}&amp;=0\\
-\delta_{ik} -Q_{ij} P_{jk}&amp;=0\\
-\end{align}
-\]</span></p>
-<p>The last equation can be written as <span class="math display">\[
-\begin{align}
-[Q][P]&amp;=[I],
-\end{align}
-\]</span></p>
-<p>which implies that <span class="math inline">\([P]\)</span> is also the right inverse of <span class="math inline">\([Q]\)</span>.</p>
+<section id="sec-kinematics_intro" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-kinematics_intro"><span class="header-section-number">9.1</span> Introduction to Kinematics</h2>
+<p><strong>Kinematics</strong> is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies. First, we begin by defining a continuum.</p>
+<div id="def-continuum" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.1</strong></span> <strong><span style="color: red;">Continuum</span></strong></p>
+<p><em>Need to fill in</em></p>
+</div>
+<p>A continuum theory is a mathematical theory. Real objects are not really continua. At the atomic level, there is empty space between atoms with no matter in between. So the continuum is a mathematical construction which certain physical systems can approximate.</p>
+</section>
+<section id="sec-bodies" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-bodies"><span class="header-section-number">9.2</span> Bodies</h2>
+<p>Bodies occupy regions of an affine point space <span class="math inline">\(\mc{E}\)</span>. Specifically, the body <span class="math inline">\(\mc{B}\)</span> is an open subset of <span class="math inline">\(\mc{E}\)</span>. It is simply a collection of points in <span class="math inline">\(\mc{E}\)</span>. We refer to <span class="math inline">\(\mc{B}\)</span> as the <strong>material body</strong> and the points in it as <strong>material particles</strong>. We denote a material particle in <span class="math inline">\(\mc{B}\)</span> by <span class="math inline">\(\chi\)</span>.</p>
+<p>Let <span class="math inline">\(\mc{E}_{R}\)</span> and <span class="math inline">\(\b{E}_{R}\)</span> be referred to as the <strong>reference point space</strong> and <strong>reference Euclidean space</strong> respectively. <span class="math inline">\(\mc{B}\)</span> can be mapped to a subset of <span class="math inline">\(\mc{E}_{R}\)</span> to represent the object of interest before it has changed shape or orientation. Similarly, <span class="math inline">\(\mc{B}\)</span> can be mapped to a subset of <span class="math inline">\(\b{E}_{R}\)</span>. That is, each material particle <span class="math inline">\(\chi \in \mc{B}\)</span> can be mapped to a position vector in <span class="math inline">\(\b{E}_{R}\)</span>.</p>
+<p>We refer to the map <span class="math inline">\(\bs{k}_{R} : \mc{B} \ra \bs{\mc{B}}_{R}\)</span> is referred to as the <strong>reference configuration</strong> and the set <span class="math inline">\(\bs{\mc{B}_{R}} \subset \b{E}_{R}\)</span> is called the <strong>reference body in the reference Euclidean space</strong>. <span class="math inline">\(\bs{k}_{R}\)</span> is a continuous, injective map. A material particle’s reference position vector is given by <span class="math inline">\(\bs{k}_{R}[\chi] = \bs{X}\)</span>. When we refer to the position vector <span class="math inline">\(\bs{X}\)</span> as the material particle, we in fact mean the material particle <span class="math inline">\(\bs{k}^{-1}_{R}[\bs{X}] = \chi\)</span> belonging to <span class="math inline">\(\mc{B}\)</span>. Associated with <span class="math inline">\(\bs{k}_{R}\)</span>, we also have the map <span class="math inline">\(k_{R} : \mc{B} \ra \mc{B}_{R}\)</span>, where <span class="math inline">\(\mc{B}_{R}\)</span> is the <strong>reference body in the reference point space</strong>.</p>
 
 
 </section>
@@ -969,14 +772,11 @@ x_i &amp;= Q_{ij} P_{jk}x_k\\
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="pagination-link" aria-label="Trace and determinant">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span>
+      <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="pagination-link" aria-label="Change of basis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/Kinematics/BodiesConfigurations.html" class="pagination-link" aria-label="Bodies and Configurations">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
