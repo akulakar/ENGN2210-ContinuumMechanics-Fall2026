@@ -11,8 +11,8 @@ book:
   # Front-matter files sit at the top level; group the rest under parts.
   chapters:
     - index.qmd
-    -part : "Notation"
-    chapters:
+    - part: "Notation"
+      chapters:
         - notes/Notation/Notation.qmd
     - part: "Mathematical Preliminaries"
       chapters:
