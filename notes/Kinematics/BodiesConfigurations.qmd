@@ -1,5 +1,7 @@
 # Bodies and Configurations {#sec-bodies_configurations}
 
+## Introduction to Kinematics {#sec-kinematics_intro}
+
 **Kinematics** is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies. First, we begin by defining a continuum.
 
 ::: {#def-continuum}
@@ -8,4 +10,12 @@
 *Need to fill in*
 :::
 
+A continuum theory is a mathematical theory. Real objects are not really continua. At the atomic level, there is empty space between atoms with no matter in between. So the continuum is a mathematical construction which certain physical systems can approximate.
 
+## Bodies {#sec-bodies}
+
+Bodies occupy regions of an affine point space $\mc{E}$. Specifically, the body $\mc{B}$ is an open subset of $\mc{E}$. It is simply a collection of points in $\mc{E}$. We refer to $\mc{B}$ as the **material body** and the points in it as **material particles**. We denote a material particle in $\mc{B}$ by $\chi$.
+
+Let $\mc{E}_{R}$ and $\b{E}_{R}$ be referred to as the **reference point space** and **reference Euclidean space** respectively. $\mc{B}$ can be mapped to a subset of $\mc{E}_{R}$ to represent the object of interest before it has changed shape or orientation. Similarly, $\mc{B}$ can be mapped to a subset of $\b{E}_{R}$. That is, each material particle $\chi \in \mc{B}$ can be mapped to a position vector in $\b{E}_{R}$.
+
+We refer to the map $\bs{k}_{R} : \mc{B} \ra \bs{\mc{B}}_{R}$ is referred to as the **reference configuration** and the set $\bs{\mc{B}_{R}} \subset \b{E}_{R}$ is called the **reference body in the reference Euclidean space**. $\bs{k}_{R}$ is a continuous, injective map. A material particle's reference position vector is given by $\bs{k}_{R}[\chi] = \bs{X}$. When we refer to the position vector $\bs{X}$ as the material particle, we in fact mean the material particle $\bs{k}^{-1}_{R}[\bs{X}] = \chi$ belonging to $\mc{B}$. Associated with $\bs{k}_{R}$, we also have the map $k_{R} : \mc{B} \ra \mc{B}_{R}$, where $\mc{B}_{R}$ is the **reference body in the reference point space**.

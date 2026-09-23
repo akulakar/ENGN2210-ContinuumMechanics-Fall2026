@@ -21,13 +21,13 @@ book:
         - notes/MathematicalPreliminaries/VectorTensorComponents.qmd
         - notes/MathematicalPreliminaries/TraceDeterminant.qmd
         - notes/MathematicalPreliminaries/ChangeOfBasis.qmd
-    # - part: "Kinematics"
-    #   chapters:
-    #     - notes/Kinematics/Motion.qmd
+    - part: "Kinematics"
+      chapters:
+        - notes/Kinematics/BodiesConfigurations.qmd
     #     - notes/kinematics/Deformation.qmd
     # - part: "Stress"
     #   chapters:
-    # - part: "Balnce Laws"
+    # - part: "Balance Laws"
 
 
 
