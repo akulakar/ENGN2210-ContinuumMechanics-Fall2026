@@ -1,0 +1,133 @@
+# Deformation and Motion {#sec-deformation_motion}
+
+The previous section described reference and current bodies as well as Lagrangian and Eulerian coordinates of a material particle. However, we still need to describe the motion of the material body, that is the map between the reference and deformed bodies. The reference configuration maps the material body to the reference body, and the current configuration maps the material body to the current body. We would also like to have a map between the reference body and deformed bodie(s).
+
+::: {#def-motion_map}
+**\sqpr{Motion}{style="color: red;"}**
+
+The motion is a map $\bs{\varphi} : \bs{\mathcal{B}}_{\rm{R}} \times \b{T} \to \mathbb{E}$ that takes in a material particle $\bs{X}\in \bs{\mathcal{B}}_{\rm R}$ and a time $\tau \in \b{T}$, and returns the spatial position $\bs{\varphi}\sqpr{\bs{X}, \bs{\tau}} = \bs{x}$ occupied in $\mathbb{E}$ at the time instance $\bs{\tau}$.
+:::
+
+**Note:** We model time as a one dimensional vector space and denote it with $\b{T}$.
+
+::: {#def-deformation_map}
+**\sqpr{Deformation map}{style="color: red;"}**
+
+The deformation map $\bs{\varphi}_{\tau} : \bs{\mathcal{B}}_{\rm{R}} \to \mathbb{E}$ takes in a material particle $\bs{X}\in \bs{\mathcal{B}}_{\rm R}$ and return the spatial position $\bs{\varphi}_{\tau}\sqpr{\bs{X}}$ occupied in $\mathbb{E}$ at the time instance $\bs{\tau}$. We often use $\bs{x}_{\tau}$ as an abbreviation for $\bs{\varphi}_{\tau}\sqpr{\bs{X}}$.
+:::
+
+The motion can be thought of as the collection of all deformation maps at all time instances. When we consider a single time instance, that is $\bs{\varphi}\sqpr{\cdot, \bs{\tau}}$, we obtain the deformation map $\bs{\varphi}_{\tau}$.
+
+## Admissible and inverse deformation map {#sec-admissible_inverse_def_map}
+
+In continuum mechanics we will be interested in a wide class of possible deformation maps, but we will place some conditions on $\bs{\varphi}_{\tau}$. We will say that $\bs{\varphi}$ is an admissible deformation map if and only if
+
+1.  $\bs{\varphi}_{\tau}$ is defined for all $\bs{X}\in \bs{\mathcal{B}}_{\rm R}$
+2.  $\bs{\varphi}_{\tau}$ is injective, except perhaps at the boundary of $\bs{\mathcal{B}}_{\rm R}$ (such as to avoid interpenetration)
+3. $\bs{\varphi}_{\tau}$ is continuously differentiable, expect perhaps at the boundary of $\bs{\mathcal{B}}_{\rm R}$ (such as to avoid cracks, dislocations)
+
+If the deformation map is well defined for the entire domain and injective, then it is possible to be more specific about the codomain. Particularly, the codomain is the set $\bs{\mathcal{B}}_{\tau} \subset \b{R}$, which is the current body in the physical Euclidean space. Then the deformation map $\bs{\varphi}_{\tau} : \bs{\mathcal{B}}_{\rm{R}} \to \bs{\mathcal{B}}_{\tau}$ is also surjective and therefore bijective. 
+
+
+Since it is bijective, there exists a well defined inverse map. This is true for finite dimensional maps between vector spaces of the same dimension. Therefore, it is possible to define the inverse map $\bs{\varphi}^{-1} : \bs{\mathcal{B}}_{\tau} \to \bs{\mathcal{B}}_{\rm R}$ such that $\bs{\varphi}^{-1}_{\tau}\sqpr{\bs{x}}:=$ gives the material particle $\bs{X}$ that is located at $\bs{x}$ at time instance $\bs{\tau}$. Clearly $\bs{\varphi}_{\tau}\sqpr{\bs{\varphi}_{\tau}^{-1}\sqpr{\bs{x}}}=\bs{x}$.
+
+<!-- **Note:**
+
+The motion need not be injective with respect to time. The motion evaluated at two distinct times $\bs{\tau}_{1}$ and $\bs{\tau}_{2}$ may produce two deformation maps that may be identical with each other. -->
+
+## Deformation Map Components {#sec-deformation_map_components}
+
+Recall the nondimensionalization map $\msf{U} : \bs{\mc{B}}_{\rm{R}} \to \b{R}^{3}$. We define the components of the deformation map as follows
+$$
+\begin{align}
+\bs{\varphi}_{\tau}\sqpr{\bs{X}} &= \varphi_{i\tau}\sqpr{\msf{U}\sqpr{\bs{X}}}\bs{e}_i,
+\end{align}
+$$
+
+where 
+$$
+\varphi_{i\tau}:\mathbb{R}^3\to \mathbb{R}
+$$
+
+and $\pr{\msf{U}\sqpr{\bs{X}}}_{j} = X_j$. Specifically, $X_{j}=\bs{X}\cdot \bs{E}_j$. The functions $\varphi_{i\tau}$ are called the components of the deformation map. 
+We can also define the deformation map by defining the map,
+$$
+\begin{align}
+\bs{\varphi}_{\tau}: B_{\rm R} \to \mathbb{E},
+\end{align}
+$$
+
+where 
+$$
+\bs{\varphi}_{\tau}\sqpr{X_1,X_2,X_3}=\varphi_{i\tau}\sqpr{X_{1},X_{2},X_{3}}\bs{e}_i
+$$
+
+This map is different from the map $\bs{\varphi}_{\tau} :\bs{\mathcal{B}}_{\rm R}\to \mathbb{E}$. 
+
+Clearly, when $X_i$ are the components/co-ordinates of $\bs{X}$ w.r.t $\bs{E}_i$, $\bs{\varphi}_{\tau}\sqpr{X_1,X_2,X_3}=\bs{\varphi}_{\tau}\sqpr{\bs{X}}$. Despite using the same symbols, it will be clear from context as to which map we are talking about. In many books you will see $x_i$ being used as an alias for $\varphi_{i}\sqpr{X_1,X_2,X_3}$.
+
+When we are considering a specific deformation map at a time instance $\bs{\tau}$, we will omit writing the $\tau$ as a subscript. In such a case the above paragraph can be written as,
+$$
+\begin{align}
+\bs{\varphi}\sqpr{\bs{X}}=\varphi_{i}\sqpr{X_{1}, X_{2}, X_{3}}\bs{e}_i,
+\end{align}
+$$
+
+where $\varphi_{i} : \mathbb{R}^3 \to \mathbb{R}$ and $\msf{U}\sqpr{\bs{X}} = \pr{\bs{X}\cdot\bs{e}_{1}, \bs{X}\cdot\bs{e}_{2}, \bs{X}\cdot\bs{e}_{3}} = \pr{X_1, X_2, X_3}$. The functions $\varphi_{i}$ are called the components of the deformation map. 
+
+It follows from the above introduced notation that the spatial location occupied by the material particle $\bs{X}$ is $x_i \bs{e}_i$. Thus, $\bs{x}=x_i\bs{e}_i$.
+
+## Examples of Deformation Maps {#sec-deformation_map_example}
+
+#### Stretching of a cube {-}
+
+Let $B_{\rm R}= \set{(X_{1}, X_{2}, X_{3})}{0 \leq X_{i} \leq L, ~i=1,2,3}$, where $L \in \mathbb{R}_{\ge 0}$. Consider a deformation map $\bs{\varphi}:B_{\rm R}\to \mathbb{E}$. The deformation consists in strectching each edge of the cube in the $a^\text{th}$ direction by a factor of $\lambda_a$.  $\lambda_a\in (0, \infty)$, which is expressed as
+$$
+\begin{align}
+x_1&=\lambda_1X_1,
+\\
+x_2&=\lambda_2X_2,
+\\
+x_3&=\lambda_3 X_3.
+\end{align}
+$$
+
+The values $\lambda_1$,$\lambda_2$, and $\lambda_3$ are called the stretch rations.
+
+
+#### Pure shear of a cube {-}
+
+For $\gamma\in \mathbb{R}$, the deformation map
+$$
+\begin{align}
+x_1&=X_1+\gamma X_2\\
+x_2&=X_2\\
+x_3&=X_3
+\end{align}
+$$
+
+is called pure shear in the $\bs{X}_1-\bs{X}_2$ plane, and $\gamma$ is the shear deformation.
+
+#### Anti-plane shear (along the $\bs{E}_3$ direction) {-}
+Another type of two dimensional deformation has the following form,
+$$
+\begin{align}
+x_1&=X_1\\
+x_2&=X_2\\
+x_3&=\varphi_3(X_1,X_2)
+\end{align}
+$$
+In this case the deformation is only in the $\bs{E}_3$ direction.
+
+#### Plane strain (within the $\bs{E}_1-\bs{E}_2$ plane) {-}
+We often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is,
+$$
+\begin{align}
+x_1&=\varphi_1(X_1,X_2)\\
+x_2&=\varphi_2(X_1,X_2)\\
+x_3&=X_3
+\end{align}
+$$
+
+Because there is no deformation along the $\bs{E}_3$ direction, these types
+of deformations are called "plane strain".

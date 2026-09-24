@@ -17,14 +17,14 @@ A continuum theory is a mathematical theory. Real objects are not really continu
 
 Bodies occupy regions of an affine point space $\mc{E}$. Specifically, the body $\mc{B}$ is an open subset of $\mc{E}$. It is simply a collection of points in $\mc{E}$. We refer to $\mc{B}$ as the **material body** and the points in it as **material particles** or **material points**. We denote a material particle in $\mc{B}$ by $\chi$.
 
-Let $\mc{E}_{R}$ and $\b{E}_{R}$ be referred to as the **reference point space** and **reference Euclidean space** respectively. $\mc{B}$ can be mapped to a subset of $\mc{E}_{R}$ to represent the object of interest before it has changed shape or orientation. Similarly, $\mc{B}$ can be mapped to a subset of $\b{E}_{R}$. That is, each material particle $\chi \in \mc{B}$ can be mapped to a position vector in $\b{E}_{R}$.
+Let $\mc{E}_{\rm{R}}$ and $\b{E}_{\rm{R}}$ be referred to as the **reference point space** and **reference Euclidean space** respectively. $\mc{B}$ can be mapped to a subset of $\mc{E}_{\rm{R}}$ to represent the object of interest before it has changed shape or orientation. Similarly, $\mc{B}$ can be mapped to a subset of $\b{E}_{\rm{R}}$. That is, each material particle $\chi \in \mc{B}$ can be mapped to a position vector in $\b{E}_{\rm{R}}$.
 
-We refer to the map $\bs{k}_{R} : \mc{B} \ra \bs{\mc{B}}_{R}$ is referred to as the **reference configuration** and the set $\bs{\mc{B}_{R}} \subset \b{E}_{R}$ is called the **reference body in the reference Euclidean space**. $\bs{k}_{R}$ is a continuous, injective map. A material particle's reference position vector is given by $\bs{k}_{R}[\chi] = \bs{X}$. When we refer to the position vector $\bs{X}$ as the material particle, we in fact mean the material particle $\bs{k}^{-1}_{R}[\bs{X}] = \chi$ belonging to $\mc{B}$. Associated with $\bs{k}_{R}$, we also have the map $k_{R} : \mc{B} \ra \mc{B}_{R}$, where $\mc{B}_{R}$ is the **reference body in the reference point space**.
+We refer to the map $\bs{k}_{\rm{R}} : \mc{B} \ra \bs{\mc{B}}_{\rm{R}}$ is referred to as the **reference configuration** and the set $\bs{\mc{B}_{\rm{R}}} \subset \b{E}_{\rm{R}}$ is called the **reference body in the reference Euclidean space**. $\bs{k}_{\rm{R}}$ is a continuous, injective map. A material particle's reference position vector is given by $\bs{k}_{\rm{R}}[\chi] = \bs{X}$. When we refer to the position vector $\bs{X}$ as the material particle, we in fact mean the material particle $\bs{k}^{-1}_{\rm{R}}[\bs{X}] = \chi$ belonging to $\mc{B}$. Associated with $\bs{k}_{\rm{R}}$, we also have the map $k_{\rm{R}} : \mc{B} \ra \mc{B}_{\rm{R}}$, where $\mc{B}_{\rm{R}}$ is the **reference body in the reference point space**.
 
 To summarize the notation:
 
-1. $\bsmc{B}_{R} = \bs{k}_{R}\pr{\mc{B}} = \set{\bs{k}_{R}\pr{\chi} \in \b{E}_{R}}{\chi \in \mc{B}} \subset \b{E}_{R}$ &ensp; (Reference body in $\b{E}_{R}$)
-1. $\mc{B}_{R} = k_{R}\pr{\mc{B}} = \set{k_{R}\pr{\chi} \in \mc{E}_{R}}{\chi \in \mc{B}} \subset \mc{E}_{R}$ &ensp; (Reference body in $\mc{E}_{R}$)
+1. $\bsmc{B}_{\rm{R}} = \bs{k}_{\rm{R}}\pr{\mc{B}} = \set{\bs{k}_{\rm{R}}\pr{\chi} \in \b{E}_{\rm{R}}}{\chi \in \mc{B}} \subset \b{E}_{\rm{R}}$ &ensp; (Reference body in $\b{E}_{\rm{R}}$)
+1. $\mc{B}_{\rm{R}} = k_{\rm{R}}\pr{\mc{B}} = \set{k_{\rm{R}}\pr{\chi} \in \mc{E}_{\rm{R}}}{\chi \in \mc{B}} \subset \mc{E}_{\rm{R}}$ &ensp; (Reference body in $\mc{E}_{\rm{R}}$)
 
 **Remarks:**
 
@@ -33,7 +33,7 @@ To summarize the notation:
 
 ### Lagrangian Coordinates {#sec-lagrangian_coordinates}
 
-We describe the motion of a continuum by describing the motion of all its constituent material particles. $\mc{E}_{R}$ and $\b{E}_{R}$ are assumed to be finite dimensional. $\b{E}_{R}$ is a finite dimensional inner product space. Since it is finite dimensional, it is also complete and therefore a *Hilbert space*. We select a list of vectors $\bs{E}_{i} \in \b{E}_{r}$ that form an orthonormal basis for $\b{E}_{r}$. We define an inner product of $\b{E}_{R}$ by setting $\bs{E}_{i} \cdot \bs{E}_{j} = \delta_{ij}$. Let $\b{E}_{R}$ and $\mc{E}_{R}$ be three dimensional. A material particle $\bs{X} \in \b{E}_{R}$ can be written as a linear combination of the basis vectors:
+We describe the motion of a continuum by describing the motion of all its constituent material particles. $\mc{E}_{\rm{R}}$ and $\b{E}_{\rm{R}}$ are assumed to be finite dimensional. $\b{E}_{\rm{R}}$ is a finite dimensional inner product space. Since it is finite dimensional, it is also complete and therefore a *Hilbert space*. We select a list of vectors $\bs{E}_{i} \in \b{E}_{\rm{R}}$ that form an orthonormal basis for $\b{E}_{\rm{R}}$. We define an inner product of $\b{E}_{\rm{R}}$ by setting $\bs{E}_{i} \cdot \bs{E}_{j} = \delta_{ij}$. Let $\b{E}_{\rm{R}}$ and $\mc{E}_{\rm{R}}$ be three dimensional. A material particle $\bs{X} \in \b{E}_{\rm{R}}$ can be written as a linear combination of the basis vectors:
 
 $$
 \begin{equation}
@@ -44,7 +44,7 @@ $$
 $\bs{X}$ is a position vector and so has physical units of distance. The scalars $X_{1}, X_{2}, X_{3}$ are real numbers and are unitless. It is the basis vectors $\bs{E}_{i}$ that carry the units. Distinctions between two Euclidean vector spaces of the same dimension can be made with regard to the units carried by the basis vectors. In order to work with the components $X_{1}, X_{2}, X_{3}$, we declare the following non-dimensionalization map
 $$
 \begin{equation}
-    \mathsf{U} : \b{E}_{R} \ra \b{R}^{3}
+    \mathsf{U} : \b{E}_{\rm{R}} \ra \b{R}^{3}
 \end{equation}
 $$
 
@@ -80,7 +80,7 @@ When the reference configuration does not change, Lagrangian coordinates of a ma
 
 Continuum mechanics is, for the most part, a study of deforming bodies. A reference body in the reference Euclidean space will experience forces and deform. The deformation of a reference body is described by deformation maps, which will be elucidated in a following section.
 
-Let $\mc{E}$ and $\b{E}$ be referred to as the **physical point space** and **physical Euclidean space** respectively. As $\mc{B}_{r}$ deforms, the material particles occupy different regions in the physical point space. At time $\tau$, $\mc{B}$ can be mapped to a subset of $\mc{E}$ to describe deformed body after it has changed shape or orientation. Similarly, $\mc{B}$ can also be mapped to a subset of $\b{E}$. That is, each material particle $\chi \in \mc{B}$ can be mapped to a position vector in $\b{E}$ describing its current position.
+Let $\mc{E}$ and $\b{E}$ be referred to as the **physical point space** and **physical Euclidean space** respectively. As $\mc{B}_{\rm{R}}$ deforms, the material particles occupy different regions in the physical point space. At time $\tau$, $\mc{B}$ can be mapped to a subset of $\mc{E}$ to describe deformed body after it has changed shape or orientation. Similarly, $\mc{B}$ can also be mapped to a subset of $\b{E}$. That is, each material particle $\chi \in \mc{B}$ can be mapped to a position vector in $\b{E}$ describing its current position.
 
 We refer to the map $\bs{k}_{\tau} : \mc{B} \ra \bs{\mc{B}}_{\tau}$ is referred to as the **current configuration or deformed configuration** and the set $\bs{\mc{B}_{\tau}} \subset \b{E}$ is called the **current body or deformed body in the physical Euclidean space**. $\bs{k}_{\tau}$ is also a continuous, injective map. A material particle's current position vector is given by $\bs{k}_{\tau}[\chi] = \bs{x}$. We also have the map $k_{\tau} : \mc{B} \ra \mc{B}_{\tau}$, where $\mc{B}_{\tau}$ is the **current body or deformed body in the physical point space**.
 
@@ -91,7 +91,7 @@ Once again, to summarize the notation:
 
 ### Eulerian Coordinates {#sec-eulerian_coordinates}
 
-We saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume $\mc{E}_{r}$ and $\b{E}_{r}$ are finite dimensional spaces and $\b{E}_{r}$ is a Hilbert space. We select a list of vectors $\bs{e}_{i} \in \b{E}$ that form an orthonormal basis for $\b{E}$ and define an inner product for $\b{E}$ such that $\bs{e}_{i} \cdot \bs{e}_{j} = \delta_{ij}$. Let the spaces be three dimensional. We denote the material particle's position vector in the physical Euclidean space $\b{E}$ at time $\tau$ with $\bs{x}$, which can be written as a linear combination of the basis vectors:
+We saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume $\mc{E}$ and $\b{E}$ are finite dimensional spaces and $\b{E}$ is a Hilbert space. We select a list of vectors $\bs{e}_{i} \in \b{E}$ that form an orthonormal basis for $\b{E}$ and define an inner product for $\b{E}$ such that $\bs{e}_{i} \cdot \bs{e}_{j} = \delta_{ij}$. Let the spaces be three dimensional. We denote the material particle's position vector in the physical Euclidean space $\b{E}$ at time $\tau$ with $\bs{x}$, which can be written as a linear combination of the basis vectors:
 
 $$
 \begin{equation}
@@ -130,6 +130,6 @@ $$
 \end{equation}
 $$
 
-$\bssf{x}$ is referred to as the **Eulerian coordinates** or **spatial coordinates** of the material particle $\bs{k}^{-1}[\bs{X}]$ at time $\tau$. The Eulerian coordinates are the components of $\bs{x}$ with respect to the basis vectors $\bs{e}_{i}$. 
+$\bssf{x}$ is referred to as the **Eulerian coordinates** or **spatial coordinates** of the material particle $\bs{k}_{\rm{R}}^{-1}[\bs{X}]$ at time $\tau$. The Eulerian coordinates are the components of $\bs{x}$ with respect to the basis vectors $\bs{e}_{i}$. 
 
 As the body deforms, the Eulerian coordinates of a material particle change since $\bs{k}_{\tau}[\chi]$ occupies different positions in the physical Euclidean space.
