@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5c68c56399ad69b87d177e7ce0fe0cb0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1863ba1fd308c4e2ed246a7f7244b87d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -102,11 +102,13 @@ window.MathJax = {
       // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
       bs:    ['\\boldsymbol{#1}', 1],
       mc:    ['\\mathcal{#1}', 1],
+      bsmc:    ['\\boldsymbol{\\mathcal{#1}}', 1],
       msf:   ['\\mathsf{#1}', 1],
       rm:    ['\\mathrm{#1}', 1],
       brm:   ['\\boldsymbol{\\mathrm{#1}}', 1], 
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       bsf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
+      bssf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
       tu:    ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
       tusf:  ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
@@ -342,7 +344,14 @@ window.Quarto = {
    
   <ul>
   <li><a href="#sec-kinematics_intro" id="toc-sec-kinematics_intro" class="nav-link active" data-scroll-target="#sec-kinematics_intro"><span class="header-section-number">10.1</span> Introduction to Kinematics</a></li>
-  <li><a href="#sec-bodies" id="toc-sec-bodies" class="nav-link" data-scroll-target="#sec-bodies"><span class="header-section-number">10.2</span> Bodies</a></li>
+  <li><a href="#sec-ref_body_configuration" id="toc-sec-ref_body_configuration" class="nav-link" data-scroll-target="#sec-ref_body_configuration"><span class="header-section-number">10.2</span> Reference Body and Reference Configuration</a>
+  <ul class="collapse">
+  <li><a href="#sec-lagrangian_coordinates" id="toc-sec-lagrangian_coordinates" class="nav-link" data-scroll-target="#sec-lagrangian_coordinates"><span class="header-section-number">10.2.1</span> Lagrangian Coordinates</a></li>
+  </ul></li>
+  <li><a href="#sec-ref_body_configuration" id="toc-sec-ref_body_configuration" class="nav-link" data-scroll-target="#sec-ref_body_configuration"><span class="header-section-number">10.3</span> Deformed Body and Deformed Configuration</a>
+  <ul class="collapse">
+  <li><a href="#sec-eulerian_coordinates" id="toc-sec-eulerian_coordinates" class="nav-link" data-scroll-target="#sec-eulerian_coordinates"><span class="header-section-number">10.3.1</span> Eulerian Coordinates</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -370,20 +379,112 @@ window.Quarto = {
 
 <section id="sec-kinematics_intro" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="sec-kinematics_intro"><span class="header-section-number">10.1</span> Introduction to Kinematics</h2>
-<p><strong>Kinematics</strong> is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies. First, we begin by defining a continuum.</p>
-<div id="def-continuum" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10.1</strong></span> <strong><span style="color: red;">Continuum</span></strong></p>
-<p><em>Need to fill in</em></p>
-</div>
-<p>A continuum theory is a mathematical theory. Real objects are not really continua. At the atomic level, there is empty space between atoms with no matter in between. So the continuum is a mathematical construction which certain physical systems can approximate.</p>
+<p><strong>Kinematics</strong> is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies. <!-- First, we begin by defining a continuum.
+
+::: {#def-continuum}
+**[Continuum]{style="color: red;"}**
+
+*Need to fill in*
+:::
+
+A continuum theory is a mathematical theory. Real objects are not really continua. At the atomic level, there is empty space between atoms with no matter in between. So the continuum is a mathematical construction which certain physical systems can approximate. --></p>
 </section>
-<section id="sec-bodies" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="sec-bodies"><span class="header-section-number">10.2</span> Bodies</h2>
-<p>Bodies occupy regions of an affine point space <span class="math inline">\(\mc{E}\)</span>. Specifically, the body <span class="math inline">\(\mc{B}\)</span> is an open subset of <span class="math inline">\(\mc{E}\)</span>. It is simply a collection of points in <span class="math inline">\(\mc{E}\)</span>. We refer to <span class="math inline">\(\mc{B}\)</span> as the <strong>material body</strong> and the points in it as <strong>material particles</strong>. We denote a material particle in <span class="math inline">\(\mc{B}\)</span> by <span class="math inline">\(\chi\)</span>.</p>
+<section id="sec-ref_body_configuration" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="sec-ref_body_configuration"><span class="header-section-number">10.2</span> Reference Body and Reference Configuration</h2>
+<p>Bodies occupy regions of an affine point space <span class="math inline">\(\mc{E}\)</span>. Specifically, the body <span class="math inline">\(\mc{B}\)</span> is an open subset of <span class="math inline">\(\mc{E}\)</span>. It is simply a collection of points in <span class="math inline">\(\mc{E}\)</span>. We refer to <span class="math inline">\(\mc{B}\)</span> as the <strong>material body</strong> and the points in it as <strong>material particles</strong> or <strong>material points</strong>. We denote a material particle in <span class="math inline">\(\mc{B}\)</span> by <span class="math inline">\(\chi\)</span>.</p>
 <p>Let <span class="math inline">\(\mc{E}_{R}\)</span> and <span class="math inline">\(\b{E}_{R}\)</span> be referred to as the <strong>reference point space</strong> and <strong>reference Euclidean space</strong> respectively. <span class="math inline">\(\mc{B}\)</span> can be mapped to a subset of <span class="math inline">\(\mc{E}_{R}\)</span> to represent the object of interest before it has changed shape or orientation. Similarly, <span class="math inline">\(\mc{B}\)</span> can be mapped to a subset of <span class="math inline">\(\b{E}_{R}\)</span>. That is, each material particle <span class="math inline">\(\chi \in \mc{B}\)</span> can be mapped to a position vector in <span class="math inline">\(\b{E}_{R}\)</span>.</p>
 <p>We refer to the map <span class="math inline">\(\bs{k}_{R} : \mc{B} \ra \bs{\mc{B}}_{R}\)</span> is referred to as the <strong>reference configuration</strong> and the set <span class="math inline">\(\bs{\mc{B}_{R}} \subset \b{E}_{R}\)</span> is called the <strong>reference body in the reference Euclidean space</strong>. <span class="math inline">\(\bs{k}_{R}\)</span> is a continuous, injective map. A material particle’s reference position vector is given by <span class="math inline">\(\bs{k}_{R}[\chi] = \bs{X}\)</span>. When we refer to the position vector <span class="math inline">\(\bs{X}\)</span> as the material particle, we in fact mean the material particle <span class="math inline">\(\bs{k}^{-1}_{R}[\bs{X}] = \chi\)</span> belonging to <span class="math inline">\(\mc{B}\)</span>. Associated with <span class="math inline">\(\bs{k}_{R}\)</span>, we also have the map <span class="math inline">\(k_{R} : \mc{B} \ra \mc{B}_{R}\)</span>, where <span class="math inline">\(\mc{B}_{R}\)</span> is the <strong>reference body in the reference point space</strong>.</p>
+<p>To summarize the notation:</p>
+<ol type="1">
+<li><span class="math inline">\(\bsmc{B}_{R} = \bs{k}_{R}\pr{\mc{B}} = \set{\bs{k}_{R}\pr{\chi} \in \b{E}_{R}}{\chi \in \mc{B}} \subset \b{E}_{R}\)</span>   (Reference body in <span class="math inline">\(\b{E}_{R}\)</span>)</li>
+<li><span class="math inline">\(\mc{B}_{R} = k_{R}\pr{\mc{B}} = \set{k_{R}\pr{\chi} \in \mc{E}_{R}}{\chi \in \mc{B}} \subset \mc{E}_{R}\)</span>   (Reference body in <span class="math inline">\(\mc{E}_{R}\)</span>)</li>
+</ol>
+<p><strong>Remarks:</strong></p>
+<ol type="1">
+<li>The choice of the reference body is arbitrary.</li>
+<li>The reference body need not be stress free.</li>
+</ol>
+<section id="sec-lagrangian_coordinates" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="sec-lagrangian_coordinates"><span class="header-section-number">10.2.1</span> Lagrangian Coordinates</h3>
+<p>We describe the motion of a continuum by describing the motion of all its constituent material particles. <span class="math inline">\(\mc{E}_{R}\)</span> and <span class="math inline">\(\b{E}_{R}\)</span> are assumed to be finite dimensional. <span class="math inline">\(\b{E}_{R}\)</span> is a finite dimensional inner product space. Since it is finite dimensional, it is also complete and therefore a <em>Hilbert space</em>. We select a list of vectors <span class="math inline">\(\bs{E}_{i} \in \b{E}_{r}\)</span> that form an orthonormal basis for <span class="math inline">\(\b{E}_{r}\)</span>. We define an inner product of <span class="math inline">\(\b{E}_{R}\)</span> by setting <span class="math inline">\(\bs{E}_{i} \cdot \bs{E}_{j} = \delta_{ij}\)</span>. Let <span class="math inline">\(\b{E}_{R}\)</span> and <span class="math inline">\(\mc{E}_{R}\)</span> be three dimensional. A material particle <span class="math inline">\(\bs{X} \in \b{E}_{R}\)</span> can be written as a linear combination of the basis vectors:</p>
+<p><span class="math display">\[
+\begin{equation}
+    \bs{X} = X_{1} \bs{E}_{1} + X_{2} \bs{E}_{2} + X_{3} \bs{E}_{3}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(\bs{X}\)</span> is a position vector and so has physical units of distance. The scalars <span class="math inline">\(X_{1}, X_{2}, X_{3}\)</span> are real numbers and are unitless. It is the basis vectors <span class="math inline">\(\bs{E}_{i}\)</span> that carry the units. Distinctions between two Euclidean vector spaces of the same dimension can be made with regard to the units carried by the basis vectors. In order to work with the components <span class="math inline">\(X_{1}, X_{2}, X_{3}\)</span>, we declare the following non-dimensionalization map <span class="math display">\[
+\begin{equation}
+    \sf U : \b{E}_{R} \ra \b{R}^{3}
+\end{equation}
+\]</span></p>
+<p>defined as</p>
+<p><span class="math display">\[
+\begin{equation}
+\sf{U}[\bs{X}] = \pr{\bs{X} \cdot \bs{E}_{1}, \bs{X} \cdot \bs{E}_{2}, \bs{X} \cdot \bs{E}_{3}} = \pr{X_{1}, X_{2}, X_{3}}.
+\end{equation}
+\]</span></p>
+<p>We denote the tuple <span class="math inline">\(\pr{X_{1}, X_{2}, X_{3}}\)</span> with the following bold sans-serif symbol <span class="math display">\[
+\begin{equation}
+\bssf{X} = \pr{X_{1}, X_{2}, X_{3}}
+\end{equation}
+\]</span></p>
+<p>where <span class="math inline">\(\bssf{X} \in \b{R}^3\)</span>. Equivalently, <span class="math inline">\(\bssf{X}\)</span> can be written as a column matrix: <span class="math display">\[
+\begin{equation}
+    \bssf{X} = \begin{bmatrix}
+                X_{1} \\ X_{2} \\ X_{3}
+                \end{bmatrix}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(\bssf{X}\)</span> is referred to as the <strong>Lagrangian coordinates</strong> or <strong>material coordinates</strong> of <span class="math inline">\(\bs{X}\)</span>. The Lagrangian coordinates are the components of <span class="math inline">\(\bs{X}\)</span> with respect to the basis vectors <span class="math inline">\(\bs{E}_{i}\)</span>.</p>
+<p>When the reference configuration does not change, Lagrangian coordinates of a material particle do not change, since they describe the material particle in the reference body in the reference Euclidean space.</p>
+</section>
+</section>
+<section id="sec-ref_body_configuration" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="sec-ref_body_configuration"><span class="header-section-number">10.3</span> Deformed Body and Deformed Configuration</h2>
+<p>Continuum mechanics is, for the most part, a study of deforming bodies. A reference body in the reference Euclidean space will experience forces and deform. The deformation of a reference body is described by deformation maps, which will be elucidated in a following section.</p>
+<p>Let <span class="math inline">\(\mc{E}\)</span> and <span class="math inline">\(\b{E}\)</span> be referred to as the <strong>physical point space</strong> and <strong>physical Euclidean space</strong> respectively. As <span class="math inline">\(\mc{B}_{r}\)</span> deforms, the material particles occupy different regions in the physical point space. At time <span class="math inline">\(\tau\)</span>, <span class="math inline">\(\mc{B}\)</span> can be mapped to a subset of <span class="math inline">\(\mc{E}\)</span> to describe deformed body after it has changed shape or orientation. Similarly, <span class="math inline">\(\mc{B}\)</span> can also be mapped to a subset of <span class="math inline">\(\b{E}\)</span>. That is, each material particle <span class="math inline">\(\chi \in \mc{B}\)</span> can be mapped to a position vector in <span class="math inline">\(\b{E}\)</span> describing its current position.</p>
+<p>We refer to the map <span class="math inline">\(\bs{k}_{\tau} : \mc{B} \ra \bs{\mc{B}}_{\tau}\)</span> is referred to as the <strong>current configuration or deformed configuration</strong> and the set <span class="math inline">\(\bs{\mc{B}_{\tau}} \subset \b{E}\)</span> is called the <strong>current body or deformed body in the physical Euclidean space</strong>. <span class="math inline">\(\bs{k}_{\tau}\)</span> is also a continuous, injective map. A material particle’s current position vector is given by <span class="math inline">\(\bs{k}_{\tau}[\chi] = \bs{x}\)</span>. We also have the map <span class="math inline">\(k_{\tau} : \mc{B} \ra \mc{B}_{\tau}\)</span>, where <span class="math inline">\(\mc{B}_{\tau}\)</span> is the <strong>current body or deformed body in the physical point space</strong>.</p>
+<p>Once again, to summarize the notation:</p>
+<ol type="1">
+<li><span class="math inline">\(\bsmc{B}_{\tau} = \bs{k}_{\tau}\pr{\mc{B}} = \set{\bs{k}_{\tau}\pr{\chi} \in \b{E}}{\chi \in \mc{B}} \subset \b{E}\)</span>   (Current body or deformed body at time <span class="math inline">\(\tau\)</span> in <span class="math inline">\(\b{E}\)</span>)</li>
+<li><span class="math inline">\(\mc{B}_{\tau} = k_{\tau}\pr{\mc{B}} = \set{k_{\tau}\pr{\chi} \in \mc{E}}{\chi \in \mc{B}} \subset \mc{E}_{\tau}\)</span>   (Current body or deformed body at time <span class="math inline">\(\tau\)</span> in <span class="math inline">\(\mc{E}\)</span>)</li>
+</ol>
+<section id="sec-eulerian_coordinates" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="sec-eulerian_coordinates"><span class="header-section-number">10.3.1</span> Eulerian Coordinates</h3>
+<p>We saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume <span class="math inline">\(\mc{E}_{r}\)</span> and <span class="math inline">\(\b{E}_{r}\)</span> are finite dimensional spaces and <span class="math inline">\(\b{E}_{r}\)</span> is a Hilbert space. We select a list of vectors <span class="math inline">\(\bs{e}_{i} \in \b{E}\)</span> that form an orthonormal basis for <span class="math inline">\(\b{E}\)</span> and define an inner product for <span class="math inline">\(\b{E}\)</span> such that <span class="math inline">\(\bs{e}_{i} \cdot \bs{e}_{j} = \delta_{ij}\)</span>. Let the spaces be three dimensional. We denote the material particle’s position vector in the physical Euclidean space <span class="math inline">\(\b{E}\)</span> at time <span class="math inline">\(\tau\)</span> with <span class="math inline">\(\bs{x}\)</span>, which can be written as a linear combination of the basis vectors:</p>
+<p><span class="math display">\[
+\begin{equation}
+    \bs{x} = x_{1} \bs{e}_{1} + x_{2} \bs{e}_{2} + x_{3} \bs{e}_{3}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(\bs{x}\)</span> has units of distance. The scalars <span class="math inline">\(x_{1}, x_{2}, x_{3}\)</span> are unitless real numbers, and the units are carried by the basis vectors <span class="math inline">\(\bs{e}_{i}\)</span>. We declare another non-dimensionalization map</p>
+<p><span class="math display">\[
+\begin{equation}
+\sf{U}_{\tau} : \b{E} \ra \b{R}^3
+\end{equation}
+\]</span></p>
+<p>defined as <span class="math display">\[
+\begin{equation}
+\sf{U}_{\tau}[\bs{x}] = \pr{\bs{x} \cdot \bs{e}_{1}, \bs{x} \cdot \bs{e}_{2}, \bs{x} \cdot \bs{e}_{3}} = \pr{x_{1}, x_{2}, x_{3}}.
+\end{equation}
+\]</span></p>
+<p>We denote the tuple <span class="math inline">\(\pr{x_{1}, x_{2}, x_{3}}\)</span> with the following bold sans-serif symbol <span class="math display">\[
+\begin{equation}
+\bssf{x} = \pr{x_{1}, x_{2}, x_{3}}
+\end{equation}
+\]</span></p>
+<p>where <span class="math inline">\(\bssf{x} \in \b{R}^3\)</span>. Equivalently, <span class="math inline">\(\bssf{x}\)</span> can be written as a column matrix: <span class="math display">\[
+\begin{equation}
+    \bssf{x} = \begin{bmatrix}
+                x_{1} \\ x_{2} \\ x_{3}
+                \end{bmatrix}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(\bssf{x}\)</span> is referred to as the <strong>Eulerian coordinates</strong> or <strong>spatial coordinates</strong> of the material particle <span class="math inline">\(\bs{k}^{-1}[\bs{X}]\)</span> at time <span class="math inline">\(\tau\)</span>. The Eulerian coordinates are the components of <span class="math inline">\(\bs{x}\)</span> with respect to the basis vectors <span class="math inline">\(\bs{e}_{i}\)</span>.</p>
+<p>As the body deforms, the Eulerian coordinates of a material particle change since <span class="math inline">\(\bs{k}_{\tau}[\chi]\)</span> occupies different positions in the physical Euclidean space.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
