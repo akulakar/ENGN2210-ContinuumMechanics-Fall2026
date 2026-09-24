@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Einstein Summation Convention – ENGN2210 — Continuum Mechanics</title>
+<title>11&nbsp; Deformation and Motion – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" rel="next">
-<link href="../../notes/MathematicalPreliminaries/Tensors.html" rel="prev">
+<link href="../../notes/Kinematics/BodiesConfigurations.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -217,7 +216,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/BodiesConfigurations.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/DeformationMotion.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deformation and Motion</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -294,7 +293,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></span></a>
   </div>
 </li>
@@ -335,7 +334,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/DeformationMotion.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/DeformationMotion.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deformation and Motion</span></span></a>
   </div>
 </li>
@@ -351,20 +350,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#expression-terms-indices" id="toc-expression-terms-indices" class="nav-link active" data-scroll-target="#expression-terms-indices"><span class="header-section-number">6.1</span> Expression, Terms, Indices</a>
-  <ul class="collapse">
-  <li><a href="#free-and-dummy-indices" id="toc-free-and-dummy-indices" class="nav-link" data-scroll-target="#free-and-dummy-indices"><strong>Free and dummy indices</strong></a></li>
-  </ul></li>
-  <li><a href="#kronecker-delta-symbol" id="toc-kronecker-delta-symbol" class="nav-link" data-scroll-target="#kronecker-delta-symbol"><span class="header-section-number">6.2</span> Kronecker-Delta symbol</a></li>
+  <li><a href="#sec-admissible_inverse_def_map" id="toc-sec-admissible_inverse_def_map" class="nav-link active" data-scroll-target="#sec-admissible_inverse_def_map"><span class="header-section-number">11.1</span> Admissible and inverse deformation map</a></li>
+  <li><a href="#sec-deformation_map_components" id="toc-sec-deformation_map_components" class="nav-link" data-scroll-target="#sec-deformation_map_components"><span class="header-section-number">11.2</span> Deformation Map Components</a></li>
+  <li><a href="#sec-deformation_map_example" id="toc-sec-deformation_map_example" class="nav-link" data-scroll-target="#sec-deformation_map_example"><span class="header-section-number">11.3</span> Examples of Deformation Maps</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/BodiesConfigurations.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/DeformationMotion.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deformation and Motion</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></h1>
+<h1 class="title"><span id="sec-deformation_motion" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deformation and Motion</span></span></h1>
 </div>
 
 
@@ -381,386 +378,105 @@ window.Quarto = {
 </header>
 
 
-<section id="expression-terms-indices" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="expression-terms-indices"><span class="header-section-number">6.1</span> Expression, Terms, Indices</h2>
-<p><span class="math display">\[
-\begin{equation}
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-\end{equation}
-\]</span></p>
-<p>The expression above contains three terms. The symbols <span class="math inline">\(i,m,k,q\)</span> denote indices. They typically run from one to number of space dimensions, i.e., two or three.</p>
-<p>The complexity of the terms can be indefinitely increased. <span class="math display">\[
-\begin{equation}
-a_{ij} x_ix_jx_k
-\end{equation}
-\]</span></p>
-<section id="free-and-dummy-indices" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="free-and-dummy-indices"><strong>Free and dummy indices</strong></h3>
-<div id="def-free_indices" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6.1</strong></span> A <strong><span style="color: red;">free index</span></strong> is an index that appears only once.</p>
+<p>The previous section described reference and current bodies as well as Lagrangian and Eulerian coordinates of a material particle. However, we still need to describe the motion of the material body, that is the map between the reference and deformed bodies. The reference configuration maps the material body to the reference body, and the current configuration maps the material body to the current body. We would also like to have a map between the reference body and deformed bodie(s).</p>
+<div id="def-motion_map" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 11.1</strong></span> <strong></strong></p>
+<p>The motion is a map <span class="math inline">\(\bs{\varphi} : \bs{\mathcal{B}}_{\rm{R}} \times \b{T} \to \mathbb{E}\)</span> that takes in a material particle <span class="math inline">\(\bs{X}\in \bs{\mathcal{B}}_{\rm R}\)</span> and a time <span class="math inline">\(\tau \in \b{T}\)</span>, and returns the spatial position <span class="math inline">\(\bs{\varphi}\sqpr{\bs{X}, \bs{\tau}} = \bs{x}\)</span> occupied in <span class="math inline">\(\mathbb{E}\)</span> at the time instance <span class="math inline">\(\bs{\tau}\)</span>.</p>
 </div>
-<div id="def-dummy_indices" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6.2</strong></span> A <strong><span style="color: red;">dummy index</span></strong> is an index that appears exactly twice.</p>
+<p><strong>Note:</strong> We model time as a one dimensional vector space and denote it with <span class="math inline">\(\b{T}\)</span>.</p>
+<div id="def-deformation_map" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 11.2</strong></span> <strong></strong></p>
+<p>The deformation map <span class="math inline">\(\bs{\varphi}_{\tau} : \bs{\mathcal{B}}_{\rm{R}} \to \mathbb{E}\)</span> takes in a material particle <span class="math inline">\(\bs{X}\in \bs{\mathcal{B}}_{\rm R}\)</span> and return the spatial position <span class="math inline">\(\bs{\varphi}_{\tau}\sqpr{\bs{X}}\)</span> occupied in <span class="math inline">\(\mathbb{E}\)</span> at the time instance <span class="math inline">\(\bs{\tau}\)</span>. We often use <span class="math inline">\(\bs{x}_{\tau}\)</span> as an abbreviation for <span class="math inline">\(\bs{\varphi}_{\tau}\sqpr{\bs{X}}\)</span>.</p>
 </div>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_{m}
-}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{k,q\}
-}
-\end{equation}
-\]</span></p>
-<section id="rules" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="rules"><strong>Rules</strong></h4>
-<p><span style="color: red;">Rule 1.1:</span> <em>A dummy index implies a sum w.r.t that index.</em></p>
-<p><span style="color: red;">Rule 1.2:</span> <em>In Einstein summation convention, an index cannot appear more than twice</em></p>
-<section id="examples" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples"><strong>Examples</strong></h6>
+<p>The motion can be thought of as the collection of all deformation maps at all time instances. When we consider a single time instance, that is <span class="math inline">\(\bs{\varphi}\sqpr{\cdot, \bs{\tau}}\)</span>, we obtain the deformation map <span class="math inline">\(\bs{\varphi}_{\tau}\)</span>.</p>
+<section id="sec-admissible_inverse_def_map" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="sec-admissible_inverse_def_map"><span class="header-section-number">11.1</span> Admissible and inverse deformation map</h2>
+<p>In continuum mechanics we will be interested in a wide class of possible deformation maps, but we will place some conditions on <span class="math inline">\(\bs{\varphi}_{\tau}\)</span>. We will say that <span class="math inline">\(\bs{\varphi}\)</span> is an admissible deformation map if and only if</p>
 <ol type="1">
-<li><span class="math display">\[\begin{align} x_{i}y_{i} &amp; = x_1y_1+ x_2 y_2+ x_3 y_3 \end{align}\]</span></li>
-<li><span class="math display">\[\begin{align} m^{j}v_{j} &amp; = m^{1}v_{1}+m^{2}v_{2}+m^{3}v_{3} \end{align}\]</span></li>
-<li><span class="math display">\[
-\begin{align} a_{ij}x_i y_j&amp;=x_ia_{i1} y_1+x_ia_{i2} y_2+x_ia_{i3} y_3\\
-          &amp;=(x_1a_{11}+x_2a_{21}+x_3a_{31}) y_1
-          +(x_1a_{12}+x_2a_{22}+x_3a_{32}) y_2+
-          (x_1a_{13}+x_2a_{23}+x_3a_{33}) y_3\\
-          &amp;=(a_{11}x_1y_1+a_{21}x_2y_1+a_{31}x_3y_1
-           +a_{12}x_1y_2+a_{22}x_2y_2+a_{32}x_3y_2
-           +a_{13}x_1y_3+a_{23}x_2y_3+a_{33}x_3y_3)
-\end{align}
-\]</span></li>
-<li><span class="math display">\[\begin{align}a_{ijk}x_ix_j x_k&amp;=\sum_{i=1}^{3}
-                \sum_{j=1}^{3}
-                \sum_{k=1}^{3} a_{ijk}x_ix_j x_k
-  \end{align}
-\]</span></li>
-<li><span class="math display">\[
-\begin{align}
-   x_i a_j x_j a_i&amp;=\sum_{i=1}^{3}
-                 \sum_{j=1}^{3} x_i a_j x_j a_i\\
-                 &amp;= \sum_{i=1}^{3}x_i a_i \sum_{j=1}^{3}  x_j a_j
-   \end{align}
-\]</span></li>
+<li><span class="math inline">\(\bs{\varphi}_{\tau}\)</span> is defined for all <span class="math inline">\(\bs{X}\in \bs{\mathcal{B}}_{\rm R}\)</span></li>
+<li><span class="math inline">\(\bs{\varphi}_{\tau}\)</span> is injective, except perhaps at the boundary of <span class="math inline">\(\bs{\mathcal{B}}_{\rm R}\)</span> (such as to avoid interpenetration)</li>
+<li><span class="math inline">\(\bs{\varphi}_{\tau}\)</span> is continuously differentiable, expect perhaps at the boundary of <span class="math inline">\(\bs{\mathcal{B}}_{\rm R}\)</span> (such as to avoid cracks, dislocations)</li>
 </ol>
+<p>If the deformation map is well defined for the entire domain and injective, then it is possible to be more specific about the codomain. Particularly, the codomain is the set <span class="math inline">\(\bs{\mathcal{B}}_{\tau} \subset \b{R}\)</span>, which is the current body in the physical Euclidean space. Then the deformation map <span class="math inline">\(\bs{\varphi}_{\tau} : \bs{\mathcal{B}}_{\rm{R}} \to \bs{\mathcal{B}}_{\tau}\)</span> is also surjective and therefore bijective.</p>
+<p>Since it is bijective, there exists a well defined inverse map. This is true for finite dimensional maps between vector spaces of the same dimension. Therefore, it is possible to define the inverse map <span class="math inline">\(\bs{\varphi}^{-1} : \bs{\mathcal{B}}_{\tau} \to \bs{\mathcal{B}}_{\rm R}\)</span> such that <span class="math inline">\(\bs{\varphi}^{-1}_{\tau}\sqpr{\bs{x}}:=\)</span> gives the material particle <span class="math inline">\(\bs{X}\)</span> that is located at <span class="math inline">\(\bs{x}\)</span> at time instance <span class="math inline">\(\bs{\tau}\)</span>. Clearly <span class="math inline">\(\bs{\varphi}_{\tau}\sqpr{\bs{\varphi}_{\tau}^{-1}\sqpr{\bs{x}}}=\bs{x}\)</span>.</p>
+<!-- **Note:**
+
+The motion need not be injective with respect to time. The motion evaluated at two distinct times $\bs{\tau}_{1}$ and $\bs{\tau}_{2}$ may produce two deformation maps that may be identical with each other. -->
 </section>
-<section id="non-examples" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="non-examples"><strong>Non-examples</strong></h6>
-<p><span class="math display">\[
-\begin{equation}
-x_{jj}y_j
-\quad \text{(Not okay; j repeated thrice)}
-\end{equation}
-\]</span></p>
-<p><span style="color: red;">Rule 2.a (Renaming of dummy indices):</span> <em>A dummy index can be renamed, as long as the new name does not conflict with the names of the other dummy or free indices in the same term</em></p>
-</section>
-<section id="examples-1" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-1"><strong>Examples</strong></h6>
-<p><span class="math display">\[
+<section id="sec-deformation_map_components" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="sec-deformation_map_components"><span class="header-section-number">11.2</span> Deformation Map Components</h2>
+<p>Recall the nondimensionalization map <span class="math inline">\(\msf{U} : \bs{\mc{B}}_{\rm{R}} \to \b{R}^{3}\)</span>. We define the components of the deformation map as follows <span class="math display">\[
 \begin{align}
-x_iy_i&amp;\Rightarrow x_j y_j\\
+\bs{\varphi}_{\tau}\sqpr{\bs{X}} &amp;= \varphi_{i\tau}\sqpr{\msf{U}\sqpr{\bs{X}}}\bs{e}_i,
 \end{align}
 \]</span></p>
-<p><span class="math display">\[
+<p>where <span class="math display">\[
+\varphi_{i\tau}:\mathbb{R}^3\to \mathbb{R}
+\]</span></p>
+<p>and <span class="math inline">\(\pr{\msf{U}\sqpr{\bs{X}}}_{j} = X_j\)</span>. Specifically, <span class="math inline">\(X_{j}=\bs{X}\cdot \bs{E}_j\)</span>. The functions <span class="math inline">\(\varphi_{i\tau}\)</span> are called the components of the deformation map. We can also define the deformation map by defining the map, <span class="math display">\[
 \begin{align}
-a_ix_jy_j&amp;\Rightarrow a_ix_k y_k, \quad (\text{OK, no conflict with free index}) \\
-a_ix_jy_j&amp;\not\Rightarrow a_ix_i y_i \quad (\text{conflict with free index})\\
+\bs{\varphi}_{\tau}: B_{\rm R} \to \mathbb{E},
 \end{align}
 \]</span></p>
-<p><span class="math display">\[
+<p>where <span class="math display">\[
+\bs{\varphi}_{\tau}\sqpr{X_1,X_2,X_3}=\varphi_{i\tau}\sqpr{X_{1},X_{2},X_{3}}\bs{e}_i
+\]</span></p>
+<p>This map is different from the map <span class="math inline">\(\bs{\varphi}_{\tau} :\bs{\mathcal{B}}_{\rm R}\to \mathbb{E}\)</span>.</p>
+<p>Clearly, when <span class="math inline">\(X_i\)</span> are the components/co-ordinates of <span class="math inline">\(\bs{X}\)</span> w.r.t <span class="math inline">\(\bs{E}_i\)</span>, <span class="math inline">\(\bs{\varphi}_{\tau}\sqpr{X_1,X_2,X_3}=\bs{\varphi}_{\tau}\sqpr{\bs{X}}\)</span>. Despite using the same symbols, it will be clear from context as to which map we are talking about. In many books you will see <span class="math inline">\(x_i\)</span> being used as an alias for <span class="math inline">\(\varphi_{i}\sqpr{X_1,X_2,X_3}\)</span>.</p>
+<p>When we are considering a specific deformation map at a time instance <span class="math inline">\(\bs{\tau}\)</span>, we will omit writing the <span class="math inline">\(\tau\)</span> as a subscript. In such a case the above paragraph can be written as, <span class="math display">\[
 \begin{align}
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \Rightarrow
-                                A_{im}x_{m}+b_i+C_{ipq}x_{p}y_{q}\quad (\text{OK, no conflict}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \Rightarrow
-                                A_{im}x_{m}+b_i+C_{imq}x_{m}y_{q}\quad (\text{OK, no conflict}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \not\Rightarrow
-                                A_{im}x_{m}+b_i+C_{iiq}x_{i}y_{q}\quad (\text{conflict with free index}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                               &amp; \not\Rightarrow
-                                A_{im}x_{m}+b_i+C_{iqq}x_{q}y_{q}\quad (\text{conflict with dummy index}) \\
-A_{im}x_{m}+b_i+C_{ikq}x_{k}y_{q}
-                                &amp;\not \Rightarrow
-                                 A_{ii}x_{i}+b_i+C_{ikq}x_{k}y_{q}\quad (\text{conflict with free index}) \\
+\bs{\varphi}\sqpr{\bs{X}}=\varphi_{i}\sqpr{X_{1}, X_{2}, X_{3}}\bs{e}_i,
 \end{align}
 \]</span></p>
-<p><span style="color: red;">Rule 2.b:</span> <em>Different terms can have same dummy indices.</em></p>
+<p>where <span class="math inline">\(\varphi_{i} : \mathbb{R}^3 \to \mathbb{R}\)</span> and <span class="math inline">\(\msf{U}\sqpr{\bs{X}} = \pr{\bs{X}\cdot\bs{e}_{1}, \bs{X}\cdot\bs{e}_{2}, \bs{X}\cdot\bs{e}_{3}} = \pr{X_1, X_2, X_3}\)</span>. The functions <span class="math inline">\(\varphi_{i}\)</span> are called the components of the deformation map.</p>
+<p>It follows from the above introduced notation that the spatial location occupied by the material particle <span class="math inline">\(\bs{X}\)</span> is <span class="math inline">\(x_i \bs{e}_i\)</span>. Thus, <span class="math inline">\(\bs{x}=x_i\bs{e}_i\)</span>.</p>
 </section>
-<section id="examples-2" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-2"><strong>Examples</strong></h6>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\{i\}\\
-\{k,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\{i\}\\
-\{k \rightarrow m,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{imq} x_{m} y_{q}}_{
-\{i\}\\
-\{m,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}
-_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{imq} x_{m} y_{q}}_{
-\{i\}\\
-\{m \rightarrow i,q\}
-}
-\end{equation}
-\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span></p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_m
-}_{
-\{i\}\\
-\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\{i\}\\
-\emptyset
-}+\underbrace{C_{iiq} x_{i} y_{q}}_{
-  \{i\}\\
-\{i,q\}
-}
-\end{equation}
-\]</span> (Not okay - conflict with free index)</p>
-<p><span style="color: red;">Rule 3 (Free Indices):</span> <em>A free index denotes a set of</em> <span class="math inline">\(n_{\rm{sd}}\)</span> <em>terms</em></p>
-</section>
-<section id="examples-3" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-3"><strong>Examples</strong></h6>
-<p><span class="math display">\[
+<section id="sec-deformation_map_example" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec-deformation_map_example"><span class="header-section-number">11.3</span> Examples of Deformation Maps</h2>
+<section id="stretching-of-a-cube" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="stretching-of-a-cube">Stretching of a cube</h4>
+<p>Let <span class="math inline">\(B_{\rm R}= \set{(X_{1}, X_{2}, X_{3})}{0 \leq X_{i} \leq L, ~i=1,2,3}\)</span>, where <span class="math inline">\(L \in \mathbb{R}_{\ge 0}\)</span>. Consider a deformation map <span class="math inline">\(\bs{\varphi}:B_{\rm R}\to \mathbb{E}\)</span>. The deformation consists in strectching each edge of the cube in the <span class="math inline">\(a^\text{th}\)</span> direction by a factor of <span class="math inline">\(\lambda_a\)</span>. <span class="math inline">\(\lambda_a\in (0, \infty)\)</span>, which is expressed as <span class="math display">\[
 \begin{align}
-a_{i}&amp;\Rightarrow\{a_1,a_2,a_3\}\\
-a_{i}=b_{i}&amp;\Rightarrow\{a_1=b_1,a_2=b_2,a_3=b_3\}\\
-a_{i}+b_{i}&amp;\Rightarrow\{a_1+b_1,a_2+b_2,a_3+b_3\}\\
+x_1&amp;=\lambda_1X_1,
+\\
+x_2&amp;=\lambda_2X_2,
+\\
+x_3&amp;=\lambda_3 X_3.
 \end{align}
 \]</span></p>
-<!-- Removed equation: A_{ij}&\Rightarrow\{A_{11},A_{12},A_{13},A_{21},A_{22},A_{23},A_{31},A_{32},A_{33},\}\\  ZZ, 20230208-->
+<p>The values <span class="math inline">\(\lambda_1\)</span>,<span class="math inline">\(\lambda_2\)</span>, and <span class="math inline">\(\lambda_3\)</span> are called the stretch rations.</p>
 </section>
-<section id="denoting-ordered-sets" class="level5 unnumbered">
-<h5 class="unnumbered anchored" data-anchor-id="denoting-ordered-sets">Denoting ordered sets</h5>
-<p><span class="math display">\[(\left(A_{ij})_{j\in \mathcal{I}}\right)_{i\in \mathcal{I}}=(A_{ij})_{i,~j\in \mathcal{I}}\]</span></p>
-<p><span class="math display">\[\left(\left(A_{1j}\right)_{j \in \mathcal{I}},
-\left(A_{2j}\right)_{j\in \mathcal{I}},
-\left(A_{3j}\right)_{j\in \mathcal{I}}\right)
-\]</span></p>
-<!-- % &=
-% (\left(A_{1j}\right)_{j\in \mathcal{I}},
-% \left( A_{2j}\right)_{j\in \mathcal{I}},
-% \left( A_{2j} \right)_{j\in \mathcal{I}}) -->
-<p>Notice that in each expression, all terms have the same set of free indices. That is, take a look at the expression,</p>
-<p><span class="math display">\[
-\begin{equation}
-\underbrace
-{
-A_{im}x_{m}
-}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{m\}
-}
-+\underbrace{
-b_i}
-_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\emptyset
-}+\underbrace{C_{ikq} x_{k} y_{q}}_{
-\text{Free}=\{i\}\\
-\text{Dummy}=\{k,q\}
-}
-\end{equation}
-\]</span></p>
-<p>This is a consequence of the following rule:</p>
-<p><span style="color: red;">Rule 4:</span> <em>All terms in an expression should have the same set of free indices.</em></p>
-<section id="examples-4" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="examples-4"><strong>Examples</strong></h6>
-<p><span class="math display">\[
+<section id="pure-shear-of-a-cube" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="pure-shear-of-a-cube">Pure shear of a cube</h4>
+<p>For <span class="math inline">\(\gamma\in \mathbb{R}\)</span>, the deformation map <span class="math display">\[
 \begin{align}
-a_i +b_i\quad (\text{OK})\\
-a_j +b_j\quad (\text{OK})\\
-a_i +b_j\quad (\text{Not OK})\\
-M_i =C_{mi}b_m\quad (\text{OK})\\
-M_i =C_{mj}b_m\quad (\text{Not OK})\\
+x_1&amp;=X_1+\gamma X_2\\
+x_2&amp;=X_2\\
+x_3&amp;=X_3
 \end{align}
 \]</span></p>
-<p><span style="color: red;">Rule 5:</span> <em>All terms in an expression should have the same set of free indices.</em></p>
-<!-- (the power of computers) - Viola Mathematica -->
+<p>is called pure shear in the <span class="math inline">\(\bs{X}_1-\bs{X}_2\)</span> plane, and <span class="math inline">\(\gamma\)</span> is the shear deformation.</p>
 </section>
-</section>
-</section>
-</section>
-</section>
-<section id="kronecker-delta-symbol" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="kronecker-delta-symbol"><span class="header-section-number">6.2</span> Kronecker-Delta symbol</h2>
-<p>Kronecker delta, denoted by <span class="math inline">\(\delta_{ij}\)</span>, is defined as:</p>
-<p>$$ <span class="math display">\[\begin{equation}
-\delta_{ij} =
-\begin{cases}
-  1 &amp; i=j \\
-  0 &amp; i \neq j
-\end{cases}
-\end{equation}\]</span></p>
-<p>$$</p>
-<p>That is,</p>
-<p><span class="math inline">\(\delta_{11}=1\)</span> <span class="math inline">\(\delta_{12}=0\)</span> <span class="math inline">\(\delta_{13}=0\)</span> <span class="math inline">\(\delta_{21}=0\)</span> <span class="math inline">\(\delta_{22}=1\)</span> <span class="math inline">\(\delta_{23}=0\)</span> <span class="math inline">\(\delta_{31}=0\)</span> <span class="math inline">\(\delta_{32}=0\)</span> <span class="math inline">\(\delta_{33}=1\)</span></p>
-<p>For example, <span class="math inline">\(\delta_{12}=0\)</span> and <span class="math inline">\(\delta_{33}=1\)</span>.</p>
-<section id="identity-matrix" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="identity-matrix"><strong>Identity Matrix</strong></h4>
-<p><span class="math display">\[
-\mathbb{\mathsf{I}}
-=
-\left(\delta_{ij}\right)= \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{pmatrix}\\
-\text{Read paranthesis as ``matrix representation of the Kronecker-delta symbol``}
-\]</span> <span class="math display">\[\left[\delta_{ij}\right]= \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}\]</span></p>
-</section>
-<section id="properties-of-the-kronecker-delta" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="properties-of-the-kronecker-delta"><strong>Properties of the Kronecker Delta</strong></h4>
-<ol type="1">
-<li>Replacement Property:</li>
-</ol>
-<p><span class="math display">\[
+<section id="anti-plane-shear-along-the-bse_3-direction" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="anti-plane-shear-along-the-bse_3-direction">Anti-plane shear (along the <span class="math inline">\(\bs{E}_3\)</span> direction)</h4>
+<p>Another type of two dimensional deformation has the following form, <span class="math display">\[
 \begin{align}
-\delta_{1m}a_m
-=\delta_{11}a_1+\delta_{12}a_2+\delta_{13}a_3\ \\
-=1a_1+0a_2+0a_3\ \\
-=a_1 \end{align}
-\]</span></p>
-<p><span class="math display">\[
+x_1&amp;=X_1\\
+x_2&amp;=X_2\\
+x_3&amp;=\varphi_3(X_1,X_2)
+\end{align}
+\]</span> In this case the deformation is only in the <span class="math inline">\(\bs{E}_3\)</span> direction.</p>
+</section>
+<section id="plane-strain-within-the-bse_1-bse_2-plane" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="plane-strain-within-the-bse_1-bse_2-plane">Plane strain (within the <span class="math inline">\(\bs{E}_1-\bs{E}_2\)</span> plane)</h4>
+<p>We often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is, <span class="math display">\[
 \begin{align}
-\delta_{2m}a_m = \delta_{21}a_1+\delta_{22}a_2+0a_3\ \\ =a_2
+x_1&amp;=\varphi_1(X_1,X_2)\\
+x_2&amp;=\varphi_2(X_1,X_2)\\
+x_3&amp;=X_3
 \end{align}
 \]</span></p>
-<p><span class="math display">\[
-\begin{align} \delta_{3m}a_m &amp; = \delta_{31}a_1+\delta_{32}a_2+\delta_{33}a_3\ \\
-=0a_1+0a_2+a_3\ \\
-=a_3
-\end{align}
-\]</span></p>
-<p>So, <span class="math inline">\(\delta_{im}a_m = a_i\)</span>, <span class="math inline">\((\delta_{1m}a_m, \delta_{2m}a_m , \delta_{3m}a_m) = (a_1, a_2, a_3)\)</span>, <span class="math inline">\(\delta_{1m}a_m = a_i\)</span>.</p>
-<p><span class="math display">\[
-\begin{align}
-\delta_{1m}T_{mj} &amp; = \delta_{11}T_{1j}+ \delta_{12}T_{2j}+\delta_{13}T_{3j} =T_{1j} \\
-\delta_{2m}T_{mj} &amp; = \delta_{21}T_{1j}+ \delta_{22}T_{2j}+\delta_{23}T_{3j} =T_{2j} \\
-\delta_{3m}T_{mj} &amp; = \delta_{31}T_{1j}+ \delta_{32}T_{2j}+\delta_{33}T_{3j} =T_{3j}
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{bmatrix}
-\delta_{1m}T_{mj} = T_{1j} \\
-\delta_{2m}T_{mj} = T_{2j} \\
-\delta_{3m}T_{mj} = T_{3j}
-\end{bmatrix}
-\]</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{1m}T_{mj} = T_{1j},  \delta_{2m}T_{mj} = T_{2j}, \delta_{3m}T_{mj}=T_{3j}\)</span>. <span class="math display">\[\delta_{im}T_{mj} = T_{ij}\]</span></p>
-<p><strong>We can generalize the last two results.</strong> If, in a term, the Kronecker delta and another symbol share an index, the index in that symbol can be replaced by the Kronecker delta’s other index in its symbol. <em>For example:</em></p>
-<ol type="1">
-<li><span class="math inline">\(\delta_{im}a_{mb}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ib}\)</span></li>
-<li><span class="math inline">\(\delta_{mi}a_{mb}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a_{ib}\)</span></li>
-<li><span class="math inline">\(\delta_{im}a_{pqms}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(a_{pqis}\)</span></li>
-<li><span class="math inline">\(\delta_{im}\delta_{mj}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ij}\)</span></li>
-<li><span class="math inline">\(\delta_{im}\delta_{mn}\delta_{nj}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{in}\delta_nj\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\delta_{ij}\)</span></li>
-</ol>
-<!-- <br /> -->
-<p><span class="math display">\[
-\begin{align}
-\delta_{m1}T_{mj} &amp;= \delta_{11}T_{1j} + \delta_{21}T_{2j}+ \delta_{31}T_{3j} = T_{1j} \\
-\delta_{m2}T_{mj} &amp;= \delta_{12}T_{1j} + \delta_{22}T_{2j}+ \delta_{32}T_{3j} = T_{2j} \\
-\delta_{m3}T_{mj} &amp;= \delta_{13}T_{1j} + \delta_{23}T_{2j}+ \delta_{33}T_{3j} = T_{3j}
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-\delta_{m1}T_{mj} &amp;= T_{1j} \\
-\delta_{m2}T_{mj} &amp;= T_{2j} \\
-\delta_{m3}T_{mj} &amp;= T_{3j} \\
-\delta_{mi}T_{mj} &amp;= T_{ij}
-\end{align}
-\]</span></p>
-<!-- [<span style="color:gray; opacity:0.2"> [edit] </span>](https://github.com/AppliedMechanicsLab/appliedmechanicslab/blob/master/course_notes/ENGN1370/ESC.md) -->
+<p>Because there is no deformation along the <span class="math inline">\(\bs{E}_3\)</span> direction, these types of deformations are called “plane strain”.</p>
 
 
 </section>
@@ -1169,14 +885,11 @@ M_i =C_{mj}b_m\quad (\text{Not OK})\\
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="pagination-link" aria-label="Tensors">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tensors</span></span>
+      <a href="../../notes/Kinematics/BodiesConfigurations.html" class="pagination-link" aria-label="Bodies and Configurations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="pagination-link" aria-label="Vector and Tensor Components">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
