@@ -44,7 +44,7 @@ $$
 $\bs{X}$ is a position vector and so has physical units of distance. The scalars $X_{1}, X_{2}, X_{3}$ are real numbers and are unitless. It is the basis vectors $\bs{E}_{i}$ that carry the units. Distinctions between two Euclidean vector spaces of the same dimension can be made with regard to the units carried by the basis vectors. In order to work with the components $X_{1}, X_{2}, X_{3}$, we declare the following non-dimensionalization map
 $$
 \begin{equation}
-    \sf U : \b{E}_{R} \ra \b{R}^{3}
+    \mathsf{U} : \b{E}_{R} \ra \b{R}^{3}
 \end{equation}
 $$
 
@@ -52,7 +52,7 @@ defined as
 
 $$
 \begin{equation}
-\sf{U}[\bs{X}] = \pr{\bs{X} \cdot \bs{E}_{1}, \bs{X} \cdot \bs{E}_{2}, \bs{X} \cdot \bs{E}_{3}} = \pr{X_{1}, X_{2}, X_{3}}.
+\mathsf{U}[\bs{X}] = \pr{\bs{X} \cdot \bs{E}_{1}, \bs{X} \cdot \bs{E}_{2}, \bs{X} \cdot \bs{E}_{3}} = \pr{X_{1}, X_{2}, X_{3}}.
 \end{equation}
 $$
 
@@ -103,14 +103,14 @@ $\bs{x}$ has units of distance. The scalars $x_{1}, x_{2}, x_{3}$ are unitless r
 
 $$
 \begin{equation}
-\sf{U}_{\tau} : \b{E} \ra \b{R}^3
+\mathsf{U}_{\tau} : \b{E} \ra \b{R}^3
 \end{equation}
 $$
 
 defined as 
 $$
 \begin{equation}
-\sf{U}_{\tau}[\bs{x}] = \pr{\bs{x} \cdot \bs{e}_{1}, \bs{x} \cdot \bs{e}_{2}, \bs{x} \cdot \bs{e}_{3}} = \pr{x_{1}, x_{2}, x_{3}}.
+\mathsf{U}_{\tau}[\bs{x}] = \pr{\bs{x} \cdot \bs{e}_{1}, \bs{x} \cdot \bs{e}_{2}, \bs{x} \cdot \bs{e}_{3}} = \pr{x_{1}, x_{2}, x_{3}}.
 \end{equation}
 $$
 
