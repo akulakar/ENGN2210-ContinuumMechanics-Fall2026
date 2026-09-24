@@ -27,7 +27,7 @@ book:
     - part: "Kinematics"
       chapters:
         - notes/Kinematics/BodiesConfigurations.qmd
-    #     - notes/kinematics/Deformation.qmd
+        # - notes/Kinematics/DeformationMotion.qmd
     # - part: "Stress"
     #   chapters:
     # - part: "Balance Laws"
