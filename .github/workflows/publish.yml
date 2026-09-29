@@ -1,4 +1,4 @@
-name: Publish site
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -9,18 +9,15 @@ permissions:
   contents: write
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
         uses: actions/checkout@v4
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Render and publish to gh-pages
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Deploy _book to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_book
+          cname: # Optional: add custom domain if needed

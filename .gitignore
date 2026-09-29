@@ -1,5 +1,5 @@
 # Quarto
-/_book/
+# /_book/ # now committing built files
 /.quarto/
 /_freeze/
 
@@ -11,3 +11,6 @@
 *~
 
 **/*.quarto_ipynb
+
+# Claude
+Claude */
