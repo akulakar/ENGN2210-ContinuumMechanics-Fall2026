@@ -1,38 +1,50 @@
 project:
-  type: book
-  output-dir: _book
+  type: website
+  output-dir: _book          # kept so your deploy path doesn't change
 
-book:
+# Applies to every page
+date: today
+author: "Aashutosh Kulakarni Prachet"   # delete if not wanted
+
+website:
   title: "ENGN2210 — Continuum Mechanics"
-  subtitle: "Course Notes, Fall 2026"
-  # author: "Aashutosh Kulakarni Prachet"
-  date: today
+  description: "Course Notes, Fall 2026"
   search: true
-  # Front-matter files sit at the top level; group the rest under parts.
-  chapters:
-    - index.qmd
-    - part: "Notation"
-      chapters:
-        - notes/Notation/Notation.qmd
-    - part: "Mathematical Preliminaries"
-      chapters:
-        - notes/MathematicalPreliminaries/VectorSpaces.qmd
-        - notes/MathematicalPreliminaries/Maps.qmd
-        # - notes/MathematicalPreliminaries/TensorsTrue.qmd
-        - notes/MathematicalPreliminaries/Tensors.qmd
-        - notes/MathematicalPreliminaries/EinsteinSummationConvention.qmd
-        - notes/MathematicalPreliminaries/VectorTensorComponents.qmd
-        - notes/MathematicalPreliminaries/TraceDeterminant.qmd
-        - notes/MathematicalPreliminaries/ChangeOfBasis.qmd
-    - part: "Kinematics"
-      chapters:
-        - notes/Kinematics/BodiesConfigurations.qmd
-        - notes/Kinematics/DeformationMotion.qmd
-    # - part: "Stress"
-    #   chapters:
-    # - part: "Balance Laws"
-
-
+  page-navigation: true      # previous/next links at page bottom, as in a book
+  sidebar:
+    style: docked
+    collapse-level: 2        # levels expanded by default
+    contents:
+      - index.qmd
+      - section: "Notation"
+        contents:
+          - notes/Notation/Notation.qmd
+      - section: "Mathematical Preliminaries"
+        contents:
+          - notes/MathematicalPreliminaries/VectorSpaces.qmd
+          - notes/MathematicalPreliminaries/Maps.qmd
+          # - notes/MathematicalPreliminaries/TensorsTrue.qmd
+          - notes/MathematicalPreliminaries/Tensors.qmd
+          - notes/MathematicalPreliminaries/EinsteinSummationConvention.qmd
+          - notes/MathematicalPreliminaries/VectorTensorComponents.qmd
+          - notes/MathematicalPreliminaries/TraceDeterminant.qmd
+          - notes/MathematicalPreliminaries/ChangeOfBasis.qmd
+      - section: "Kinematics"
+        contents:
+          - notes/Kinematics/ContinuousBijectionNotHomeomorphism.qmd
+          - notes/Kinematics/BodiesConfigurations.qmd
+          - section: "Simple deformations"
+            href: notes/Kinematics/SimpleDeformations/index.qmd
+            contents:
+              - notes/Kinematics/SimpleDeformations/SimpleShear.qmd
+              # - section: "Deeper level"      # nest as far as you like
+              #   contents:
+              #     - notes/Kinematics/SimpleDeformations/Example/Page.qmd
+          # - notes/Kinematics/Deformation.qmd
+      # - section: "Stress"
+      #   contents:
+      # - section: "Balance Laws"
+      #   contents:
 
 crossref:
   eq-prefix: "Eq."
@@ -41,17 +53,13 @@ crossref:
 
 format:
   html:
-    theme: 
+    theme:
       - simplex
       # - custom.scss
     toc: true
-    toc-depth: 3
+    toc-depth: 6
     number-sections: true
+    number-depth: 6
     html-math-method: mathjax
     include-in-header: _mathjax.html
     css: styles.css
-  # To also produce a PDF, install TinyTeX (`quarto install tinytex`) and
-  # uncomment. LaTeX macros below would then need a parallel definition via
-  # `include-in-header` with a .tex partial.
-  # pdf:
-  #   documentclass: scrreprt

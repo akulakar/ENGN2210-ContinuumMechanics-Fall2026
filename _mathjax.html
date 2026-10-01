@@ -26,13 +26,11 @@ window.MathJax = {
       // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
       bs:    ['\\boldsymbol{#1}', 1],
       mc:    ['\\mathcal{#1}', 1],
-      bsmc:    ['\\boldsymbol{\\mathcal{#1}}', 1],
       msf:   ['\\mathsf{#1}', 1],
       rm:    ['\\mathrm{#1}', 1],
       brm:   ['\\boldsymbol{\\mathrm{#1}}', 1], 
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       bsf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
-      bssf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
       tu:    ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
       tusf:  ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
@@ -51,7 +49,6 @@ window.MathJax = {
       // --- delimiters / operators ---
       pr:   ['\\left(#1\\right)', 1],
       cpr:  ['\\left\\{#1\\right\\}', 1],
-      sqpr:  ['\\left[#1\\right]', 1],
       apr:  ['\\left\\langle#1\\right\\rangle', 1],
       tp:   ['{#1}^{\\mathsf{T}}', 1],
       tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
@@ -92,7 +89,37 @@ window.MathJax = {
       physF: '\\boldsymbol{\\mathfrak{f}}',
       physf: '\\boldsymbol{\\mathfrak{f}}',
       physh: '\\mathscr{h}', physm: '\\mathscr{m}',
-      physu: '\\mathscr{u}', physw: '\\mathscr{w}'
+      physu: '\\mathscr{u}', physw: '\\mathscr{w}',
+
+
+	u: ['\\boldsymbol{#1}', 1],
+      ou: ['\\overline{\\u{#1}}', 1],
+      usf:['\\bsf{#1}',1] ,
+	  husf: ['\\hat{\\usf{#1}}', 1],
+      busf: ['\\overline{\\usf{#1}}', 1],
+      cusf: ['\\check{\\usf{#1}}', 1],
+      pr: ['\\left( #1 \\right)', 1],
+      tps: ['\\left( #1 \\right)^{\\mathsf{T}}', 1],
+      innerproduct: ['\\left( #1, #2 \\right)', 2],
+      dr: ['\\frac{\\partial{#1}}{\\partial{r}}', 1],
+      pR: ['\\frac{\\partial{#1}}{\\partial{R}}', 1],
+      en: ['\\left( #1 \\right)', 1],
+      ppr: ['\\frac{\\partial^2{#1}}{\\partial{r}^2}', 1],
+      ppR: ['\\frac{\\partial^2{#1}}{\\partial{R}^2}', 1],
+      pt: ['\\frac{\\partial{#1}}{\\partial{t}}', 1],
+      ptau: ['\\frac{\\partial{#1}}{\\partial{\\tau}}', 1],
+      ppt: ['\\frac{\\partial^2{#1}}{\\partial{t}^2}', 1],
+      pptau: ['\\frac{\\partial^2{#1}}{\\partial{\\tau}^2}', 1],
+
+      physC: '\\boldsymbol{\\mathscr{C}}',
+      physc: '\\boldsymbol{\\mathscr{c}}',
+      set: ['\\left\\{#1\\, \\big|\\, #2\\right\\}', 2],
+      abs: ['\\left\\lvert #1\\right\\rvert', 1],
+      msqrt: ['\\sqrt{#1}^*', 1],
+      vast: '\\Bigg',
+      Vast: '\\Bigg',
+      t: ['\\tilde{#1}', 1],
+	  ag: ['\\left[ #1 \\right]', 1]
     }
   }
 };

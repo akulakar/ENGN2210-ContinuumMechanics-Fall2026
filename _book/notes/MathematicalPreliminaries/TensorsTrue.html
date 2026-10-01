@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aashutosh Kulakarni Prachet">
+<meta name="dcterms.date" content="2026-10-01">
 
-<title>tensorstrue</title>
+<title>tensorstrue – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,17 +31,50 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="TensorsTrue_files/libs/clipboard/clipboard.min.js"></script>
-<script src="TensorsTrue_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="TensorsTrue_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="TensorsTrue_files/libs/quarto-html/popper.min.js"></script>
-<script src="TensorsTrue_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="TensorsTrue_files/libs/quarto-html/anchor.min.js"></script>
-<link href="TensorsTrue_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="TensorsTrue_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="TensorsTrue_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="TensorsTrue_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="TensorsTrue_files/libs/bootstrap/bootstrap-0c56405ded50f79d1c8dbdb02d4a2b16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 <!--
   Global MathJax configuration for the ENGN2210 notes.
 
@@ -68,13 +103,11 @@ window.MathJax = {
       // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
       bs:    ['\\boldsymbol{#1}', 1],
       mc:    ['\\mathcal{#1}', 1],
-      bsmc:    ['\\boldsymbol{\\mathcal{#1}}', 1],
       msf:   ['\\mathsf{#1}', 1],
       rm:    ['\\mathrm{#1}', 1],
       brm:   ['\\boldsymbol{\\mathrm{#1}}', 1], 
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       bsf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
-      bssf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
       tu:    ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
       tusf:  ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
@@ -133,7 +166,37 @@ window.MathJax = {
       physF: '\\boldsymbol{\\mathfrak{f}}',
       physf: '\\boldsymbol{\\mathfrak{f}}',
       physh: '\\mathscr{h}', physm: '\\mathscr{m}',
-      physu: '\\mathscr{u}', physw: '\\mathscr{w}'
+      physu: '\\mathscr{u}', physw: '\\mathscr{w}',
+
+
+	u: ['\\boldsymbol{#1}', 1],
+      ou: ['\\overline{\\u{#1}}', 1],
+      usf:['\\bsf{#1}',1] ,
+	  husf: ['\\hat{\\usf{#1}}', 1],
+      busf: ['\\overline{\\usf{#1}}', 1],
+      cusf: ['\\check{\\usf{#1}}', 1],
+      pr: ['\\left( #1 \\right)', 1],
+      tps: ['\\left( #1 \\right)^{\\mathsf{T}}', 1],
+      innerproduct: ['\\left( #1, #2 \\right)', 2],
+      dr: ['\\frac{\\partial{#1}}{\\partial{r}}', 1],
+      pR: ['\\frac{\\partial{#1}}{\\partial{R}}', 1],
+      en: ['\\left( #1 \\right)', 1],
+      ppr: ['\\frac{\\partial^2{#1}}{\\partial{r}^2}', 1],
+      ppR: ['\\frac{\\partial^2{#1}}{\\partial{R}^2}', 1],
+      pt: ['\\frac{\\partial{#1}}{\\partial{t}}', 1],
+      ptau: ['\\frac{\\partial{#1}}{\\partial{\\tau}}', 1],
+      ppt: ['\\frac{\\partial^2{#1}}{\\partial{t}^2}', 1],
+      pptau: ['\\frac{\\partial^2{#1}}{\\partial{\\tau}^2}', 1],
+
+      physC: '\\boldsymbol{\\mathscr{C}}',
+      physc: '\\boldsymbol{\\mathscr{c}}',
+      set: ['\\left\\{#1\\, \\big|\\, #2\\right\\}', 2],
+      abs: ['\\left\\lvert #1\\right\\rvert', 1],
+      msqrt: ['\\sqrt{#1}^*', 1],
+      vast: '\\Bigg',
+      Vast: '\\Bigg',
+      t: ['\\tilde{#1}', 1],
+	  ag: ['\\left[ #1 \\right]', 1]
     }
   }
 };
@@ -172,24 +235,206 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      ENGN2210 — Continuum Mechanics
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">ENGN2210 — Continuum Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notation.html</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Mathematical Preliminaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Spaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tensors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Einstein Summation Convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector and Tensor Components</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trace and determinant</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Change of basis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Kinematics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bodies and Configurations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../notes/Kinematics/SimpleDeformations/index.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple deformations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/SimpleDeformations/SimpleShear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple shear</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#tensors-done-properly" id="toc-tensors-done-properly" class="nav-link active" data-scroll-target="#tensors-done-properly"><span class="header-section-number">1</span> Tensors done properly</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#sec-tensor_product" id="toc-sec-tensor_product" class="nav-link" data-scroll-target="#sec-tensor_product"><span class="header-section-number">1.1</span> Tensor Product</a></li>
   </ul></li>
   </ul>
 </nav>
-</div>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aashutosh Kulakarni Prachet </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="tensors-done-properly" class="level1" data-number="1">
@@ -229,11 +474,12 @@ window.Quarto = {
 <p>A dyadic product can also be thought of as a linear map from <span class="math inline">\(\mc{V}\)</span> to <span class="math inline">\(\mc{V}\)</span>. Let <span class="math inline">\(\mc{V}\)</span> be an inner product space. Further, let <span class="math inline">\(\bs{u}, \bs{v} \in \mc{V}\)</span> and <span class="math inline">\(\bs{w}^{\flat} \in \mc{V}'\)</span>. Then, <span class="math display">\[
     \pr{\bs{v} \otimes \bs{w}^\flat} \pr{\cdot, \bs u} = \pr{\bs{w}^\flat (\bs u)} \bs{v} = \inpd{\bs{w}}{\bs u} \bs v
 \]</span></p>
+
+
 </section>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

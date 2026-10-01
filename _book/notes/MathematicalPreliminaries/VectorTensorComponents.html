@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aashutosh Kulakarni Prachet">
+<meta name="dcterms.date" content="2026-10-01">
 
-<title>7&nbsp; Vector and Tensor Components – ENGN2210 — Continuum Mechanics</title>
+<title>vectortensorcomponents – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -47,7 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-345df92c34fc063015aeb6eb30fb760f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,13 +105,11 @@ window.MathJax = {
       // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
       bs:    ['\\boldsymbol{#1}', 1],
       mc:    ['\\mathcal{#1}', 1],
-      bsmc:    ['\\boldsymbol{\\mathcal{#1}}', 1],
       msf:   ['\\mathsf{#1}', 1],
       rm:    ['\\mathrm{#1}', 1],
       brm:   ['\\boldsymbol{\\mathrm{#1}}', 1], 
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       bsf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
-      bssf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
       tu:    ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
       tusf:  ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
@@ -128,7 +128,6 @@ window.MathJax = {
       // --- delimiters / operators ---
       pr:   ['\\left(#1\\right)', 1],
       cpr:  ['\\left\\{#1\\right\\}', 1],
-      sqpr:  ['\\left[#1\\right]', 1],
       apr:  ['\\left\\langle#1\\right\\rangle', 1],
       tp:   ['{#1}^{\\mathsf{T}}', 1],
       tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
@@ -169,7 +168,37 @@ window.MathJax = {
       physF: '\\boldsymbol{\\mathfrak{f}}',
       physf: '\\boldsymbol{\\mathfrak{f}}',
       physh: '\\mathscr{h}', physm: '\\mathscr{m}',
-      physu: '\\mathscr{u}', physw: '\\mathscr{w}'
+      physu: '\\mathscr{u}', physw: '\\mathscr{w}',
+
+
+	u: ['\\boldsymbol{#1}', 1],
+      ou: ['\\overline{\\u{#1}}', 1],
+      usf:['\\bsf{#1}',1] ,
+	  husf: ['\\hat{\\usf{#1}}', 1],
+      busf: ['\\overline{\\usf{#1}}', 1],
+      cusf: ['\\check{\\usf{#1}}', 1],
+      pr: ['\\left( #1 \\right)', 1],
+      tps: ['\\left( #1 \\right)^{\\mathsf{T}}', 1],
+      innerproduct: ['\\left( #1, #2 \\right)', 2],
+      dr: ['\\frac{\\partial{#1}}{\\partial{r}}', 1],
+      pR: ['\\frac{\\partial{#1}}{\\partial{R}}', 1],
+      en: ['\\left( #1 \\right)', 1],
+      ppr: ['\\frac{\\partial^2{#1}}{\\partial{r}^2}', 1],
+      ppR: ['\\frac{\\partial^2{#1}}{\\partial{R}^2}', 1],
+      pt: ['\\frac{\\partial{#1}}{\\partial{t}}', 1],
+      ptau: ['\\frac{\\partial{#1}}{\\partial{\\tau}}', 1],
+      ppt: ['\\frac{\\partial^2{#1}}{\\partial{t}^2}', 1],
+      pptau: ['\\frac{\\partial^2{#1}}{\\partial{\\tau}^2}', 1],
+
+      physC: '\\boldsymbol{\\mathscr{C}}',
+      physc: '\\boldsymbol{\\mathscr{c}}',
+      set: ['\\left\\{#1\\, \\big|\\, #2\\right\\}', 2],
+      abs: ['\\left\\lvert #1\\right\\rvert', 1],
+      msqrt: ['\\sqrt{#1}^*', 1],
+      vast: '\\Bigg',
+      Vast: '\\Bigg',
+      t: ['\\tilde{#1}', 1],
+	  ag: ['\\left[ #1 \\right]', 1]
     }
   }
 };
@@ -208,7 +237,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -217,7 +246,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html">Vector and Tensor Components</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -229,7 +258,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">ENGN2210 — Continuum Mechanics</a> 
@@ -245,7 +274,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -260,7 +289,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Notation.html</span></span></a>
+ <span class="menu-text">Notation.html</span></a>
   </div>
 </li>
       </ul>
@@ -277,43 +306,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vector Spaces</span></span></a>
+ <span class="menu-text">Vector Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maps</span></span></a>
+ <span class="menu-text">Maps</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+ <span class="menu-text">Tensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></span></a>
+ <span class="menu-text">Einstein Summation Convention</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span></a>
+ <span class="menu-text">Vector and Tensor Components</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span></a>
+ <span class="menu-text">Trace and determinant</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Change of basis</span></span></a>
+ <span class="menu-text">Change of basis</span></a>
   </div>
 </li>
       </ul>
@@ -329,16 +358,33 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></span></a>
+  <a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/DeformationMotion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deformation and Motion</span></span></a>
+  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bodies and Configurations</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../notes/Kinematics/SimpleDeformations/index.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple deformations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/SimpleDeformations/SimpleShear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple shear</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -348,14 +394,17 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-vector_components" id="toc-sec-vector_components" class="nav-link active" data-scroll-target="#sec-vector_components"><span class="header-section-number">7.1</span> Vector Components</a></li>
-  <li><a href="#sec-tensor_components" id="toc-sec-tensor_components" class="nav-link" data-scroll-target="#sec-tensor_components"><span class="header-section-number">7.2</span> Tensor Components</a>
-  <ul class="collapse">
-  <li><a href="#sec-tensor_matrix_representation" id="toc-sec-tensor_matrix_representation" class="nav-link" data-scroll-target="#sec-tensor_matrix_representation"><span class="header-section-number">7.2.1</span> Computing the matrix representation of a tensor</a></li>
-  <li><a href="#sec-tensor_dyadic_components" id="toc-sec-tensor_dyadic_components" class="nav-link" data-scroll-target="#sec-tensor_dyadic_components"><span class="header-section-number">7.2.2</span> Representation of tensors as a sum of dyadics products</a></li>
+  <li><a href="#sec-vec_components" id="toc-sec-vec_components" class="nav-link active" data-scroll-target="#sec-vec_components"><span class="header-section-number">1</span> Vector and Tensor Components</a>
+  <ul>
+  <li><a href="#sec-vector_components" id="toc-sec-vector_components" class="nav-link" data-scroll-target="#sec-vector_components"><span class="header-section-number">1.1</span> Vector Components</a></li>
+  <li><a href="#sec-tensor_components" id="toc-sec-tensor_components" class="nav-link" data-scroll-target="#sec-tensor_components"><span class="header-section-number">1.2</span> Tensor Components</a>
+  <ul>
+  <li><a href="#sec-tensor_matrix_representation" id="toc-sec-tensor_matrix_representation" class="nav-link" data-scroll-target="#sec-tensor_matrix_representation"><span class="header-section-number">1.2.1</span> Computing the matrix representation of a tensor</a></li>
+  <li><a href="#sec-tensor_dyadic_components" id="toc-sec-tensor_dyadic_components" class="nav-link" data-scroll-target="#sec-tensor_dyadic_components"><span class="header-section-number">1.2.2</span> Representation of tensors as a sum of dyadics products</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -363,16 +412,27 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html">Vector and Tensor Components</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-vec_components" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aashutosh Kulakarni Prachet </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -382,16 +442,18 @@ window.Quarto = {
 </header>
 
 
+<section id="sec-vec_components" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Vector and Tensor Components</h1>
 <p>Henceforth, the Einstein summation convention will be employed.</p>
-<section id="sec-vector_components" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="sec-vector_components"><span class="header-section-number">7.1</span> Vector Components</h2>
+<section id="sec-vector_components" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-vector_components"><span class="header-section-number">1.1</span> Vector Components</h2>
 <p>A vector can be written as a linear combination of a basis, that is a list of linearly independent vectors the span the space. We are typically interested in vectors that belong to <span class="math inline">\(\b{E}^{n}\)</span>.</p>
 <div id="def-orthogonality" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7.1</strong></span> <strong><span style="color: red;">Orthogonal vectors</span></strong></p>
+<p><span class="theorem-title"><strong>Definition 1</strong></span> <strong><span style="color: red;">Orthogonal vectors</span></strong></p>
 <p>Two vectors <span class="math inline">\(\bs{u}, \bs{v} \in \b{E}^n\)</span> are <em>orthogonal</em> if <span class="math inline">\(\bs{u} \cdot \bs{v} = 0\)</span>.</p>
 </div>
 <div id="def-orthonormal-basis" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7.2</strong></span> <strong><span style="color: red;">Orthonormal basis</span></strong></p>
+<p><span class="theorem-title"><strong>Definition 2</strong></span> <strong><span style="color: red;">Orthonormal basis</span></strong></p>
 <p>An <em>orthonormal basis</em> is a basis whose elements are mutually orthogonal and have a unit norm.</p>
 </div>
 <p>We typically denote orthonormal basis vectors with a tophat, for example <span class="math inline">\(\{\hat{\bs{E}}_{i}\}_{i=1,2,3}\)</span>. Further, we will typically make use of orthonormal basis vectors unless specified otherwise.</p>
@@ -441,8 +503,8 @@ x_3
 \]</span></p>
 <p>The question is, are the components <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(\tilde{x}_i\)</span> the same? In general no. However, a relation between the two represenation can be determined using a change of basis, which will be discussed in a later section.</p>
 </section>
-<section id="sec-tensor_components" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="sec-tensor_components"><span class="header-section-number">7.2</span> Tensor Components</h2>
+<section id="sec-tensor_components" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-tensor_components"><span class="header-section-number">1.2</span> Tensor Components</h2>
 <p>Say <span class="math inline">\(\bs{T} : \b{E}^{n} \ra \b{E}^n\)</span> is a tensor. Then we define its components <span class="math inline">\(T_{ij}\)</span> w.r.t. to the two bases <span class="math inline">\(\hat{\bs{E}}_i\)</span> and <span class="math inline">\(\hat{\bs{F}}_i\)</span> as</p>
 <p><span class="math display">\[
 \begin{align}
@@ -523,8 +585,8 @@ T_{21}a_1 + T_{22}a_2 + T_{23}a_3 = b_2\\
 T_{31}a_1 + T_{32}a_2 + T_{33}a_3 = b_3\\
 \end{align}
 \]</span></p>
-<section id="sec-tensor_matrix_representation" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="sec-tensor_matrix_representation"><span class="header-section-number">7.2.1</span> Computing the matrix representation of a tensor</h3>
+<section id="sec-tensor_matrix_representation" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-tensor_matrix_representation"><span class="header-section-number">1.2.1</span> Computing the matrix representation of a tensor</h3>
 <p><strong>Motivating example</strong></p>
 <p>Let <span class="math inline">\(\bs{T}\)</span> be a tensor that transforms the specific vectors <span class="math inline">\(\bs{a}\)</span> and <span class="math inline">\(\bs{b}\)</span> as follows:</p>
 <p><span class="math display">\[
@@ -773,8 +835,8 @@ b_3\\
 \]</span></p>
 <p>The components of this tensor are clearly <span class="math inline">\(T_{ij} = \alpha\delta_{ij}\)</span>.</p>
 </section>
-<section id="sec-tensor_dyadic_components" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="sec-tensor_dyadic_components"><span class="header-section-number">7.2.2</span> Representation of tensors as a sum of dyadics products</h3>
+<section id="sec-tensor_dyadic_components" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="sec-tensor_dyadic_components"><span class="header-section-number">1.2.2</span> Representation of tensors as a sum of dyadics products</h3>
 <p>If <span class="math inline">\(\hat{\bs{E}}_i\)</span> is an orthonormal basis, it can be shown that</p>
 <p><span class="math display">\[
 \begin{align}
@@ -834,6 +896,7 @@ d_i&amp;=T_{ij}c_j\label{eq:dComponents}
 <p>If follows from <span class="math inline">\(\eqref{eq:eComponents}\)</span> and <span class="math inline">\(\eqref{eq:dComponents}\)</span> that <span class="math inline">\(\bs{e}\)</span> and <span class="math inline">\(\bs{d}\)</span> are the same, from which it follows that <span class="math inline">\(\bs{T}\)</span> and <span class="math inline">\(T_{ij}\hat{\bs{E}}_{i}\otimes \hat{\bs{E}}_{j}\)</span> are one and the same.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -1241,12 +1304,12 @@ d_i&amp;=T_{ij}c_j\label{eq:dComponents}
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="pagination-link" aria-label="Einstein Summation Convention">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Einstein Summation Convention</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="pagination-link" aria-label="Trace and determinant">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Trace and determinant</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

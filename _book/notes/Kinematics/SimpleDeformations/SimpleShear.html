@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aashutosh Kulakarni Prachet">
+<meta name="dcterms.date" content="2026-10-01">
 
-<title>9&nbsp; Material and Spatial Descriptions – ENGN2210 — Continuum Mechanics</title>
+<title>simpleshear – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,24 +31,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-345df92c34fc063015aeb6eb30fb760f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../notes/Kinematics/SimpleDeformations/index.qmd" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -165,7 +167,37 @@ window.MathJax = {
       physF: '\\boldsymbol{\\mathfrak{f}}',
       physf: '\\boldsymbol{\\mathfrak{f}}',
       physh: '\\mathscr{h}', physm: '\\mathscr{m}',
-      physu: '\\mathscr{u}', physw: '\\mathscr{w}'
+      physu: '\\mathscr{u}', physw: '\\mathscr{w}',
+
+
+	u: ['\\boldsymbol{#1}', 1],
+      ou: ['\\overline{\\u{#1}}', 1],
+      usf:['\\bsf{#1}',1] ,
+	  husf: ['\\hat{\\usf{#1}}', 1],
+      busf: ['\\overline{\\usf{#1}}', 1],
+      cusf: ['\\check{\\usf{#1}}', 1],
+      pr: ['\\left( #1 \\right)', 1],
+      tps: ['\\left( #1 \\right)^{\\mathsf{T}}', 1],
+      innerproduct: ['\\left( #1, #2 \\right)', 2],
+      dr: ['\\frac{\\partial{#1}}{\\partial{r}}', 1],
+      pR: ['\\frac{\\partial{#1}}{\\partial{R}}', 1],
+      en: ['\\left( #1 \\right)', 1],
+      ppr: ['\\frac{\\partial^2{#1}}{\\partial{r}^2}', 1],
+      ppR: ['\\frac{\\partial^2{#1}}{\\partial{R}^2}', 1],
+      pt: ['\\frac{\\partial{#1}}{\\partial{t}}', 1],
+      ptau: ['\\frac{\\partial{#1}}{\\partial{\\tau}}', 1],
+      ppt: ['\\frac{\\partial^2{#1}}{\\partial{t}^2}', 1],
+      pptau: ['\\frac{\\partial^2{#1}}{\\partial{\\tau}^2}', 1],
+
+      physC: '\\boldsymbol{\\mathscr{C}}',
+      physc: '\\boldsymbol{\\mathscr{c}}',
+      set: ['\\left\\{#1\\, \\big|\\, #2\\right\\}', 2],
+      abs: ['\\left\\lvert #1\\right\\rvert', 1],
+      msqrt: ['\\sqrt{#1}^*', 1],
+      vast: '\\Bigg',
+      Vast: '\\Bigg',
+      t: ['\\tilde{#1}', 1],
+	  ag: ['\\left[ #1 \\right]', 1]
     }
   }
 };
@@ -201,10 +233,10 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -213,7 +245,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/LagrangianCoordinates.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/LagrangianCoordinates.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material and Spatial Descriptions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/SimpleDeformations/index.qmd">Simple deformations</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/SimpleDeformations/SimpleShear.html">Simple shear</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -225,10 +257,10 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">ENGN2210 — Continuum Mechanics</a> 
+      <a href="../../../">ENGN2210 — Continuum Mechanics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -240,14 +272,14 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Mathematical Preliminaries</span></a>
+ <span class="menu-text">Notation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -255,44 +287,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Vector Spaces</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Maps</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></span></a>
+  <a href="../../../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notation.html</span></a>
   </div>
 </li>
       </ul>
@@ -300,7 +296,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Kinematics</span></a>
+ <span class="menu-text">Mathematical Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -308,10 +304,86 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/LagrangianCoordinates.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material and Spatial Descriptions</span></span></a>
+  <a href="../../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Spaces</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tensors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Einstein Summation Convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector and Tensor Components</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trace and determinant</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Change of basis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Kinematics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bodies and Configurations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../notes/Kinematics/SimpleDeformations/index.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple deformations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/SimpleDeformations/SimpleShear.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Simple shear</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -319,22 +391,43 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#simple-shear" id="toc-simple-shear" class="nav-link active" data-scroll-target="#simple-shear"><span class="header-section-number">1</span> Simple shear</a>
+  <ul>
+  <li><a href="#simple-shear-in-2d" id="toc-simple-shear-in-2d" class="nav-link" data-scroll-target="#simple-shear-in-2d"><span class="header-section-number">1.0.1</span> Simple shear in 2D</a></li>
+  <li><a href="#simple-shear-in-3d" id="toc-simple-shear-in-3d" class="nav-link" data-scroll-target="#simple-shear-in-3d"><span class="header-section-number">1.0.2</span> Simple shear in 3D</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/LagrangianCoordinates.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/LagrangianCoordinates.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material and Spatial Descriptions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/SimpleDeformations/index.qmd">Simple deformations</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/SimpleDeformations/SimpleShear.html">Simple shear</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-bodies_configurations" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material and Spatial Descriptions</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aashutosh Kulakarni Prachet </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -344,13 +437,53 @@ window.Quarto = {
 </header>
 
 
-<p>We describe the motion of a continuum by describing the motion of all its constituent material particles. In order to describe the motion of all the particles we need to have names for all of them. However, since there are an <span class="math inline">\(\inf\)</span> of particles we need an infinity of names.</p>
-<p><strong>Material particle = Material point</strong></p>
-<p>Consider a time invariant configuration (spatial arrangement of all the continuum particles) of the solid that we will call the reference configuration. Consider four particles at the four corners of a beam. For now let us name them as Alex, Wei, and Sara. In the reference configuration the material particle Alex is at <span class="math inline">\((0,0)\)</span>, the material particle Wei is at <span class="math inline">\((5,)\)</span>, and the material particle Sara is <span class="math inline">\((5,1)\)</span>. Since, the co-ordinates that the material points have in the reference configuration is always fixed, we can use these co-ordinates as the material point names. So, instead of saying - “the material particle Alex,” we can say - “the material particle <span class="math inline">\((0,0)\)</span>”</p>
-<p>We can also make statements such as - “the material point <span class="math inline">\((0,0)\)</span> is fixed and cannot move”</p>
-<p>At some later time, say <span class="math inline">\(\tau = 1\)</span>, the material particles Alex, Wei, and Sara move to new points in space. At <span class="math inline">\(\tau = 1\)</span> Alex is still at <span class="math inline">\((0,0)\)</span>, Wei is at <span class="math inline">\((6,2)\)</span>, and Sara is at <span class="math inline">\((4,3)\)</span>. Now consider the following statement</p>
+<section id="simple-shear" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Simple shear</h1>
+<section id="simple-shear-in-2d" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="simple-shear-in-2d"><span class="header-section-number">1.0.1</span> Simple shear in 2D</h3>
+<p>The reference body <span class="math inline">\(B_{\rm{Ref}}\)</span> is a subset of <span class="math inline">\(\mathbb{R}^2\)</span>. The deformation map, <span class="math inline">\(\bsf{x}\ag{\cdot}\)</span>, takes points from <span class="math inline">\(B_{\rm{Ref}}\)</span> into <span class="math inline">\(\mathbb{R}^2\)</span>. We will denote the set <span class="math inline">\(\bsf{x}\ag{B_{\rm{Ref}}}\)</span> as <span class="math inline">\(B_{\tau}\)</span>, the deformed body.</p>
+<p>We can talk about the deformation map <span class="math inline">\(\bsf{x}\ag{\cdot}: B_{\rm Ref}\to \mathbb{R}^2\)</span>.</p>
+<p>$$ <span class="math display">\[\begin{align}
+x_1[X_1,X_2,X_3]&amp;=X_1+0.2 t X_2,\\
+x_2[X_1,X_2,X_3]&amp;=X_2,\\
+
+\end{align}\]</span> $$</p>
+</section>
+<section id="simple-shear-in-3d" class="level3" data-number="1.0.2">
+<h3 data-number="1.0.2" class="anchored" data-anchor-id="simple-shear-in-3d"><span class="header-section-number">1.0.2</span> Simple shear in 3D</h3>
+<p><span class="math display">\[
+\begin{align}
+x_1[X_1,X_2,X_3]&amp;=X_1+0.2 t X_2,\\
+x_2[X_1,X_2,X_3]&amp;=X_2,\\
+x_3[X_1,X_2,X_3]&amp;=X_3,\\
+\end{align}
+\]</span></p>
+<p>The above defomation map can also be written as</p>
+<p><span class="math display">\[\begin{align}
+x_1[X_i]&amp;=X_1+0.4 X_2,\\
+x_2[X_i]&amp;=X_2,\\
+x_3[X_i]&amp;=X_3,\\
+\end{align}\]</span></p>
+<p>Since <span class="math display">\[\begin{align}
+x_1[\bsf{X}]&amp;=\bsf{X}_{\cdot 1}+0.4  \bsf{X}_{\cdot 2},\\
+x_2[\bsf{X}]&amp;=\bsf{X}_{\cdot 2},\\
+x_3[\bsf{X}]&amp;=\bsf{X}_{\cdot 3},\\
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+\bsf{x}\ag{\bsf{X}}&amp;=\bsf{F} \bsf{X}
+\end{align}\]</span> where <span class="math display">\[\begin{align}
+\bsf{F}_{\tau}
+=\begin{bmatrix}
+1 &amp; 0.4 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\end{align}\]</span></p>
+<p>The other deformation map that we use is</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -755,8 +888,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="pagination-link" aria-label="Change of basis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Change of basis</span></span>
+      <a href="../../../notes/Kinematics/SimpleDeformations/index.qmd" class="pagination-link" aria-label="Simple deformations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Simple deformations</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
