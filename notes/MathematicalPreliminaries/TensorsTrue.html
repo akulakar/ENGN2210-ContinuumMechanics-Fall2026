@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aashutosh Kulakarni Prachet">
+<meta name="dcterms.date" content="2026-10-01">
 
-<title>5&nbsp; Tensors done properly – ENGN2210 — Continuum Mechanics</title>
+<title>tensorstrue – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +38,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/MathematicalPreliminaries/Tensors.html" rel="next">
-<link href="../../notes/MathematicalPreliminaries/Maps.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-345df92c34fc063015aeb6eb30fb760f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,13 +103,11 @@ window.MathJax = {
       // --- bold / sans-serif "vector & tensor" macros (used pervasively) ---
       bs:    ['\\boldsymbol{#1}', 1],
       mc:    ['\\mathcal{#1}', 1],
-      bsmc:    ['\\boldsymbol{\\mathcal{#1}}', 1],
       msf:   ['\\mathsf{#1}', 1],
       rm:    ['\\mathrm{#1}', 1],
       brm:   ['\\boldsymbol{\\mathrm{#1}}', 1], 
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       bsf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
-      bssf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
       tu:    ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
       tusf:  ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
@@ -128,7 +126,6 @@ window.MathJax = {
       // --- delimiters / operators ---
       pr:   ['\\left(#1\\right)', 1],
       cpr:  ['\\left\\{#1\\right\\}', 1],
-      sqpr:  ['\\left[#1\\right]', 1],
       apr:  ['\\left\\langle#1\\right\\rangle', 1],
       tp:   ['{#1}^{\\mathsf{T}}', 1],
       tps:  ['\\left(#1\\right)^{\\mathsf{T}}', 1],
@@ -169,7 +166,37 @@ window.MathJax = {
       physF: '\\boldsymbol{\\mathfrak{f}}',
       physf: '\\boldsymbol{\\mathfrak{f}}',
       physh: '\\mathscr{h}', physm: '\\mathscr{m}',
-      physu: '\\mathscr{u}', physw: '\\mathscr{w}'
+      physu: '\\mathscr{u}', physw: '\\mathscr{w}',
+
+
+	u: ['\\boldsymbol{#1}', 1],
+      ou: ['\\overline{\\u{#1}}', 1],
+      usf:['\\bsf{#1}',1] ,
+	  husf: ['\\hat{\\usf{#1}}', 1],
+      busf: ['\\overline{\\usf{#1}}', 1],
+      cusf: ['\\check{\\usf{#1}}', 1],
+      pr: ['\\left( #1 \\right)', 1],
+      tps: ['\\left( #1 \\right)^{\\mathsf{T}}', 1],
+      innerproduct: ['\\left( #1, #2 \\right)', 2],
+      dr: ['\\frac{\\partial{#1}}{\\partial{r}}', 1],
+      pR: ['\\frac{\\partial{#1}}{\\partial{R}}', 1],
+      en: ['\\left( #1 \\right)', 1],
+      ppr: ['\\frac{\\partial^2{#1}}{\\partial{r}^2}', 1],
+      ppR: ['\\frac{\\partial^2{#1}}{\\partial{R}^2}', 1],
+      pt: ['\\frac{\\partial{#1}}{\\partial{t}}', 1],
+      ptau: ['\\frac{\\partial{#1}}{\\partial{\\tau}}', 1],
+      ppt: ['\\frac{\\partial^2{#1}}{\\partial{t}^2}', 1],
+      pptau: ['\\frac{\\partial^2{#1}}{\\partial{\\tau}^2}', 1],
+
+      physC: '\\boldsymbol{\\mathscr{C}}',
+      physc: '\\boldsymbol{\\mathscr{c}}',
+      set: ['\\left\\{#1\\, \\big|\\, #2\\right\\}', 2],
+      abs: ['\\left\\lvert #1\\right\\rvert', 1],
+      msqrt: ['\\sqrt{#1}^*', 1],
+      vast: '\\Bigg',
+      Vast: '\\Bigg',
+      t: ['\\tilde{#1}', 1],
+	  ag: ['\\left[ #1 \\right]', 1]
     }
   }
 };
@@ -208,7 +235,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -217,7 +244,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/TensorsTrue.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tensors done properly</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      ENGN2210 — Continuum Mechanics
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -229,7 +258,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">ENGN2210 — Continuum Mechanics</a> 
@@ -245,7 +274,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -260,7 +289,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Notation.html</span></span></a>
+ <span class="menu-text">Notation.html</span></a>
   </div>
 </li>
       </ul>
@@ -277,49 +306,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vector Spaces</span></span></a>
+ <span class="menu-text">Vector Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maps</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/TensorsTrue.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tensors done properly</span></span></a>
+ <span class="menu-text">Maps</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+ <span class="menu-text">Tensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Einstein Summation Convention</span></span></a>
+ <span class="menu-text">Einstein Summation Convention</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Vector and Tensor Components</span></span></a>
+ <span class="menu-text">Vector and Tensor Components</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Trace and determinant</span></span></a>
+ <span class="menu-text">Trace and determinant</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Change of basis</span></span></a>
+ <span class="menu-text">Change of basis</span></a>
   </div>
 </li>
       </ul>
@@ -335,16 +358,33 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Bodies and Configurations</span></span></a>
+  <a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/DeformationMotion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Deformation and Motion</span></span></a>
+  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bodies and Configurations</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../notes/Kinematics/SimpleDeformations/index.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple deformations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/SimpleDeformations/SimpleShear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple shear</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -354,26 +394,40 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-tensor_product" id="toc-sec-tensor_product" class="nav-link active" data-scroll-target="#sec-tensor_product"><span class="header-section-number">5.1</span> Tensor Product</a></li>
+  <li><a href="#tensors-done-properly" id="toc-tensors-done-properly" class="nav-link active" data-scroll-target="#tensors-done-properly"><span class="header-section-number">1</span> Tensors done properly</a>
+  <ul>
+  <li><a href="#sec-tensor_product" id="toc-sec-tensor_product" class="nav-link" data-scroll-target="#sec-tensor_product"><span class="header-section-number">1.1</span> Tensor Product</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/TensorsTrue.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tensors done properly</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tensors done properly</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aashutosh Kulakarni Prachet </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -383,8 +437,10 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-tensor_product" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="sec-tensor_product"><span class="header-section-number">5.1</span> Tensor Product</h2>
+<section id="tensors-done-properly" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Tensors done properly</h1>
+<section id="sec-tensor_product" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-tensor_product"><span class="header-section-number">1.1</span> Tensor Product</h2>
 <p>We would like form a product between two vectors <span class="math inline">\(\bs{v} \in \mc{V}\)</span> and <span class="math inline">\(\bs{w} \in \mc{W}\)</span>. We denote this product by the symbol <span class="math inline">\(\bs{v} \otimes \bs{w}\)</span> pronounced ‘<span class="math inline">\(\bs{v}\)</span> tensor <span class="math inline">\(\bs{w}\)</span>’. We attach to this tensor product some distributive properties:</p>
 <p><span class="math display">\[
     \begin{align*}
@@ -396,7 +452,7 @@ window.Quarto = {
 \]</span></p>
 <p>The formal definition of a tensor product is the following.</p>
 <div id="def-tensor_product_def" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5.1</strong></span> <strong><span style="color: red;">Tensor product</span></strong></p>
+<p><span class="theorem-title"><strong>Definition 1</strong></span> <strong><span style="color: red;">Tensor product</span></strong></p>
 <p>A <em>tensor product</em> <span class="math inline">\(\bs{v} \otimes \bs{w}\)</span> is an element of the tensor product space <span class="math inline">\(\mc{V} \otimes \mc{W}\)</span> where <span class="math inline">\(\bs{v} \in \mc{V}, \bs{w} \in \mc{W}\)</span> and <span class="math inline">\(\mc{V} \otimes \mc{W}\)</span> is the space of bilinear functionals <span class="math inline">\(\mc{B}\pr{\mc{V}', \mc{W}'}\)</span>. Specifically, <span class="math display">\[
     \pr{\bs{v} \otimes \bs{w}}\pr{\bs{\varphi},\bs{\tau}} = \bs{\varphi}(\bs{v}) \bs{\tau}(\bs{w})
 \]</span> for all <span class="math inline">\(\bs{\varphi} \in \mc{V}', \bs{\tau} \in \mc{W}'\)</span></p>
@@ -413,13 +469,14 @@ window.Quarto = {
 \]</span></p>
 <p>Ultimately, we want to point out that the definition of a tensor product does not require the vector spaces to be inner product spaces. However, if they are equipped with an inner product, then there is a nice isomorphism to the dual space, known as the musical isomorphism, consisting of the flat and sharp maps that are inverses of each other.</p>
 <div id="def-dyad_product_def" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5.2</strong></span> A <strong><span style="color: red;">Dyadic product</span></strong> is a specific type of tensor product. Specifically, it is an element on the space <span class="math inline">\(\mc{V} \otimes \mc{V}'\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 2</strong></span> A <strong><span style="color: red;">Dyadic product</span></strong> is a specific type of tensor product. Specifically, it is an element on the space <span class="math inline">\(\mc{V} \otimes \mc{V}'\)</span>.</p>
 </div>
 <p>A dyadic product can also be thought of as a linear map from <span class="math inline">\(\mc{V}\)</span> to <span class="math inline">\(\mc{V}\)</span>. Let <span class="math inline">\(\mc{V}\)</span> be an inner product space. Further, let <span class="math inline">\(\bs{u}, \bs{v} \in \mc{V}\)</span> and <span class="math inline">\(\bs{w}^{\flat} \in \mc{V}'\)</span>. Then, <span class="math display">\[
     \pr{\bs{v} \otimes \bs{w}^\flat} \pr{\cdot, \bs u} = \pr{\bs{w}^\flat (\bs u)} \bs{v} = \inpd{\bs{w}}{\bs u} \bs v
 \]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -823,18 +880,6 @@ window.Quarto = {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/Maps.html" class="pagination-link" aria-label="Maps">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Maps</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="pagination-link" aria-label="Tensors">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
