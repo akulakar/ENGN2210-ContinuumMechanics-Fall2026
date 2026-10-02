@@ -13,7 +13,7 @@ Let $\mc{B}_{\rm{ref}} = \cpr{\bs{\msf{X}} \in \mbb{R}^{3} ~|~ 0 < X_{i} < 1}$. 
 - $x_{\tau 2}[X_{i}] = X_{2} + \frac{1}{2} X_{2}$
 - $x_{\tau 3}[X_{i}] = X_{3}$
 
-Let $\mc{B} = \cpr{\bs{\msf{x}}[\bs{\msf{X}}, 0] ~|~ \bs{\msf{X}} \in \mc{B}_{\rm{ref}}}$. 
+Let $\mc{B} = \cpr{\bs{\msf{x}}_{\tau}[\bs{\msf{X}}] ~|~ \bs{\msf{X}} \in \mc{B}_{\rm{ref}}}$. 
 Sketch $\mc{B}_{\rm{ref}}$ and $\mc{B}$ in $\mbb{R}^{3}$.
 
 ## Problem 2 (15 pts) {-}
