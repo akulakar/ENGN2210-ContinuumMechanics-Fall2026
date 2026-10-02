@@ -9,7 +9,7 @@
 <meta name="author" content="Aashutosh Kulakarni Prachet and Haneesh Kesari">
 <meta name="dcterms.date" content="2026-10-01">
 
-<title>maps – ENGN2210 — Continuum Mechanics</title>
+<title>index – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -38,8 +38,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/MathematicalPreliminaries/Tensors.html" rel="next">
-<link href="../../notes/MathematicalPreliminaries/VectorSpaces.html" rel="prev">
+<link href="../../homework/HW1/Problems.html" rel="next">
+<link href="../../homework/index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -204,35 +204,6 @@ window.MathJax = {
 };
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -246,7 +217,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/Maps.html">Maps</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/index.html">HW1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -311,7 +282,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Maps</span></a>
   </div>
 </li>
@@ -396,12 +367,23 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../homework/HW1/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">HW1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../homework/HW1/Problems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 1</span></a>
   </div>
 </li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -414,18 +396,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-linear_maps_main" id="toc-sec-linear_maps_main" class="nav-link active" data-scroll-target="#sec-linear_maps_main"><span class="header-section-number">1</span> Maps</a>
-  <ul>
-  <li><a href="#sec-maps" id="toc-sec-maps" class="nav-link" data-scroll-target="#sec-maps"><span class="header-section-number">1.1</span> Maps</a></li>
-  <li><a href="#sec-linear_maps" id="toc-sec-linear_maps" class="nav-link" data-scroll-target="#sec-linear_maps"><span class="header-section-number">1.2</span> Linear Maps</a></li>
-  </ul></li>
+  <li><a href="#hw1" id="toc-hw1" class="nav-link active" data-scroll-target="#hw1"><span class="header-section-number">1</span> HW1</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/VectorSpaces.html">Mathematical Preliminaries</a></li><li class="breadcrumb-item"><a href="../../notes/MathematicalPreliminaries/Maps.html">Maps</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/index.html">HW1</a></li></ol></nav>
 <div class="quarto-title">
 </div>
 
@@ -455,80 +433,10 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-linear_maps_main" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Maps</h1>
-<section id="sec-maps" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="sec-maps"><span class="header-section-number">1.1</span> Maps</h2>
-<div id="def-map" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1</strong></span> <strong><span style="color: red;">Map</span></strong></p>
-<p>A <em>map</em> (or function) <span class="math inline">\(f : X \ra Y\)</span> assigns each element of the set <span class="math inline">\(X\)</span> to exactly one element of the set <span class="math inline">\(Y\)</span>. In other words, it returns a single, unique output when operated on an input.</p>
-</div>
-<p>Typically, a map <span class="math inline">\(f : \mc{D} \subset \b{R} \ra \b{R}\)</span> that returns a real number on being fed a real number is referred to as a <em>function</em>. Sometimes, it can be defined by a formula, for example, as</p>
-<p><span class="math display">\[
-    y=f(x)
-\]</span></p>
-<p>where <span class="math inline">\(x \in \mc{D} \subset \b{R}\)</span> and <span class="math inline">\(y \in \b{R}\)</span>. A distinction is made between the function <span class="math inline">\(f\)</span> and the function’s value <span class="math inline">\(f(x)\)</span>. Some examples of functions include</p>
-<p><span class="math display">\[
-\begin{align*}
-    y &amp;= \sin(x), ~x \in \b{R} \\
-    y &amp;= 1/x, ~x \in \b{R} - \{0\}
-\end{align*}
-\]</span></p>
-<p>We will refer more general operations as <em>maps</em> whose input and output are more general mathematical objects. Examples, of general mathematical objects can be complex numbers, plane geometric objects (triangle, circles, etc.), 3D geometric objects (cubes, spheres, ect.), digital images, and of course the main focus of this course, vectors. The only requirements on a map is that it should be well defined. That is, we should clearly know the domain of the mapping, and for each element of the domain the mapping should always return a well defined, unique object.</p>
-<p><strong>Examples</strong></p>
-<ul>
-<li><span class="math inline">\(A : \mc{D} \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all triangles and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(A(x)\)</span> returns the area of the triangle.</li>
-<li><span class="math inline">\(V : \mc{D} \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all cubes and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(V(x)\)</span> returns the volume of the cube.</li>
-<li><span class="math inline">\(D : \mc{D} \ra \cpr{\text{Mon,Tu,Wed,Th,Fri,Sat,Sun}}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all dates and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(D(x)\)</span> returns the corresponding day of the week for a particular date.</li>
-<li><span class="math inline">\(\text{Col}: \mc{D} \ra \cpr{\text{Red,Blue,Green}}\)</span>, where <span class="math inline">\(\mc{D}\)</span> is the set of all pixels on a well defined digital image and for each <span class="math inline">\(x \in \mc D\)</span>, <span class="math inline">\(\text{Col}(x)\)</span> returns the pixel’s color.</li>
-<li>Norms</li>
-<li>Inner products</li>
-</ul>
-<p><strong>Non examples</strong></p>
-<ul>
-<li><span class="math inline">\(V : \mc{D} \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc D\)</span> is the set of all words in the English language and for each <span class="math inline">\(x \in \mc D, \, V(x)\)</span> returns to us the volume of the word. (Concept of volume is ill defined for words).</li>
-<li><span class="math inline">\(\text{Age} : \mc D \ra \b{R}^{+}\)</span>, where <span class="math inline">\(\mc D\)</span> is the set of all people on Earth and for each <span class="math inline">\(x \in \mc D, \, \text{Age}(x)\)</span> returns to use the age of a person’s child. (A person may have more than one child or no child at all).</li>
-</ul>
-<div id="def-map_between_Euc_spaces" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2</strong></span> <strong><span style="color: red;">Map between Euclidean spaces</span></strong></p>
-<p>The map <span class="math inline">\(\bs{T} : \b E^{n} \ra \b F^{n}\)</span> assigns a vector <span class="math inline">\(\bs v \in \b E^n\)</span> the unique vector <span class="math inline">\(\bs{T}(\bs{v}) \in \b{F}^n\)</span>. It is called a map between Euclidean spaces.</p>
-</div>
-</section>
-<section id="sec-linear_maps" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-linear_maps"><span class="header-section-number">1.2</span> Linear Maps</h2>
-<div id="def-linear_map" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3</strong></span> <strong><span style="color: red;">Linear map</span></strong></p>
-<p>A <em>linear map</em> <span class="math inline">\(\bs{T} : \mc V \ra  \mc W\)</span> is a map from <span class="math inline">\(\mc V \ra \mc W\)</span> with the following properties:</p>
-<ol type="1">
-<li><span class="math inline">\(\bs{T}(\bs u + \bs v) = \bs{T}\bs{u} + \bs{T}\bs{v}\)</span> for all <span class="math inline">\(\bs{u}, \bs{v} \in \mc{V}\)</span></li>
-<li><span class="math inline">\(\bs{T}(a \bs u) = a (\bs{T}\bs{u})\)</span> for all <span class="math inline">\(a \in \b{R}\)</span> and <span class="math inline">\(\bs{u} \in \mc{V}\)</span></li>
-</ol>
-</div>
-<p><span class="math inline">\(\mc V\)</span> and <span class="math inline">\(\mc{W}\)</span> are called the <em>domain</em> and <em>codomain</em> of <span class="math inline">\(\bs{T}\)</span> respectively. Linear maps are also referred to as linear transformations. Note, the definition of the addition and scalar multiplication operations may be different int the two vector spaces <span class="math inline">\(\mc{V}\)</span> and <span class="math inline">\(\mc{W}\)</span>. We usually denote vectors by lowercase bold symbols and linear maps by uppercase bold symbols.</p>
-<p>The <strong>set of all linear maps</strong> from <span class="math inline">\(\mc{V}\)</span> to <span class="math inline">\(\mc{W}\)</span> is denoted by <span class="math inline">\(\mc{L}\pr{\mc{V}, \mc{W}}\)</span>.</p>
-<p><strong>Examples</strong></p>
-<ul>
-<li>Identity: <span class="math inline">\(\bs{I} \bs{v} = \bs{v}\)</span></li>
-<li>Multiplication by a scalar: <span class="math inline">\(\bs{T} \bs{v} = a \bs{v}\)</span></li>
-<li>Differentiation: <span class="math inline">\(D f = f'\)</span></li>
-</ul>
-<!-- **Non examples** -->
-<div id="def-linear_map_add_mult" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4</strong></span> <strong><span style="color: red;">Addition and scalar multiplication on <span class="math inline">\(\mc{L}\pr{\mc{V}, \mc{W}}\)</span></span></strong></p>
-<p>Let <span class="math inline">\(\bs{S}, \bs{T} \in \mc{L}\pr{\mc{V}, \mc{W}}\)</span> and <span class="math inline">\(a \in \b{R}\)</span>. Then <span class="math display">\[
-    \pr{\bs{S} + \bs{T}}\bs v = \bs{S} \bs v + \bs{T} \bs v ~~\text{and}~~ (a \bs{T})\bs v = a (\bs{T} \bs v)
-\]</span> for all <span class="math inline">\(\bs v \in \mc{V}\)</span></p>
-</div>
-<p>You should now be able to prove that the space of linear maps <span style="color: red;"><span class="math inline">\(\mc{L}\pr{\mc{V}, \mc{W}}\)</span> is a vector space!</span> Therefore linear maps are also vectors! This is the reason we try to steer clear of the notion that vectors are quantities with direction and magnitude, since in reality, a vector a much more general mathematical object.</p>
-<p><strong>Properties of linear maps</strong></p>
-<p>If <span class="math inline">\(\bs{S} \in \mc{L}\pr{\mc{U}, \mc{V}}\)</span> and <span class="math inline">\(\bs{T} \in \mc{L}\pr{\mc{V}, \mc{W}}\)</span>, then the <em>product</em> <span class="math inline">\(\bs{T}\bs{S} \in \mc{L}\pr{\mc{U}, \mc{W}}\)</span>, defined by <span class="math display">\[
-    \pr{\bs{T}\bs{S}}\bs{u} = \bs{T}\pr{\bs{S}\bs{u}}
-\]</span> for all <span class="math inline">\(\bs{u} \in \mc{U}\)</span>.</p>
-<p>Linear maps obey the associative, distributive and identity properties.</p>
-<p>Linear maps of the type <span class="math inline">\(\bs{T} : \mc{V} \ra \mc{V}\)</span> are called <em>linear operators</em>, that is domain and codomain are the exact same vector space. Linear maps of the type <span class="math inline">\(\bs{T} : \mc{V} \ra \b{R}\)</span> are called <em>linear forms</em> or <em>linear functionals</em>.</p>
+<section id="hw1" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> HW1</h1>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -934,13 +842,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="pagination-link" aria-label="Vector Spaces">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vector Spaces</span>
+      <a href="../../homework/index.html" class="pagination-link" aria-label="Homework">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Homework</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="pagination-link" aria-label="Tensors">
-        <span class="nav-page-text">Tensors</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../homework/HW1/Problems.html" class="pagination-link" aria-label="HW 1">
+        <span class="nav-page-text">HW 1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
