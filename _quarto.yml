@@ -4,7 +4,7 @@ project:
 
 # Applies to every page
 date: today
-author: "Aashutosh Kulakarni Prachet and Haneesh Kesari"   # delete if not wanted
+# author: "Aashutosh Kulakarni Prachet and Haneesh Kesari"   # delete if not wanted
 
 website:
   title: "ENGN2210 — Continuum Mechanics"
@@ -33,6 +33,7 @@ website:
         contents:
           - notes/Kinematics/ContinuousBijectionNotHomeomorphism.qmd
           - notes/Kinematics/BodiesConfigurations.qmd
+          - notes/Kinematics/DeformationMotion.qmd
           - section: "Simple deformations"
             href: notes/Kinematics/SimpleDeformations/index.qmd
             contents:

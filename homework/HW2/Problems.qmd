@@ -1,3 +1,72 @@
-# HW2 Problems
+# HW2 Problems {-}
 
 **Total points:** 100
+<!-- 
+## Notation {-}
+ -->
+
+## Problem 1 (15 pts) {-}
+
+Let $\mc{B}_{\rm{ref}} = \cpr{\bs{\msf{X}} \in \mbb{R}^{3} ~|~ 0 < X_{i} < 1}$. Consider the deformation
+
+- $x_{\tau 1}[X_{i}] = X_{1} + 2 X_{1}$
+- $x_{\tau 2}[X_{i}] = X_{2} + \frac{1}{2} X_{2}$
+- $x_{\tau 3}[X_{i}] = X_{3}$
+
+Let $\mc{B} = \cpr{\bs{\msf{x}}[\bs{\msf{X}}, 0] ~|~ \bs{\msf{X}} \in \mc{B}_{\rm{ref}}}$. 
+Sketch $\mc{B}_{\rm{ref}}$ and $\mc{B}$ in $\mbb{R}^{3}$.
+
+## Problem 2 (15 pts) {-}
+
+Consider the motion of a continuous body given by equations
+  
+- $x_{1}[\tau, X_i] = e^{\tau} X_{1} + X_{3}$,
+- $x_{2}[\tau, X_i] = X_{2}$,
+- $x_{3}[\tau, X_{i}] = X_{3} - \tau X_{1},$
+- $0\leq \tau \leq$ constant.
+
+1. Compute the components of the inverse motion $X_{i}[\tau, x_{i}]$.
+2. Verify that $x_{i}[\tau, X_{i}[\tau, x_{i}]] = x_{i}$.
+
+## Problem 3 (15 pts) {-}
+
+The motion of a continuous body is defined by equations
+
+- $x_{1}[\tau, X_{i}] = ({X}_1 +{X}_2)e^\tau + ({X}_1 -{X}_2)e^{-\tau}$,
+- $x_{2}[\tau, X_{i}] = ({X}_1 +{X}_2)e^\tau - ({X}_1 -{X}_2)e^{-\tau}$,
+- $x_{3}[\tau, X_{i}] = {X}_3,$
+- $0\leq \tau \leq$ constant.
+
+1. Find the material velocity field.
+1. Find the spatial velocity field.
+
+## Problem 4 (15 pts) {-}
+
+For the motion $x_{i}[\tau, X_{i}]= X_i + \sin{(\pi \tau)}\sin{(\pi X_1)}\delta_{i2}$
+
+1. Find the material velocity and acceleration fields
+1. Find the spatial velocity and acceleration fields.
+
+
+## Problem 5 (20 pts) {-}
+
+Given the simple shear motion of the body to be 
+$$
+x_{i}[\tau, X_{i}] = ({X}_1 + k\tau{X}_2)\delta_{i1} + {X}_2\delta_{i2} + {X}_3\delta_{i3}$$ 
+and the temperature field by 
+$$
+\theta= x_1 + x_2,
+$$
+find the material time derivative $\frac{D\theta}{D \tau}$ at the place (1,1,1) at time $\tau$ = 2.
+
+## Problem 6 (20 pts) {-}
+
+Given :
+$$
+\begin{align}
+\bs{v}_\tau[\bs{x}] &= \frac{x_1\bs{v}_1+x_2\bs{v}_2}{x_1^2+x_2^2}, \nonumber \\
+%\theta &=2(x_1^2+x_2^{2}) \nonumber
+\end{align}
+$$
+Determine the acceleration at place (1,1) at time $\tau= 3$.  
+Note: $\bs{v}_{1}$ and $\bs{v}_{2}$ are basis vectors in the velocity vector space

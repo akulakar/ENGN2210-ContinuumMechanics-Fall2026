@@ -475,28 +475,44 @@
     "href": "notes/Kinematics/DeformationMotion.html",
     "title": "1 Deformation and Motion",
     "section": "",
-    "text": "The previous section described reference and current bodies as well as Lagrangian and Eulerian coordinates of a material particle. However, we still need to describe the motion of the material body, that is the map between the reference and deformed bodies. The reference configuration maps the material body to the reference body, and the current configuration maps the material body to the current body. We would also like to have a map between the reference body and deformed bodie(s).\n\nDefinition 1 \nThe motion is a map \\(\\bs{\\varphi} : \\bs{\\mathcal{B}}_{\\rm{R}} \\times \\b{T} \\to \\mathbb{E}\\) that takes in a material particle \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\) and a time \\(\\tau \\in \\b{T}\\), and returns the spatial position \\(\\bs{\\varphi}\\sqpr{\\bs{X}, \\bs{\\tau}} = \\bs{x}\\) occupied in \\(\\mathbb{E}\\) at the time instance \\(\\bs{\\tau}\\).\n\nNote: We model time as a one dimensional vector space and denote it with \\(\\b{T}\\).\n\nDefinition 2 \nThe deformation map \\(\\bs{\\varphi}_{\\tau} : \\bs{\\mathcal{B}}_{\\rm{R}} \\to \\mathbb{E}\\) takes in a material particle \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\) and return the spatial position \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\) occupied in \\(\\mathbb{E}\\) at the time instance \\(\\bs{\\tau}\\). We often use \\(\\bs{x}_{\\tau}\\) as an abbreviation for \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\).\n\nThe motion can be thought of as the collection of all deformation maps at all time instances. When we consider a single time instance, that is \\(\\bs{\\varphi}\\sqpr{\\cdot, \\bs{\\tau}}\\), we obtain the deformation map \\(\\bs{\\varphi}_{\\tau}\\).\n\n\nIn continuum mechanics we will be interested in a wide class of possible deformation maps, but we will place some conditions on \\(\\bs{\\varphi}_{\\tau}\\). We will say that \\(\\bs{\\varphi}\\) is an admissible deformation map if and only if\n\n\\(\\bs{\\varphi}_{\\tau}\\) is defined for all \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\)\n\\(\\bs{\\varphi}_{\\tau}\\) is injective, except perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid interpenetration)\n\\(\\bs{\\varphi}_{\\tau}\\) is continuously differentiable, expect perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid cracks, dislocations)\n\nIf the deformation map is well defined for the entire domain and injective, then it is possible to be more specific about the codomain. Particularly, the codomain is the set \\(\\bs{\\mathcal{B}}_{\\tau} \\subset \\b{R}\\), which is the current body in the physical Euclidean space. Then the deformation map \\(\\bs{\\varphi}_{\\tau} : \\bs{\\mathcal{B}}_{\\rm{R}} \\to \\bs{\\mathcal{B}}_{\\tau}\\) is also surjective and therefore bijective.\nSince it is bijective, there exists a well defined inverse map. This is true for finite dimensional maps between vector spaces of the same dimension. Therefore, it is possible to define the inverse map \\(\\bs{\\varphi}^{-1} : \\bs{\\mathcal{B}}_{\\tau} \\to \\bs{\\mathcal{B}}_{\\rm R}\\) such that \\(\\bs{\\varphi}^{-1}_{\\tau}\\sqpr{\\bs{x}}:=\\) gives the material particle \\(\\bs{X}\\) that is located at \\(\\bs{x}\\) at time instance \\(\\bs{\\tau}\\). Clearly \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{\\varphi}_{\\tau}^{-1}\\sqpr{\\bs{x}}}=\\bs{x}\\).\n\n\n\n\nRecall the nondimensionalization map \\(\\msf{U} : \\bs{\\mc{B}}_{\\rm{R}} \\to \\b{R}^{3}\\). We define the components of the deformation map as follows \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}} &= \\varphi_{i\\tau}\\sqpr{\\msf{U}\\sqpr{\\bs{X}}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\[\n\\varphi_{i\\tau}:\\mathbb{R}^3\\to \\mathbb{R}\n\\]\nand \\(\\pr{\\msf{U}\\sqpr{\\bs{X}}}_{j} = X_j\\). Specifically, \\(X_{j}=\\bs{X}\\cdot \\bs{E}_j\\). The functions \\(\\varphi_{i\\tau}\\) are called the components of the deformation map. We can also define the deformation map by defining the map, \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}: B_{\\rm R} \\to \\mathbb{E},\n\\end{align}\n\\]\nwhere \\[\n\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\varphi_{i\\tau}\\sqpr{X_{1},X_{2},X_{3}}\\bs{e}_i\n\\]\nThis map is different from the map \\(\\bs{\\varphi}_{\\tau} :\\bs{\\mathcal{B}}_{\\rm R}\\to \\mathbb{E}\\).\nClearly, when \\(X_i\\) are the components/co-ordinates of \\(\\bs{X}\\) w.r.t \\(\\bs{E}_i\\), \\(\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\). Despite using the same symbols, it will be clear from context as to which map we are talking about. In many books you will see \\(x_i\\) being used as an alias for \\(\\varphi_{i}\\sqpr{X_1,X_2,X_3}\\).\nWhen we are considering a specific deformation map at a time instance \\(\\bs{\\tau}\\), we will omit writing the \\(\\tau\\) as a subscript. In such a case the above paragraph can be written as, \\[\n\\begin{align}\n\\bs{\\varphi}\\sqpr{\\bs{X}}=\\varphi_{i}\\sqpr{X_{1}, X_{2}, X_{3}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\(\\varphi_{i} : \\mathbb{R}^3 \\to \\mathbb{R}\\) and \\(\\msf{U}\\sqpr{\\bs{X}} = \\pr{\\bs{X}\\cdot\\bs{e}_{1}, \\bs{X}\\cdot\\bs{e}_{2}, \\bs{X}\\cdot\\bs{e}_{3}} = \\pr{X_1, X_2, X_3}\\). The functions \\(\\varphi_{i}\\) are called the components of the deformation map.\nIt follows from the above introduced notation that the spatial location occupied by the material particle \\(\\bs{X}\\) is \\(x_i \\bs{e}_i\\). Thus, \\(\\bs{x}=x_i\\bs{e}_i\\).\n\n\n\n\n\nLet \\(B_{\\rm R}= \\set{(X_{1}, X_{2}, X_{3})}{0 \\leq X_{i} \\leq L, ~i=1,2,3}\\), where \\(L \\in \\mathbb{R}_{\\ge 0}\\). Consider a deformation map \\(\\bs{\\varphi}:B_{\\rm R}\\to \\mathbb{E}\\). The deformation consists in strectching each edge of the cube in the \\(a^\\text{th}\\) direction by a factor of \\(\\lambda_a\\). \\(\\lambda_a\\in (0, \\infty)\\), which is expressed as \\[\n\\begin{align}\nx_1&=\\lambda_1X_1,\n\\\\\nx_2&=\\lambda_2X_2,\n\\\\\nx_3&=\\lambda_3 X_3.\n\\end{align}\n\\]\nThe values \\(\\lambda_1\\),\\(\\lambda_2\\), and \\(\\lambda_3\\) are called the stretch rations.\n\n\n\nFor \\(\\gamma\\in \\mathbb{R}\\), the deformation map \\[\n\\begin{align}\nx_1&=X_1+\\gamma X_2\\\\\nx_2&=X_2\\\\\nx_3&=X_3\n\\end{align}\n\\]\nis called pure shear in the \\(\\bs{X}_1-\\bs{X}_2\\) plane, and \\(\\gamma\\) is the shear deformation.\n\n\n\nAnother type of two dimensional deformation has the following form, \\[\n\\begin{align}\nx_1&=X_1\\\\\nx_2&=X_2\\\\\nx_3&=\\varphi_3(X_1,X_2)\n\\end{align}\n\\] In this case the deformation is only in the \\(\\bs{E}_3\\) direction.\n\n\n\nWe often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is, \\[\n\\begin{align}\nx_1&=\\varphi_1(X_1,X_2)\\\\\nx_2&=\\varphi_2(X_1,X_2)\\\\\nx_3&=X_3\n\\end{align}\n\\]\nBecause there is no deformation along the \\(\\bs{E}_3\\) direction, these types of deformations are called “plane strain”."
+    "text": "The previous section described reference and current bodies as well as Lagrangian and Eulerian coordinates of a material particle. However, we still need to describe the motion of the material body, that is the map between the reference and deformed bodies. The reference configuration maps the material body to the reference body, and the current configuration maps the material body to the current body. We would also like to have a map between the reference body and deformed bodie(s).\n\nDefinition 1 \nThe motion is a map \\(\\bs{\\varphi} : \\bs{\\mathcal{B}}_{\\rm{R}} \\times \\b{T} \\to \\mathbb{E}\\) that takes in a material particle \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\) and a time \\(\\tau \\in \\b{T}\\), and returns the spatial position \\(\\bs{\\varphi}\\sqpr{\\bs{X}, \\bs{\\tau}} = \\bs{x}\\) occupied in \\(\\mathbb{E}\\) at the time instance \\(\\bs{\\tau}\\).\n\nNote: We model time as a one dimensional vector space and denote it with \\(\\b{T}\\).\n\nDefinition 2 \nThe deformation map \\(\\bs{\\varphi}_{\\tau} : \\bs{\\mathcal{B}}_{\\rm{R}} \\to \\mathbb{E}\\) takes in a material particle \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\) and return the spatial position \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\) occupied in \\(\\mathbb{E}\\) at the time instance \\(\\bs{\\tau}\\). We often use \\(\\bs{x}_{\\tau}\\) as an abbreviation for \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\).\n\nThe motion can be thought of as the collection of all deformation maps at all time instances. When we consider a single time instance, that is \\(\\bs{\\varphi}\\sqpr{\\cdot, \\bs{\\tau}}\\), we obtain the deformation map \\(\\bs{\\varphi}_{\\tau}\\).\n\n\nIn continuum mechanics we will be interested in a wide class of possible deformation maps, but we will place some conditions on \\(\\bs{\\varphi}_{\\tau}\\). We will say that \\(\\bs{\\varphi}\\) is an admissible deformation map if and only if\n\n\\(\\bs{\\varphi}_{\\tau}\\) is defined for all \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\)\n\\(\\bs{\\varphi}_{\\tau}\\) is injective, except perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid interpenetration)\n\\(\\bs{\\varphi}_{\\tau}\\) is continuously differentiable, expect perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid cracks, dislocations)\n\nIf the deformation map is well defined for the entire domain and injective, then it is possible to be more specific about the codomain. Particularly, the codomain is the set \\(\\bs{\\mathcal{B}}_{\\tau} \\subset \\b{R}\\), which is the current body in the physical Euclidean space. Then the deformation map \\(\\bs{\\varphi}_{\\tau} : \\bs{\\mathcal{B}}_{\\rm{R}} \\to \\bs{\\mathcal{B}}_{\\tau}\\) is also surjective and therefore bijective.\nSince it is bijective, there exists a well defined inverse map. This is true for finite dimensional maps between vector spaces of the same dimension. Therefore, it is possible to define the inverse map \\(\\bs{\\varphi}^{-1} : \\bs{\\mathcal{B}}_{\\tau} \\to \\bs{\\mathcal{B}}_{\\rm R}\\) such that \\(\\bs{\\varphi}^{-1}_{\\tau}\\sqpr{\\bs{x}}:=\\) gives the material particle \\(\\bs{X}\\) that is located at \\(\\bs{x}\\) at time instance \\(\\bs{\\tau}\\). Clearly \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{\\varphi}_{\\tau}^{-1}\\sqpr{\\bs{x}}}=\\bs{x}\\).\n\n\n\n\nRecall the nondimensionalization map \\(\\msf{U} : \\bs{\\mc{B}}_{\\rm{R}} \\to \\b{R}^{3}\\). We define the components of the deformation map as follows \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}} &= \\varphi_{i\\tau}\\sqpr{\\msf{U}\\sqpr{\\bs{X}}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\[\n\\varphi_{i\\tau}:\\mathbb{R}^3\\to \\mathbb{R}\n\\]\nand \\(\\pr{\\msf{U}\\sqpr{\\bs{X}}}_{j} = X_j\\). Specifically, \\(X_{j}=\\bs{X}\\cdot \\bs{E}_j\\). The functions \\(\\varphi_{i\\tau}\\) are called the components of the deformation map. We can also define the deformation map by defining the map, \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}: B_{\\rm R} \\to \\mathbb{E},\n\\end{align}\n\\]\nwhere \\[\n\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\varphi_{i\\tau}\\sqpr{X_{1},X_{2},X_{3}}\\bs{e}_i\n\\]\nThis map is different from the map \\(\\bs{\\varphi}_{\\tau} :\\bs{\\mathcal{B}}_{\\rm R}\\to \\mathbb{E}\\).\nClearly, when \\(X_i\\) are the components/co-ordinates of \\(\\bs{X}\\) w.r.t \\(\\bs{E}_i\\), \\(\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\). Despite using the same symbols, it will be clear from context as to which map we are talking about. In many books you will see \\(x_i\\) being used as an alias for \\(\\varphi_{i}\\sqpr{X_1,X_2,X_3}\\).\nWhen we are considering a specific deformation map at a time instance \\(\\bs{\\tau}\\), we will omit writing the \\(\\tau\\) as a subscript. In such a case the above paragraph can be written as, \\[\n\\begin{align}\n\\bs{\\varphi}\\sqpr{\\bs{X}}=\\varphi_{i}\\sqpr{X_{1}, X_{2}, X_{3}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\(\\varphi_{i} : \\mathbb{R}^3 \\to \\mathbb{R}\\) and \\(\\msf{U}\\sqpr{\\bs{X}} = \\pr{\\bs{X}\\cdot\\bs{e}_{1}, \\bs{X}\\cdot\\bs{e}_{2}, \\bs{X}\\cdot\\bs{e}_{3}} = \\pr{X_1, X_2, X_3}\\). The functions \\(\\varphi_{i}\\) are called the components of the deformation map.\nIt follows from the above introduced notation that the spatial location occupied by the material particle \\(\\bs{X}\\) is \\(x_i \\bs{e}_i\\). Thus, \\(\\bs{x}=x_i\\bs{e}_i\\).\n\n\n\n\n\nLet \\(B_{\\rm R}= \\set{(X_{1}, X_{2}, X_{3})}{0 \\leq X_{i} \\leq L, ~i=1,2,3}\\), where \\(L \\in \\mathbb{R}_{\\ge 0}\\). Consider a deformation map \\(\\bs{\\varphi}:B_{\\rm R}\\to \\mathbb{E}\\). The deformation consists in strectching each edge of the cube in the \\(a^\\text{th}\\) direction by a factor of \\(\\lambda_a\\). \\(\\lambda_a\\in (0, \\infty)\\), which is expressed as \\[\n\\begin{align}\nx_1&=\\lambda_1X_1,\n\\\\\nx_2&=\\lambda_2X_2,\n\\\\\nx_3&=\\lambda_3 X_3.\n\\end{align}\n\\]\nThe values \\(\\lambda_1\\),\\(\\lambda_2\\), and \\(\\lambda_3\\) are called the stretch rations.\n\n\n\nFor \\(\\gamma\\in \\mathbb{R}\\), the deformation map \\[\n\\begin{align}\nx_1&=X_1+\\gamma X_2\\\\\nx_2&=X_2\\\\\nx_3&=X_3\n\\end{align}\n\\]\nis called pure shear in the \\(\\bs{X}_1-\\bs{X}_2\\) plane, and \\(\\gamma\\) is the shear deformation.\n\n\n\nAnother type of two dimensional deformation has the following form, \\[\n\\begin{align}\nx_1&=X_1\\\\\nx_2&=X_2\\\\\nx_3&=\\varphi_3(X_1,X_2)\n\\end{align}\n\\] In this case the deformation is only in the \\(\\bs{E}_3\\) direction.\n\n\n\nWe often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is, \\[\n\\begin{align}\nx_1&=\\varphi_1(X_1,X_2)\\\\\nx_2&=\\varphi_2(X_1,X_2)\\\\\nx_3&=X_3\n\\end{align}\n\\]\nBecause there is no deformation along the \\(\\bs{E}_3\\) direction, these types of deformations are called “plane strain”.",
+    "crumbs": [
+      "Kinematics",
+      "Deformation and Motion"
+    ]
   },
   {
     "objectID": "notes/Kinematics/DeformationMotion.html#sec-admissible_inverse_def_map",
     "href": "notes/Kinematics/DeformationMotion.html#sec-admissible_inverse_def_map",
     "title": "1 Deformation and Motion",
     "section": "",
-    "text": "In continuum mechanics we will be interested in a wide class of possible deformation maps, but we will place some conditions on \\(\\bs{\\varphi}_{\\tau}\\). We will say that \\(\\bs{\\varphi}\\) is an admissible deformation map if and only if\n\n\\(\\bs{\\varphi}_{\\tau}\\) is defined for all \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\)\n\\(\\bs{\\varphi}_{\\tau}\\) is injective, except perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid interpenetration)\n\\(\\bs{\\varphi}_{\\tau}\\) is continuously differentiable, expect perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid cracks, dislocations)\n\nIf the deformation map is well defined for the entire domain and injective, then it is possible to be more specific about the codomain. Particularly, the codomain is the set \\(\\bs{\\mathcal{B}}_{\\tau} \\subset \\b{R}\\), which is the current body in the physical Euclidean space. Then the deformation map \\(\\bs{\\varphi}_{\\tau} : \\bs{\\mathcal{B}}_{\\rm{R}} \\to \\bs{\\mathcal{B}}_{\\tau}\\) is also surjective and therefore bijective.\nSince it is bijective, there exists a well defined inverse map. This is true for finite dimensional maps between vector spaces of the same dimension. Therefore, it is possible to define the inverse map \\(\\bs{\\varphi}^{-1} : \\bs{\\mathcal{B}}_{\\tau} \\to \\bs{\\mathcal{B}}_{\\rm R}\\) such that \\(\\bs{\\varphi}^{-1}_{\\tau}\\sqpr{\\bs{x}}:=\\) gives the material particle \\(\\bs{X}\\) that is located at \\(\\bs{x}\\) at time instance \\(\\bs{\\tau}\\). Clearly \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{\\varphi}_{\\tau}^{-1}\\sqpr{\\bs{x}}}=\\bs{x}\\)."
+    "text": "In continuum mechanics we will be interested in a wide class of possible deformation maps, but we will place some conditions on \\(\\bs{\\varphi}_{\\tau}\\). We will say that \\(\\bs{\\varphi}\\) is an admissible deformation map if and only if\n\n\\(\\bs{\\varphi}_{\\tau}\\) is defined for all \\(\\bs{X}\\in \\bs{\\mathcal{B}}_{\\rm R}\\)\n\\(\\bs{\\varphi}_{\\tau}\\) is injective, except perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid interpenetration)\n\\(\\bs{\\varphi}_{\\tau}\\) is continuously differentiable, expect perhaps at the boundary of \\(\\bs{\\mathcal{B}}_{\\rm R}\\) (such as to avoid cracks, dislocations)\n\nIf the deformation map is well defined for the entire domain and injective, then it is possible to be more specific about the codomain. Particularly, the codomain is the set \\(\\bs{\\mathcal{B}}_{\\tau} \\subset \\b{R}\\), which is the current body in the physical Euclidean space. Then the deformation map \\(\\bs{\\varphi}_{\\tau} : \\bs{\\mathcal{B}}_{\\rm{R}} \\to \\bs{\\mathcal{B}}_{\\tau}\\) is also surjective and therefore bijective.\nSince it is bijective, there exists a well defined inverse map. This is true for finite dimensional maps between vector spaces of the same dimension. Therefore, it is possible to define the inverse map \\(\\bs{\\varphi}^{-1} : \\bs{\\mathcal{B}}_{\\tau} \\to \\bs{\\mathcal{B}}_{\\rm R}\\) such that \\(\\bs{\\varphi}^{-1}_{\\tau}\\sqpr{\\bs{x}}:=\\) gives the material particle \\(\\bs{X}\\) that is located at \\(\\bs{x}\\) at time instance \\(\\bs{\\tau}\\). Clearly \\(\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{\\varphi}_{\\tau}^{-1}\\sqpr{\\bs{x}}}=\\bs{x}\\).",
+    "crumbs": [
+      "Kinematics",
+      "Deformation and Motion"
+    ]
   },
   {
     "objectID": "notes/Kinematics/DeformationMotion.html#sec-deformation_map_components",
     "href": "notes/Kinematics/DeformationMotion.html#sec-deformation_map_components",
     "title": "1 Deformation and Motion",
     "section": "",
-    "text": "Recall the nondimensionalization map \\(\\msf{U} : \\bs{\\mc{B}}_{\\rm{R}} \\to \\b{R}^{3}\\). We define the components of the deformation map as follows \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}} &= \\varphi_{i\\tau}\\sqpr{\\msf{U}\\sqpr{\\bs{X}}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\[\n\\varphi_{i\\tau}:\\mathbb{R}^3\\to \\mathbb{R}\n\\]\nand \\(\\pr{\\msf{U}\\sqpr{\\bs{X}}}_{j} = X_j\\). Specifically, \\(X_{j}=\\bs{X}\\cdot \\bs{E}_j\\). The functions \\(\\varphi_{i\\tau}\\) are called the components of the deformation map. We can also define the deformation map by defining the map, \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}: B_{\\rm R} \\to \\mathbb{E},\n\\end{align}\n\\]\nwhere \\[\n\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\varphi_{i\\tau}\\sqpr{X_{1},X_{2},X_{3}}\\bs{e}_i\n\\]\nThis map is different from the map \\(\\bs{\\varphi}_{\\tau} :\\bs{\\mathcal{B}}_{\\rm R}\\to \\mathbb{E}\\).\nClearly, when \\(X_i\\) are the components/co-ordinates of \\(\\bs{X}\\) w.r.t \\(\\bs{E}_i\\), \\(\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\). Despite using the same symbols, it will be clear from context as to which map we are talking about. In many books you will see \\(x_i\\) being used as an alias for \\(\\varphi_{i}\\sqpr{X_1,X_2,X_3}\\).\nWhen we are considering a specific deformation map at a time instance \\(\\bs{\\tau}\\), we will omit writing the \\(\\tau\\) as a subscript. In such a case the above paragraph can be written as, \\[\n\\begin{align}\n\\bs{\\varphi}\\sqpr{\\bs{X}}=\\varphi_{i}\\sqpr{X_{1}, X_{2}, X_{3}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\(\\varphi_{i} : \\mathbb{R}^3 \\to \\mathbb{R}\\) and \\(\\msf{U}\\sqpr{\\bs{X}} = \\pr{\\bs{X}\\cdot\\bs{e}_{1}, \\bs{X}\\cdot\\bs{e}_{2}, \\bs{X}\\cdot\\bs{e}_{3}} = \\pr{X_1, X_2, X_3}\\). The functions \\(\\varphi_{i}\\) are called the components of the deformation map.\nIt follows from the above introduced notation that the spatial location occupied by the material particle \\(\\bs{X}\\) is \\(x_i \\bs{e}_i\\). Thus, \\(\\bs{x}=x_i\\bs{e}_i\\)."
+    "text": "Recall the nondimensionalization map \\(\\msf{U} : \\bs{\\mc{B}}_{\\rm{R}} \\to \\b{R}^{3}\\). We define the components of the deformation map as follows \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}} &= \\varphi_{i\\tau}\\sqpr{\\msf{U}\\sqpr{\\bs{X}}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\[\n\\varphi_{i\\tau}:\\mathbb{R}^3\\to \\mathbb{R}\n\\]\nand \\(\\pr{\\msf{U}\\sqpr{\\bs{X}}}_{j} = X_j\\). Specifically, \\(X_{j}=\\bs{X}\\cdot \\bs{E}_j\\). The functions \\(\\varphi_{i\\tau}\\) are called the components of the deformation map. We can also define the deformation map by defining the map, \\[\n\\begin{align}\n\\bs{\\varphi}_{\\tau}: B_{\\rm R} \\to \\mathbb{E},\n\\end{align}\n\\]\nwhere \\[\n\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\varphi_{i\\tau}\\sqpr{X_{1},X_{2},X_{3}}\\bs{e}_i\n\\]\nThis map is different from the map \\(\\bs{\\varphi}_{\\tau} :\\bs{\\mathcal{B}}_{\\rm R}\\to \\mathbb{E}\\).\nClearly, when \\(X_i\\) are the components/co-ordinates of \\(\\bs{X}\\) w.r.t \\(\\bs{E}_i\\), \\(\\bs{\\varphi}_{\\tau}\\sqpr{X_1,X_2,X_3}=\\bs{\\varphi}_{\\tau}\\sqpr{\\bs{X}}\\). Despite using the same symbols, it will be clear from context as to which map we are talking about. In many books you will see \\(x_i\\) being used as an alias for \\(\\varphi_{i}\\sqpr{X_1,X_2,X_3}\\).\nWhen we are considering a specific deformation map at a time instance \\(\\bs{\\tau}\\), we will omit writing the \\(\\tau\\) as a subscript. In such a case the above paragraph can be written as, \\[\n\\begin{align}\n\\bs{\\varphi}\\sqpr{\\bs{X}}=\\varphi_{i}\\sqpr{X_{1}, X_{2}, X_{3}}\\bs{e}_i,\n\\end{align}\n\\]\nwhere \\(\\varphi_{i} : \\mathbb{R}^3 \\to \\mathbb{R}\\) and \\(\\msf{U}\\sqpr{\\bs{X}} = \\pr{\\bs{X}\\cdot\\bs{e}_{1}, \\bs{X}\\cdot\\bs{e}_{2}, \\bs{X}\\cdot\\bs{e}_{3}} = \\pr{X_1, X_2, X_3}\\). The functions \\(\\varphi_{i}\\) are called the components of the deformation map.\nIt follows from the above introduced notation that the spatial location occupied by the material particle \\(\\bs{X}\\) is \\(x_i \\bs{e}_i\\). Thus, \\(\\bs{x}=x_i\\bs{e}_i\\).",
+    "crumbs": [
+      "Kinematics",
+      "Deformation and Motion"
+    ]
   },
   {
     "objectID": "notes/Kinematics/DeformationMotion.html#sec-deformation_map_example",
     "href": "notes/Kinematics/DeformationMotion.html#sec-deformation_map_example",
     "title": "1 Deformation and Motion",
     "section": "",
-    "text": "Let \\(B_{\\rm R}= \\set{(X_{1}, X_{2}, X_{3})}{0 \\leq X_{i} \\leq L, ~i=1,2,3}\\), where \\(L \\in \\mathbb{R}_{\\ge 0}\\). Consider a deformation map \\(\\bs{\\varphi}:B_{\\rm R}\\to \\mathbb{E}\\). The deformation consists in strectching each edge of the cube in the \\(a^\\text{th}\\) direction by a factor of \\(\\lambda_a\\). \\(\\lambda_a\\in (0, \\infty)\\), which is expressed as \\[\n\\begin{align}\nx_1&=\\lambda_1X_1,\n\\\\\nx_2&=\\lambda_2X_2,\n\\\\\nx_3&=\\lambda_3 X_3.\n\\end{align}\n\\]\nThe values \\(\\lambda_1\\),\\(\\lambda_2\\), and \\(\\lambda_3\\) are called the stretch rations.\n\n\n\nFor \\(\\gamma\\in \\mathbb{R}\\), the deformation map \\[\n\\begin{align}\nx_1&=X_1+\\gamma X_2\\\\\nx_2&=X_2\\\\\nx_3&=X_3\n\\end{align}\n\\]\nis called pure shear in the \\(\\bs{X}_1-\\bs{X}_2\\) plane, and \\(\\gamma\\) is the shear deformation.\n\n\n\nAnother type of two dimensional deformation has the following form, \\[\n\\begin{align}\nx_1&=X_1\\\\\nx_2&=X_2\\\\\nx_3&=\\varphi_3(X_1,X_2)\n\\end{align}\n\\] In this case the deformation is only in the \\(\\bs{E}_3\\) direction.\n\n\n\nWe often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is, \\[\n\\begin{align}\nx_1&=\\varphi_1(X_1,X_2)\\\\\nx_2&=\\varphi_2(X_1,X_2)\\\\\nx_3&=X_3\n\\end{align}\n\\]\nBecause there is no deformation along the \\(\\bs{E}_3\\) direction, these types of deformations are called “plane strain”."
+    "text": "Let \\(B_{\\rm R}= \\set{(X_{1}, X_{2}, X_{3})}{0 \\leq X_{i} \\leq L, ~i=1,2,3}\\), where \\(L \\in \\mathbb{R}_{\\ge 0}\\). Consider a deformation map \\(\\bs{\\varphi}:B_{\\rm R}\\to \\mathbb{E}\\). The deformation consists in strectching each edge of the cube in the \\(a^\\text{th}\\) direction by a factor of \\(\\lambda_a\\). \\(\\lambda_a\\in (0, \\infty)\\), which is expressed as \\[\n\\begin{align}\nx_1&=\\lambda_1X_1,\n\\\\\nx_2&=\\lambda_2X_2,\n\\\\\nx_3&=\\lambda_3 X_3.\n\\end{align}\n\\]\nThe values \\(\\lambda_1\\),\\(\\lambda_2\\), and \\(\\lambda_3\\) are called the stretch rations.\n\n\n\nFor \\(\\gamma\\in \\mathbb{R}\\), the deformation map \\[\n\\begin{align}\nx_1&=X_1+\\gamma X_2\\\\\nx_2&=X_2\\\\\nx_3&=X_3\n\\end{align}\n\\]\nis called pure shear in the \\(\\bs{X}_1-\\bs{X}_2\\) plane, and \\(\\gamma\\) is the shear deformation.\n\n\n\nAnother type of two dimensional deformation has the following form, \\[\n\\begin{align}\nx_1&=X_1\\\\\nx_2&=X_2\\\\\nx_3&=\\varphi_3(X_1,X_2)\n\\end{align}\n\\] In this case the deformation is only in the \\(\\bs{E}_3\\) direction.\n\n\n\nWe often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is, \\[\n\\begin{align}\nx_1&=\\varphi_1(X_1,X_2)\\\\\nx_2&=\\varphi_2(X_1,X_2)\\\\\nx_3&=X_3\n\\end{align}\n\\]\nBecause there is no deformation along the \\(\\bs{E}_3\\) direction, these types of deformations are called “plane strain”.",
+    "crumbs": [
+      "Kinematics",
+      "Deformation and Motion"
+    ]
   },
   {
     "objectID": "notes/Kinematics/SimpleDeformations/index.html",
@@ -523,9 +539,9 @@
   {
     "objectID": "homework/HW2/Problems.html",
     "href": "homework/HW2/Problems.html",
-    "title": "1 HW2 Problems",
+    "title": "HW2 Problems",
     "section": "",
-    "text": "1 HW2 Problems\nTotal points: 100",
+    "text": "Total points: 100 \n\n\nLet \\(\\mc{B}_{\\rm{ref}} = \\cpr{\\bs{\\msf{X}} \\in \\mbb{R}^{3} ~|~ 0 &lt; X_{i} &lt; 1}\\). Consider the deformation\n\n\\(x_{\\tau 1}[X_{i}] = X_{1} + 2 X_{1}\\)\n\\(x_{\\tau 2}[X_{i}] = X_{2} + \\frac{1}{2} X_{2}\\)\n\\(x_{\\tau 3}[X_{i}] = X_{3}\\)\n\nLet \\(\\mc{B} = \\cpr{\\bs{\\msf{x}}[\\bs{\\msf{X}}, 0] ~|~ \\bs{\\msf{X}} \\in \\mc{B}_{\\rm{ref}}}\\). Sketch \\(\\mc{B}_{\\rm{ref}}\\) and \\(\\mc{B}\\) in \\(\\mbb{R}^{3}\\).\n\n\n\nConsider the motion of a continuous body given by equations\n\n\\(x_{1}[\\tau, X_i] = e^{\\tau} X_{1} + X_{3}\\),\n\\(x_{2}[\\tau, X_i] = X_{2}\\),\n\\(x_{3}[\\tau, X_{i}] = X_{3} - \\tau X_{1},\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nCompute the components of the inverse motion \\(X_{i}[\\tau, x_{i}]\\).\nVerify that \\(x_{i}[\\tau, X_{i}[\\tau, x_{i}]] = x_{i}\\).\n\n\n\n\nThe motion of a continuous body is defined by equations\n\n\\(x_{1}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau + ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{2}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau - ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{3}[\\tau, X_{i}] = {X}_3,\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nFind the material velocity field.\nFind the spatial velocity field.\n\n\n\n\nFor the motion \\(x_{i}[\\tau, X_{i}]= X_i + \\sin{(\\pi \\tau)}\\sin{(\\pi X_1)}\\delta_{i2}\\)\n\nFind the material velocity and acceleration fields\nFind the spatial velocity and acceleration fields.\n\n\n\n\nGiven the simple shear motion of the body to be \\[\nx_{i}[\\tau, X_{i}] = ({X}_1 + k\\tau{X}_2)\\delta_{i1} + {X}_2\\delta_{i2} + {X}_3\\delta_{i3}\\] and the temperature field by \\[\n\\theta= x_1 + x_2,\n\\] find the material time derivative \\(\\frac{D\\theta}{D \\tau}\\) at the place (1,1,1) at time \\(\\tau\\) = 2.\n\n\n\nGiven : \\[\n\\begin{align}\n\\bs{v}_\\tau[\\bs{x}] &= \\frac{x_1\\bs{v}_1+x_2\\bs{v}_2}{x_1^2+x_2^2}, \\nonumber \\\\\n%\\theta &=2(x_1^2+x_2^{2}) \\nonumber\n\\end{align}\n\\] Determine the acceleration at place (1,1) at time \\(\\tau= 3\\).\nNote: \\(\\bs{v}_{1}\\) and \\(\\bs{v}_{2}\\) are basis vectors in the velocity vector space",
     "crumbs": [
       "Homework",
       "HW2",
@@ -542,6 +558,174 @@
       "Homework",
       "HW1",
       "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-1-25-pts",
+    "href": "homework/HW2/Problems.html#problem-1-25-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "The motion of a continuous body is defined by equations\n\n\\(x_{1}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau + ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{2}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau - ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{3}[\\tau, X_{i}] = {X}_3,\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nFind the material velocity field.\nFind the spatial velocity field.",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-2-25-pts",
+    "href": "homework/HW2/Problems.html#problem-2-25-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "For the motion \\(x_{i}[\\tau, X_{i}]= X_i + \\sin{(\\pi \\tau)}\\sin{(\\pi X_1)}\\delta_{i2}\\)\n\nFind the material velocity and acceleration fields\nFind the spatial velocity and acceleration fields.",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-3-25-pts",
+    "href": "homework/HW2/Problems.html#problem-3-25-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Given the simple shear motion of the body to be \\[\nx_{i}[\\tau, X_{i}] = ({X}_1 + k\\tau{X}_2)\\delta_{i1} + {X}_2\\delta_{i2} + {X}_3\\delta_{i3}\\] and the temperature field by \\[\n\\theta= x_1 + x_2,\n\\] find the material time derivative \\(\\frac{D\\theta}{D \\tau}\\) at the place (1,1,1) at time \\(\\tau\\) = 2.",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-4-25-pts",
+    "href": "homework/HW2/Problems.html#problem-4-25-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Given : \\[\n\\begin{align}\n\\bs{v}_\\tau[\\bs{x}] &= \\frac{x_1\\bs{v}_1+x_2\\bs{v}_2}{x_1^2+x_2^2}, \\nonumber \\\\\n%\\theta &=2(x_1^2+x_2^{2}) \\nonumber\n\\end{align}\n\\] Determine the acceleration at place (1,1) at time \\(\\tau= 3\\).\nNote: \\(\\bs{v}_{1}\\) and \\(\\bs{v}_{2}\\) are basis vectors in the velocity vector space",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-1-10-pts--1",
+    "href": "homework/HW2/Problems.html#problem-1-10-pts--1",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Consider the motion of a continuous body given by equations\n\n\\(\\varphi_{1}[X_i, \\tau] = ({X}_1 +{X}_2)e^\\tau + ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(\\varphi_{2}[X_i, \\tau] = ({X}_1 +{X}_2)e^\\tau - ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(\\varphi_{3}[X_i, \\tau] = {X}_3,\\) \\(0\\leq \\tau \\leq\\) constant.",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-1-10-pts",
+    "href": "homework/HW2/Problems.html#problem-1-10-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Let \\(\\mc{B}_{\\rm{ref}} = \\cpr{\\bs{\\msf{X}} \\in \\mbb{R}^{3} ~|~ 0 &lt; X_{i} &lt; 1}\\). Consider the deformation\n\n\\(x_{\\tau 1}[X_{i}] = X_{1} + 2 X_{1}\\)\n\\(x_{\\tau 2}[X_{i}] = X_{2} + \\frac{1}{2} X_{2}\\)\n\\(x_{\\tau 3}[X_{i}] = X_{3}\\)\n\nLet \\(\\mc{B} = \\cpr{\\bs{\\msf{x}}[\\bs{\\msf{X}}, 0] ~|~ \\bs{\\msf{X}} \\in \\mc{B}_{\\rm{ref}}}\\). Sketch \\(\\mc{B}_{\\rm{ref}}\\) and \\(\\mc{B}\\) in \\(\\mbb{R}^{3}\\).",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-1-10-pts-1",
+    "href": "homework/HW2/Problems.html#problem-1-10-pts-1",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Consider the motion of a continuous body given by equations\n\n\\(x_{1}[X_i, \\tau] = e^{\\tau} X_{1} + X_{3}\\),\n\\(x_{2}[X_i, \\tau] = X_{2}\\),\n\\(x_{3}[X_i, \\tau] = X_{3} - \\tau X_{1},\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nCompute the components of the inverse motion \\(X_{i}^{-1}[x_i, \\tau]\\).\nVerify that \\(x_{i}[X_{i}^{-1}[x_i, \\tau], \\tau] = x_{i}\\).",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-2-10-pts",
+    "href": "homework/HW2/Problems.html#problem-2-10-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Consider the motion of a continuous body given by equations\n\n\\(x_{1}[\\tau, X_i] = e^{\\tau} X_{1} + X_{3}\\),\n\\(x_{2}[\\tau, X_i] = X_{2}\\),\n\\(x_{3}[\\tau, X_{i}] = X_{3} - \\tau X_{1},\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nCompute the components of the inverse motion \\(X_{i}^{-1}[\\tau, X_{i}]\\).\nVerify that \\(x_{i}[\\tau, X_{i}[\\tau, x_{i}]] = x_{i}\\).",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-1-15-pts",
+    "href": "homework/HW2/Problems.html#problem-1-15-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Let \\(\\mc{B}_{\\rm{ref}} = \\cpr{\\bs{\\msf{X}} \\in \\mbb{R}^{3} ~|~ 0 &lt; X_{i} &lt; 1}\\). Consider the deformation\n\n\\(x_{\\tau 1}[X_{i}] = X_{1} + 2 X_{1}\\)\n\\(x_{\\tau 2}[X_{i}] = X_{2} + \\frac{1}{2} X_{2}\\)\n\\(x_{\\tau 3}[X_{i}] = X_{3}\\)\n\nLet \\(\\mc{B} = \\cpr{\\bs{\\msf{x}}[\\bs{\\msf{X}}, 0] ~|~ \\bs{\\msf{X}} \\in \\mc{B}_{\\rm{ref}}}\\). Sketch \\(\\mc{B}_{\\rm{ref}}\\) and \\(\\mc{B}\\) in \\(\\mbb{R}^{3}\\).",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-2-15-pts",
+    "href": "homework/HW2/Problems.html#problem-2-15-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Consider the motion of a continuous body given by equations\n\n\\(x_{1}[\\tau, X_i] = e^{\\tau} X_{1} + X_{3}\\),\n\\(x_{2}[\\tau, X_i] = X_{2}\\),\n\\(x_{3}[\\tau, X_{i}] = X_{3} - \\tau X_{1},\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nCompute the components of the inverse motion \\(X_{i}[\\tau, x_{i}]\\).\nVerify that \\(x_{i}[\\tau, X_{i}[\\tau, x_{i}]] = x_{i}\\).",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-3-15-pts",
+    "href": "homework/HW2/Problems.html#problem-3-15-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "The motion of a continuous body is defined by equations\n\n\\(x_{1}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau + ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{2}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau - ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{3}[\\tau, X_{i}] = {X}_3,\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nFind the material velocity field.\nFind the spatial velocity field.",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-4-15-pts",
+    "href": "homework/HW2/Problems.html#problem-4-15-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "For the motion \\(x_{i}[\\tau, X_{i}]= X_i + \\sin{(\\pi \\tau)}\\sin{(\\pi X_1)}\\delta_{i2}\\)\n\nFind the material velocity and acceleration fields\nFind the spatial velocity and acceleration fields.",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-5-20-pts",
+    "href": "homework/HW2/Problems.html#problem-5-20-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Given the simple shear motion of the body to be \\[\nx_{i}[\\tau, X_{i}] = ({X}_1 + k\\tau{X}_2)\\delta_{i1} + {X}_2\\delta_{i2} + {X}_3\\delta_{i3}\\] and the temperature field by \\[\n\\theta= x_1 + x_2,\n\\] find the material time derivative \\(\\frac{D\\theta}{D \\tau}\\) at the place (1,1,1) at time \\(\\tau\\) = 2.",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html#problem-6-20-pts",
+    "href": "homework/HW2/Problems.html#problem-6-20-pts",
+    "title": "HW2 Problems",
+    "section": "",
+    "text": "Given : \\[\n\\begin{align}\n\\bs{v}_\\tau[\\bs{x}] &= \\frac{x_1\\bs{v}_1+x_2\\bs{v}_2}{x_1^2+x_2^2}, \\nonumber \\\\\n%\\theta &=2(x_1^2+x_2^{2}) \\nonumber\n\\end{align}\n\\] Determine the acceleration at place (1,1) at time \\(\\tau= 3\\).\nNote: \\(\\bs{v}_{1}\\) and \\(\\bs{v}_{2}\\) are basis vectors in the velocity vector space",
+    "crumbs": [
+      "Homework",
+      "HW2",
+      "HW2 Problems"
     ]
   }
 ]
