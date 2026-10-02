@@ -549,114 +549,6 @@
     ]
   },
   {
-    "objectID": "homework/HW1/Problems.html",
-    "href": "homework/HW1/Problems.html",
-    "title": "1 HW1 Problems",
-    "section": "",
-    "text": "1 HW1 Problems\nTotal points: 105",
-    "crumbs": [
-      "Homework",
-      "HW1",
-      "HW1 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-1-25-pts",
-    "href": "homework/HW2/Problems.html#problem-1-25-pts",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "The motion of a continuous body is defined by equations\n\n\\(x_{1}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau + ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{2}[\\tau, X_{i}] = ({X}_1 +{X}_2)e^\\tau - ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(x_{3}[\\tau, X_{i}] = {X}_3,\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nFind the material velocity field.\nFind the spatial velocity field.",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-2-25-pts",
-    "href": "homework/HW2/Problems.html#problem-2-25-pts",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "For the motion \\(x_{i}[\\tau, X_{i}]= X_i + \\sin{(\\pi \\tau)}\\sin{(\\pi X_1)}\\delta_{i2}\\)\n\nFind the material velocity and acceleration fields\nFind the spatial velocity and acceleration fields.",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-3-25-pts",
-    "href": "homework/HW2/Problems.html#problem-3-25-pts",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "Given the simple shear motion of the body to be \\[\nx_{i}[\\tau, X_{i}] = ({X}_1 + k\\tau{X}_2)\\delta_{i1} + {X}_2\\delta_{i2} + {X}_3\\delta_{i3}\\] and the temperature field by \\[\n\\theta= x_1 + x_2,\n\\] find the material time derivative \\(\\frac{D\\theta}{D \\tau}\\) at the place (1,1,1) at time \\(\\tau\\) = 2.",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-4-25-pts",
-    "href": "homework/HW2/Problems.html#problem-4-25-pts",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "Given : \\[\n\\begin{align}\n\\bs{v}_\\tau[\\bs{x}] &= \\frac{x_1\\bs{v}_1+x_2\\bs{v}_2}{x_1^2+x_2^2}, \\nonumber \\\\\n%\\theta &=2(x_1^2+x_2^{2}) \\nonumber\n\\end{align}\n\\] Determine the acceleration at place (1,1) at time \\(\\tau= 3\\).\nNote: \\(\\bs{v}_{1}\\) and \\(\\bs{v}_{2}\\) are basis vectors in the velocity vector space",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-1-10-pts--1",
-    "href": "homework/HW2/Problems.html#problem-1-10-pts--1",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "Consider the motion of a continuous body given by equations\n\n\\(\\varphi_{1}[X_i, \\tau] = ({X}_1 +{X}_2)e^\\tau + ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(\\varphi_{2}[X_i, \\tau] = ({X}_1 +{X}_2)e^\\tau - ({X}_1 -{X}_2)e^{-\\tau}\\),\n\\(\\varphi_{3}[X_i, \\tau] = {X}_3,\\) \\(0\\leq \\tau \\leq\\) constant.",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-1-10-pts",
-    "href": "homework/HW2/Problems.html#problem-1-10-pts",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "Let \\(\\mc{B}_{\\rm{ref}} = \\cpr{\\bs{\\msf{X}} \\in \\mbb{R}^{3} ~|~ 0 &lt; X_{i} &lt; 1}\\). Consider the deformation\n\n\\(x_{\\tau 1}[X_{i}] = X_{1} + 2 X_{1}\\)\n\\(x_{\\tau 2}[X_{i}] = X_{2} + \\frac{1}{2} X_{2}\\)\n\\(x_{\\tau 3}[X_{i}] = X_{3}\\)\n\nLet \\(\\mc{B} = \\cpr{\\bs{\\msf{x}}[\\bs{\\msf{X}}, 0] ~|~ \\bs{\\msf{X}} \\in \\mc{B}_{\\rm{ref}}}\\). Sketch \\(\\mc{B}_{\\rm{ref}}\\) and \\(\\mc{B}\\) in \\(\\mbb{R}^{3}\\).",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-1-10-pts-1",
-    "href": "homework/HW2/Problems.html#problem-1-10-pts-1",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "Consider the motion of a continuous body given by equations\n\n\\(x_{1}[X_i, \\tau] = e^{\\tau} X_{1} + X_{3}\\),\n\\(x_{2}[X_i, \\tau] = X_{2}\\),\n\\(x_{3}[X_i, \\tau] = X_{3} - \\tau X_{1},\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nCompute the components of the inverse motion \\(X_{i}^{-1}[x_i, \\tau]\\).\nVerify that \\(x_{i}[X_{i}^{-1}[x_i, \\tau], \\tau] = x_{i}\\).",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html#problem-2-10-pts",
-    "href": "homework/HW2/Problems.html#problem-2-10-pts",
-    "title": "HW2 Problems",
-    "section": "",
-    "text": "Consider the motion of a continuous body given by equations\n\n\\(x_{1}[\\tau, X_i] = e^{\\tau} X_{1} + X_{3}\\),\n\\(x_{2}[\\tau, X_i] = X_{2}\\),\n\\(x_{3}[\\tau, X_{i}] = X_{3} - \\tau X_{1},\\)\n\\(0\\leq \\tau \\leq\\) constant.\n\n\nCompute the components of the inverse motion \\(X_{i}^{-1}[\\tau, X_{i}]\\).\nVerify that \\(x_{i}[\\tau, X_{i}[\\tau, x_{i}]] = x_{i}\\).",
-    "crumbs": [
-      "Homework",
-      "HW2",
-      "HW2 Problems"
-    ]
-  },
-  {
     "objectID": "homework/HW2/Problems.html#problem-1-15-pts",
     "href": "homework/HW2/Problems.html#problem-1-15-pts",
     "title": "HW2 Problems",
@@ -726,6 +618,18 @@
       "Homework",
       "HW2",
       "HW2 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Problems.html",
+    "href": "homework/HW1/Problems.html",
+    "title": "1 HW1 Problems",
+    "section": "",
+    "text": "1 HW1 Problems\nTotal points: 105",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
     ]
   }
 ]
