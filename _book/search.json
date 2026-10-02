@@ -2,12 +2,12 @@
   {
     "objectID": "notes/Notation/Notation.html",
     "href": "notes/Notation/Notation.html",
-    "title": "ENGN2210 — Continuum Mechanics",
+    "title": "2  Notation",
     "section": "",
     "text": "Here is the basic notation\n\\(\\mathbb{E}\\).",
     "crumbs": [
       "Notation",
-      "Notation.html"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Notation</span>"
     ]
   },
   {
@@ -413,6 +413,145 @@
     "crumbs": [
       "Kinematics",
       "Bodies and Configurations"
+    ]
+  },
+  {
+    "objectID": "homework/index.html",
+    "href": "homework/index.html",
+    "title": "1 Homework",
+    "section": "",
+    "text": "1 Homework\nHomework sets will be posted here. Please submit via canvas.",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "When you push to main, GitHub Actions rebuilds the site even though you’ve already built it locally with quarto publish gh-pages. This happens because: 1. Your .gitignore excludes _book/ 2. GitHub Action still runs the Quarto build step 3. Two builds = slower deployment + potential inconsistencies\n\n\n\n\n\nComment out or remove the _book/ entry so you can commit the built files:\n# Before:\n/_book/\n\n# After:\n# /_book/  # now committing built files\n\n\n\nReplace your publish.yml with a deploy-only workflow that skips the build:\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out\n        uses: actions/checkout@v4\n\n      - name: Deploy _book to gh-pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./_book\nThis uses peaceiris/actions-gh-pages which simply copies the pre-built _book/ directory to the gh-pages branch—no rebuild needed.\n\n\n\n# 1. Make changes to your .qmd files\n# 2. Build locally\nquarto render\n\n# 3. Commit everything (including _book/)\ngit add -A\ngit commit -m \"Update course notes\"\n\n# 4. Push to main\ngit push origin main\n\n# 5. GitHub Actions deploys instantly (no rebuild)\n\n\n\nIf Git hasn’t picked up _book/ yet, explicitly add it:\ngit add _book/\ngit commit -m \"Add built site\"\n\n\n\n\n✅ Single build step (local)\n✅ Instant deployment to GitHub Pages\n✅ No runner waste rebuilding\n✅ Built site always in sync with source\n\n\n\n\n.gitignore — uncomment _book/\n.github/workflows/publish.yml — switch to deploy-only workflow"
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#the-problem",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#the-problem",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "When you push to main, GitHub Actions rebuilds the site even though you’ve already built it locally with quarto publish gh-pages. This happens because: 1. Your .gitignore excludes _book/ 2. GitHub Action still runs the Quarto build step 3. Two builds = slower deployment + potential inconsistencies"
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#the-solution-build-once-deploy-to-github",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#the-solution-build-once-deploy-to-github",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "Comment out or remove the _book/ entry so you can commit the built files:\n# Before:\n/_book/\n\n# After:\n# /_book/  # now committing built files\n\n\n\nReplace your publish.yml with a deploy-only workflow that skips the build:\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out\n        uses: actions/checkout@v4\n\n      - name: Deploy _book to gh-pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./_book\nThis uses peaceiris/actions-gh-pages which simply copies the pre-built _book/ directory to the gh-pages branch—no rebuild needed.\n\n\n\n# 1. Make changes to your .qmd files\n# 2. Build locally\nquarto render\n\n# 3. Commit everything (including _book/)\ngit add -A\ngit commit -m \"Update course notes\"\n\n# 4. Push to main\ngit push origin main\n\n# 5. GitHub Actions deploys instantly (no rebuild)\n\n\n\nIf Git hasn’t picked up _book/ yet, explicitly add it:\ngit add _book/\ngit commit -m \"Add built site\""
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#benefits",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#benefits",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "✅ Single build step (local)\n✅ Instant deployment to GitHub Pages\n✅ No runner waste rebuilding\n✅ Built site always in sync with source"
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#files-changed",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#files-changed",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": ".gitignore — uncomment _book/\n.github/workflows/publish.yml — switch to deploy-only workflow"
+  },
+  {
+    "objectID": "notes/sample.html",
+    "href": "notes/sample.html",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "A scratch page that exercises the math setup. Delete it once real content exists.\n\n\nThe spatial velocity field is \\(\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\bs{\\pi}_t + \\bar{\\bs{v}}_t\\), where \\bs gives a bold symbol and \\u{R} gives a bold sans-serif tensor \\(\\u{R}\\).\n\n\n\n\\[\n\\begin{align}\n\\bs{\\Omega}_t &= \\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}  \\label{omega} \\\\\n\\bs{c}_t      &= -\\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}\\bs{t}_t + \\dot{\\bs{t}}_t\n\\end{align}\n\\]\nEquation \\(\\eqref{omega}\\) defines the angular-velocity tensor. (\\label / \\eqref are handled entirely by MathJax and are scoped to this page.)\n\n\n\n\\[\n\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\left(\\bs{x} - \\bar{\\bs{x}}_t\\right) + \\bar{\\bs{v}}_t\n\\tag{1}\\]\nEq. 1 holds for every rigid motion, and this reference survives the page being renamed or moved.\n\n\n\n\\[\n\\Dro = \\dot{\\rho}, \\qquad\n\\Dr  = D\\hspace{-.1em}\\varrho, \\qquad\n\\DDf = \\ddot{f}, \\qquad\n\\Deq = \\mathcal{D}^{\\circ}\n\\]\n\n\n\n\n\n\n\n\n\nFigure 1: A placeholder figure pulled from the old notes.\n\n\n\nFigure 1 shows Quarto figure cross-referencing."
+  },
+  {
+    "objectID": "notes/sample.html#inline-math-and-macros",
+    "href": "notes/sample.html#inline-math-and-macros",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "The spatial velocity field is \\(\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\bs{\\pi}_t + \\bar{\\bs{v}}_t\\), where \\bs gives a bold symbol and \\u{R} gives a bold sans-serif tensor \\(\\u{R}\\)."
+  },
+  {
+    "objectID": "notes/sample.html#numbered-align-with-an-in-page-reference",
+    "href": "notes/sample.html#numbered-align-with-an-in-page-reference",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "\\[\n\\begin{align}\n\\bs{\\Omega}_t &= \\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}  \\label{omega} \\\\\n\\bs{c}_t      &= -\\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}\\bs{t}_t + \\dot{\\bs{t}}_t\n\\end{align}\n\\]\nEquation \\(\\eqref{omega}\\) defines the angular-velocity tensor. (\\label / \\eqref are handled entirely by MathJax and are scoped to this page.)"
+  },
+  {
+    "objectID": "notes/sample.html#quarto-cross-reference-use-this-style-going-forward",
+    "href": "notes/sample.html#quarto-cross-reference-use-this-style-going-forward",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "\\[\n\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\left(\\bs{x} - \\bar{\\bs{x}}_t\\right) + \\bar{\\bs{v}}_t\n\\tag{1}\\]\nEq. 1 holds for every rigid motion, and this reference survives the page being renamed or moved."
+  },
+  {
+    "objectID": "notes/sample.html#rate-family-macros",
+    "href": "notes/sample.html#rate-family-macros",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "\\[\n\\Dro = \\dot{\\rho}, \\qquad\n\\Dr  = D\\hspace{-.1em}\\varrho, \\qquad\n\\DDf = \\ddot{f}, \\qquad\n\\Deq = \\mathcal{D}^{\\circ}\n\\]"
+  },
+  {
+    "objectID": "notes/sample.html#a-figure",
+    "href": "notes/sample.html#a-figure",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "Figure 1: A placeholder figure pulled from the old notes.\n\n\n\nFigure 1 shows Quarto figure cross-referencing."
+  },
+  {
+    "objectID": "homework/HW1/Problems.html",
+    "href": "homework/HW1/Problems.html",
+    "title": "1 HW1 Problems",
+    "section": "",
+    "text": "1 HW1 Problems\nTotal points: 105",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Solutions.html",
+    "href": "homework/HW1/Solutions.html",
+    "title": "1 HW 1 Solutions",
+    "section": "",
+    "text": "1 HW 1 Solutions",
+    "crumbs": [
+      "Homework",
+      "HW 1 Solutions"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/index.html",
+    "href": "homework/HW1/index.html",
+    "title": "1 HW1",
+    "section": "",
+    "text": "1 HW1",
+    "crumbs": [
+      "Homework",
+      "HW1"
+    ]
+  },
+  {
+    "objectID": "homework/HW2/Problems.html",
+    "href": "homework/HW2/Problems.html",
+    "title": "1 HW2 Problems",
+    "section": "",
+    "text": "1 HW2 Problems\nTotal points: 100"
+  },
+  {
+    "objectID": "notes/Kinematics/SimpleDeformations/index.html",
+    "href": "notes/Kinematics/SimpleDeformations/index.html",
+    "title": "Simple deformations",
+    "section": "",
+    "text": "Simple deformations",
+    "crumbs": [
+      "Kinematics",
+      "Simple deformations"
     ]
   }
 ]

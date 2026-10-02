@@ -4,7 +4,7 @@ project:
 
 # Applies to every page
 date: today
-author: "Aashutosh Kulakarni Prachet"   # delete if not wanted
+author: "Aashutosh Kulakarni Prachet and Haneesh Kesari"   # delete if not wanted
 
 website:
   title: "ENGN2210 — Continuum Mechanics"
@@ -13,7 +13,7 @@ website:
   page-navigation: true      # previous/next links at page bottom, as in a book
   sidebar:
     style: docked
-    collapse-level: 2        # levels expanded by default
+    collapse-level: 1        # levels expanded by default
     contents:
       - index.qmd
       - section: "Notation"
@@ -45,6 +45,16 @@ website:
       #   contents:
       # - section: "Balance Laws"
       #   contents:
+      - section: "Homework"
+        href: homework/index.qmd 
+        contents: 
+        - section: "HW1"
+          contents:
+            - homework/HW1/Problems.qmd
+          # - homework/HW1/Solutions.qmd
+        - section: "HW2"
+          contents:
+            - homework/HW2/Problems.qmd
 
 crossref:
   eq-prefix: "Eq."
