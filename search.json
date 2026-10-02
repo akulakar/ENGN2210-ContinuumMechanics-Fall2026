@@ -1,13 +1,94 @@
 [
   {
-    "objectID": "notes/Notation/Notation.html",
-    "href": "notes/Notation/Notation.html",
-    "title": "2  Notation",
+    "objectID": "homework/HW1/Solutions.html",
+    "href": "homework/HW1/Solutions.html",
+    "title": "1 HW 1 Solutions",
     "section": "",
-    "text": "Here is the basic notation\n\\(\\mathbb{E}\\).",
+    "text": "1 HW 1 Solutions"
+  },
+  {
+    "objectID": "homework/index.html",
+    "href": "homework/index.html",
+    "title": "1 Homework",
+    "section": "",
+    "text": "1 Homework\nHomework sets will be posted here. Please submit via canvas.",
     "crumbs": [
-      "Notation",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Notation</span>"
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "notes/sample.html",
+    "href": "notes/sample.html",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "A scratch page that exercises the math setup. Delete it once real content exists.\n\n\nThe spatial velocity field is \\(\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\bs{\\pi}_t + \\bar{\\bs{v}}_t\\), where \\bs gives a bold symbol and \\u{R} gives a bold sans-serif tensor \\(\\u{R}\\).\n\n\n\n\\[\n\\begin{align}\n\\bs{\\Omega}_t &= \\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}  \\label{omega} \\\\\n\\bs{c}_t      &= -\\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}\\bs{t}_t + \\dot{\\bs{t}}_t\n\\end{align}\n\\]\nEquation \\(\\eqref{omega}\\) defines the angular-velocity tensor. (\\label / \\eqref are handled entirely by MathJax and are scoped to this page.)\n\n\n\n\\[\n\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\left(\\bs{x} - \\bar{\\bs{x}}_t\\right) + \\bar{\\bs{v}}_t\n\\tag{1}\\]\nEq. 1 holds for every rigid motion, and this reference survives the page being renamed or moved.\n\n\n\n\\[\n\\Dro = \\dot{\\rho}, \\qquad\n\\Dr  = D\\hspace{-.1em}\\varrho, \\qquad\n\\DDf = \\ddot{f}, \\qquad\n\\Deq = \\mathcal{D}^{\\circ}\n\\]\n\n\n\n\n\n\n\n\n\nFigure 1: A placeholder figure pulled from the old notes.\n\n\n\nFigure 1 shows Quarto figure cross-referencing."
+  },
+  {
+    "objectID": "notes/sample.html#inline-math-and-macros",
+    "href": "notes/sample.html#inline-math-and-macros",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "The spatial velocity field is \\(\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\bs{\\pi}_t + \\bar{\\bs{v}}_t\\), where \\bs gives a bold symbol and \\u{R} gives a bold sans-serif tensor \\(\\u{R}\\)."
+  },
+  {
+    "objectID": "notes/sample.html#numbered-align-with-an-in-page-reference",
+    "href": "notes/sample.html#numbered-align-with-an-in-page-reference",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "\\[\n\\begin{align}\n\\bs{\\Omega}_t &= \\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}  \\label{omega} \\\\\n\\bs{c}_t      &= -\\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}\\bs{t}_t + \\dot{\\bs{t}}_t\n\\end{align}\n\\]\nEquation \\(\\eqref{omega}\\) defines the angular-velocity tensor. (\\label / \\eqref are handled entirely by MathJax and are scoped to this page.)"
+  },
+  {
+    "objectID": "notes/sample.html#quarto-cross-reference-use-this-style-going-forward",
+    "href": "notes/sample.html#quarto-cross-reference-use-this-style-going-forward",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "\\[\n\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\left(\\bs{x} - \\bar{\\bs{x}}_t\\right) + \\bar{\\bs{v}}_t\n\\tag{1}\\]\nEq. 1 holds for every rigid motion, and this reference survives the page being renamed or moved."
+  },
+  {
+    "objectID": "notes/sample.html#rate-family-macros",
+    "href": "notes/sample.html#rate-family-macros",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "\\[\n\\Dro = \\dot{\\rho}, \\qquad\n\\Dr  = D\\hspace{-.1em}\\varrho, \\qquad\n\\DDf = \\ddot{f}, \\qquad\n\\Deq = \\mathcal{D}^{\\circ}\n\\]"
+  },
+  {
+    "objectID": "notes/sample.html#a-figure",
+    "href": "notes/sample.html#a-figure",
+    "title": "1 Sample page",
+    "section": "",
+    "text": "Figure 1: A placeholder figure pulled from the old notes.\n\n\n\nFigure 1 shows Quarto figure cross-referencing."
+  },
+  {
+    "objectID": "notes/Kinematics/BodiesConfigurations.html",
+    "href": "notes/Kinematics/BodiesConfigurations.html",
+    "title": "1 Bodies and Configurations",
+    "section": "",
+    "text": "Kinematics is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies. \n\n\n\nBodies occupy regions of an affine point space \\(\\mc{E}\\). Specifically, the body \\(\\mc{B}\\) is an open subset of \\(\\mc{E}\\). It is simply a collection of points in \\(\\mc{E}\\). We refer to \\(\\mc{B}\\) as the material body and the points in it as material particles or material points. We denote a material particle in \\(\\mc{B}\\) by \\(\\chi\\).\nLet \\(\\mc{E}_{\\rm{R}}\\) and \\(\\b{E}_{\\rm{R}}\\) be referred to as the reference point space and reference Euclidean space respectively. \\(\\mc{B}\\) can be mapped to a subset of \\(\\mc{E}_{\\rm{R}}\\) to represent the object of interest before it has changed shape or orientation. Similarly, \\(\\mc{B}\\) can be mapped to a subset of \\(\\b{E}_{\\rm{R}}\\). That is, each material particle \\(\\chi \\in \\mc{B}\\) can be mapped to a position vector in \\(\\b{E}_{\\rm{R}}\\).\nWe refer to the map \\(\\bs{k}_{\\rm{R}} : \\mc{B} \\ra \\bs{\\mc{B}}_{\\rm{R}}\\) is referred to as the reference configuration and the set \\(\\bs{\\mc{B}_{\\rm{R}}} \\subset \\b{E}_{\\rm{R}}\\) is called the reference body in the reference Euclidean space. \\(\\bs{k}_{\\rm{R}}\\) is a continuous, injective map. A material particle’s reference position vector is given by \\(\\bs{k}_{\\rm{R}}[\\chi] = \\bs{X}\\). When we refer to the position vector \\(\\bs{X}\\) as the material particle, we in fact mean the material particle \\(\\bs{k}^{-1}_{\\rm{R}}[\\bs{X}] = \\chi\\) belonging to \\(\\mc{B}\\). Associated with \\(\\bs{k}_{\\rm{R}}\\), we also have the map \\(k_{\\rm{R}} : \\mc{B} \\ra \\mc{B}_{\\rm{R}}\\), where \\(\\mc{B}_{\\rm{R}}\\) is the reference body in the reference point space.\nTo summarize the notation:\n\n\\(\\bsmc{B}_{\\rm{R}} = \\bs{k}_{\\rm{R}}\\pr{\\mc{B}} = \\set{\\bs{k}_{\\rm{R}}\\pr{\\chi} \\in \\b{E}_{\\rm{R}}}{\\chi \\in \\mc{B}} \\subset \\b{E}_{\\rm{R}}\\)   (Reference body in \\(\\b{E}_{\\rm{R}}\\))\n\\(\\mc{B}_{\\rm{R}} = k_{\\rm{R}}\\pr{\\mc{B}} = \\set{k_{\\rm{R}}\\pr{\\chi} \\in \\mc{E}_{\\rm{R}}}{\\chi \\in \\mc{B}} \\subset \\mc{E}_{\\rm{R}}\\)   (Reference body in \\(\\mc{E}_{\\rm{R}}\\))\n\nRemarks:\n\nThe choice of the reference body is arbitrary.\nThe reference body need not be stress free.\n\n\n\nWe describe the motion of a continuum by describing the motion of all its constituent material particles. \\(\\mc{E}_{\\rm{R}}\\) and \\(\\b{E}_{\\rm{R}}\\) are assumed to be finite dimensional. \\(\\b{E}_{\\rm{R}}\\) is a finite dimensional inner product space. Since it is finite dimensional, it is also complete and therefore a Hilbert space. We select a list of vectors \\(\\bs{E}_{i} \\in \\b{E}_{\\rm{R}}\\) that form an orthonormal basis for \\(\\b{E}_{\\rm{R}}\\). We define an inner product of \\(\\b{E}_{\\rm{R}}\\) by setting \\(\\bs{E}_{i} \\cdot \\bs{E}_{j} = \\delta_{ij}\\). Let \\(\\b{E}_{\\rm{R}}\\) and \\(\\mc{E}_{\\rm{R}}\\) be three dimensional. A material particle \\(\\bs{X} \\in \\b{E}_{\\rm{R}}\\) can be written as a linear combination of the basis vectors:\n\\[\n\\begin{equation}\n    \\bs{X} = X_{1} \\bs{E}_{1} + X_{2} \\bs{E}_{2} + X_{3} \\bs{E}_{3}\n\\end{equation}\n\\]\n\\(\\bs{X}\\) is a position vector and so has physical units of distance. The scalars \\(X_{1}, X_{2}, X_{3}\\) are real numbers and are unitless. It is the basis vectors \\(\\bs{E}_{i}\\) that carry the units. Distinctions between two Euclidean vector spaces of the same dimension can be made with regard to the units carried by the basis vectors. In order to work with the components \\(X_{1}, X_{2}, X_{3}\\), we declare the following non-dimensionalization map \\[\n\\begin{equation}\n    \\mathsf{U} : \\b{E}_{\\rm{R}} \\ra \\b{R}^{3}\n\\end{equation}\n\\]\ndefined as\n\\[\n\\begin{equation}\n\\mathsf{U}[\\bs{X}] = \\pr{\\bs{X} \\cdot \\bs{E}_{1}, \\bs{X} \\cdot \\bs{E}_{2}, \\bs{X} \\cdot \\bs{E}_{3}} = \\pr{X_{1}, X_{2}, X_{3}}.\n\\end{equation}\n\\]\nWe denote the tuple \\(\\pr{X_{1}, X_{2}, X_{3}}\\) with the following bold sans-serif symbol \\[\n\\begin{equation}\n\\bssf{X} = \\pr{X_{1}, X_{2}, X_{3}}\n\\end{equation}\n\\]\nwhere \\(\\bssf{X} \\in \\b{R}^3\\). Equivalently, \\(\\bssf{X}\\) can be written as a column matrix: \\[\n\\begin{equation}\n    \\bssf{X} = \\begin{bmatrix}\n                X_{1} \\\\ X_{2} \\\\ X_{3}\n                \\end{bmatrix}\n\\end{equation}\n\\]\n\\(\\bssf{X}\\) is referred to as the Lagrangian coordinates or material coordinates of \\(\\bs{X}\\). The Lagrangian coordinates are the components of \\(\\bs{X}\\) with respect to the basis vectors \\(\\bs{E}_{i}\\).\nWhen the reference configuration does not change, Lagrangian coordinates of a material particle do not change, since they describe the material particle in the reference body in the reference Euclidean space.\n\n\n\n\nContinuum mechanics is, for the most part, a study of deforming bodies. A reference body in the reference Euclidean space will experience forces and deform. The deformation of a reference body is described by deformation maps, which will be elucidated in a following section.\nLet \\(\\mc{E}\\) and \\(\\b{E}\\) be referred to as the physical point space and physical Euclidean space respectively. As \\(\\mc{B}_{\\rm{R}}\\) deforms, the material particles occupy different regions in the physical point space. At time \\(\\tau\\), \\(\\mc{B}\\) can be mapped to a subset of \\(\\mc{E}\\) to describe deformed body after it has changed shape or orientation. Similarly, \\(\\mc{B}\\) can also be mapped to a subset of \\(\\b{E}\\). That is, each material particle \\(\\chi \\in \\mc{B}\\) can be mapped to a position vector in \\(\\b{E}\\) describing its current position.\nWe refer to the map \\(\\bs{k}_{\\tau} : \\mc{B} \\ra \\bs{\\mc{B}}_{\\tau}\\) is referred to as the current configuration or deformed configuration and the set \\(\\bs{\\mc{B}_{\\tau}} \\subset \\b{E}\\) is called the current body or deformed body in the physical Euclidean space. \\(\\bs{k}_{\\tau}\\) is also a continuous, injective map. A material particle’s current position vector is given by \\(\\bs{k}_{\\tau}[\\chi] = \\bs{x}\\). We also have the map \\(k_{\\tau} : \\mc{B} \\ra \\mc{B}_{\\tau}\\), where \\(\\mc{B}_{\\tau}\\) is the current body or deformed body in the physical point space.\nOnce again, to summarize the notation:\n\n\\(\\bsmc{B}_{\\tau} = \\bs{k}_{\\tau}\\pr{\\mc{B}} = \\set{\\bs{k}_{\\tau}\\pr{\\chi} \\in \\b{E}}{\\chi \\in \\mc{B}} \\subset \\b{E}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\b{E}\\))\n\\(\\mc{B}_{\\tau} = k_{\\tau}\\pr{\\mc{B}} = \\set{k_{\\tau}\\pr{\\chi} \\in \\mc{E}}{\\chi \\in \\mc{B}} \\subset \\mc{E}_{\\tau}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\mc{E}\\))\n\n\n\nWe saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume \\(\\mc{E}\\) and \\(\\b{E}\\) are finite dimensional spaces and \\(\\b{E}\\) is a Hilbert space. We select a list of vectors \\(\\bs{e}_{i} \\in \\b{E}\\) that form an orthonormal basis for \\(\\b{E}\\) and define an inner product for \\(\\b{E}\\) such that \\(\\bs{e}_{i} \\cdot \\bs{e}_{j} = \\delta_{ij}\\). Let the spaces be three dimensional. We denote the material particle’s position vector in the physical Euclidean space \\(\\b{E}\\) at time \\(\\tau\\) with \\(\\bs{x}\\), which can be written as a linear combination of the basis vectors:\n\\[\n\\begin{equation}\n    \\bs{x} = x_{1} \\bs{e}_{1} + x_{2} \\bs{e}_{2} + x_{3} \\bs{e}_{3}\n\\end{equation}\n\\]\n\\(\\bs{x}\\) has units of distance. The scalars \\(x_{1}, x_{2}, x_{3}\\) are unitless real numbers, and the units are carried by the basis vectors \\(\\bs{e}_{i}\\). We declare another non-dimensionalization map\n\\[\n\\begin{equation}\n\\mathsf{U}_{\\tau} : \\b{E} \\ra \\b{R}^3\n\\end{equation}\n\\]\ndefined as \\[\n\\begin{equation}\n\\mathsf{U}_{\\tau}[\\bs{x}] = \\pr{\\bs{x} \\cdot \\bs{e}_{1}, \\bs{x} \\cdot \\bs{e}_{2}, \\bs{x} \\cdot \\bs{e}_{3}} = \\pr{x_{1}, x_{2}, x_{3}}.\n\\end{equation}\n\\]\nWe denote the tuple \\(\\pr{x_{1}, x_{2}, x_{3}}\\) with the following bold sans-serif symbol \\[\n\\begin{equation}\n\\bssf{x} = \\pr{x_{1}, x_{2}, x_{3}}\n\\end{equation}\n\\]\nwhere \\(\\bssf{x} \\in \\b{R}^3\\). Equivalently, \\(\\bssf{x}\\) can be written as a column matrix: \\[\n\\begin{equation}\n    \\bssf{x} = \\begin{bmatrix}\n                x_{1} \\\\ x_{2} \\\\ x_{3}\n                \\end{bmatrix}\n\\end{equation}\n\\]\n\\(\\bssf{x}\\) is referred to as the Eulerian coordinates or spatial coordinates of the material particle \\(\\bs{k}_{\\rm{R}}^{-1}[\\bs{X}]\\) at time \\(\\tau\\). The Eulerian coordinates are the components of \\(\\bs{x}\\) with respect to the basis vectors \\(\\bs{e}_{i}\\).\nAs the body deforms, the Eulerian coordinates of a material particle change since \\(\\bs{k}_{\\tau}[\\chi]\\) occupies different positions in the physical Euclidean space.",
+    "crumbs": [
+      "Kinematics",
+      "Bodies and Configurations"
+    ]
+  },
+  {
+    "objectID": "notes/Kinematics/BodiesConfigurations.html#sec-kinematics_intro",
+    "href": "notes/Kinematics/BodiesConfigurations.html#sec-kinematics_intro",
+    "title": "1 Bodies and Configurations",
+    "section": "",
+    "text": "Kinematics is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies.",
+    "crumbs": [
+      "Kinematics",
+      "Bodies and Configurations"
+    ]
+  },
+  {
+    "objectID": "notes/Kinematics/BodiesConfigurations.html#sec-ref_body_configuration",
+    "href": "notes/Kinematics/BodiesConfigurations.html#sec-ref_body_configuration",
+    "title": "1 Bodies and Configurations",
+    "section": "",
+    "text": "Continuum mechanics is, for the most part, a study of deforming bodies. A reference body in the reference Euclidean space will experience forces and deform. The deformation of a reference body is described by deformation maps, which will be elucidated in a following section.\nLet \\(\\mc{E}\\) and \\(\\b{E}\\) be referred to as the physical point space and physical Euclidean space respectively. As \\(\\mc{B}_{\\rm{R}}\\) deforms, the material particles occupy different regions in the physical point space. At time \\(\\tau\\), \\(\\mc{B}\\) can be mapped to a subset of \\(\\mc{E}\\) to describe deformed body after it has changed shape or orientation. Similarly, \\(\\mc{B}\\) can also be mapped to a subset of \\(\\b{E}\\). That is, each material particle \\(\\chi \\in \\mc{B}\\) can be mapped to a position vector in \\(\\b{E}\\) describing its current position.\nWe refer to the map \\(\\bs{k}_{\\tau} : \\mc{B} \\ra \\bs{\\mc{B}}_{\\tau}\\) is referred to as the current configuration or deformed configuration and the set \\(\\bs{\\mc{B}_{\\tau}} \\subset \\b{E}\\) is called the current body or deformed body in the physical Euclidean space. \\(\\bs{k}_{\\tau}\\) is also a continuous, injective map. A material particle’s current position vector is given by \\(\\bs{k}_{\\tau}[\\chi] = \\bs{x}\\). We also have the map \\(k_{\\tau} : \\mc{B} \\ra \\mc{B}_{\\tau}\\), where \\(\\mc{B}_{\\tau}\\) is the current body or deformed body in the physical point space.\nOnce again, to summarize the notation:\n\n\\(\\bsmc{B}_{\\tau} = \\bs{k}_{\\tau}\\pr{\\mc{B}} = \\set{\\bs{k}_{\\tau}\\pr{\\chi} \\in \\b{E}}{\\chi \\in \\mc{B}} \\subset \\b{E}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\b{E}\\))\n\\(\\mc{B}_{\\tau} = k_{\\tau}\\pr{\\mc{B}} = \\set{k_{\\tau}\\pr{\\chi} \\in \\mc{E}}{\\chi \\in \\mc{B}} \\subset \\mc{E}_{\\tau}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\mc{E}\\))\n\n\n\nWe saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume \\(\\mc{E}\\) and \\(\\b{E}\\) are finite dimensional spaces and \\(\\b{E}\\) is a Hilbert space. We select a list of vectors \\(\\bs{e}_{i} \\in \\b{E}\\) that form an orthonormal basis for \\(\\b{E}\\) and define an inner product for \\(\\b{E}\\) such that \\(\\bs{e}_{i} \\cdot \\bs{e}_{j} = \\delta_{ij}\\). Let the spaces be three dimensional. We denote the material particle’s position vector in the physical Euclidean space \\(\\b{E}\\) at time \\(\\tau\\) with \\(\\bs{x}\\), which can be written as a linear combination of the basis vectors:\n\\[\n\\begin{equation}\n    \\bs{x} = x_{1} \\bs{e}_{1} + x_{2} \\bs{e}_{2} + x_{3} \\bs{e}_{3}\n\\end{equation}\n\\]\n\\(\\bs{x}\\) has units of distance. The scalars \\(x_{1}, x_{2}, x_{3}\\) are unitless real numbers, and the units are carried by the basis vectors \\(\\bs{e}_{i}\\). We declare another non-dimensionalization map\n\\[\n\\begin{equation}\n\\mathsf{U}_{\\tau} : \\b{E} \\ra \\b{R}^3\n\\end{equation}\n\\]\ndefined as \\[\n\\begin{equation}\n\\mathsf{U}_{\\tau}[\\bs{x}] = \\pr{\\bs{x} \\cdot \\bs{e}_{1}, \\bs{x} \\cdot \\bs{e}_{2}, \\bs{x} \\cdot \\bs{e}_{3}} = \\pr{x_{1}, x_{2}, x_{3}}.\n\\end{equation}\n\\]\nWe denote the tuple \\(\\pr{x_{1}, x_{2}, x_{3}}\\) with the following bold sans-serif symbol \\[\n\\begin{equation}\n\\bssf{x} = \\pr{x_{1}, x_{2}, x_{3}}\n\\end{equation}\n\\]\nwhere \\(\\bssf{x} \\in \\b{R}^3\\). Equivalently, \\(\\bssf{x}\\) can be written as a column matrix: \\[\n\\begin{equation}\n    \\bssf{x} = \\begin{bmatrix}\n                x_{1} \\\\ x_{2} \\\\ x_{3}\n                \\end{bmatrix}\n\\end{equation}\n\\]\n\\(\\bssf{x}\\) is referred to as the Eulerian coordinates or spatial coordinates of the material particle \\(\\bs{k}_{\\rm{R}}^{-1}[\\bs{X}]\\) at time \\(\\tau\\). The Eulerian coordinates are the components of \\(\\bs{x}\\) with respect to the basis vectors \\(\\bs{e}_{i}\\).\nAs the body deforms, the Eulerian coordinates of a material particle change since \\(\\bs{k}_{\\tau}[\\chi]\\) occupies different positions in the physical Euclidean space.",
+    "crumbs": [
+      "Kinematics",
+      "Bodies and Configurations"
     ]
   },
   {
@@ -201,6 +282,41 @@
     ]
   },
   {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "When you push to main, GitHub Actions rebuilds the site even though you’ve already built it locally with quarto publish gh-pages. This happens because: 1. Your .gitignore excludes _book/ 2. GitHub Action still runs the Quarto build step 3. Two builds = slower deployment + potential inconsistencies\n\n\n\n\n\nComment out or remove the _book/ entry so you can commit the built files:\n# Before:\n/_book/\n\n# After:\n# /_book/  # now committing built files\n\n\n\nReplace your publish.yml with a deploy-only workflow that skips the build:\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out\n        uses: actions/checkout@v4\n\n      - name: Deploy _book to gh-pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./_book\nThis uses peaceiris/actions-gh-pages which simply copies the pre-built _book/ directory to the gh-pages branch—no rebuild needed.\n\n\n\n# 1. Make changes to your .qmd files\n# 2. Build locally\nquarto render\n\n# 3. Commit everything (including _book/)\ngit add -A\ngit commit -m \"Update course notes\"\n\n# 4. Push to main\ngit push origin main\n\n# 5. GitHub Actions deploys instantly (no rebuild)\n\n\n\nIf Git hasn’t picked up _book/ yet, explicitly add it:\ngit add _book/\ngit commit -m \"Add built site\"\n\n\n\n\n✅ Single build step (local)\n✅ Instant deployment to GitHub Pages\n✅ No runner waste rebuilding\n✅ Built site always in sync with source\n\n\n\n\n.gitignore — uncomment _book/\n.github/workflows/publish.yml — switch to deploy-only workflow"
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#the-problem",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#the-problem",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "When you push to main, GitHub Actions rebuilds the site even though you’ve already built it locally with quarto publish gh-pages. This happens because: 1. Your .gitignore excludes _book/ 2. GitHub Action still runs the Quarto build step 3. Two builds = slower deployment + potential inconsistencies"
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#the-solution-build-once-deploy-to-github",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#the-solution-build-once-deploy-to-github",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "Comment out or remove the _book/ entry so you can commit the built files:\n# Before:\n/_book/\n\n# After:\n# /_book/  # now committing built files\n\n\n\nReplace your publish.yml with a deploy-only workflow that skips the build:\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out\n        uses: actions/checkout@v4\n\n      - name: Deploy _book to gh-pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./_book\nThis uses peaceiris/actions-gh-pages which simply copies the pre-built _book/ directory to the gh-pages branch—no rebuild needed.\n\n\n\n# 1. Make changes to your .qmd files\n# 2. Build locally\nquarto render\n\n# 3. Commit everything (including _book/)\ngit add -A\ngit commit -m \"Update course notes\"\n\n# 4. Push to main\ngit push origin main\n\n# 5. GitHub Actions deploys instantly (no rebuild)\n\n\n\nIf Git hasn’t picked up _book/ yet, explicitly add it:\ngit add _book/\ngit commit -m \"Add built site\""
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#benefits",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#benefits",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": "✅ Single build step (local)\n✅ Instant deployment to GitHub Pages\n✅ No runner waste rebuilding\n✅ Built site always in sync with source"
+  },
+  {
+    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#files-changed",
+    "href": "Claude outputs/QuartoGitHubPagesSetup.html#files-changed",
+    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
+    "section": "",
+    "text": ".gitignore — uncomment _book/\n.github/workflows/publish.yml — switch to deploy-only workflow"
+  },
+  {
     "objectID": "notes/MathematicalPreliminaries/VectorTensorComponents.html",
     "href": "notes/MathematicalPreliminaries/VectorTensorComponents.html",
     "title": "1 Vector and Tensor Components",
@@ -383,124 +499,38 @@
     "text": "Let \\(B_{\\rm R}= \\set{(X_{1}, X_{2}, X_{3})}{0 \\leq X_{i} \\leq L, ~i=1,2,3}\\), where \\(L \\in \\mathbb{R}_{\\ge 0}\\). Consider a deformation map \\(\\bs{\\varphi}:B_{\\rm R}\\to \\mathbb{E}\\). The deformation consists in strectching each edge of the cube in the \\(a^\\text{th}\\) direction by a factor of \\(\\lambda_a\\). \\(\\lambda_a\\in (0, \\infty)\\), which is expressed as \\[\n\\begin{align}\nx_1&=\\lambda_1X_1,\n\\\\\nx_2&=\\lambda_2X_2,\n\\\\\nx_3&=\\lambda_3 X_3.\n\\end{align}\n\\]\nThe values \\(\\lambda_1\\),\\(\\lambda_2\\), and \\(\\lambda_3\\) are called the stretch rations.\n\n\n\nFor \\(\\gamma\\in \\mathbb{R}\\), the deformation map \\[\n\\begin{align}\nx_1&=X_1+\\gamma X_2\\\\\nx_2&=X_2\\\\\nx_3&=X_3\n\\end{align}\n\\]\nis called pure shear in the \\(\\bs{X}_1-\\bs{X}_2\\) plane, and \\(\\gamma\\) is the shear deformation.\n\n\n\nAnother type of two dimensional deformation has the following form, \\[\n\\begin{align}\nx_1&=X_1\\\\\nx_2&=X_2\\\\\nx_3&=\\varphi_3(X_1,X_2)\n\\end{align}\n\\] In this case the deformation is only in the \\(\\bs{E}_3\\) direction.\n\n\n\nWe often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is, \\[\n\\begin{align}\nx_1&=\\varphi_1(X_1,X_2)\\\\\nx_2&=\\varphi_2(X_1,X_2)\\\\\nx_3&=X_3\n\\end{align}\n\\]\nBecause there is no deformation along the \\(\\bs{E}_3\\) direction, these types of deformations are called “plane strain”."
   },
   {
-    "objectID": "notes/Kinematics/BodiesConfigurations.html",
-    "href": "notes/Kinematics/BodiesConfigurations.html",
-    "title": "1 Bodies and Configurations",
+    "objectID": "notes/Kinematics/SimpleDeformations/index.html",
+    "href": "notes/Kinematics/SimpleDeformations/index.html",
+    "title": "Simple deformations",
     "section": "",
-    "text": "Kinematics is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies. \n\n\n\nBodies occupy regions of an affine point space \\(\\mc{E}\\). Specifically, the body \\(\\mc{B}\\) is an open subset of \\(\\mc{E}\\). It is simply a collection of points in \\(\\mc{E}\\). We refer to \\(\\mc{B}\\) as the material body and the points in it as material particles or material points. We denote a material particle in \\(\\mc{B}\\) by \\(\\chi\\).\nLet \\(\\mc{E}_{\\rm{R}}\\) and \\(\\b{E}_{\\rm{R}}\\) be referred to as the reference point space and reference Euclidean space respectively. \\(\\mc{B}\\) can be mapped to a subset of \\(\\mc{E}_{\\rm{R}}\\) to represent the object of interest before it has changed shape or orientation. Similarly, \\(\\mc{B}\\) can be mapped to a subset of \\(\\b{E}_{\\rm{R}}\\). That is, each material particle \\(\\chi \\in \\mc{B}\\) can be mapped to a position vector in \\(\\b{E}_{\\rm{R}}\\).\nWe refer to the map \\(\\bs{k}_{\\rm{R}} : \\mc{B} \\ra \\bs{\\mc{B}}_{\\rm{R}}\\) is referred to as the reference configuration and the set \\(\\bs{\\mc{B}_{\\rm{R}}} \\subset \\b{E}_{\\rm{R}}\\) is called the reference body in the reference Euclidean space. \\(\\bs{k}_{\\rm{R}}\\) is a continuous, injective map. A material particle’s reference position vector is given by \\(\\bs{k}_{\\rm{R}}[\\chi] = \\bs{X}\\). When we refer to the position vector \\(\\bs{X}\\) as the material particle, we in fact mean the material particle \\(\\bs{k}^{-1}_{\\rm{R}}[\\bs{X}] = \\chi\\) belonging to \\(\\mc{B}\\). Associated with \\(\\bs{k}_{\\rm{R}}\\), we also have the map \\(k_{\\rm{R}} : \\mc{B} \\ra \\mc{B}_{\\rm{R}}\\), where \\(\\mc{B}_{\\rm{R}}\\) is the reference body in the reference point space.\nTo summarize the notation:\n\n\\(\\bsmc{B}_{\\rm{R}} = \\bs{k}_{\\rm{R}}\\pr{\\mc{B}} = \\set{\\bs{k}_{\\rm{R}}\\pr{\\chi} \\in \\b{E}_{\\rm{R}}}{\\chi \\in \\mc{B}} \\subset \\b{E}_{\\rm{R}}\\)   (Reference body in \\(\\b{E}_{\\rm{R}}\\))\n\\(\\mc{B}_{\\rm{R}} = k_{\\rm{R}}\\pr{\\mc{B}} = \\set{k_{\\rm{R}}\\pr{\\chi} \\in \\mc{E}_{\\rm{R}}}{\\chi \\in \\mc{B}} \\subset \\mc{E}_{\\rm{R}}\\)   (Reference body in \\(\\mc{E}_{\\rm{R}}\\))\n\nRemarks:\n\nThe choice of the reference body is arbitrary.\nThe reference body need not be stress free.\n\n\n\nWe describe the motion of a continuum by describing the motion of all its constituent material particles. \\(\\mc{E}_{\\rm{R}}\\) and \\(\\b{E}_{\\rm{R}}\\) are assumed to be finite dimensional. \\(\\b{E}_{\\rm{R}}\\) is a finite dimensional inner product space. Since it is finite dimensional, it is also complete and therefore a Hilbert space. We select a list of vectors \\(\\bs{E}_{i} \\in \\b{E}_{\\rm{R}}\\) that form an orthonormal basis for \\(\\b{E}_{\\rm{R}}\\). We define an inner product of \\(\\b{E}_{\\rm{R}}\\) by setting \\(\\bs{E}_{i} \\cdot \\bs{E}_{j} = \\delta_{ij}\\). Let \\(\\b{E}_{\\rm{R}}\\) and \\(\\mc{E}_{\\rm{R}}\\) be three dimensional. A material particle \\(\\bs{X} \\in \\b{E}_{\\rm{R}}\\) can be written as a linear combination of the basis vectors:\n\\[\n\\begin{equation}\n    \\bs{X} = X_{1} \\bs{E}_{1} + X_{2} \\bs{E}_{2} + X_{3} \\bs{E}_{3}\n\\end{equation}\n\\]\n\\(\\bs{X}\\) is a position vector and so has physical units of distance. The scalars \\(X_{1}, X_{2}, X_{3}\\) are real numbers and are unitless. It is the basis vectors \\(\\bs{E}_{i}\\) that carry the units. Distinctions between two Euclidean vector spaces of the same dimension can be made with regard to the units carried by the basis vectors. In order to work with the components \\(X_{1}, X_{2}, X_{3}\\), we declare the following non-dimensionalization map \\[\n\\begin{equation}\n    \\mathsf{U} : \\b{E}_{\\rm{R}} \\ra \\b{R}^{3}\n\\end{equation}\n\\]\ndefined as\n\\[\n\\begin{equation}\n\\mathsf{U}[\\bs{X}] = \\pr{\\bs{X} \\cdot \\bs{E}_{1}, \\bs{X} \\cdot \\bs{E}_{2}, \\bs{X} \\cdot \\bs{E}_{3}} = \\pr{X_{1}, X_{2}, X_{3}}.\n\\end{equation}\n\\]\nWe denote the tuple \\(\\pr{X_{1}, X_{2}, X_{3}}\\) with the following bold sans-serif symbol \\[\n\\begin{equation}\n\\bssf{X} = \\pr{X_{1}, X_{2}, X_{3}}\n\\end{equation}\n\\]\nwhere \\(\\bssf{X} \\in \\b{R}^3\\). Equivalently, \\(\\bssf{X}\\) can be written as a column matrix: \\[\n\\begin{equation}\n    \\bssf{X} = \\begin{bmatrix}\n                X_{1} \\\\ X_{2} \\\\ X_{3}\n                \\end{bmatrix}\n\\end{equation}\n\\]\n\\(\\bssf{X}\\) is referred to as the Lagrangian coordinates or material coordinates of \\(\\bs{X}\\). The Lagrangian coordinates are the components of \\(\\bs{X}\\) with respect to the basis vectors \\(\\bs{E}_{i}\\).\nWhen the reference configuration does not change, Lagrangian coordinates of a material particle do not change, since they describe the material particle in the reference body in the reference Euclidean space.\n\n\n\n\nContinuum mechanics is, for the most part, a study of deforming bodies. A reference body in the reference Euclidean space will experience forces and deform. The deformation of a reference body is described by deformation maps, which will be elucidated in a following section.\nLet \\(\\mc{E}\\) and \\(\\b{E}\\) be referred to as the physical point space and physical Euclidean space respectively. As \\(\\mc{B}_{\\rm{R}}\\) deforms, the material particles occupy different regions in the physical point space. At time \\(\\tau\\), \\(\\mc{B}\\) can be mapped to a subset of \\(\\mc{E}\\) to describe deformed body after it has changed shape or orientation. Similarly, \\(\\mc{B}\\) can also be mapped to a subset of \\(\\b{E}\\). That is, each material particle \\(\\chi \\in \\mc{B}\\) can be mapped to a position vector in \\(\\b{E}\\) describing its current position.\nWe refer to the map \\(\\bs{k}_{\\tau} : \\mc{B} \\ra \\bs{\\mc{B}}_{\\tau}\\) is referred to as the current configuration or deformed configuration and the set \\(\\bs{\\mc{B}_{\\tau}} \\subset \\b{E}\\) is called the current body or deformed body in the physical Euclidean space. \\(\\bs{k}_{\\tau}\\) is also a continuous, injective map. A material particle’s current position vector is given by \\(\\bs{k}_{\\tau}[\\chi] = \\bs{x}\\). We also have the map \\(k_{\\tau} : \\mc{B} \\ra \\mc{B}_{\\tau}\\), where \\(\\mc{B}_{\\tau}\\) is the current body or deformed body in the physical point space.\nOnce again, to summarize the notation:\n\n\\(\\bsmc{B}_{\\tau} = \\bs{k}_{\\tau}\\pr{\\mc{B}} = \\set{\\bs{k}_{\\tau}\\pr{\\chi} \\in \\b{E}}{\\chi \\in \\mc{B}} \\subset \\b{E}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\b{E}\\))\n\\(\\mc{B}_{\\tau} = k_{\\tau}\\pr{\\mc{B}} = \\set{k_{\\tau}\\pr{\\chi} \\in \\mc{E}}{\\chi \\in \\mc{B}} \\subset \\mc{E}_{\\tau}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\mc{E}\\))\n\n\n\nWe saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume \\(\\mc{E}\\) and \\(\\b{E}\\) are finite dimensional spaces and \\(\\b{E}\\) is a Hilbert space. We select a list of vectors \\(\\bs{e}_{i} \\in \\b{E}\\) that form an orthonormal basis for \\(\\b{E}\\) and define an inner product for \\(\\b{E}\\) such that \\(\\bs{e}_{i} \\cdot \\bs{e}_{j} = \\delta_{ij}\\). Let the spaces be three dimensional. We denote the material particle’s position vector in the physical Euclidean space \\(\\b{E}\\) at time \\(\\tau\\) with \\(\\bs{x}\\), which can be written as a linear combination of the basis vectors:\n\\[\n\\begin{equation}\n    \\bs{x} = x_{1} \\bs{e}_{1} + x_{2} \\bs{e}_{2} + x_{3} \\bs{e}_{3}\n\\end{equation}\n\\]\n\\(\\bs{x}\\) has units of distance. The scalars \\(x_{1}, x_{2}, x_{3}\\) are unitless real numbers, and the units are carried by the basis vectors \\(\\bs{e}_{i}\\). We declare another non-dimensionalization map\n\\[\n\\begin{equation}\n\\mathsf{U}_{\\tau} : \\b{E} \\ra \\b{R}^3\n\\end{equation}\n\\]\ndefined as \\[\n\\begin{equation}\n\\mathsf{U}_{\\tau}[\\bs{x}] = \\pr{\\bs{x} \\cdot \\bs{e}_{1}, \\bs{x} \\cdot \\bs{e}_{2}, \\bs{x} \\cdot \\bs{e}_{3}} = \\pr{x_{1}, x_{2}, x_{3}}.\n\\end{equation}\n\\]\nWe denote the tuple \\(\\pr{x_{1}, x_{2}, x_{3}}\\) with the following bold sans-serif symbol \\[\n\\begin{equation}\n\\bssf{x} = \\pr{x_{1}, x_{2}, x_{3}}\n\\end{equation}\n\\]\nwhere \\(\\bssf{x} \\in \\b{R}^3\\). Equivalently, \\(\\bssf{x}\\) can be written as a column matrix: \\[\n\\begin{equation}\n    \\bssf{x} = \\begin{bmatrix}\n                x_{1} \\\\ x_{2} \\\\ x_{3}\n                \\end{bmatrix}\n\\end{equation}\n\\]\n\\(\\bssf{x}\\) is referred to as the Eulerian coordinates or spatial coordinates of the material particle \\(\\bs{k}_{\\rm{R}}^{-1}[\\bs{X}]\\) at time \\(\\tau\\). The Eulerian coordinates are the components of \\(\\bs{x}\\) with respect to the basis vectors \\(\\bs{e}_{i}\\).\nAs the body deforms, the Eulerian coordinates of a material particle change since \\(\\bs{k}_{\\tau}[\\chi]\\) occupies different positions in the physical Euclidean space.",
+    "text": "Simple deformations",
     "crumbs": [
       "Kinematics",
-      "Bodies and Configurations"
+      "Simple deformations"
     ]
   },
   {
-    "objectID": "notes/Kinematics/BodiesConfigurations.html#sec-kinematics_intro",
-    "href": "notes/Kinematics/BodiesConfigurations.html#sec-kinematics_intro",
-    "title": "1 Bodies and Configurations",
+    "objectID": "notes/Notation/Notation.html",
+    "href": "notes/Notation/Notation.html",
+    "title": "1 Notation",
     "section": "",
-    "text": "Kinematics is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies.",
+    "text": "1 Notation\nHere is the basic notation\n\\(\\mathbb{E}\\).",
     "crumbs": [
-      "Kinematics",
-      "Bodies and Configurations"
+      "Notation",
+      "Notation"
     ]
   },
   {
-    "objectID": "notes/Kinematics/BodiesConfigurations.html#sec-ref_body_configuration",
-    "href": "notes/Kinematics/BodiesConfigurations.html#sec-ref_body_configuration",
-    "title": "1 Bodies and Configurations",
+    "objectID": "homework/HW2/Problems.html",
+    "href": "homework/HW2/Problems.html",
+    "title": "1 HW2 Problems",
     "section": "",
-    "text": "Continuum mechanics is, for the most part, a study of deforming bodies. A reference body in the reference Euclidean space will experience forces and deform. The deformation of a reference body is described by deformation maps, which will be elucidated in a following section.\nLet \\(\\mc{E}\\) and \\(\\b{E}\\) be referred to as the physical point space and physical Euclidean space respectively. As \\(\\mc{B}_{\\rm{R}}\\) deforms, the material particles occupy different regions in the physical point space. At time \\(\\tau\\), \\(\\mc{B}\\) can be mapped to a subset of \\(\\mc{E}\\) to describe deformed body after it has changed shape or orientation. Similarly, \\(\\mc{B}\\) can also be mapped to a subset of \\(\\b{E}\\). That is, each material particle \\(\\chi \\in \\mc{B}\\) can be mapped to a position vector in \\(\\b{E}\\) describing its current position.\nWe refer to the map \\(\\bs{k}_{\\tau} : \\mc{B} \\ra \\bs{\\mc{B}}_{\\tau}\\) is referred to as the current configuration or deformed configuration and the set \\(\\bs{\\mc{B}_{\\tau}} \\subset \\b{E}\\) is called the current body or deformed body in the physical Euclidean space. \\(\\bs{k}_{\\tau}\\) is also a continuous, injective map. A material particle’s current position vector is given by \\(\\bs{k}_{\\tau}[\\chi] = \\bs{x}\\). We also have the map \\(k_{\\tau} : \\mc{B} \\ra \\mc{B}_{\\tau}\\), where \\(\\mc{B}_{\\tau}\\) is the current body or deformed body in the physical point space.\nOnce again, to summarize the notation:\n\n\\(\\bsmc{B}_{\\tau} = \\bs{k}_{\\tau}\\pr{\\mc{B}} = \\set{\\bs{k}_{\\tau}\\pr{\\chi} \\in \\b{E}}{\\chi \\in \\mc{B}} \\subset \\b{E}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\b{E}\\))\n\\(\\mc{B}_{\\tau} = k_{\\tau}\\pr{\\mc{B}} = \\set{k_{\\tau}\\pr{\\chi} \\in \\mc{E}}{\\chi \\in \\mc{B}} \\subset \\mc{E}_{\\tau}\\)   (Current body or deformed body at time \\(\\tau\\) in \\(\\mc{E}\\))\n\n\n\nWe saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume \\(\\mc{E}\\) and \\(\\b{E}\\) are finite dimensional spaces and \\(\\b{E}\\) is a Hilbert space. We select a list of vectors \\(\\bs{e}_{i} \\in \\b{E}\\) that form an orthonormal basis for \\(\\b{E}\\) and define an inner product for \\(\\b{E}\\) such that \\(\\bs{e}_{i} \\cdot \\bs{e}_{j} = \\delta_{ij}\\). Let the spaces be three dimensional. We denote the material particle’s position vector in the physical Euclidean space \\(\\b{E}\\) at time \\(\\tau\\) with \\(\\bs{x}\\), which can be written as a linear combination of the basis vectors:\n\\[\n\\begin{equation}\n    \\bs{x} = x_{1} \\bs{e}_{1} + x_{2} \\bs{e}_{2} + x_{3} \\bs{e}_{3}\n\\end{equation}\n\\]\n\\(\\bs{x}\\) has units of distance. The scalars \\(x_{1}, x_{2}, x_{3}\\) are unitless real numbers, and the units are carried by the basis vectors \\(\\bs{e}_{i}\\). We declare another non-dimensionalization map\n\\[\n\\begin{equation}\n\\mathsf{U}_{\\tau} : \\b{E} \\ra \\b{R}^3\n\\end{equation}\n\\]\ndefined as \\[\n\\begin{equation}\n\\mathsf{U}_{\\tau}[\\bs{x}] = \\pr{\\bs{x} \\cdot \\bs{e}_{1}, \\bs{x} \\cdot \\bs{e}_{2}, \\bs{x} \\cdot \\bs{e}_{3}} = \\pr{x_{1}, x_{2}, x_{3}}.\n\\end{equation}\n\\]\nWe denote the tuple \\(\\pr{x_{1}, x_{2}, x_{3}}\\) with the following bold sans-serif symbol \\[\n\\begin{equation}\n\\bssf{x} = \\pr{x_{1}, x_{2}, x_{3}}\n\\end{equation}\n\\]\nwhere \\(\\bssf{x} \\in \\b{R}^3\\). Equivalently, \\(\\bssf{x}\\) can be written as a column matrix: \\[\n\\begin{equation}\n    \\bssf{x} = \\begin{bmatrix}\n                x_{1} \\\\ x_{2} \\\\ x_{3}\n                \\end{bmatrix}\n\\end{equation}\n\\]\n\\(\\bssf{x}\\) is referred to as the Eulerian coordinates or spatial coordinates of the material particle \\(\\bs{k}_{\\rm{R}}^{-1}[\\bs{X}]\\) at time \\(\\tau\\). The Eulerian coordinates are the components of \\(\\bs{x}\\) with respect to the basis vectors \\(\\bs{e}_{i}\\).\nAs the body deforms, the Eulerian coordinates of a material particle change since \\(\\bs{k}_{\\tau}[\\chi]\\) occupies different positions in the physical Euclidean space.",
+    "text": "1 HW2 Problems\nTotal points: 100",
     "crumbs": [
-      "Kinematics",
-      "Bodies and Configurations"
+      "Homework",
+      "HW2",
+      "HW2 Problems"
     ]
-  },
-  {
-    "objectID": "homework/index.html",
-    "href": "homework/index.html",
-    "title": "1 Homework",
-    "section": "",
-    "text": "1 Homework\nHomework sets will be posted here. Please submit via canvas.",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html",
-    "href": "Claude outputs/QuartoGitHubPagesSetup.html",
-    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
-    "section": "",
-    "text": "When you push to main, GitHub Actions rebuilds the site even though you’ve already built it locally with quarto publish gh-pages. This happens because: 1. Your .gitignore excludes _book/ 2. GitHub Action still runs the Quarto build step 3. Two builds = slower deployment + potential inconsistencies\n\n\n\n\n\nComment out or remove the _book/ entry so you can commit the built files:\n# Before:\n/_book/\n\n# After:\n# /_book/  # now committing built files\n\n\n\nReplace your publish.yml with a deploy-only workflow that skips the build:\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out\n        uses: actions/checkout@v4\n\n      - name: Deploy _book to gh-pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./_book\nThis uses peaceiris/actions-gh-pages which simply copies the pre-built _book/ directory to the gh-pages branch—no rebuild needed.\n\n\n\n# 1. Make changes to your .qmd files\n# 2. Build locally\nquarto render\n\n# 3. Commit everything (including _book/)\ngit add -A\ngit commit -m \"Update course notes\"\n\n# 4. Push to main\ngit push origin main\n\n# 5. GitHub Actions deploys instantly (no rebuild)\n\n\n\nIf Git hasn’t picked up _book/ yet, explicitly add it:\ngit add _book/\ngit commit -m \"Add built site\"\n\n\n\n\n✅ Single build step (local)\n✅ Instant deployment to GitHub Pages\n✅ No runner waste rebuilding\n✅ Built site always in sync with source\n\n\n\n\n.gitignore — uncomment _book/\n.github/workflows/publish.yml — switch to deploy-only workflow"
-  },
-  {
-    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#the-problem",
-    "href": "Claude outputs/QuartoGitHubPagesSetup.html#the-problem",
-    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
-    "section": "",
-    "text": "When you push to main, GitHub Actions rebuilds the site even though you’ve already built it locally with quarto publish gh-pages. This happens because: 1. Your .gitignore excludes _book/ 2. GitHub Action still runs the Quarto build step 3. Two builds = slower deployment + potential inconsistencies"
-  },
-  {
-    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#the-solution-build-once-deploy-to-github",
-    "href": "Claude outputs/QuartoGitHubPagesSetup.html#the-solution-build-once-deploy-to-github",
-    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
-    "section": "",
-    "text": "Comment out or remove the _book/ entry so you can commit the built files:\n# Before:\n/_book/\n\n# After:\n# /_book/  # now committing built files\n\n\n\nReplace your publish.yml with a deploy-only workflow that skips the build:\nname: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out\n        uses: actions/checkout@v4\n\n      - name: Deploy _book to gh-pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./_book\nThis uses peaceiris/actions-gh-pages which simply copies the pre-built _book/ directory to the gh-pages branch—no rebuild needed.\n\n\n\n# 1. Make changes to your .qmd files\n# 2. Build locally\nquarto render\n\n# 3. Commit everything (including _book/)\ngit add -A\ngit commit -m \"Update course notes\"\n\n# 4. Push to main\ngit push origin main\n\n# 5. GitHub Actions deploys instantly (no rebuild)\n\n\n\nIf Git hasn’t picked up _book/ yet, explicitly add it:\ngit add _book/\ngit commit -m \"Add built site\""
-  },
-  {
-    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#benefits",
-    "href": "Claude outputs/QuartoGitHubPagesSetup.html#benefits",
-    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
-    "section": "",
-    "text": "✅ Single build step (local)\n✅ Instant deployment to GitHub Pages\n✅ No runner waste rebuilding\n✅ Built site always in sync with source"
-  },
-  {
-    "objectID": "Claude outputs/QuartoGitHubPagesSetup.html#files-changed",
-    "href": "Claude outputs/QuartoGitHubPagesSetup.html#files-changed",
-    "title": "1 Fix Quarto + GitHub Pages Double-Build Issue",
-    "section": "",
-    "text": ".gitignore — uncomment _book/\n.github/workflows/publish.yml — switch to deploy-only workflow"
-  },
-  {
-    "objectID": "notes/sample.html",
-    "href": "notes/sample.html",
-    "title": "1 Sample page",
-    "section": "",
-    "text": "A scratch page that exercises the math setup. Delete it once real content exists.\n\n\nThe spatial velocity field is \\(\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\bs{\\pi}_t + \\bar{\\bs{v}}_t\\), where \\bs gives a bold symbol and \\u{R} gives a bold sans-serif tensor \\(\\u{R}\\).\n\n\n\n\\[\n\\begin{align}\n\\bs{\\Omega}_t &= \\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}  \\label{omega} \\\\\n\\bs{c}_t      &= -\\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}\\bs{t}_t + \\dot{\\bs{t}}_t\n\\end{align}\n\\]\nEquation \\(\\eqref{omega}\\) defines the angular-velocity tensor. (\\label / \\eqref are handled entirely by MathJax and are scoped to this page.)\n\n\n\n\\[\n\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\left(\\bs{x} - \\bar{\\bs{x}}_t\\right) + \\bar{\\bs{v}}_t\n\\tag{1}\\]\nEq. 1 holds for every rigid motion, and this reference survives the page being renamed or moved.\n\n\n\n\\[\n\\Dro = \\dot{\\rho}, \\qquad\n\\Dr  = D\\hspace{-.1em}\\varrho, \\qquad\n\\DDf = \\ddot{f}, \\qquad\n\\Deq = \\mathcal{D}^{\\circ}\n\\]\n\n\n\n\n\n\n\n\n\nFigure 1: A placeholder figure pulled from the old notes.\n\n\n\nFigure 1 shows Quarto figure cross-referencing."
-  },
-  {
-    "objectID": "notes/sample.html#inline-math-and-macros",
-    "href": "notes/sample.html#inline-math-and-macros",
-    "title": "1 Sample page",
-    "section": "",
-    "text": "The spatial velocity field is \\(\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\bs{\\pi}_t + \\bar{\\bs{v}}_t\\), where \\bs gives a bold symbol and \\u{R} gives a bold sans-serif tensor \\(\\u{R}\\)."
-  },
-  {
-    "objectID": "notes/sample.html#numbered-align-with-an-in-page-reference",
-    "href": "notes/sample.html#numbered-align-with-an-in-page-reference",
-    "title": "1 Sample page",
-    "section": "",
-    "text": "\\[\n\\begin{align}\n\\bs{\\Omega}_t &= \\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}  \\label{omega} \\\\\n\\bs{c}_t      &= -\\dot{\\bs{R}}_t\\,\\bs{R}_t^{\\mathsf{T}}\\bs{t}_t + \\dot{\\bs{t}}_t\n\\end{align}\n\\]\nEquation \\(\\eqref{omega}\\) defines the angular-velocity tensor. (\\label / \\eqref are handled entirely by MathJax and are scoped to this page.)"
-  },
-  {
-    "objectID": "notes/sample.html#quarto-cross-reference-use-this-style-going-forward",
-    "href": "notes/sample.html#quarto-cross-reference-use-this-style-going-forward",
-    "title": "1 Sample page",
-    "section": "",
-    "text": "\\[\n\\bs{v}_t(\\bs{x}) = \\bs{\\omega}_t \\times \\left(\\bs{x} - \\bar{\\bs{x}}_t\\right) + \\bar{\\bs{v}}_t\n\\tag{1}\\]\nEq. 1 holds for every rigid motion, and this reference survives the page being renamed or moved."
-  },
-  {
-    "objectID": "notes/sample.html#rate-family-macros",
-    "href": "notes/sample.html#rate-family-macros",
-    "title": "1 Sample page",
-    "section": "",
-    "text": "\\[\n\\Dro = \\dot{\\rho}, \\qquad\n\\Dr  = D\\hspace{-.1em}\\varrho, \\qquad\n\\DDf = \\ddot{f}, \\qquad\n\\Deq = \\mathcal{D}^{\\circ}\n\\]"
-  },
-  {
-    "objectID": "notes/sample.html#a-figure",
-    "href": "notes/sample.html#a-figure",
-    "title": "1 Sample page",
-    "section": "",
-    "text": "Figure 1: A placeholder figure pulled from the old notes.\n\n\n\nFigure 1 shows Quarto figure cross-referencing."
   },
   {
     "objectID": "homework/HW1/Problems.html",
@@ -512,46 +542,6 @@
       "Homework",
       "HW1",
       "HW1 Problems"
-    ]
-  },
-  {
-    "objectID": "homework/HW1/Solutions.html",
-    "href": "homework/HW1/Solutions.html",
-    "title": "1 HW 1 Solutions",
-    "section": "",
-    "text": "1 HW 1 Solutions",
-    "crumbs": [
-      "Homework",
-      "HW 1 Solutions"
-    ]
-  },
-  {
-    "objectID": "homework/HW1/index.html",
-    "href": "homework/HW1/index.html",
-    "title": "1 HW1",
-    "section": "",
-    "text": "1 HW1",
-    "crumbs": [
-      "Homework",
-      "HW1"
-    ]
-  },
-  {
-    "objectID": "homework/HW2/Problems.html",
-    "href": "homework/HW2/Problems.html",
-    "title": "1 HW2 Problems",
-    "section": "",
-    "text": "1 HW2 Problems\nTotal points: 100"
-  },
-  {
-    "objectID": "notes/Kinematics/SimpleDeformations/index.html",
-    "href": "notes/Kinematics/SimpleDeformations/index.html",
-    "title": "Simple deformations",
-    "section": "",
-    "text": "Simple deformations",
-    "crumbs": [
-      "Kinematics",
-      "Simple deformations"
     ]
   }
 ]
