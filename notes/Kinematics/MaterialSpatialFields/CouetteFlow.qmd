@@ -1,0 +1,98 @@
+# Couette flow {#sec-couette_flow}
+
+
+Consider Couette flow, that is, the flow between two parallel plates with the upper plate moving at a velocity $V_{\max}$. The temperature field measured in this flow is
+
+$$
+t\ag{x_i}\ = T_0 + \Delta T\, x_1.
+$$ {#eq-couette-temperature}
+
+What is the rate of change of temperature experienced by the material particle that is located at $\bsf{x} = (0, 0)$ at time $\bs{\tau} = 1\,\rm{s}$? The deformation mapping corresponding to this flow is
+
+
+
+
+$\bsf{x}\ag{\cdot}\ag{\cdot}: \mathbb{R}\times B\to B$, $B=\left\{ (X_1,X_2)\in \mathbb{R}^2~|~0<X_{2}<h\right\}$,
+$$
+\begin{aligned}
+x_{1}[\tau]\ag{X_i}&=X_1+V_{\rm max}\left(1-\left(\frac{X_2}{h}\right)^2\right)\tau,\\
+x_{2}\ag{\tau}\ag{X_i}&=X_2,
+\end{aligned}
+$$ {#eq-couette-deformation-map}
+
+
+
+#### Solution 1
+
+Let us refer to an equation @eq-couette-deformation-map.
+Let $^P\bsf{X}$ be the material particle that is located $\bsf{x} = (0, 0)$ at time $\bs{\tau} = 1\,\rm{s}$.
+Let the material temperrature field be $T\ag{\tau}\ag{X_i}$.
+One way to get the rate change of temperature experienced by the material particle $^P\bsf{X}$ is to get the material time derivative of the temperrature field. 
+$$
+\frac{\partial}{\partial \tau}T\ag{\tau,X_i}=T'[\tau]\ag{X_i}
+$$ {#eq-couette-material-time-derivative}
+and then compute $T'[1]\ag{^P X_i}$. 
+
+We need two things the material temperature field and the $^P\bsf{X}$. The materials temperature field is easy to get, 
+$$
+T[\tau]\ag{X_i}=T_0+\Delta T \left(X_1+V_{\rm max}\left(1-\left(\frac{X_2}{h}\right)^2\right)\tau\right)
+$$ {#eq-couette-material-temperature}
+The material field corresponding to the material time derivative of the temperature field is 
+$$
+T'[\tau]\ag{X_i}=\Delta T V_{\rm max}\left(1-\left(\frac{X_2}{h}\right)^2\right)
+$$ {#eq-couette-material-temperature-rate}
+
+To get $^{P}\bsf{X}$ we need the inverse deformation map. The inverse deformation map is
+$\bsf{X}\ag{\cdot}\ag{\cdot}: \mathbb{R}\times B\to B$, $B=\left\{ (X_1,X_2)\in \mathbb{R}^2~|~0<X_{2}<h\right\}$,
+$$
+\begin{aligned}
+X_{1}[\tau]\ag{X_i}&=x_1-V_{\rm max}\left(1-\left(\frac{x_2}{h}\right)^2\right)\tau,\\
+X_{2}\ag{\tau}\ag{X_i}&=x_2,
+\end{aligned}
+$$ {#eq-couette-inverse-deformation-map}
+
+From the inverse deformation map we get the $^P \bsf{X}=(-V_{\rm max},0)$.Substituting this result in @eq-couette-material-temperature-rate we get the rate of temperature change experienced by the material particle to be 
+$$
+\Delta T V_{\rm max}
+$$
+
+
+Also using the inverse deformation map we get the material temperature field to be \begin{equation}
+\end{equation}
+
+#### Solution 2
+There is an alternate way to do this. This by using the spacial velocity field. 
+The material velocity field is 
+$$
+\begin{align}
+V_1\ag{\tau}\ag{X_i}&=V_{\rm max}\left(1-\left(\frac{X_2}{h}\right)^2\right),\\
+V_2\ag{\tau}\ag{X_i}&=0.
+\end{align}
+$$
+
+
+The spatial velocity field is 
+$$
+\begin{align}
+v_1\ag{\tau}\ag{x_i}&=V_{\rm max}\left(1-\left(\frac{x_2}{h}\right)^2\right),\\
+v_2\ag{\tau}\ag{x_i}&=0.
+\end{align}
+$$
+
+Now we apply the formular for the material time derivative to the spatial temperature field, 
+\begin{align}
+\frac{Dt}{D\tau}&=t_{,\tau}+v_{i}t_{,i}.
+\end{align}
+We know that the first term is zero. The second terms 
+$$
+{\text{grad}}\, t=\Delta T \,\bsf{E}_1.
+$$ Thus we have that 
+
+$$
+v_i t_{,i}=V_{\rm max} \Delta T\left(1-\left(\frac{x_2}{h}\right)^2\right),
+$$
+which at the spatial point $\bsf{x}=(0,0)$ at $\tau=1$ computes to be $$
+v_i t_{,i}=V_{\rm max} \Delta T,
+$$
+
+Thus the material time derivative of the temperature field at the time instance $\tau$ and $\bsf{x}=(0,0)$ is $$V_{\rm max} \Delta T$$.
