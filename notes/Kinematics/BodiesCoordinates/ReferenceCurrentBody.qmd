@@ -18,7 +18,7 @@ To summarize the notation:
 1. The choice of the reference body is arbitrary.
 1. The reference body need not be stress free.
 
-## Current Body and Current Configuration {#sec-ref_body_configuration -}
+## Current Body and Current Configuration {#sec-current_body_configuration -}
 
 A reference body in the reference Euclidean space will experience forces and undergo a motion. The motion of a reference body will be elucidated in a following section.
 
