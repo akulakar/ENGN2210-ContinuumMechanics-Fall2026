@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-05">
+<meta name="dcterms.date" content="2026-10-07">
 <meta name="description" content="Wrapping [0, 2π) onto the circle; why deformation maps do not suffer from this pathology.">
 
 <title>A continuous bijection that is not a homeomorphism – ENGN2210 — Continuum Mechanics</title>
@@ -38,8 +38,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../notes/Kinematics/BodiesConfigurations.html" rel="next">
-<link href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" rel="prev">
+<link href="../../notes/Kinematics/BodiesCoordinates/ReferenceCurrentBody.html" rel="next">
+<link href="../../notes/Kinematics/index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -107,10 +107,11 @@ window.MathJax = {
       mc:    ['\\mathcal{#1}', 1],
       msf:   ['\\mathsf{#1}', 1],
       mbb:   ['\\mathbb{#1}', 1],
-      rm:    ['\\mathrm{#1}', 1],
+      mrm:    ['\\mathrm{#1}', 1],
       brm:   ['\\boldsymbol{\\mathrm{#1}}', 1], 
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       bsf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
+      bmc:   ['\\boldsymbol{\\mathcal{#1}}', 1],
       dsf:   ['\\Delta\\boldsymbol{\\mathsf{#1}}', 1],
       tu:    ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
       tusf:  ['\\tilde{\\boldsymbol{\\mathsf{#1}}}', 1],
@@ -248,7 +249,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">A continuous bijection that is not a homeomorphism</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/index.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">A continuous bijection that is not a homeomorphism</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -351,7 +352,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a href="../../notes/Kinematics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kinematics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -364,22 +365,10 @@ window.Quarto = {
  <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bodies and Configurations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/DeformationMotion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Deformation and Motion</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../notes/Kinematics/SimpleDeformations/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simple deformations</span></a>
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bodies and coordinates</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -387,7 +376,48 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/SimpleDeformations/SimpleShear.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/BodiesCoordinates/ReferenceCurrentBody.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference and Current Bodies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/BodiesCoordinates/LagrangianCoordinates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lagrangian Coordinates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/BodiesCoordinates/EulerianCoordinates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eulerian Coordinates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../notes/Kinematics/Motion/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motion</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/Motion/MotionDeformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/Motion/DeformationMapExamples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of Deformation Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/Kinematics/Motion/SimpleShear.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Simple shear</span></a>
   </div>
 </li>
@@ -397,11 +427,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../notes/Kinematics/MaterialSpatialFields/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Material and spatial fields</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notes/Kinematics/MaterialSpatialFields/CouetteFlow.html" class="sidebar-item-text sidebar-link">
@@ -416,20 +446,20 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../homework/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">HW1</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">HW1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../homework/HW1/Problems.html" class="sidebar-item-text sidebar-link">
@@ -440,13 +470,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">HW2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../homework/HW2/Problems.html" class="sidebar-item-text sidebar-link">
@@ -484,7 +514,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">A continuous bijection that is not a homeomorphism</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/Kinematics/index.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html">A continuous bijection that is not a homeomorphism</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">A continuous bijection that is not a homeomorphism</h1>
 </div>
@@ -502,7 +532,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 5, 2026</p>
+      <p class="date">October 7, 2026</p>
     </div>
   </div>
   
@@ -1001,13 +1031,13 @@ g(p_n) = 2\pi - \frac{1}{n} \to 2\pi \neq 0 = g(1,0).
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="pagination-link" aria-label="Change of basis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Change of basis</span>
+      <a href="../../notes/Kinematics/index.html" class="pagination-link" aria-label="Kinematics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Kinematics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../notes/Kinematics/BodiesConfigurations.html" class="pagination-link" aria-label="Bodies and Configurations">
-        <span class="nav-page-text">Bodies and Configurations</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/Kinematics/BodiesCoordinates/ReferenceCurrentBody.html" class="pagination-link" aria-label="Reference and Current Bodies">
+        <span class="nav-page-text">Reference and Current Bodies</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

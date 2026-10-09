@@ -1,0 +1,76 @@
+## Motion {#sec-motion -}
+
+We would like to map reference position vectors of material particles to their current position vectors at each time instant. We refer to this map as the motion.
+
+::: {#def-motion_map}
+**[Motion]{style="color: red;"}**
+
+The motion is a map $\bs{x}[\cdot][\cdot] : \b{T} \times \bs{\mathcal{B}}_{\rm{R}} \to \mathbb{E}$ that takes a time $\tau \in \b{T}$ and a reference position vector $\bs{X}\in \bs{\mathcal{B}}_{\rm R}$ and returns the current position vector $\bs{x} = \bs{x}[\tau][\bs{X}]$ occupied in $\mathbb{E}$ at the time instance $\tau$.
+:::
+
+**Note:** $\bs{x}[\cdot][\cdot]$, or equivalently, $\bs{x}[\cdot, \cdot]$  refers to the map whereas $\bs{x}$ refers to the current position vector, which is the mapped object.
+
+**Non-dimensionalization:** The non-dimensionalization maps map $\bs{X}$ and $\bs{x}$ to $\bsf{X}$ and $\bsf{x}$, where both vectors belong to $\mbb{R}^3$. An appropriate non-dimensionalization map maps the motion to its non dimensional equivalent $\bsf{x}[\cdot][\cdot] : \mbb{T} \times B_{\rm{R}} \to \mbb{R}^{3}$ where $B_{\rm{R}} \subset \mbb{R}^3$.
+
+## Deformation map {#sec-deformation-map -}
+
+The motion evaluated at a time $\tau$ yields a deformation map.
+
+::: {#def-deformation_map}
+**[Deformation map]{style="color: red;"}**
+
+The deformation map $\bs{x}[\tau] : \bs{\mathcal{B}}_{\rm{R}} \to \bs{\mathcal{B}}_{\tau}$ takes in a material particle $\bs{X}\in \bs{\mathcal{B}}_{\rm R}$ and returns the current position $\bs{\varphi}_{\tau}\sqpr{\bs{X}}$ occupied in the current body at the time instance $\tau$ $\bs{\mc{B}}_{\tau}$. We often use $\bs{x}_{\tau}$ as an abbreviation for $\bs{x}[\tau]$.
+:::
+
+The motion can be thought of as the collection of all deformation maps at all time instances. When we consider a single time instance $\tau$, we obtain a deformation map $\bs{x}[\tau][\cdot]$ or $\bs{x}_{\tau}[\cdot]$. Note that the range of the deformation maps $\bs{x}_{\tau_{1}}[\cdot]$ and $\bs{x}_{\tau_{2}}[\cdot]$ are different, because the current body occupies different subsets of the physical Euclidean space.
+
+**Non-dimensionalization:** Similar to the motion, the non-dimensional equivalent of the deformation map at time $\tau$ is denoted by $\bsf{x}[\tau][\cdot] : B_{\rm{R}} \to B_{\tau}$ where $B_{\rm{R}} \subset \mbb{R}^3$ and $B_{\tau} \subset \mbb{R}^3$.
+
+### Admissible and inverse deformation map {#sec-admissible_inverse_def_map -}
+
+In continuum mechanics we will be interested in a wide class of possible deformation maps, but we will place some conditions on $\bs{x}_{\tau}$. We will say that $\bs{x}$ is an admissible deformation map if and only if:
+
+1.  $\bs{x}_{\tau}$ is defined for all $\bs{X}\in \bs{\mathcal{B}}_{\rm R}$
+2.  $\bs{x}_{\tau}$ is injective, except perhaps at the boundary of $\bs{\mathcal{B}}_{\rm R}$ (such as to avoid interpenetration)
+3. $\bs{x}_{\tau}$ is continuously differentiable, expect perhaps at the boundary of $\bs{\mathcal{B}}_{\rm R}$ (such as to avoid cracks, dislocations)
+
+The codomain of the deformation map is the current body $\bs{\mc B} = \set{\bs{x}_{\tau}[\bs{X}] \in \mbb{E}}{\bs{X} \in \bs{\mc B}_{\rm{R}}}$. Then by definition, the deformation map is also surjective and therefore bijective. By bijectivity, there exists a well defined inverse deformation map $\bs{X}[\tau][\cdot] : \bs{\mathcal{B}}_{\tau} \to \bs{\mathcal{B}}_{\rm R}$ such that $\bs{X}[\tau][\bs{x}]= \bs{X}$, which is the material particle $\bs{X}$ that is located at $\bs{x}$ at time instance $\tau$. Clearly $\bs{x}_{\tau}[\bs{X}_{\tau}[\bs{x}]]=\bs{x}$.
+
+<!-- **Note:**
+
+The motion need not be injective with respect to time. The motion evaluated at two distinct times $\bs{\tau}_{1}$ and $\bs{\tau}_{2}$ may produce two deformation maps that may be identical with each other. -->
+
+### Deformation map components {#sec-deformation_map_components -}
+
+Recall the nondimensionalization map $\msf{U} : \bs{\mc{B}}_{\rm{R}} \to \b{R}^{3}$. We define the components of the deformation map as follows
+$$
+\begin{align}
+\bs{x}_{\tau}\sqpr{\bs{X}} &= x[\tau]_{i}\sqpr{\msf{U}\sqpr{\bs{X}}}\bs{e}_i,
+\end{align}
+$$
+
+where 
+$$
+x[\tau]_{i} : \mathbb{R}^3 \to \mathbb{R}
+$$
+
+and $\pr{\msf{U}\sqpr{\bs{X}}}_{j} = X_j$. Specifically, $X_{j}=\bs{X}\cdot \bs{E}_j$. The functions $x[\tau]_{i}$ are called the components of the deformation map. 
+<!-- We can also define the deformation map by defining the map,
+$$
+\begin{align}
+\bs{\varphi}_{\tau}: B_{\rm R} \to \mathbb{E},
+\end{align}
+$$
+
+where 
+$$
+\bs{\varphi}_{\tau}\sqpr{X_1,X_2,X_3}=\varphi_{i\tau}\sqpr{X_{1},X_{2},X_{3}}\bs{e}_i
+$$
+
+This map is different from the map $\bs{\varphi}_{\tau} :\bs{\mathcal{B}}_{\rm R}\to \mathbb{E}$.  -->
+
+Clearly, when $X_i$ are the components/coordinates of $\bs{X}$ w.r.t $\bs{E}_i$, $x[\tau]_{i}\sqpr{X_1,X_2,X_3} \bs{e}_{i} = \bs{x}_{\tau}\sqpr{\bs{X}}$. Despite using the same symbols, it will be clear from context as to which map we are talking about. In many books you will see $x_i$ being used as an alias for $x[\tau]_{i}\sqpr{X_1,X_2,X_3}$. Clearly, $\pr{x_1, x_2, x_3} \in \mathbb{R}^{3}$. We denote the non-dimensionalized vector $\bs{\msf{x}} = \pr{x_1, x_2, x_3}$.
+
+It follows from the above introduced notation that the spatial location occupied by the material particle $\bs{X}$ is $x_i \bs{e}_i$. Thus, $\bs{x}=x_i\bs{e}_i$.
+
+We may sometimes omit the subscript $\tau$ for the deformation and inverse deformation maps. It should be understood that it is a map and not a vector in by the context.

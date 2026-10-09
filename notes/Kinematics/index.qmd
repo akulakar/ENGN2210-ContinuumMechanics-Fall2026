@@ -1,0 +1,12 @@
+## Introduction to Kinematics {#sec-kinematics_intro}
+
+**Kinematics** is the study of motion, without regard to the forces that produce it. As such, in this section we will build the tools necessary to study the motion of continuum bodies. 
+<!-- First, we begin by defining a continuum.
+
+::: {#def-continuum}
+**[Continuum]{style="color: red;"}**
+
+*Need to fill in*
+:::
+
+A continuum theory is a mathematical theory. Real objects are not really continua. At the atomic level, there is empty space between atoms with no matter in between. So the continuum is a mathematical construction which certain physical systems can approximate. -->

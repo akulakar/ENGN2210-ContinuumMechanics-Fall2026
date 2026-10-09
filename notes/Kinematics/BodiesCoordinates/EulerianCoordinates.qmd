@@ -1,0 +1,44 @@
+### Eulerian Coordinates {#sec-eulerian_coordinates - }
+
+We saw that the Lagrangian coordinates describe the position of the material particles in the reference body in the reference Euclidean space. However, we require another set of coordinates to describe the position of the material particles as the body deforms. Again, assume $\mc{E}$ and $\b{E}$ are finite dimensional spaces and $\b{E}$ is a Hilbert space. We select a list of vectors $\bs{e}_{i} \in \b{E}$ that form an orthonormal basis for $\b{E}$ and define an inner product for $\b{E}$ such that $\bs{e}_{i} \cdot \bs{e}_{j} = \delta_{ij}$. Let the spaces be three dimensional. We denote the material particle's position vector in the physical Euclidean space $\b{E}$ at time $\tau$ with $\bs{x}$, which can be written as a linear combination of the basis vectors:
+
+$$
+\begin{equation}
+    \bs{x} = x_{1} \bs{e}_{1} + x_{2} \bs{e}_{2} + x_{3} \bs{e}_{3}
+\end{equation}
+$$
+
+$\bs{x}$ has units of distance. The scalars $x_{1}, x_{2}, x_{3}$ are unitless real numbers, and the units are carried by the basis vectors $\bs{e}_{i}$. We declare another non-dimensionalization map
+
+$$
+\begin{equation}
+\mathsf{U}_{\tau} : \b{E} \ra \b{R}^3
+\end{equation}
+$$
+
+defined as 
+$$
+\begin{equation}
+\mathsf{U}_{\tau}[\bs{x}] = \pr{\bs{x} \cdot \bs{e}_{1}, \bs{x} \cdot \bs{e}_{2}, \bs{x} \cdot \bs{e}_{3}} = \pr{x_{1}, x_{2}, x_{3}}.
+\end{equation}
+$$
+
+We denote the tuple $\pr{x_{1}, x_{2}, x_{3}}$ with the following bold sans-serif symbol
+$$
+\begin{equation}
+\bsf{x} = \pr{x_{1}, x_{2}, x_{3}}
+\end{equation}
+$$
+
+where $\bsf{x} \in \b{R}^3$. Equivalently, $\bsf{x}$ can be written as a column matrix:
+$$
+\begin{equation}
+    \bsf{x} = \begin{bmatrix}
+                x_{1} \\ x_{2} \\ x_{3}
+                \end{bmatrix}
+\end{equation}
+$$
+
+$\bsf{x}$ is referred to as the **Eulerian coordinates** or **spatial coordinates** of the material particle $\bs{k}_{\rm{R}}^{-1}[\bs{X}]$ at time $\tau$. The Eulerian coordinates are the components of $\bs{x}$ with respect to the basis vectors $\bs{e}_{i}$. 
+
+As the body deforms, the Eulerian coordinates of a material particle change since $\bs{k}_{\tau}[\chi]$ occupies different positions in the physical Euclidean space.

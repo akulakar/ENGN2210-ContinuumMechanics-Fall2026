@@ -1,0 +1,54 @@
+## Examples of Deformation Maps {#sec-deformation_map_example -}
+
+#### Stretching of a cube {-}
+
+Let $B_{\rm R}= \set{(X_{1}, X_{2}, X_{3})}{0 \leq X_{i} \leq L, ~i=1,2,3}$, where $L \in \mathbb{R}_{\ge 0}$. Consider a deformation map $\bsf{x}:B_{\rm R}\to B$. The deformation consists in strectching each edge of the cube in the $a^\text{th}$ direction by a factor of $\lambda_a$.  $\lambda_a\in (0, \infty)$, which is expressed as
+$$
+\begin{align}
+x_1&=\lambda_1X_1,
+\\
+x_2&=\lambda_2X_2,
+\\
+x_3&=\lambda_3 X_3.
+\end{align}
+$$
+
+The values $\lambda_1$,$\lambda_2$, and $\lambda_3$ are called the stretch rations.
+
+
+#### Pure shear of a cube {-}
+
+For $\gamma\in \mathbb{R}$, the deformation map
+$$
+\begin{align}
+x_1&=X_1+\gamma X_2\\
+x_2&=X_2\\
+x_3&=X_3
+\end{align}
+$$
+
+is called pure shear in the $\bs{X}_1-\bs{X}_2$ plane, and $\gamma$ is the shear deformation.
+
+#### Anti-plane shear (along the $\bs{E}_3$ direction) {-}
+Another type of two dimensional deformation has the following form,
+$$
+\begin{align}
+x_1&=X_1\\
+x_2&=X_2\\
+x_3&=x_3[X_1,X_2]
+\end{align}
+$$
+In this case the deformation is only in the $\bs{E}_3$ direction.
+
+#### Plane strain (within the $\bs{E}_1-\bs{E}_2$ plane) {-}
+We often describe deformations of bodies in two-dimensions. One possible type of essentially two-dimensional deformation is,
+$$
+\begin{align}
+x_1&=x_1[X_1,X_2]\\
+x_2&=x_2[X_1,X_2]\\
+x_3&=X_3
+\end{align}
+$$
+
+Because there is no deformation along the $\bs{E}_3$ direction, these types
+of deformations are called "plane strain".

@@ -1,0 +1,44 @@
+## Lagrangian Coordinates {#sec-lagrangian_coordinates -}
+
+We describe the motion of a continuum by describing the motion of all its constituent material particles. $\mc{E}_{\rm{R}}$ and $\b{E}_{\rm{R}}$ are assumed to be finite dimensional. $\b{E}_{\rm{R}}$ is a finite dimensional inner product space. Since it is finite dimensional, it is also complete and therefore a *Hilbert space*. We select a list of vectors $\bs{E}_{i} \in \b{E}_{\rm{R}}$ that form an orthonormal basis for $\b{E}_{\rm{R}}$. We define an inner product of $\b{E}_{\rm{R}}$ by setting $\bs{E}_{i} \cdot \bs{E}_{j} = \delta_{ij}$. Let $\b{E}_{\rm{R}}$ and $\mc{E}_{\rm{R}}$ be three dimensional. A material particle $\bs{X} \in \b{E}_{\rm{R}}$ can be written as a linear combination of the basis vectors:
+
+$$
+\begin{equation}
+    \bs{X} = X_{1} \bs{E}_{1} + X_{2} \bs{E}_{2} + X_{3} \bs{E}_{3}
+\end{equation}
+$$
+
+$\bs{X}$ is a position vector and so has physical units of distance. The scalars $X_{1}, X_{2}, X_{3}$ are real numbers and are unitless. It is the basis vectors $\bs{E}_{i}$ that carry the units. Distinctions between two Euclidean vector spaces of the same dimension can be made with regard to the units carried by the basis vectors. In order to work with the components $X_{1}, X_{2}, X_{3}$, we declare the following non-dimensionalization map
+$$
+\begin{equation}
+    \mathsf{U} : \b{E}_{\rm{R}} \ra \b{R}^{3}
+\end{equation}
+$$
+
+defined as
+
+$$
+\begin{equation}
+\mathsf{U}[\bs{X}] = \pr{\bs{X} \cdot \bs{E}_{1}, \bs{X} \cdot \bs{E}_{2}, \bs{X} \cdot \bs{E}_{3}} = \pr{X_{1}, X_{2}, X_{3}}.
+\end{equation}
+$$
+
+We denote the tuple $\pr{X_{1}, X_{2}, X_{3}}$ with the following bold sans-serif symbol
+$$
+\begin{equation}
+\bsf{X} = \pr{X_{1}, X_{2}, X_{3}}
+\end{equation}
+$$
+
+where $\bsf{X} \in \b{R}^3$. Equivalently, $\bsf{X}$ can be written as a column matrix:
+$$
+\begin{equation}
+    \bsf{X} = \begin{bmatrix}
+                X_{1} \\ X_{2} \\ X_{3}
+                \end{bmatrix}
+\end{equation}
+$$
+
+$\bsf{X}$ is referred to as the **Lagrangian coordinates** or **material coordinates** of $\bs{X}$. The Lagrangian coordinates are the components of $\bs{X}$ with respect to the basis vectors $\bs{E}_{i}$. 
+
+When the reference configuration does not change, Lagrangian coordinates of a material particle do not change, since they describe the material particle in the reference body in the reference Euclidean space.

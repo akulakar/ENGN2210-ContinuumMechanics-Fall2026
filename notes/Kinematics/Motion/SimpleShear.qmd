@@ -1,6 +1,6 @@
-# Simple shear
+## Simple shear {-}
 
-### Simple shear in 2D
+### Simple shear in 2D {-}
 The reference body $B_{\rm{Ref}}$ is a subset of $\mathbb{R}^2$. The deformation map, $\bsf{x}\ag{\cdot}$, takes points from $B_{\rm{Ref}}$ into $\mathbb{R}^2$. We will denote the set $\bsf{x}\ag{B_{\rm{Ref}}}$ as $B_{\tau}$, the deformed body.
 
 We can talk about the deformation map $\bsf{x}\ag{\cdot}: B_{\rm Ref}\to \mathbb{R}^2$. 
@@ -9,11 +9,10 @@ $$
 \begin{align}
 x_1[X_1,X_2,X_3]&=X_1+0.2 t X_2,\\
 x_2[X_1,X_2,X_3]&=X_2,\\
-
 \end{align}
 $$
 
-### Simple shear in 3D
+### Simple shear in 3D {-}
 
 
 $$
@@ -26,24 +25,32 @@ $$
 
 The above defomation map can also be written as
 
+$$
 \begin{align}
 x_1[X_i]&=X_1+0.4 X_2,\\
 x_2[X_i]&=X_2,\\
 x_3[X_i]&=X_3,\\
 \end{align}
+$$
 
 
 Since 
+$$
 \begin{align}
 x_1[\bsf{X}]&=\bsf{X}_{\cdot 1}+0.4  \bsf{X}_{\cdot 2},\\
 x_2[\bsf{X}]&=\bsf{X}_{\cdot 2},\\
 x_3[\bsf{X}]&=\bsf{X}_{\cdot 3},\\
 \end{align}
+$$
 
+$$
 \begin{align}
 \bsf{x}\ag{\bsf{X}}&=\bsf{F} \bsf{X}
 \end{align}
+$$
+
 where 
+$$
 \begin{align}
 \bsf{F}_{\tau}
 =\begin{bmatrix}
@@ -52,5 +59,6 @@ where
 0 & 0 & 1
 \end{bmatrix}
 \end{align}
+$$
 
 The other deformation map that we use is 

@@ -1,0 +1,11 @@
+# Motion and Deformation {-}
+
+The previous section described reference and current bodies as well as Lagrangian and Eulerian coordinates of a material particle. However, we still need to describe the motion of the material body, that is the map between the reference and deformed bodies. The reference configuration maps the material body to the reference body, and the current configuration maps the material body to the current body. We would also like to have a map between the reference body and current body.
+
+### A note on non-dimensionalized quantities {-}
+
+In the previous section, the non dimensionalization maps $\msf{U} : \mbb{E}_{\mrm{R}} \to \mbb{R}^{3}$ and $\msf{U} : \mbb{E} \to \mbb{R}^{3}$. When considering reference and current bodies, which are subsets of the reference and physical Euclidean vector spaces, the maps map (position vectors of) material particles to their components in $\mbb{R}^{3}$. Similarly, we choose to non dimensionalize all further kinematic quantities such as velocity and acceleration. A more detailed explanation is provided in the time derivative section. The consequence is that we will only be working with non dimensionalized quantites in $\mbb{R}^{3}$ and linear operators $\mc{L}(\mbb{R}^{3})$.
+
+### Time {-}
+
+We model time as a one dimensional vector space and denote it with $\b{T}$.

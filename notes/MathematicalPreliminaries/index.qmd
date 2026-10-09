@@ -1,0 +1,4 @@
+---
+title: Mathematical preliminaries
+description: Mathematical preliminearties for understanding continuum mechanics.
+---

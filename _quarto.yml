@@ -30,17 +30,20 @@ website:
           - notes/MathematicalPreliminaries/TraceDeterminant.qmd
           - notes/MathematicalPreliminaries/ChangeOfBasis.qmd
       - section: "Kinematics"
+        href: notes/Kinematics/index.qmd
         contents:
-          - notes/Kinematics/ContinuousBijectionNotHomeomorphism.qmd
-          - notes/Kinematics/BodiesConfigurations.qmd
-          - notes/Kinematics/DeformationMotion.qmd
-          - section: "Simple deformations"
-            href: notes/Kinematics/SimpleDeformations/index.qmd
+          - section: "Bodies and coordinates"
             contents:
-              - notes/Kinematics/SimpleDeformations/SimpleShear.qmd
-              # - section: "Deeper level"      # nest as far as you like
-              #   contents:
-              #     - notes/Kinematics/SimpleDeformations/Example/Page.qmd
+              - notes/Kinematics/BodiesCoordinates/ReferenceCurrentBody.qmd
+              - notes/Kinematics/BodiesCoordinates/LagrangianCoordinates.qmd
+              - notes/Kinematics/BodiesCoordinates/EulerianCoordinates.qmd
+          - section: "Motion"
+            href: notes/Kinematics/Motion/index.qmd
+            contents:
+              - notes/Kinematics/Motion/MotionDeformation.qmd
+              - notes/Kinematics/Motion/DeformationMapExamples.qmd
+              - notes/Kinematics/Motion/SimpleShear.qmd
+              - notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.qmd
           - section: "Material and spatial fields"
             href: notes/Kinematics/MaterialSpatialFields/index.qmd
             contents:

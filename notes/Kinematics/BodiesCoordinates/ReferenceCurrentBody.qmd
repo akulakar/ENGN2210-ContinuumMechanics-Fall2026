@@ -1,0 +1,32 @@
+# Reference and Current Bodies {#sec-bodies_configurations -}
+
+## Reference Body and Reference Configuration {#sec-ref_body_configuration -}
+
+Bodies occupy regions of an affine point space $\mc{E}$. Specifically, the body $\mc{B}$ is an open subset of $\mc{E}$. It is simply a collection of points in $\mc{E}$. We refer to $\mc{B}$ as the **material body** and the points in it as **material particles** or **material points**. We denote a material particle in $\mc{B}$ by $\chi$.
+
+Let $\mc{E}_{\rm{R}}$ and $\b{E}_{\rm{R}}$ be referred to as the **reference point space** and **reference Euclidean space** respectively. $\mc{B}$ can be mapped to a subset of $\mc{E}_{\rm{R}}$ to represent the object of interest before it has changed shape or orientation. Similarly, $\mc{B}$ can be mapped to a subset of $\b{E}_{\rm{R}}$. That is, each material particle $\chi \in \mc{B}$ can be mapped to a position vector in $\b{E}_{\rm{R}}$.
+
+We refer to the map $\bs{k}_{\rm{R}} : \mc{B} \ra \bs{\mc{B}}_{\rm{R}}$ is referred to as the **reference configuration** and the set $\bs{\mc{B}_{\rm{R}}} \subset \b{E}_{\rm{R}}$ is called the **reference body in the reference Euclidean space**. $\bs{k}_{\rm{R}}$ is a continuous, injective map. A material particle's reference position vector is given by $\bs{k}_{\rm{R}}[\chi] = \bs{X}$. When we refer to the position vector $\bs{X}$ as the material particle, we in fact mean the material particle $\bs{k}^{-1}_{\rm{R}}[\bs{X}] = \chi$ belonging to $\mc{B}$. Associated with $\bs{k}_{\rm{R}}$, we also have the map $k_{\rm{R}} : \mc{B} \ra \mc{B}_{\rm{R}}$, where $\mc{B}_{\rm{R}}$ is the **reference body in the reference point space**.
+
+To summarize the notation:
+
+1. $\bmc{B}_{\rm{R}} = \bs{k}_{\rm{R}}\pr{\mc{B}} = \set{\bs{k}_{\rm{R}}\pr{\chi} \in \b{E}_{\rm{R}}}{\chi \in \mc{B}} \subset \b{E}_{\rm{R}}$ &ensp; (Reference body in $\b{E}_{\rm{R}}$)
+1. $\mc{B}_{\rm{R}} = k_{\rm{R}}\pr{\mc{B}} = \set{k_{\rm{R}}\pr{\chi} \in \mc{E}_{\rm{R}}}{\chi \in \mc{B}} \subset \mc{E}_{\rm{R}}$ &ensp; (Reference body in $\mc{E}_{\rm{R}}$)
+
+**Remarks:**
+
+1. The choice of the reference body is arbitrary.
+1. The reference body need not be stress free.
+
+## Current Body and Current Configuration {#sec-ref_body_configuration -}
+
+A reference body in the reference Euclidean space will experience forces and undergo a motion. The motion of a reference body will be elucidated in a following section.
+
+Let $\mc{E}$ and $\b{E}$ be referred to as the **physical point space** and **physical Euclidean space** respectively. As $\mc{B}_{\rm{R}}$ deforms, the material particles occupy different regions in the physical point space. At time $\tau$, $\mc{B}$ can be mapped to a subset of $\mc{E}$ to describe deformed body after it has changed shape or orientation. Similarly, $\mc{B}$ can also be mapped to a subset of $\b{E}$. That is, each material particle $\chi \in \mc{B}$ can be mapped to a position vector in $\b{E}$ describing its current position.
+
+We refer to the map $\bs{k}_{\tau} : \mc{B} \ra \bs{\mc{B}}_{\tau}$ as the **current configuration configuration** and the set $\bs{\mc{B}_{\tau}} \subset \b{E}$ is called the **current body in the physical Euclidean space**. $\bs{k}_{\tau}$ is also a continuous, injective map. A material particle's current position vector is given by $\bs{k}_{\tau}[\chi] = \bs{x}$. We also have the map $k_{\tau} : \mc{B} \ra \mc{B}_{\tau}$, where $\mc{B}_{\tau}$ is the **current body in the physical point space**.
+
+Once again, to summarize the notation:
+
+1. $\bmc{B}_{\tau} = \bs{k}_{\tau}\pr{\mc{B}} = \set{\bs{k}_{\tau}\pr{\chi} \in \b{E}}{\chi \in \mc{B}} \subset \b{E}$ &ensp; (Current body or deformed body at time $\tau$ in $\b{E}$)
+1. $\mc{B}_{\tau} = k_{\tau}\pr{\mc{B}} = \set{k_{\tau}\pr{\chi} \in \mc{E}}{\chi \in \mc{B}} \subset \mc{E}_{\tau}$ &ensp; (Current body or deformed body at time $\tau$ in $\mc{E}$)
