@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-10-07">
+<meta name="description" content="Wrapping [0, 2π) onto the circle; why deformation maps do not suffer from this pathology.">
 
-<title>problems – ENGN2210 — Continuum Mechanics</title>
+<title>A continuous bijection that is not a homeomorphism – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,25 +31,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../homework/HW2/Problems.html" rel="next">
-<link href="../../homework/index.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../notes/Kinematics/MaterialSpatialFields/index.html" rel="next">
+<link href="../../../notes/Kinematics/Motion/SimpleShear.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +107,7 @@ window.MathJax = {
       mc:    ['\\mathcal{#1}', 1],
       msf:   ['\\mathsf{#1}', 1],
       mbb:   ['\\mathbb{#1}', 1],
-      rm:    ['\\mathrm{#1}', 1],
+      mrm:    ['\\mathrm{#1}', 1],
       brm:   ['\\boldsymbol{\\mathrm{#1}}', 1], 
       u:     ['\\boldsymbol{\\mathsf{#1}}', 1],
       bsf:   ['\\boldsymbol{\\mathsf{#1}}', 1],
@@ -206,8 +207,37 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -219,7 +249,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/Problems.html">HW1</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/Problems.html">HW1 Problems</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../notes/Kinematics/index.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/Motion/index.html">Motion</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.html">A continuous bijection that is not a homeomorphism</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -234,7 +264,7 @@ window.MathJax = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">ENGN2210 — Continuum Mechanics</a> 
+      <a href="../../../">ENGN2210 — Continuum Mechanics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -246,7 +276,7 @@ window.MathJax = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -261,7 +291,7 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notation</span></a>
   </div>
 </li>
@@ -278,43 +308,43 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Maps</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Einstein Summation Convention</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector and Tensor Components</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Trace and determinant</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Change of basis</span></a>
   </div>
 </li>
@@ -322,35 +352,17 @@ window.MathJax = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a href="../../../notes/Kinematics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kinematics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/BodiesConfigurations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bodies and Configurations {#sec-bodies_configurations}</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/DeformationMotion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Deformation and Motion</span></a>
-  </div>
-</li>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../notes/Kinematics/SimpleDeformations/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simple deformations</span></a>
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Bodies and coordinates</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -358,24 +370,71 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/SimpleDeformations/SimpleShear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simple shear</span></a>
+  <a href="../../../notes/Kinematics/BodiesCoordinates/ReferenceCurrentBody.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference and Current Bodies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/BodiesCoordinates/LagrangianCoordinates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lagrangian Coordinates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/BodiesCoordinates/EulerianCoordinates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eulerian Coordinates</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../notes/Kinematics/MaterialSpatialFields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Material and spatial fields</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a href="../../../notes/Kinematics/Motion/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motion</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notes/Kinematics/MaterialSpatialFields/CouetteFlow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../notes/Kinematics/Motion/MotionDeformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/Motion/DeformationMapExamples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of Deformation Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/Motion/SimpleShear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simple shear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../notes/Kinematics/MaterialSpatialFields/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material and spatial fields</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/Kinematics/MaterialSpatialFields/CouetteFlow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Couette flow</span></a>
   </div>
 </li>
@@ -385,34 +444,17 @@ window.MathJax = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../homework/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../homework/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">HW1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../homework/HW1/Problems.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">HW1 Problems</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
- <span class="menu-text">HW2</span></a>
+ <span class="menu-text">HW1</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -420,7 +462,24 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../homework/HW2/Problems.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../homework/HW1/Problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW1 Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">HW2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../homework/HW2/Problems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW2 Problems</span></a>
   </div>
 </li>
@@ -438,17 +497,33 @@ window.MathJax = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hw1-problems" id="toc-hw1-problems" class="nav-link active" data-scroll-target="#hw1-problems"><span class="header-section-number">1</span> HW1 Problems</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions"><span class="header-section-number">1</span> Definitions</a></li>
+  <li><a href="#the-example" id="toc-the-example" class="nav-link" data-scroll-target="#the-example"><span class="header-section-number">2</span> The example</a>
+  <ul>
+  <li><a href="#f-is-continuous" id="toc-f-is-continuous" class="nav-link" data-scroll-target="#f-is-continuous"><span class="header-section-number">2.1</span> <span class="math inline">\(f\)</span> is continuous</a></li>
+  <li><a href="#f-is-injective" id="toc-f-is-injective" class="nav-link" data-scroll-target="#f-is-injective"><span class="header-section-number">2.2</span> <span class="math inline">\(f\)</span> is injective</a></li>
+  <li><a href="#f-is-surjective" id="toc-f-is-surjective" class="nav-link" data-scroll-target="#f-is-surjective"><span class="header-section-number">2.3</span> <span class="math inline">\(f\)</span> is surjective</a></li>
+  <li><a href="#f-1-is-not-continuous-at-10" id="toc-f-1-is-not-continuous-at-10" class="nav-link" data-scroll-target="#f-1-is-not-continuous-at-10"><span class="header-section-number">2.4</span> <span class="math inline">\(f^{-1}\)</span> is not continuous at <span class="math inline">\((1,0)\)</span></a></li>
+  <li><a href="#no-homeomorphism-exists-between-these-spaces" id="toc-no-homeomorphism-exists-between-these-spaces" class="nav-link" data-scroll-target="#no-homeomorphism-exists-between-these-spaces"><span class="header-section-number">2.5</span> No homeomorphism exists between these spaces</a></li>
+  </ul></li>
+  <li><a href="#when-a-continuous-bijection-is-automatically-a-homeomorphism" id="toc-when-a-continuous-bijection-is-automatically-a-homeomorphism" class="nav-link" data-scroll-target="#when-a-continuous-bijection-is-automatically-a-homeomorphism"><span class="header-section-number">3</span> When a continuous bijection is automatically a homeomorphism</a></li>
+  <li><a href="#relevance-to-continuum-mechanics" id="toc-relevance-to-continuum-mechanics" class="nav-link" data-scroll-target="#relevance-to-continuum-mechanics"><span class="header-section-number">4</span> Relevance to continuum mechanics</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/Problems.html">HW1</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/Problems.html">HW1 Problems</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../notes/Kinematics/index.html">Kinematics</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/Motion/index.html">Motion</a></li><li class="breadcrumb-item"><a href="../../../notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.html">A continuous bijection that is not a homeomorphism</a></li></ol></nav>
 <div class="quarto-title">
+<h1 class="title">A continuous bijection that is not a homeomorphism</h1>
 </div>
 
+<div>
+  <div class="description">
+    Wrapping [0, 2π) onto the circle; why deformation maps do not suffer from this pathology.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -469,9 +544,86 @@ window.MathJax = {
 </header>
 
 
-<section id="hw1-problems" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> HW1 Problems</h1>
-<p><strong>Total points:</strong> 105</p>
+<section id="definitions" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">1</span> Definitions</h2>
+<p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be topological spaces. Subsets of <span class="math inline">\(\mathbb{R}^n\)</span> carry the subspace topology induced by the Euclidean metric.</p>
+<div id="def-homeomorphism" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Homeomorphism)</strong></span> A map <span class="math inline">\(f : X \to Y\)</span> is a <em>homeomorphism</em> if <span class="math inline">\(f\)</span> is bijective, <span class="math inline">\(f\)</span> is continuous, and <span class="math inline">\(f^{-1} : Y \to X\)</span> is continuous.</p>
+</div>
+<p>Continuity of <span class="math inline">\(f^{-1}\)</span> is a separate requirement. It does not follow from continuity and bijectivity of <span class="math inline">\(f\)</span>, as the following example shows.</p>
+</section>
+<section id="the-example" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-example"><span class="header-section-number">2</span> The example</h2>
+<div id="exm-circle-wrap" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (Wrapping an interval onto the circle)</strong></span> Let <span class="math inline">\(S^1 = \{ (y_1, y_2) \in \mathbb{R}^2 : y_1^2 + y_2^2 = 1 \}\)</span> and define <span id="eq-circle-wrap"><span class="math display">\[
+f : [0, 2\pi) \to S^1, \qquad f(t) = (\cos t, \sin t).
+\tag{1}\]</span></span> Then <span class="math inline">\(f\)</span> is a continuous bijection, but <span class="math inline">\(f^{-1}\)</span> is not continuous at <span class="math inline">\((1, 0)\)</span>. Hence <span class="math inline">\(f\)</span> is not a homeomorphism.</p>
+</div>
+<div id="fig-circle-wrap" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-circle-wrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./figures/circle_wrap.svg" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-circle-wrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The map <span class="math inline">\(f\)</span> of <a href="#eq-circle-wrap" class="quarto-xref">Eq.&nbsp;1</a>. Points <span class="math inline">\(t_n = 2\pi - 1/n\)</span> near the excluded endpoint <span class="math inline">\(2\pi\)</span> (red) are mapped next to <span class="math inline">\(f(0) = (1,0)\)</span>, while their preimages stay far from <span class="math inline">\(0\)</span>.
+</figcaption>
+</figure>
+</div>
+<section id="f-is-continuous" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="f-is-continuous"><span class="header-section-number">2.1</span> <span class="math inline">\(f\)</span> is continuous</h3>
+<p>Its components <span class="math inline">\(\cos\)</span> and <span class="math inline">\(\sin\)</span> are continuous on <span class="math inline">\(\mathbb{R}\)</span>, hence on <span class="math inline">\([0, 2\pi)\)</span>.</p>
+</section>
+<section id="f-is-injective" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="f-is-injective"><span class="header-section-number">2.2</span> <span class="math inline">\(f\)</span> is injective</h3>
+<p>Suppose <span class="math inline">\(f(t_1) = f(t_2)\)</span> with <span class="math inline">\(t_1, t_2 \in [0, 2\pi)\)</span>. Equality of cosines and sines implies <span class="math inline">\(t_1 - t_2 = 2\pi k\)</span> for some integer <span class="math inline">\(k\)</span>. Since <span class="math inline">\(|t_1 - t_2| &lt; 2\pi\)</span>, <span class="math inline">\(k = 0\)</span>, so <span class="math inline">\(t_1 = t_2\)</span>.</p>
+</section>
+<section id="f-is-surjective" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="f-is-surjective"><span class="header-section-number">2.3</span> <span class="math inline">\(f\)</span> is surjective</h3>
+<p>Every <span class="math inline">\((y_1, y_2) \in S^1\)</span> can be written as <span class="math inline">\((\cos\theta, \sin\theta)\)</span> for some <span class="math inline">\(\theta \in \mathbb{R}\)</span>. Subtracting a suitable integer multiple of <span class="math inline">\(2\pi\)</span> gives such a <span class="math inline">\(\theta\)</span> in <span class="math inline">\([0, 2\pi)\)</span>.</p>
+</section>
+<section id="f-1-is-not-continuous-at-10" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="f-1-is-not-continuous-at-10"><span class="header-section-number">2.4</span> <span class="math inline">\(f^{-1}\)</span> is not continuous at <span class="math inline">\((1,0)\)</span></h3>
+<p>Let <span class="math inline">\(g = f^{-1} : S^1 \to [0, 2\pi)\)</span> and, for <span class="math inline">\(n \geq 1\)</span>, <span class="math display">\[
+t_n = 2\pi - \frac{1}{n} \in [0, 2\pi), \qquad p_n = f(t_n) = \left( \cos\tfrac{1}{n}, \, -\sin\tfrac{1}{n} \right).
+\]</span> Then <span class="math display">\[
+\left| p_n - (1,0) \right| = 2 \sin\frac{1}{2n} \to 0,
+\]</span> so <span class="math inline">\(p_n \to (1,0)\)</span> in <span class="math inline">\(S^1\)</span>. However, <span class="math display">\[
+g(p_n) = 2\pi - \frac{1}{n} \to 2\pi \neq 0 = g(1,0).
+\]</span> Since <span class="math inline">\(S^1\)</span> and <span class="math inline">\([0, 2\pi)\)</span> are metric spaces, sequential continuity is equivalent to continuity. Therefore <span class="math inline">\(g\)</span> is not continuous at <span class="math inline">\((1,0)\)</span>.</p>
+<p><a href="#fig-circle-wrap" class="quarto-xref">Figure&nbsp;1</a> shows the mechanism: <span class="math inline">\(f\)</span> glues the two ends of the interval together, and <span class="math inline">\(f^{-1}\)</span> must tear them apart again.</p>
+</section>
+<section id="no-homeomorphism-exists-between-these-spaces" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="no-homeomorphism-exists-between-these-spaces"><span class="header-section-number">2.5</span> No homeomorphism exists between these spaces</h3>
+<p>The failure is not specific to <span class="math inline">\(f\)</span>: no map <span class="math inline">\(h : S^1 \to [0, 2\pi)\)</span> whatsoever is a homeomorphism. Two independent arguments follow.</p>
+<ol type="1">
+<li><strong>Compactness.</strong> <span class="math inline">\(S^1\)</span> is closed and bounded in <span class="math inline">\(\mathbb{R}^2\)</span>, hence compact. <span class="math inline">\([0, 2\pi)\)</span> is not closed in <span class="math inline">\(\mathbb{R}\)</span>, hence not compact. A continuous image of a compact space is compact, so there is no continuous surjection <span class="math inline">\(S^1 \to [0, 2\pi)\)</span>.</li>
+<li><strong>Connectedness.</strong> Removing the point <span class="math inline">\(\pi\)</span> disconnects <span class="math inline">\([0, 2\pi)\)</span> into <span class="math inline">\([0, \pi)\)</span> and <span class="math inline">\((\pi, 2\pi)\)</span>. Removing any point <span class="math inline">\(q\)</span> from <span class="math inline">\(S^1\)</span> leaves a connected set, namely the continuous image of an open interval of length <span class="math inline">\(2\pi\)</span>. A homeomorphism <span class="math inline">\(h\)</span> would restrict to a homeomorphism between <span class="math inline">\(S^1 \setminus \{h^{-1}(\pi)\}\)</span> and <span class="math inline">\([0, 2\pi) \setminus \{\pi\}\)</span>, which is impossible.</li>
+</ol>
+</section>
+</section>
+<section id="when-a-continuous-bijection-is-automatically-a-homeomorphism" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="when-a-continuous-bijection-is-automatically-a-homeomorphism"><span class="header-section-number">3</span> When a continuous bijection is automatically a homeomorphism</h2>
+<p>The example relies on the domain being non-compact and the map changing dimension. Removing either feature eliminates the pathology.</p>
+<div id="thm-compact-hausdorff" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Compact domain, Hausdorff codomain)</strong></span> Let <span class="math inline">\(X\)</span> be compact, <span class="math inline">\(Y\)</span> Hausdorff, and <span class="math inline">\(f : X \to Y\)</span> a continuous bijection. Then <span class="math inline">\(f\)</span> is a homeomorphism.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>It suffices to show that <span class="math inline">\(f\)</span> maps closed sets to closed sets, because then <span class="math inline">\((f^{-1})^{-1}(C) = f(C)\)</span> is closed for every closed <span class="math inline">\(C \subseteq X\)</span>. A closed subset <span class="math inline">\(C\)</span> of the compact space <span class="math inline">\(X\)</span> is compact. Its image <span class="math inline">\(f(C)\)</span> is compact because <span class="math inline">\(f\)</span> is continuous. A compact subset of a Hausdorff space is closed. Hence <span class="math inline">\(f(C)\)</span> is closed.</p>
+</div>
+<p>In <a href="#exm-circle-wrap" class="quarto-xref">Example&nbsp;1</a>, <span class="math inline">\(Y = S^1\)</span> is Hausdorff but <span class="math inline">\(X = [0, 2\pi)\)</span> is not compact, so <a href="#thm-compact-hausdorff" class="quarto-xref">Thrm.&nbsp;1</a> does not apply.</p>
+<div id="thm-invariance-domain" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Invariance of domain (Brouwer))</strong></span> Let <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> be open and <span class="math inline">\(f : U \to \mathbb{R}^n\)</span> continuous and injective. Then <span class="math inline">\(f(U)\)</span> is open and <span class="math inline">\(f : U \to f(U)\)</span> is a homeomorphism.</p>
+</div>
+<p>The proof requires algebraic topology and is omitted. In <a href="#exm-circle-wrap" class="quarto-xref">Example&nbsp;1</a>, the domain is one-dimensional while the codomain lies in <span class="math inline">\(\mathbb{R}^2\)</span>, so <a href="#thm-invariance-domain" class="quarto-xref">Thrm.&nbsp;2</a> does not apply.</p>
+</section>
+<section id="relevance-to-continuum-mechanics" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="relevance-to-continuum-mechanics"><span class="header-section-number">4</span> Relevance to continuum mechanics</h2>
+<p>A deformation <span class="math inline">\(\boldsymbol{\chi} : \mathcal{B}_0 \to \mathbb{R}^3\)</span> is assumed continuous and injective. It is a bijection onto its image <span class="math inline">\(\mathcal{B} = \boldsymbol{\chi}(\mathcal{B}_0)\)</span>. Whether <span class="math inline">\(\boldsymbol{\chi}^{-1} : \mathcal{B} \to \mathcal{B}_0\)</span> is also continuous is settled by the two theorems above.</p>
+<ul>
+<li>If <span class="math inline">\(\mathcal{B}_0\)</span> is an open subset of <span class="math inline">\(\mathbb{R}^3\)</span>, <a href="#thm-invariance-domain" class="quarto-xref">Thrm.&nbsp;2</a> applies with <span class="math inline">\(n = 3\)</span>.</li>
+<li>If <span class="math inline">\(\mathcal{B}_0\)</span> is the closure of a bounded open set, it is compact. Since <span class="math inline">\(\mathbb{R}^3\)</span> is Hausdorff, <a href="#thm-compact-hausdorff" class="quarto-xref">Thrm.&nbsp;1</a> applies.</li>
+</ul>
+<p>In either case, <span class="math inline">\(\boldsymbol{\chi}\)</span> is a homeomorphism onto <span class="math inline">\(\mathcal{B}\)</span>. Material points that are close in the current configuration were close in the reference configuration, and the inverse motion <span class="math inline">\(\mathbf{X} = \boldsymbol{\chi}^{-1}(\mathbf{x})\)</span> is continuous. <a href="#exm-circle-wrap" class="quarto-xref">Example&nbsp;1</a> shows that this conclusion is a genuine consequence of the setting, not a property of every continuous bijection.</p>
 
 
 </section>
@@ -879,13 +1031,13 @@ window.MathJax = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../homework/index.html" class="pagination-link" aria-label="Homework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Homework</span>
+      <a href="../../../notes/Kinematics/Motion/SimpleShear.html" class="pagination-link" aria-label="Simple shear">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Simple shear</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../homework/HW2/Problems.html" class="pagination-link" aria-label="HW2 Problems">
-        <span class="nav-page-text">HW2 Problems</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../notes/Kinematics/MaterialSpatialFields/index.html" class="pagination-link" aria-label="Material and spatial fields">
+        <span class="nav-page-text">Material and spatial fields</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
