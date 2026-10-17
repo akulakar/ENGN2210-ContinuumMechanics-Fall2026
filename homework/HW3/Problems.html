@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-09">
+<meta name="dcterms.date" content="2026-10-16">
+<meta name="description" content="Total points 100">
 
-<title>quartogithubpagessetup – ENGN2210 — Continuum Mechanics</title>
+<title>HW3 Problems – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,61 +28,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../homework/HW2/Problems.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a27c3ea9164950d4c099d05c1707b456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -239,8 +206,37 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -252,9 +248,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      ENGN2210 — Continuum Mechanics
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../homework/HW3/Problems.html">HW3</a></li><li class="breadcrumb-item"><a href="../../homework/HW3/Problems.html">HW3 Problems</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -269,7 +263,7 @@ window.MathJax = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">ENGN2210 — Continuum Mechanics</a> 
+      <a href="../../">ENGN2210 — Continuum Mechanics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -281,7 +275,7 @@ window.MathJax = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -296,7 +290,7 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Notation/Notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notation</span></a>
   </div>
 </li>
@@ -313,43 +307,43 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/VectorSpaces.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/Maps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Maps</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/Tensors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tensors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/EinsteinSummationConvention.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Einstein Summation Convention</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/VectorTensorComponents.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector and Tensor Components</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/TraceDeterminant.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Trace and determinant</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/MathematicalPreliminaries/ChangeOfBasis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Change of basis</span></a>
   </div>
 </li>
@@ -357,7 +351,7 @@ window.MathJax = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../notes/Kinematics/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../notes/Kinematics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kinematics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -375,19 +369,19 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/BodiesCoordinates/ReferenceCurrentBody.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/BodiesCoordinates/ReferenceCurrentBody.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reference and Current Bodies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/BodiesCoordinates/LagrangianCoordinates.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/BodiesCoordinates/LagrangianCoordinates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lagrangian Coordinates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/BodiesCoordinates/EulerianCoordinates.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/BodiesCoordinates/EulerianCoordinates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Eulerian Coordinates</span></a>
   </div>
 </li>
@@ -395,7 +389,7 @@ window.MathJax = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../notes/Kinematics/Motion/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../notes/Kinematics/Motion/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Motion</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -404,25 +398,25 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/Motion/MotionDeformation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/Motion/MotionDeformation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Motion</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/Motion/DeformationMapExamples.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/Motion/DeformationMapExamples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Examples of Deformation Maps</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/Motion/SimpleShear.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/Motion/SimpleShear.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Simple shear</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A continuous bijection that is not a homeomorphism</span></a>
   </div>
 </li>
@@ -430,7 +424,7 @@ window.MathJax = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../notes/Kinematics/MaterialSpatialFields/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../notes/Kinematics/MaterialSpatialFields/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Material and spatial fields</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -439,7 +433,7 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/Kinematics/MaterialSpatialFields/CouetteFlow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/Kinematics/MaterialSpatialFields/CouetteFlow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Couette flow</span></a>
   </div>
 </li>
@@ -449,13 +443,13 @@ window.MathJax = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../homework/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../homework/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
@@ -467,7 +461,7 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/HW1/Problems.html" class="sidebar-item-text sidebar-link">
+  <a href="../../homework/HW1/Problems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW1 Problems</span></a>
   </div>
 </li>
@@ -484,8 +478,25 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/HW2/Problems.html" class="sidebar-item-text sidebar-link">
+  <a href="../../homework/HW2/Problems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW2 Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">HW3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../homework/HW3/Problems.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">HW3 Problems</span></a>
   </div>
 </li>
       </ul>
@@ -502,29 +513,27 @@ window.MathJax = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fix-quarto-github-pages-double-build-issue" id="toc-fix-quarto-github-pages-double-build-issue" class="nav-link active" data-scroll-target="#fix-quarto-github-pages-double-build-issue"><span class="header-section-number">1</span> Fix Quarto + GitHub Pages Double-Build Issue</a>
-  <ul>
-  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem"><span class="header-section-number">1.1</span> The Problem</a></li>
-  <li><a href="#the-solution-build-once-deploy-to-github" id="toc-the-solution-build-once-deploy-to-github" class="nav-link" data-scroll-target="#the-solution-build-once-deploy-to-github"><span class="header-section-number">1.2</span> The Solution: Build Once, Deploy to GitHub</a>
-  <ul>
-  <li><a href="#step-1-update-.gitignore" id="toc-step-1-update-.gitignore" class="nav-link" data-scroll-target="#step-1-update-.gitignore"><span class="header-section-number">1.2.1</span> Step 1: Update <code>.gitignore</code></a></li>
-  <li><a href="#step-2-update-github-actions-workflow" id="toc-step-2-update-github-actions-workflow" class="nav-link" data-scroll-target="#step-2-update-github-actions-workflow"><span class="header-section-number">1.2.2</span> Step 2: Update GitHub Actions Workflow</a></li>
-  <li><a href="#step-3-local-workflow" id="toc-step-3-local-workflow" class="nav-link" data-scroll-target="#step-3-local-workflow"><span class="header-section-number">1.2.3</span> Step 3: Local Workflow</a></li>
-  <li><a href="#step-4-optional---add-_book-to-git-if-needed" id="toc-step-4-optional---add-_book-to-git-if-needed" class="nav-link" data-scroll-target="#step-4-optional---add-_book-to-git-if-needed"><span class="header-section-number">1.2.4</span> Step 4: Optional - Add <code>_book</code> to Git (if needed)</a></li>
-  </ul></li>
-  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits"><span class="header-section-number">1.3</span> Benefits</a></li>
-  <li><a href="#files-changed" id="toc-files-changed" class="nav-link" data-scroll-target="#files-changed"><span class="header-section-number">1.4</span> Files Changed</a></li>
-  </ul></li>
+  <li><a href="#problem-1-20-pts" id="toc-problem-1-20-pts" class="nav-link active" data-scroll-target="#problem-1-20-pts">Problem 1 (20 pts)</a></li>
+  <li><a href="#problem-2-20-pts" id="toc-problem-2-20-pts" class="nav-link" data-scroll-target="#problem-2-20-pts">Problem 2 (20 pts)</a></li>
+  <li><a href="#problem-3-20-pts" id="toc-problem-3-20-pts" class="nav-link" data-scroll-target="#problem-3-20-pts">Problem 3 (20 pts)</a></li>
+  <li><a href="#problem-4-20-pts" id="toc-problem-4-20-pts" class="nav-link" data-scroll-target="#problem-4-20-pts">Problem 4 (20 pts)</a></li>
+  <li><a href="#problem-5-20-pts" id="toc-problem-5-20-pts" class="nav-link" data-scroll-target="#problem-5-20-pts">Problem 5 (20 pts)</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../homework/HW3/Problems.html">HW3</a></li><li class="breadcrumb-item"><a href="../../homework/HW3/Problems.html">HW3 Problems</a></li></ol></nav>
 <div class="quarto-title">
+<h1 class="title">HW3 Problems</h1>
 </div>
 
+<div>
+  <div class="description">
+    Total points 100
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -533,7 +542,7 @@ window.MathJax = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 9, 2026</p>
+      <p class="date">October 16, 2026</p>
     </div>
   </div>
   
@@ -545,88 +554,89 @@ window.MathJax = {
 </header>
 
 
-<section id="fix-quarto-github-pages-double-build-issue" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Fix Quarto + GitHub Pages Double-Build Issue</h1>
-<section id="the-problem" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="the-problem"><span class="header-section-number">1.1</span> The Problem</h2>
-<p>When you push to <code>main</code>, GitHub Actions rebuilds the site even though you’ve already built it locally with <code>quarto publish gh-pages</code>. This happens because: 1. Your <code>.gitignore</code> excludes <code>_book/</code> 2. GitHub Action still runs the Quarto build step 3. Two builds = slower deployment + potential inconsistencies</p>
+<!-- 
+## Notation {-}
+ -->
+<section id="problem-1-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-1-20-pts">Problem 1 (20 pts)</h2>
+<p>Consider a deformation map <span class="math display">\[
+\bsf{x} : B_{\rm{R}} \to B, \quad B_{\rm{R}} \subset \mbb{R}^{3}, B \subset \mbb{R}^{3}
+\]</span> The components of <span class="math inline">\(\bsf{x}\)</span> are <span class="math inline">\(x_{1}, x_{2}, x_{3} \in C^{\infty}(B_{\rm R})\)</span>. Assume <span class="math inline">\(B_{\rm{R}}\)</span> is open and convex.</p>
+<ol type="1">
+<li><p>Using Taylor’s theorem for multivariate functions, write out the linear expansion of the deformation map around a point <span class="math inline">\(\bsf{A} \in B_{\rm R}\)</span> (and denote the remainder) in component form.</p></li>
+<li><p>In component form, rearrange the expansion and take an appropriate limit to obtain the components of the deformation gradient <span class="math inline">\(\bsf{F}\)</span>. <!-- 1. Explain in simple terms what the deformation gradient represents. --></p></li>
+<li><p>In general, is the deformation gradient evaluated at a point <span class="math inline">\(\bsf{A} \in B_{\rm R}\)</span> a relevant strain measure at another point <span class="math inline">\(\bsf{B} \in B_{\rm R}\)</span> when <span class="math inline">\(\norm{\bsf{A} - \bsf{B}}\)</span> is large?</p></li>
+<li><p>A homogeneous deformation is an affine deformation map of the form <span class="math display">\[
+\bsf{x}[\bsf{X}] = \bsf{F} \bsf{X} + \bsf{c}
+\]</span> where the deformation gradient <span class="math inline">\(\bsf{F}\)</span> is a constant function. Consider the Taylor expansion you wrote in part 1 and derive the form above for a homogeneous deformation. What happens to the remainder? What is the form of <span class="math inline">\(\bsf{c}\)</span>?</p></li>
+<li><p>Consider question 3 again for a homogeneous deformation, does your answer remain the same?</p></li>
+</ol>
 </section>
-<section id="the-solution-build-once-deploy-to-github" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="the-solution-build-once-deploy-to-github"><span class="header-section-number">1.2</span> The Solution: Build Once, Deploy to GitHub</h2>
-<section id="step-1-update-.gitignore" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="step-1-update-.gitignore"><span class="header-section-number">1.2.1</span> Step 1: Update <code>.gitignore</code></h3>
-<p>Comment out or remove the <code>_book/</code> entry so you can commit the built files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Before:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/_book/</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># After:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># /_book/  # now committing built files</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="problem-2-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-2-20-pts">Problem 2 (20 pts)</h2>
+<p>From Gonzalez and Stuart. A homogeneous deformation <span class="math inline">\(\bsf{x}[\bsf{X}]\)</span> is called a <em>translation</em> if <span class="math display">\[
+\bsf{x}[\bsf{X}] = \bsf{X} + \bsf{c}
+\]</span></p>
+<p>where <span class="math inline">\(\bsf{c} \in \mbb{R}^{3}\)</span>. A homogeneous deformation has a <em>fixed point</em> at <span class="math inline">\(\bsf{Y}\)</span> if <span class="math display">\[
+\bsf{x}[\bsf{X}] = \bsf{Y} + \bsf{F}(\bsf{X} - \bsf{Y})
+\]</span></p>
+<ol type="1">
+<li>Why is the first deformation map called a translation and in what sense is <span class="math inline">\(\bsf{Y}\)</span> a fixed point of the second deformation map?</li>
+<li>Prove the following result: Let <span class="math inline">\(\bsf{x}[\cdot]\)</span> be a homogeneous deformation. Then given any point <span class="math inline">\(\bsf{Y}\)</span>, <span class="math inline">\(\bsf{x}[\cdot]\)</span> can be decomposed as <span class="math display">\[
+\bsf{x}[\cdot] = \bsf{d}_{1}[\cdot] \circ \bsf{g}[\cdot] = \bsf{g}[\cdot] \circ \bsf{d}_{2}[\cdot]
+\]</span> where <span class="math inline">\(\bsf{d}_{1}[\cdot], \bsf{d}_{2}[\cdot]\)</span> are translations and <span class="math inline">\(\bsf{g}[\cdot]\)</span> is a homogeneous deformation with a fixed point at <span class="math inline">\(\bsf{Y}\)</span>. Note, <span class="math inline">\(\bsf{F}\)</span> is invertible.</li>
+</ol>
 </section>
-<section id="step-2-update-github-actions-workflow" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="step-2-update-github-actions-workflow"><span class="header-section-number">1.2.2</span> Step 2: Update GitHub Actions Workflow</h3>
-<p>Replace your <code>publish.yml</code> with a <strong>deploy-only</strong> workflow that skips the build:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub Pages</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">]</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">permissions</span><span class="kw">:</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">deploy</span><span class="kw">:</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy _book to gh-pages</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> peaceiris/actions-gh-pages@v3</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">github_token</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">publish_dir</span><span class="kw">:</span><span class="at"> ./_book</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This uses <code>peaceiris/actions-gh-pages</code> which simply copies the pre-built <code>_book/</code> directory to the <code>gh-pages</code> branch—no rebuild needed.</p>
+<section id="problem-3-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-3-20-pts">Problem 3 (20 pts)</h2>
+<p>Given a deformation map <span class="math display">\[
+\begin{align}
+x_1[X_i] &amp;= 2X_1+X_2^2 +X_1,  \\
+x_2[X_i] &amp;= X_1^2 - X_2^2+X_2,  \\
+x_3[X_i] &amp;= X_3
+\end{align}
+\]</span></p>
+<ol type="1">
+<li>What is the deformation gradient at the point <span class="math inline">\(\bsf{X}_0\)</span>?</li>
+<li>What is the right Cauchy-Green strain tensor at the point <span class="math inline">\(\bsf{X}_0\)</span>?</li>
+<li>Find the stretch ratio, <span class="math inline">\(\lambda_1\)</span>, at the point <span class="math inline">\(\bsf{X}_0=(1,-1,0)\)</span> in the direction of the material vector <span class="math inline">\(\bsf{N}_1=(0.001,0,0)\)</span>.</li>
+<li>Find the stretch ratio, <span class="math inline">\(\lambda_2\)</span>, at the point <span class="math inline">\(\bsf{X}_0=(1,-1,0)\)</span> in the direction of the material vector <span class="math inline">\(\bsf{N}_2=(0,0.5,0)\)</span>.</li>
+</ol>
+<p>Consider the material curves <span class="math inline">\(\bsf{\Gamma}_1[\xi]=\bsf{X}_0+\xi \bsf{N}_1\)</span>, <span class="math inline">\(\bsf{\Gamma}_2[\xi]=\bsf{X}_0+\xi \bsf{N}_2\)</span>, where <span class="math inline">\(\xi\in [0,1]\)</span>.</p>
+<ol start="5" type="1">
+<li>What are the lengths of the curves <span class="math inline">\(\bsf{\Gamma}_1\)</span> and <span class="math inline">\(\bsf{\Gamma}_2\)</span>? We will refer to these lengths as <span class="math inline">\(L_1\)</span> and <span class="math inline">\(L_2\)</span>.</li>
+<li>What is the length of the deformed curves corresponding to <span class="math inline">\(\bsf{\Gamma}_1\)</span> and <span class="math inline">\(\bsf{\Gamma}_2\)</span>? We will refer to these lengths as <span class="math inline">\(l_1\)</span> and <span class="math inline">\(l_2\)</span>.</li>
+<li>Is it reasonable to approximate <span class="math inline">\(l_1\)</span> as <span class="math inline">\(\lambda_1 L_1\)</span>?</li>
+<li>Is it reasonable to approximate <span class="math inline">\(l_2\)</span> as <span class="math inline">\(\lambda_2 L_2\)</span>?</li>
+<li>What is the change in the angle between the curves <span class="math inline">\(\bsf{\Gamma}_1\)</span> and <span class="math inline">\(\bsf{\Gamma}_2\)</span> at <span class="math inline">\(\bsf{X}_0\)</span>?</li>
+</ol>
 </section>
-<section id="step-3-local-workflow" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="step-3-local-workflow"><span class="header-section-number">1.2.3</span> Step 3: Local Workflow</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Make changes to your .qmd files</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Build locally</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Commit everything (including _book/)</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Update course notes"</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Push to main</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. GitHub Actions deploys instantly (no rebuild)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="problem-4-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-4-20-pts">Problem 4 (20 pts)</h2>
+<p>From Gonzalez and Stuart. Consider a material point <span class="math inline">\(\bsf{X}_{0}\)</span>. Let <span class="math inline">\(C_{ij}\)</span> be the components of the right Cauchy-Green strain tensor with respect to the canonical basis <span class="math inline">\(\bsf{E}_{i}\)</span>, and let <span class="math inline">\(\lambda_{\bsf{E}_i}\)</span> be the stretch ratio in the direction of the material vectors <span class="math inline">\(\bsf{E}_{i}\)</span>. Show that at <span class="math inline">\(\bsf{X}_{0}\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(C_{ii} = \lambda_{\bsf{E}_{i}}^2\)</span> (no sum)</li>
+<li><span class="math inline">\(C_{ij} = \lambda_{\bsf{E}_{i}} \lambda_{\bsf{E}_{j}} \sin[\Theta - \theta]\)</span>, <span class="math inline">\((i \neq j)\)</span> where <span class="math inline">\(\Theta - \theta\)</span> is the change in angle between two curves <span class="math inline">\(\bsf{\Gamma}_{i}\)</span> and <span class="math inline">\(\bsf{\Gamma}_{j}\)</span> at <span class="math inline">\(\xi_{0}\)</span> and <span class="math inline">\(\rho_{0}\)</span> such that <span class="math inline">\(\bsf{\Gamma}_{i}[\xi_{0}] = \bsf{X_{0}}\)</span> and <span class="math inline">\(\bsf{\Gamma}_{j}[\rho_{0}] = \bsf{X_{0}}\)</span>, whose tangent vectors are the material vectors <span class="math inline">\(\bsf{E}_{i}\)</span> and <span class="math inline">\(\bsf{E}_{j}\)</span>.</li>
+</ol>
 </section>
-<section id="step-4-optional---add-_book-to-git-if-needed" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="step-4-optional---add-_book-to-git-if-needed"><span class="header-section-number">1.2.4</span> Step 4: Optional - Add <code>_book</code> to Git (if needed)</h3>
-<p>If Git hasn’t picked up <code>_book/</code> yet, explicitly add it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add _book/</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add built site"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="benefits" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="benefits"><span class="header-section-number">1.3</span> Benefits</h2>
-<p>✅ Single build step (local)<br>
-✅ Instant deployment to GitHub Pages<br>
-✅ No runner waste rebuilding<br>
-✅ Built site always in sync with source</p>
-</section>
-<section id="files-changed" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="files-changed"><span class="header-section-number">1.4</span> Files Changed</h2>
-<ul>
-<li><code>.gitignore</code> — uncomment <code>_book/</code></li>
-<li><code>.github/workflows/publish.yml</code> — switch to deploy-only workflow</li>
-</ul>
+<section id="problem-5-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-5-20-pts">Problem 5 (20 pts)</h2>
+<p>From Gonzalez and Stuart. Let <span class="math inline">\(B = \set{\bsf{X} \in \mbb{R}^{3}}{0 &lt; X_{i} &lt; 1}\)</span>. Consider the deformation map <span class="math display">\[
+\begin{align}
+x_1[X_i] &amp;= X_1 + \alpha X_2,  \\
+x_2[X_i] &amp;= X_2,  \\
+x_3[X_i] &amp;= X_3, \\
+\alpha &amp;&gt; 0
+\end{align}
+\]</span> A deformation of this type is called <em>simple shear</em> in the <span class="math inline">\(\bsf{E}_{1}-\bsf{E}_{2}\)</span> plane, where <span class="math inline">\(\bsf{E}_{1} = (1, 0, 0), \bsf{E}_{2} = (0, 1, 0), \bsf{E}_{3} = (0, 0, 1)\)</span>.</p>
+<ol type="1">
+<li>Is this a homogeneous deformation?</li>
+<li>Find the components of the right Cauchy-Green strain tensor.</li>
+<li>Find the shear, i.e.&nbsp;the change in angle between the pairs of material vectors <span class="math inline">\(\bsf{E}_{1}, \bsf{E}_{2}\)</span> and <span class="math inline">\(\bsf{E}_{1}, \bsf{E}_{3}\)</span>. What happens to the shears in the limits <span class="math inline">\(\alpha \to 0\)</span> and <span class="math inline">\(\alpha \to \infty\)</span>?</li>
+<li>In the direction(s) of what material vector(s) <span class="math inline">\(\bsf{N}\)</span> is the stretch ratio <span class="math inline">\(\lambda\)</span> an stationary value? (The stationary values of stretch ratio are called the principal stretches).</li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -703,7 +713,7 @@ window.MathJax = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/akulakar\.github\.io\/ENGN2210-ContinuumMechanics-Fall2026\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1030,6 +1040,15 @@ window.MathJax = {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../homework/HW2/Problems.html" class="pagination-link" aria-label="HW2 Problems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">HW2 Problems</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
