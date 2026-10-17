@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: _book          # kept so your deploy path doesn't change
 
+execute:
+  freeze: auto
+
 # Applies to every page
 date: today
 # author: "Aashutosh Kulakarni Prachet and Haneesh Kesari"   # delete if not wanted
@@ -63,6 +66,9 @@ website:
         - section: "HW2"
           contents:
             - homework/HW2/Problems.qmd
+        - section: "HW3"
+          contents:
+            - homework/HW3/Problems.qmd
 
 crossref:
   eq-prefix: "Eq."

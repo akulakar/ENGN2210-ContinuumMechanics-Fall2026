@@ -1,0 +1,101 @@
+---
+title: HW3 Problems
+description: Total points 100
+---
+
+<!-- 
+## Notation {-}
+ -->
+
+## Problem 1 (20 pts) {-}
+
+Consider a deformation map 
+$$
+\bsf{x} : B_{\rm{R}} \to B, \quad B_{\rm{R}} \subset \mbb{R}^{3}, B \subset \mbb{R}^{3}
+$$
+The components of $\bsf{x}$ are $x_{1}, x_{2}, x_{3} \in C^{\infty}(B_{\rm R})$. Assume $B_{\rm{R}}$ is open and convex.
+
+1. Using Taylor's theorem for multivariate functions, write out the linear expansion of the deformation map around a point $\bsf{A} \in B_{\rm R}$ (and denote the remainder) in component form.
+
+1. In component form, rearrange the expansion and take an appropriate limit to obtain the components of the deformation gradient $\bsf{F}$.
+<!-- 1. Explain in simple terms what the deformation gradient represents. -->
+1. In general, is the deformation gradient evaluated at a point $\bsf{A} \in B_{\rm R}$ a relevant strain measure at another point $\bsf{B} \in B_{\rm R}$ when $\norm{\bsf{A} - \bsf{B}}$ is large?
+
+1. A homogeneous deformation is an affine deformation map of the form
+$$
+\bsf{x}[\bsf{X}] = \bsf{F} \bsf{X} + \bsf{c}
+$$
+where the deformation gradient $\bsf{F}$ is a constant function. Consider the Taylor expansion you wrote in part 1 and derive the form above for a homogeneous deformation. What happens to the remainder? What is the form of $\bsf{c}$?
+
+1. Consider question 3 again for a homogeneous deformation, does your answer remain the same?
+
+## Problem 2 (20 pts) {-}
+
+From Gonzalez and Stuart. A homogeneous deformation $\bsf{x}[\bsf{X}]$ is called a *translation* if 
+$$ 
+\bsf{x}[\bsf{X}] = \bsf{X} + \bsf{c}
+$$
+
+where $\bsf{c} \in \mbb{R}^{3}$. A homogeneous deformation has a *fixed point* at $\bsf{Y}$ if 
+$$ 
+\bsf{x}[\bsf{X}] = \bsf{Y} + \bsf{F}(\bsf{X} - \bsf{Y})
+$$
+
+1. Why is the first deformation map called a translation and in what sense is $\bsf{Y}$ a fixed point of the second deformation map?
+2. Prove the following result: 
+Let $\bsf{x}[\cdot]$ be a homogeneous deformation. Then given any point $\bsf{Y}$, $\bsf{x}[\cdot]$ can be decomposed as 
+$$
+    \bsf{x}[\cdot] = \bsf{d}_{1}[\cdot] \circ \bsf{g}[\cdot] = \bsf{g}[\cdot] \circ \bsf{d}_{2}[\cdot]
+$$
+where $\bsf{d}_{1}[\cdot], \bsf{d}_{2}[\cdot]$ are translations and $\bsf{g}[\cdot]$ is a homogeneous deformation with a fixed point at $\bsf{Y}$. Note, $\bsf{F}$ is invertible.
+
+## Problem 3 (20 pts) {-}
+
+Given a deformation map
+$$
+\begin{align}
+x_1[X_i] &= 2X_1+X_2^2 +X_1,  \\
+x_2[X_i] &= X_1^2 - X_2^2+X_2,  \\
+x_3[X_i] &= X_3
+\end{align}
+$$
+
+1. What is the deformation gradient at the point $\bsf{X}_0$?
+2. What is the right Cauchy-Green strain tensor at the point $\bsf{X}_0$?
+3. Find the stretch ratio, $\lambda_1$, at the point $\bsf{X}_0=(1,-1,0)$ in the direction of the material vector $\bsf{N}_1=(0.001,0,0)$.
+4. Find the stretch ratio, $\lambda_2$, at the point $\bsf{X}_0=(1,-1,0)$ in the direction of the material vector $\bsf{N}_2=(0,0.5,0)$.
+
+Consider the material curves $\bsf{\Gamma}_1[\xi]=\bsf{X}_0+\xi \bsf{N}_1$, $\bsf{\Gamma}_2[\xi]=\bsf{X}_0+\xi \bsf{N}_2$, where $\xi\in [0,1]$.
+
+5. What are the lengths of the curves $\bsf{\Gamma}_1$ and $\bsf{\Gamma}_2$?  We will refer to these lengths as $L_1$ and $L_2$.
+6. What is the length of the deformed curves corresponding to $\bsf{\Gamma}_1$ and $\bsf{\Gamma}_2$? We will refer to these lengths as $l_1$ and $l_2$.
+7. Is it reasonable to approximate $l_1$ as $\lambda_1 L_1$?
+8. Is it reasonable to approximate $l_2$ as $\lambda_2 L_2$?
+9. What is the change in the angle between the curves $\bsf{\Gamma}_1$ and $\bsf{\Gamma}_2$ at $\bsf{X}_0$?
+
+## Problem 4 (20 pts) {-}
+
+From Gonzalez and Stuart. Consider a material point $\bsf{X}_{0}$. Let $C_{ij}$ be the components of the right Cauchy-Green strain tensor with respect to the canonical basis $\bsf{E}_{i}$, and let $\lambda_{\bsf{E}_i}$ be the stretch ratio in the direction of the material vectors $\bsf{E}_{i}$. Show that at $\bsf{X}_{0}$
+
+1. $C_{ii} = \lambda_{\bsf{E}_{i}}^2$ (no sum)
+2. $C_{ij} = \lambda_{\bsf{E}_{i}} \lambda_{\bsf{E}_{j}} \sin[\Theta - \theta]$, $(i \neq j)$ where $\Theta - \theta$ is the change in angle between two curves $\bsf{\Gamma}_{i}$ and $\bsf{\Gamma}_{j}$ at $\xi_{0}$ and $\rho_{0}$ such that $\bsf{\Gamma}_{i}[\xi_{0}] = \bsf{X_{0}}$ and $\bsf{\Gamma}_{j}[\rho_{0}] = \bsf{X_{0}}$, whose tangent vectors are the material vectors $\bsf{E}_{i}$ and $\bsf{E}_{j}$.
+
+## Problem 5 (20 pts) {-}
+
+From Gonzalez and Stuart.
+Let $B = \set{\bsf{X} \in \mbb{R}^{3}}{0 < X_{i} < 1}$. Consider the deformation map
+$$
+\begin{align}
+x_1[X_i] &= X_1 + \alpha X_2,  \\
+x_2[X_i] &= X_2,  \\
+x_3[X_i] &= X_3, \\
+\alpha &> 0
+\end{align}
+$$
+A deformation of this type is called *simple shear* in the $\bsf{E}_{1}-\bsf{E}_{2}$ plane, where $\bsf{E}_{1} = (1, 0, 0), \bsf{E}_{2} = (0, 1, 0), \bsf{E}_{3} = (0, 0, 1)$.
+
+1. Is this a homogeneous deformation?
+2. Find the components of the right Cauchy-Green strain tensor.
+3. Find the shear, i.e. the change in angle between the pairs of material vectors $\bsf{E}_{1}, \bsf{E}_{2}$ and $\bsf{E}_{1}, \bsf{E}_{3}$. What happens to the shears in the limits $\alpha \to 0$ and $\alpha \to \infty$?
+4. In the direction(s) of what material vector(s) $\bsf{N}$ is the stretch ratio $\lambda$ an stationary value? (The stationary values of stretch ratio are called the principal stretches).
+
