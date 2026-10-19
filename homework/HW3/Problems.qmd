@@ -54,7 +54,7 @@ where $\bsf{d}_{1}[\cdot], \bsf{d}_{2}[\cdot]$ are translations and $\bsf{g}[\cd
 Given a deformation map
 $$
 \begin{align}
-x_1[X_i] &= 2X_1+X_2^2 +X_1,  \\
+x_1[X_i] &= 3X_1+X_2^2,  \\
 x_2[X_i] &= X_1^2 - X_2^2+X_2,  \\
 x_3[X_i] &= X_3
 \end{align}
