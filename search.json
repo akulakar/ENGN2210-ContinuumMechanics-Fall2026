@@ -2,9 +2,51 @@
   {
     "objectID": "homework/HW1/Solutions.html",
     "href": "homework/HW1/Solutions.html",
-    "title": "1 HW 1 Solutions",
+    "title": "HW1 Solutions",
     "section": "",
-    "text": "1 HW 1 Solutions"
+    "text": "Nomenclature: ESC : Einstein summation convention."
+  },
+  {
+    "objectID": "homework/HW1/Solutions.html#problem-1-15-pts",
+    "href": "homework/HW1/Solutions.html#problem-1-15-pts",
+    "title": "HW1 Solutions",
+    "section": "Problem 1 (15 pts)",
+    "text": "Problem 1 (15 pts)\n\n(10 pts)\n\nNot a vector space. Cannot add two elements to get an element in the same set. That is, \\(\\pr{x_{1}, x_{2}, 2} + \\pr{y_{1}, y_{2}, 2} = \\pr{x_{1} + y_{1}, x_{2} + y_{2}, 4}\\). But \\(\\pr{x_{1} + y_{1}, x_{2} + y_{2}, 4}\\) doesn’t belong to the set.\nIt is a 2D vector space, since it is a linear space (can add two elements to obtain an element in the same set, and multiply an element by a scalar to obtain an element in the same set) and it satisfies all the axioms of a vector space. \\((1,0,0)\\) and \\((0,0,1)\\) form a basis.\nIt is a 4 dimensional vector space. Polynomials up to a finite degree satisfy the axioms of a vector space. The standard basis is \\(\\cpr{1, x^1, x^2, x^3}\\). Legendre polynomials up to the 3rd order also form a basis.\nIt is a 2D vector space. In fact, \\(\\mbb{C}\\) is isomorphic to \\(\\mbb{R}^2\\), meaning there is a one to one map from elements of \\(\\mbb{R}^2\\) to \\(\\mbb{C}\\). The set \\(\\cpr{1,i}\\) forms a basis.\nNot a vector space. Matrix multiplication does not commute in general.\n\n(5 pts) For the map to be linear, \\(T(u + v) = Tu + Tv\\) and \\(T(\\alpha u) = \\alpha T u\\), where \\(\\alpha \\in \\mbb{R}\\) and \\(u, v \\in \\mbb{R}^3\\). \\[\n\\begin{aligned}\nT(x_{1} + y_{1}, x_{2} + y_{2}, x_{3} + y_{3}) &= \\pr{2 x_{1} + 2 y_{1} - 7 x_{2} - 7 y_{2} + x_{3} + y_{3} + b, 5 x_{1} + 5 y_{1} + c(x_{1}+y_{1})(x_{3}+y_{3})} \\\\\nT(x_{1}, x_{2} ,x_{3}) + T(y_{1}, y_{2}, y_{3}) &= \\pr{2 x_{1} + 2 y_{1} - 7 x_{2} - 7 y_{2} + x_{3} + y_{3} + b + b, 5 x_{1} + 5 y_{1} + c\\, x_{1} x_{3} + c\\, y_{1} y_{3}}\n\\end{aligned}\n\\] The two are the same iff \\(b=0, c=0\\)."
+  },
+  {
+    "objectID": "homework/HW1/Solutions.html#problem-2-20-pts",
+    "href": "homework/HW1/Solutions.html#problem-2-20-pts",
+    "title": "HW1 Solutions",
+    "section": "Problem 2 (20 pts)",
+    "text": "Problem 2 (20 pts)\n\n\nIncorrect\nCorrect\n\nFree: \\(j, k\\)\nDummy: \\(i\\)\n\nCorrect\n\nFree: \\(\\alpha, \\gamma, \\sigma\\)\nDummy: \\(\\beta\\).\n\n\n\n\\(a_{11}+a_{22}+a_{33}\\)\nInvalid expression: all terms in an expression should have the same set of free indices.\n\\(a_{11}x_1y_1+a_{12}x_1y_2+a_{13}x_1y_3+a_{21}x_2y_1+a_{22}x_2y_2+a_{23}x_2y_3+a_{31}x_3y_1+a_{32}x_3y_2+a_{33}x_3y_3\\)\n\\[(a_1, a_2, a_3)=\\pr{\\frac{\\partial v_1}{\\partial t}+v_1\\frac{\\partial v_1}{\\partial x_1}+v_2\\frac{\\partial v_1}{\\partial x_2}+v_3\\frac{\\partial v_1}{\\partial x_3}, \\frac{\\partial v_2}{\\partial t}+v_1\\frac{\\partial v_2}{\\partial x_1}+v_2\\frac{\\partial v_2}{\\partial x_2}+v_3\\frac{\\partial v_2}{\\partial x_3},\\frac{\\partial v_3}{\\partial t}+v_1\\frac{\\partial v_3}{\\partial x_1}+v_2\\frac{\\partial v_3}{\\partial x_2}+v_3\\frac{\\partial v_3}{\\partial x_3}}\\]\n\\[\\begin{bmatrix}\n  1&0&0\\\\\n  0&1&0\\\\\n  0&0&1\n  \\end{bmatrix}\\] The matrix representation of \\(\\dfrac{\\partial x_i}{\\partial x_j}\\) is the same as \\(\\sqpr{\\delta_{ij}}\\)."
+  },
+  {
+    "objectID": "homework/HW1/Solutions.html#problem-3-15-pts",
+    "href": "homework/HW1/Solutions.html#problem-3-15-pts",
+    "title": "HW1 Solutions",
+    "section": "Problem 3 (15 pts)",
+    "text": "Problem 3 (15 pts)\n\n\\(S_{ii}=S_{11}+S_{22}+S_{33}=5\\).\n\\(S_{ij}S_{ij}=S_{11}^2+S_{12}^2+S_{13}^2+S_{21}^2+S_{22}^2+S_{23}^2+S_{31}^2+S_{32}^2+S_{33}^2=28\\)\n\\(S_{ij}S_{ji}=S_{11}^2+S_{12}S_{21}+S_{13}S_{31}+S_{21}S_{12}+S_{22}^2+S_{23}S_{32}+S_{31}S_{13}+S_{32}S_{23}+S_{33}^2=23\\)\n\\(S_{pq}S_{qp}\\) is the same as part 3 with the dummy indices renamed, so \\(S_{pq}S_{qp}=23\\)\n\\(a_ia_i=14\\)\n\\(S_{im}a_ia_m=59\\)\n\\(S_{im}a_ma_i=59\\)"
+  },
+  {
+    "objectID": "homework/HW1/Solutions.html#problem-4-15-pts",
+    "href": "homework/HW1/Solutions.html#problem-4-15-pts",
+    "title": "HW1 Solutions",
+    "section": "Problem 4 (15 pts)",
+    "text": "Problem 4 (15 pts)\n\n\n\\(\\sqrt{a_i a_i}\\)\n\\(\\dfrac{a_i}{\\sqrt{a_j a_j}}\\bs{e}_i\\)\n\\(a_i b_i\\)"
+  },
+  {
+    "objectID": "homework/HW1/Solutions.html#problem-5-20-pts",
+    "href": "homework/HW1/Solutions.html#problem-5-20-pts",
+    "title": "HW1 Solutions",
+    "section": "Problem 5 (20 pts)",
+    "text": "Problem 5 (20 pts)\n\n\\[\n\\begin{aligned}\n(\\bsf{u}\\times\\bsf{v})\\cdot \\bsf{w}+ (\\bsf{w}\\times\\bsf{v})\\cdot \\bsf{u}&= \\epsilon_{ijk}u_{j}v_{k} w_{i} + \\epsilon_{ijk}w_{j}v_{k} u_{i} \\\\\n&=\\epsilon_{ijk}u_{j}v_{k} w_{i} +\\epsilon_{ijk} w_{i}v_{j}u_{k}\\\\\n&=\\epsilon_{ijk}u_{j}v_{k} w_{i} +\\epsilon_{ijk} v_{j}u_{k}w_{i}\\\\\n&=\\epsilon_{ijk}u_{j}v_{k} w_{i} -\\epsilon_{ijk} u_{j}v_{k}w_{i}=0\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\n\\text{LHS:}\\quad \\det(\\bsf{A}) &=\\begin{vmatrix}\n  A_{11}&A_{12}&A_{13}\\\\\n  A_{21}&A_{22}&A_{23}\\\\\n  A_{31}&A_{32}&A_{33}\n  \\end{vmatrix}\\\\\n  &=A_{11}(A_{22}A_{33}-A_{23}A_{32})-A_{12}(A_{21}A_{33}-A_{31}A_{23})+A_{13}(A_{21}A_{32}-A_{31}A_{22})\\\\\n  &=A_{11}A_{22}A_{33}+A_{31}A_{12}A_{23}+A_{21}A_{32}A_{13}-(A_{11}A_{32}A_{23}+A_{21}A_{12}A_{33}+A_{31}A_{22}A_{13})\\\\[1em]\n\\text{RHS:}\\quad \\epsilon_{ijk}A_{i1}A_{j2}A_{k3} &= A_{11}A_{22}A_{33}+A_{31}A_{12}A_{23}+A_{21}A_{32}A_{13}-(A_{11}A_{32}A_{23}+A_{21}A_{12}A_{33}+A_{31}A_{22}A_{13})\n\\end{aligned}\n\\] Hence, \\[\\det(\\bsf{A})=\\epsilon_{ijk}A_{i1}A_{j2}A_{k3}\\]\n\\[\n\\begin{aligned}\n\\bsf{a}\\times(\\bsf{b}\\times\\bsf{c}) &= \\epsilon_{ijk}b_{j}c_{k}\\epsilon_{mni}a_{n}\\\\\n  &=\\epsilon_{ijk}\\epsilon_{imn}b_{j}c_{k}a_{n}\\\\\n  &=(\\delta_{jm}\\delta_{kn}-\\delta_{jn}\\delta_{km})a_{n}b_{j}c_{k}\\\\\n  &=\\delta_{jm}\\delta_{kn}a_{n}b_{j}c_{k}-\\delta_{jn}\\delta_{km}a_{n}b_{j}c_{k}\\\\\n  &=a_{n}b_{m}c_{n}-a_{n}b_{n}c_{m}\\\\\n  &=(\\bsf{a}\\cdot\\bsf{c})\\bsf{b}-(\\bsf{a}\\cdot\\bsf{b})\\bsf{c}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "homework/HW1/Solutions.html#problem-6-20-pts",
+    "href": "homework/HW1/Solutions.html#problem-6-20-pts",
+    "title": "HW1 Solutions",
+    "section": "Problem 6 (20 pts)",
+    "text": "Problem 6 (20 pts)\n\nTrue\nFalse\nFalse\nFalse\nFalse\nFalse\nTrue\nTrue"
   },
   {
     "objectID": "homework/index.html",
@@ -810,9 +852,81 @@
   {
     "objectID": "homework/HW1/Problems.html",
     "href": "homework/HW1/Problems.html",
-    "title": "1 HW1 Problems",
+    "title": "HW1 Problems",
     "section": "",
-    "text": "1 HW1 Problems\nTotal points: 105",
+    "text": "Due: Friday, Sep 25, 2026, before 11:59 pm electronically over Canvas\nNomenclature: ESC : Einstein summation convention.",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Problems.html#problem-1-15-pts",
+    "href": "homework/HW1/Problems.html#problem-1-15-pts",
+    "title": "HW1 Problems",
+    "section": "Problem 1 (15 pts)",
+    "text": "Problem 1 (15 pts)\n\n(10 pts) State whether each of following sets is a vector space and provide a brief explanation. If it is, state the dimension of the space and provide an appropriate basis.\n\n\\(\\cpr{\\pr{x_{1}, x_{2}, 2} ~|~ x_{1}, x_{2} \\in \\mbb{R}}\\)\n\\(\\cpr{\\pr{x_{1}, 0, x_{3}} ~|~ x_{1}, x_{3} \\in \\mbb{R}}\\)\n\\(\\cpr{a_{0} + a_{1} x_{1} + a_{2} x_{2}^{2} + a_{3} x_{3}^{3} ~|~ a_{0}, a_{1}, a_{2}, a_{3} \\in \\mbb{R}}\\)\n\\(\\mbb{C}\\) (the set of complex numbers) over the real numbers (the scalars can only be real numbers)\nThe set of \\(2 \\times 2\\) matrices \\(\\mc{M}^{2 \\times 2}\\) over real numbers (each matrix element is a real number and scalars are real numbers) where the scalar multiplication operation is defined by element wise scalar multiplication and the addition operation is defined by matrix multiplication.\n\n(5 pts) Let \\(T : \\mbb{R}^{3} \\rightarrow \\mbb{R}^{2}\\) be defined by: \\[\nT(x_{1}, x_{2}, x_{3}) = \\pr{2 x_{1} - 7 x_{2} + x_{3} + b, 5 x_{1} + c \\, x_{1} x_{3}}\n\\] where \\(b, c \\in \\mbb{R}\\). Show that \\(T\\) is only linear if \\(b = 0, c = 0\\).",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Problems.html#problem-2-20-pts",
+    "href": "homework/HW1/Problems.html#problem-2-20-pts",
+    "title": "HW1 Problems",
+    "section": "Problem 2 (20 pts)",
+    "text": "Problem 2 (20 pts)\n\n(6 pts) Determine if the following expressions are correct or not according to ESC. If it is correct, please specify the free and dummy indices.\n\n(2 pts) \\(a_{i} b_{i} x_{i}\\)\n(2 pts) \\(A_{i} B_{ij} C_{k}\\)\n(2 pts) \\(P_{\\alpha \\beta} Q_{\\gamma} R_{\\beta \\sigma}\\)\n\n(14 pts) Write down the full form of the following expressions. The index \\(i,j = 1,2,3\\)\n\n(2 pts) \\(a_{ii}\\)\n(2 pts) \\(a_{mn}\\pr{x_{m} + y_{n}}\\)\n(2 pts) \\(a_{ij} x_{i} y_{j}\\)\n(3 pts) \\(a_{i} = \\dfrac{\\partial v_{i}}{\\partial t} + v_{j}\\dfrac{\\partial v_{i}}{\\partial x_{j}}\\)\n(5 pts) Let \\(\\bs{x} = x_{i} \\bs{e}_{i}\\), where \\(\\pr{\\bs{e}_{i}}_{i\\in(1,2,3)}\\) is an orthonormal basis for \\(\\mbb{E}^3\\). What is the matrix representation of \\(\\dfrac{\\partial x_{i}}{\\partial x_{j}}\\)? How is it related to \\(\\sqpr{\\delta_{ij}}\\)?",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Problems.html#problem-3-15-pts",
+    "href": "homework/HW1/Problems.html#problem-3-15-pts",
+    "title": "HW1 Problems",
+    "section": "Problem 3 (15 pts)",
+    "text": "Problem 3 (15 pts)\nLet \\(\\bs{S}\\) be a tensor and \\(\\bs{a}\\) be a vector. The matrix representation of \\(\\bs{S}\\) and \\(\\bs{a}\\) are written as \\(\\bsf{S} = \\sqpr{S_{ij}}\\) and \\(\\bsf{a} = \\sqpr{a_{i}}\\), where \\(i,j = 1,2,3\\). The 9 terms \\(S_{ij}\\) are the components of \\(\\bs{S}\\) and the 3 terms \\(a_{i}\\) are the components of \\(\\bs{a}\\).\nConsider the case where \\[\n\\sqpr{S_{ij}} = \\begin{bmatrix}\n    1 & 0 & 2 \\\\ 0 & 1 & 2 \\\\ 3 & 0 & 3\n\\end{bmatrix} ~, ~~~~~\n\\sqpr{a_{i}} = \\begin{bmatrix}\n    1 \\\\ 2 \\\\ 3\n\\end{bmatrix}\n\\]\nand compute\n\n(2 pts) \\(S_{ii}\\)\n(2 pts) \\(S_{ij}S_{ij}\\)\n(2 pts) \\(S_{ij}S_{ji}\\)\n(2 pts) \\(S_{pq}S_{qp}\\)\n(1 pts) \\(a_{i} a_{i}\\)\n(3 pts) \\(S_{im} a_{i} a_{m}\\)\n(3 pts) \\(S_{im} a_{m} a_{i}\\)",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Problems.html#problem-4-15-pts",
+    "href": "homework/HW1/Problems.html#problem-4-15-pts",
+    "title": "HW1 Problems",
+    "section": "Problem 4 (15 pts)",
+    "text": "Problem 4 (15 pts)\nLet \\(\\bs{a}=a_i\\bs{e}_i\\) and \\(\\bs{b}=b_i\\bs{e}_i\\) belong to the Euclidean vector space \\(\\mbb{E}^3\\). The set \\((\\bs{e}_i)_{i\\in (1,2,3)}\\) is an orthonormal basis for \\(\\mbb{E}^3\\). That is \\(\\inpd{\\bs{e}_i}{\\bs{e}_j}= \\delta_{ij}\\).\n\n(5 pts) The norm of the vector \\(\\bs{a}\\), written as \\(\\norm{\\bs{a}}\\), is \\(\\inpd{\\bs{a}}{\\bs{a}}^{1/2}\\). Write the norm using the components of \\(\\bs{a}\\) and ESC.\n(5 pts) The unit vector \\(\\hat{\\bs{a}}\\) corresponding to a vector \\(\\bs{a}\\) is defined as \\[\n\\hat{\\bs{a}}=\\bs{a}/\\norm{\\bs{a}}.\n\\] Express \\(\\hat{\\bs{a}}\\) using indicial ESC.\n(5 pts) Express \\(\\inpd{\\bs{a}}{\\bs{b}}\\) using ESC.",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Problems.html#problem-5-20-pts",
+    "href": "homework/HW1/Problems.html#problem-5-20-pts",
+    "title": "HW1 Problems",
+    "section": "Problem 5 (20 pts)",
+    "text": "Problem 5 (20 pts)\n\n(4 pts) Read about the permutation symbol \\(\\epsilon_{ijk}\\) and the vector cross product from [LRK, 2.4] (Lai, Rubin, and Krempl, section 2.4, handout on canvas). Using index notation show that for arbitrary vectors \\(\\bsf{u},\\bsf{v},\\) and \\(\\bsf{w}\\) in \\(\\mbb{R}^{3}\\): \\[\n(\\bsf{u}\\times\\bsf{v})\\cdot\\bsf{w}+(\\bsf{w}\\times\\bsf{v})\\cdot\\bsf{u}=\\bsf{0},\n\\] where we are using a short hand for the inner product and writing \\(\\inpd{\\bsf{w}\\times\\bsf{v}}{\\bsf{u}}\\) as \\((\\bsf{w}\\times\\bsf{v})\\cdot\\bsf{u}\\).\n(8 pts) Let \\(\\det (\\bsf{A})\\) denote the determinant of the \\(3\\times3\\) matrix \\(\\bsf{A}\\). Show that \\[\n\\det(\\bsf{A})=\\epsilon_{ijk}A_{i1}A_{j2}A_{k3}\n\\]\n(8 pts) Use the identity \\(\\epsilon_{ijm}\\epsilon_{klm}=\\delta_{ik}\\delta_{jl}-\\delta_{il}\\delta_{jk}\\) to show that \\[\n\\bsf{a}\\times (\\bsf{b} \\times \\bsf{c})=\n(\\bsf{a}\\cdot \\bsf{c})\\bsf{b}-(\\bsf{a}\\cdot \\bsf{b})\\bsf{c},\n\\] where \\(\\bsf{a}\\), \\(\\bsf{b}\\), and \\(\\bsf{c}\\in \\mbb{R}^3\\).",
+    "crumbs": [
+      "Homework",
+      "HW1",
+      "HW1 Problems"
+    ]
+  },
+  {
+    "objectID": "homework/HW1/Problems.html#problem-6-20-pts",
+    "href": "homework/HW1/Problems.html#problem-6-20-pts",
+    "title": "HW1 Problems",
+    "section": "Problem 6 (20 pts)",
+    "text": "Problem 6 (20 pts)\nRead the handout on Fung’s definition of a continuum (you can find this on canvas). This is the definition we will be adopting in class. Specifically, read sections 1.4, 1.5, and 1.7 in the handout.\nState True or False\n\n(3 pts) In the classical definition of the continuum the continuum particle \\(P\\) needs to belong to the set \\(\\cap_{i=0}^{\\infty} \\mathscr{V}_i\\)\n(3 pts) In Fung’s definition of a continuum the continuum particle \\(P\\) does not need to belong to the set \\(\\cap_{i=0}^{\\infty} \\mathscr{V}_i\\)\n(3 pts) In Fung’s definition of a continuum \\[\n\\lim_{n \\to \\infty }V_n=0\n\\]\n(3 pts) For any given real continuum, there is a unique abstract copy.\n(2 pts) The abstract copy of a real continuum cannot depend on the experimental length scales over which the continuum is being studied\n(2 pts) The abstract copy of the continuum cannot depend on the experimental times scales over which the continuum is being studied\n(2 pts) An advantage of the abstract copy is that we can do calculus on it exactly\n(2 pts) The results of the abstract copy are to be interpreted as an approximation to the experimental measurements on the real continuum",
     "crumbs": [
       "Homework",
       "HW1",

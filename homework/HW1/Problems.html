@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-18">
+<meta name="dcterms.date" content="2026-10-26">
+<meta name="description" content="Total points 105">
 
-<title>problems – ENGN2210 — Continuum Mechanics</title>
+<title>HW1 Problems – ENGN2210 — Continuum Mechanics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -206,6 +207,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -484,7 +514,12 @@ window.MathJax = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hw1-problems" id="toc-hw1-problems" class="nav-link active" data-scroll-target="#hw1-problems"><span class="header-section-number">1</span> HW1 Problems</a></li>
+  <li><a href="#problem-1-15-pts" id="toc-problem-1-15-pts" class="nav-link active" data-scroll-target="#problem-1-15-pts">Problem 1 (15 pts)</a></li>
+  <li><a href="#problem-2-20-pts" id="toc-problem-2-20-pts" class="nav-link" data-scroll-target="#problem-2-20-pts">Problem 2 (20 pts)</a></li>
+  <li><a href="#problem-3-15-pts" id="toc-problem-3-15-pts" class="nav-link" data-scroll-target="#problem-3-15-pts">Problem 3 (15 pts)</a></li>
+  <li><a href="#problem-4-15-pts" id="toc-problem-4-15-pts" class="nav-link" data-scroll-target="#problem-4-15-pts">Problem 4 (15 pts)</a></li>
+  <li><a href="#problem-5-20-pts" id="toc-problem-5-20-pts" class="nav-link" data-scroll-target="#problem-5-20-pts">Problem 5 (20 pts)</a></li>
+  <li><a href="#problem-6-20-pts" id="toc-problem-6-20-pts" class="nav-link" data-scroll-target="#problem-6-20-pts">Problem 6 (20 pts)</a></li>
   </ul>
 </nav>
     </div>
@@ -493,8 +528,14 @@ window.MathJax = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/Problems.html">HW1</a></li><li class="breadcrumb-item"><a href="../../homework/HW1/Problems.html">HW1 Problems</a></li></ol></nav>
 <div class="quarto-title">
+<h1 class="title">HW1 Problems</h1>
 </div>
 
+<div>
+  <div class="description">
+    Total points 105
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -503,7 +544,7 @@ window.MathJax = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 18, 2026</p>
+      <p class="date">October 26, 2026</p>
     </div>
   </div>
   
@@ -515,9 +556,107 @@ window.MathJax = {
 </header>
 
 
-<section id="hw1-problems" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> HW1 Problems</h1>
-<p><strong>Total points:</strong> 105</p>
+<p><strong>Due:</strong> Friday, Sep 25, 2026, before 11:59 pm electronically over Canvas</p>
+<p><strong>Nomenclature:</strong> ESC : Einstein summation convention.</p>
+<section id="problem-1-15-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-1-15-pts">Problem 1 (15 pts)</h2>
+<ol type="1">
+<li><p>(10 pts) State whether each of following sets is a vector space and provide a brief explanation. If it is, state the dimension of the space and provide an appropriate basis.</p>
+<ol type="a">
+<li><span class="math inline">\(\cpr{\pr{x_{1}, x_{2}, 2} ~|~ x_{1}, x_{2} \in \mbb{R}}\)</span></li>
+<li><span class="math inline">\(\cpr{\pr{x_{1}, 0, x_{3}} ~|~ x_{1}, x_{3} \in \mbb{R}}\)</span></li>
+<li><span class="math inline">\(\cpr{a_{0} + a_{1} x_{1} + a_{2} x_{2}^{2} + a_{3} x_{3}^{3} ~|~ a_{0}, a_{1}, a_{2}, a_{3} \in \mbb{R}}\)</span></li>
+<li><span class="math inline">\(\mbb{C}\)</span> (the set of complex numbers) over the real numbers (the scalars can only be real numbers)</li>
+<li>The set of <span class="math inline">\(2 \times 2\)</span> matrices <span class="math inline">\(\mc{M}^{2 \times 2}\)</span> over real numbers (each matrix element is a real number and scalars are real numbers) where the <em>scalar multiplication</em> operation is defined by element wise scalar multiplication and the <em>addition</em> operation is defined by matrix multiplication.</li>
+</ol></li>
+<li><p>(5 pts) Let <span class="math inline">\(T : \mbb{R}^{3} \rightarrow \mbb{R}^{2}\)</span> be defined by: <span class="math display">\[
+T(x_{1}, x_{2}, x_{3}) = \pr{2 x_{1} - 7 x_{2} + x_{3} + b, 5 x_{1} + c \, x_{1} x_{3}}
+\]</span> where <span class="math inline">\(b, c \in \mbb{R}\)</span>. Show that <span class="math inline">\(T\)</span> is only linear if <span class="math inline">\(b = 0, c = 0\)</span>.</p></li>
+</ol>
+</section>
+<section id="problem-2-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-2-20-pts">Problem 2 (20 pts)</h2>
+<ol type="1">
+<li><p>(6 pts) Determine if the following expressions are correct or not according to ESC. If it is correct, please specify the free and dummy indices.</p>
+<ol type="a">
+<li>(2 pts) <span class="math inline">\(a_{i} b_{i} x_{i}\)</span></li>
+<li>(2 pts) <span class="math inline">\(A_{i} B_{ij} C_{k}\)</span></li>
+<li>(2 pts) <span class="math inline">\(P_{\alpha \beta} Q_{\gamma} R_{\beta \sigma}\)</span></li>
+</ol></li>
+<li><p>(14 pts) Write down the full form of the following expressions. The index <span class="math inline">\(i,j = 1,2,3\)</span></p>
+<ol type="a">
+<li>(2 pts) <span class="math inline">\(a_{ii}\)</span></li>
+<li>(2 pts) <span class="math inline">\(a_{mn}\pr{x_{m} + y_{n}}\)</span></li>
+<li>(2 pts) <span class="math inline">\(a_{ij} x_{i} y_{j}\)</span></li>
+<li>(3 pts) <span class="math inline">\(a_{i} = \dfrac{\partial v_{i}}{\partial t} + v_{j}\dfrac{\partial v_{i}}{\partial x_{j}}\)</span></li>
+<li>(5 pts) Let <span class="math inline">\(\bs{x} = x_{i} \bs{e}_{i}\)</span>, where <span class="math inline">\(\pr{\bs{e}_{i}}_{i\in(1,2,3)}\)</span> is an orthonormal basis for <span class="math inline">\(\mbb{E}^3\)</span>. What is the matrix representation of <span class="math inline">\(\dfrac{\partial x_{i}}{\partial x_{j}}\)</span>? How is it related to <span class="math inline">\(\sqpr{\delta_{ij}}\)</span>?</li>
+</ol></li>
+</ol>
+</section>
+<section id="problem-3-15-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-3-15-pts">Problem 3 (15 pts)</h2>
+<p>Let <span class="math inline">\(\bs{S}\)</span> be a tensor and <span class="math inline">\(\bs{a}\)</span> be a vector. The matrix representation of <span class="math inline">\(\bs{S}\)</span> and <span class="math inline">\(\bs{a}\)</span> are written as <span class="math inline">\(\bsf{S} = \sqpr{S_{ij}}\)</span> and <span class="math inline">\(\bsf{a} = \sqpr{a_{i}}\)</span>, where <span class="math inline">\(i,j = 1,2,3\)</span>. The 9 terms <span class="math inline">\(S_{ij}\)</span> are the components of <span class="math inline">\(\bs{S}\)</span> and the 3 terms <span class="math inline">\(a_{i}\)</span> are the components of <span class="math inline">\(\bs{a}\)</span>.</p>
+<p>Consider the case where <span class="math display">\[
+\sqpr{S_{ij}} = \begin{bmatrix}
+    1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 2 \\ 3 &amp; 0 &amp; 3
+\end{bmatrix} ~, ~~~~~
+\sqpr{a_{i}} = \begin{bmatrix}
+    1 \\ 2 \\ 3
+\end{bmatrix}
+\]</span></p>
+<p>and compute</p>
+<ol type="1">
+<li>(2 pts) <span class="math inline">\(S_{ii}\)</span></li>
+<li>(2 pts) <span class="math inline">\(S_{ij}S_{ij}\)</span></li>
+<li>(2 pts) <span class="math inline">\(S_{ij}S_{ji}\)</span></li>
+<li>(2 pts) <span class="math inline">\(S_{pq}S_{qp}\)</span></li>
+<li>(1 pts) <span class="math inline">\(a_{i} a_{i}\)</span></li>
+<li>(3 pts) <span class="math inline">\(S_{im} a_{i} a_{m}\)</span></li>
+<li>(3 pts) <span class="math inline">\(S_{im} a_{m} a_{i}\)</span></li>
+</ol>
+</section>
+<section id="problem-4-15-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-4-15-pts">Problem 4 (15 pts)</h2>
+<p>Let <span class="math inline">\(\bs{a}=a_i\bs{e}_i\)</span> and <span class="math inline">\(\bs{b}=b_i\bs{e}_i\)</span> belong to the Euclidean vector space <span class="math inline">\(\mbb{E}^3\)</span>. The set <span class="math inline">\((\bs{e}_i)_{i\in (1,2,3)}\)</span> is an orthonormal basis for <span class="math inline">\(\mbb{E}^3\)</span>. That is <span class="math inline">\(\inpd{\bs{e}_i}{\bs{e}_j}= \delta_{ij}\)</span>.</p>
+<ol type="1">
+<li>(5 pts) The norm of the vector <span class="math inline">\(\bs{a}\)</span>, written as <span class="math inline">\(\norm{\bs{a}}\)</span>, is <span class="math inline">\(\inpd{\bs{a}}{\bs{a}}^{1/2}\)</span>. Write the norm using the components of <span class="math inline">\(\bs{a}\)</span> and ESC.</li>
+<li>(5 pts) The unit vector <span class="math inline">\(\hat{\bs{a}}\)</span> corresponding to a vector <span class="math inline">\(\bs{a}\)</span> is defined as <span class="math display">\[
+\hat{\bs{a}}=\bs{a}/\norm{\bs{a}}.
+\]</span> Express <span class="math inline">\(\hat{\bs{a}}\)</span> using indicial ESC.</li>
+<li>(5 pts) Express <span class="math inline">\(\inpd{\bs{a}}{\bs{b}}\)</span> using ESC.</li>
+</ol>
+</section>
+<section id="problem-5-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-5-20-pts">Problem 5 (20 pts)</h2>
+<ol type="1">
+<li><p>(4 pts) Read about the permutation symbol <span class="math inline">\(\epsilon_{ijk}\)</span> and the vector cross product from [LRK, 2.4] (Lai, Rubin, and Krempl, section 2.4, handout on canvas). Using index notation show that for arbitrary vectors <span class="math inline">\(\bsf{u},\bsf{v},\)</span> and <span class="math inline">\(\bsf{w}\)</span> in <span class="math inline">\(\mbb{R}^{3}\)</span>: <span class="math display">\[
+(\bsf{u}\times\bsf{v})\cdot\bsf{w}+(\bsf{w}\times\bsf{v})\cdot\bsf{u}=\bsf{0},
+\]</span> where we are using a short hand for the inner product and writing <span class="math inline">\(\inpd{\bsf{w}\times\bsf{v}}{\bsf{u}}\)</span> as <span class="math inline">\((\bsf{w}\times\bsf{v})\cdot\bsf{u}\)</span>.</p></li>
+<li><p>(8 pts) Let <span class="math inline">\(\det (\bsf{A})\)</span> denote the determinant of the <span class="math inline">\(3\times3\)</span> matrix <span class="math inline">\(\bsf{A}\)</span>. Show that <span class="math display">\[
+\det(\bsf{A})=\epsilon_{ijk}A_{i1}A_{j2}A_{k3}
+\]</span></p></li>
+<li><p>(8 pts) Use the identity <span class="math inline">\(\epsilon_{ijm}\epsilon_{klm}=\delta_{ik}\delta_{jl}-\delta_{il}\delta_{jk}\)</span> to show that <span class="math display">\[
+\bsf{a}\times (\bsf{b} \times \bsf{c})=
+(\bsf{a}\cdot \bsf{c})\bsf{b}-(\bsf{a}\cdot \bsf{b})\bsf{c},
+\]</span> where <span class="math inline">\(\bsf{a}\)</span>, <span class="math inline">\(\bsf{b}\)</span>, and <span class="math inline">\(\bsf{c}\in \mbb{R}^3\)</span>.</p></li>
+</ol>
+</section>
+<section id="problem-6-20-pts" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="problem-6-20-pts">Problem 6 (20 pts)</h2>
+<p>Read the handout on Fung’s definition of a continuum (you can find this on canvas). This is the definition we will be adopting in class. Specifically, read sections 1.4, 1.5, and 1.7 in the handout.</p>
+<p>State True or False</p>
+<ol type="1">
+<li><p>(3 pts) In the classical definition of the continuum the continuum particle <span class="math inline">\(P\)</span> needs to belong to the set <span class="math inline">\(\cap_{i=0}^{\infty} \mathscr{V}_i\)</span></p></li>
+<li><p>(3 pts) In Fung’s definition of a continuum the continuum particle <span class="math inline">\(P\)</span> does not need to belong to the set <span class="math inline">\(\cap_{i=0}^{\infty} \mathscr{V}_i\)</span></p></li>
+<li><p>(3 pts) In Fung’s definition of a continuum <span class="math display">\[
+\lim_{n \to \infty }V_n=0
+\]</span></p></li>
+<li><p>(3 pts) For any given real continuum, there is a unique abstract copy.</p></li>
+<li><p>(2 pts) The abstract copy of a real continuum cannot depend on the experimental length scales over which the continuum is being studied</p></li>
+<li><p>(2 pts) The abstract copy of the continuum cannot depend on the experimental times scales over which the continuum is being studied</p></li>
+<li><p>(2 pts) An advantage of the abstract copy is that we can do calculus on it exactly</p></li>
+<li><p>(2 pts) The results of the abstract copy are to be interpreted as an approximation to the experimental measurements on the real continuum</p></li>
+</ol>
 
 
 </section>
