@@ -1,1 +1,119 @@
-# HW 1 Solutions
+---
+title: HW1 Solutions
+description: Total points 105
+---
+
+**Nomenclature:** ESC : Einstein summation convention.
+
+## Problem 1 (15 pts) {-}
+
+1. (10 pts)
+
+    a. Not a vector space. Cannot add two elements to get an element in the same set. That is, $\pr{x_{1}, x_{2}, 2} + \pr{y_{1}, y_{2}, 2} = \pr{x_{1} + y_{1}, x_{2} + y_{2}, 4}$. But $\pr{x_{1} + y_{1}, x_{2} + y_{2}, 4}$ doesn't belong to the set.
+    b. It is a 2D vector space, since it is a linear space (can add two elements to obtain an element in the same set, and multiply an element by a scalar to obtain an element in the same set) and it satisfies all the axioms of a vector space. $(1,0,0)$ and $(0,0,1)$ form a basis.
+    c. It is a 4 dimensional vector space. Polynomials up to a finite degree satisfy the axioms of a vector space. The standard basis is $\cpr{1, x^1, x^2, x^3}$. Legendre polynomials up to the 3rd order also form a basis.
+    d. It is a 2D vector space. In fact, $\mbb{C}$ is isomorphic to $\mbb{R}^2$, meaning there is a one to one map from elements of $\mbb{R}^2$ to $\mbb{C}$. The set $\cpr{1,i}$ forms a basis.
+    e. Not a vector space. Matrix multiplication does not commute in general.
+
+2. (5 pts) For the map to be linear, $T(u + v) = Tu + Tv$ and $T(\alpha u) = \alpha T u$, where $\alpha \in \mbb{R}$ and $u, v \in \mbb{R}^3$.
+$$
+\begin{aligned}
+T(x_{1} + y_{1}, x_{2} + y_{2}, x_{3} + y_{3}) &= \pr{2 x_{1} + 2 y_{1} - 7 x_{2} - 7 y_{2} + x_{3} + y_{3} + b, 5 x_{1} + 5 y_{1} + c(x_{1}+y_{1})(x_{3}+y_{3})} \\
+T(x_{1}, x_{2} ,x_{3}) + T(y_{1}, y_{2}, y_{3}) &= \pr{2 x_{1} + 2 y_{1} - 7 x_{2} - 7 y_{2} + x_{3} + y_{3} + b + b, 5 x_{1} + 5 y_{1} + c\, x_{1} x_{3} + c\, y_{1} y_{3}}
+\end{aligned}
+$$
+The two are the same iff $b=0, c=0$.
+
+## Problem 2 (20 pts) {-}
+
+1.
+
+    a. Incorrect
+    b. Correct
+        - Free: $j, k$
+        - Dummy: $i$
+    c. Correct
+        - Free: $\alpha, \gamma, \sigma$
+        - Dummy: $\beta$.
+
+2.
+
+    a. $a_{11}+a_{22}+a_{33}$
+    b. Invalid expression: all terms in an expression should have the same set of free indices.
+    c. $a_{11}x_1y_1+a_{12}x_1y_2+a_{13}x_1y_3+a_{21}x_2y_1+a_{22}x_2y_2+a_{23}x_2y_3+a_{31}x_3y_1+a_{32}x_3y_2+a_{33}x_3y_3$
+    d. $$(a_1, a_2, a_3)=\pr{\frac{\partial v_1}{\partial t}+v_1\frac{\partial v_1}{\partial x_1}+v_2\frac{\partial v_1}{\partial x_2}+v_3\frac{\partial v_1}{\partial x_3}, \frac{\partial v_2}{\partial t}+v_1\frac{\partial v_2}{\partial x_1}+v_2\frac{\partial v_2}{\partial x_2}+v_3\frac{\partial v_2}{\partial x_3},\frac{\partial v_3}{\partial t}+v_1\frac{\partial v_3}{\partial x_1}+v_2\frac{\partial v_3}{\partial x_2}+v_3\frac{\partial v_3}{\partial x_3}}$$
+    e. $$\begin{bmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&0&1
+    \end{bmatrix}$$
+    The matrix representation of $\dfrac{\partial x_i}{\partial x_j}$ is the same as $\sqpr{\delta_{ij}}$.
+
+## Problem 3 (15 pts) {-}
+
+1. $S_{ii}=S_{11}+S_{22}+S_{33}=5$.
+2. $S_{ij}S_{ij}=S_{11}^2+S_{12}^2+S_{13}^2+S_{21}^2+S_{22}^2+S_{23}^2+S_{31}^2+S_{32}^2+S_{33}^2=28$
+3. $S_{ij}S_{ji}=S_{11}^2+S_{12}S_{21}+S_{13}S_{31}+S_{21}S_{12}+S_{22}^2+S_{23}S_{32}+S_{31}S_{13}+S_{32}S_{23}+S_{33}^2=23$
+4. $S_{pq}S_{qp}$ is the same as part 3 with the dummy indices renamed, so $S_{pq}S_{qp}=23$
+5. $a_ia_i=14$
+6. $S_{im}a_ia_m=59$
+7. $S_{im}a_ma_i=59$
+
+## Problem 4 (15 pts) {-}
+
+1.
+
+    a. $\sqrt{a_i a_i}$
+    b. $\dfrac{a_i}{\sqrt{a_j a_j}}\bs{e}_i$
+    c. $a_i b_i$
+
+## Problem 5 (20 pts) {-}
+
+1.
+$$
+\begin{aligned}
+(\bsf{u}\times\bsf{v})\cdot \bsf{w}+ (\bsf{w}\times\bsf{v})\cdot \bsf{u}&= \epsilon_{ijk}u_{j}v_{k} w_{i} + \epsilon_{ijk}w_{j}v_{k} u_{i} \\
+&=\epsilon_{ijk}u_{j}v_{k} w_{i} +\epsilon_{ijk} w_{i}v_{j}u_{k}\\
+&=\epsilon_{ijk}u_{j}v_{k} w_{i} +\epsilon_{ijk} v_{j}u_{k}w_{i}\\
+&=\epsilon_{ijk}u_{j}v_{k} w_{i} -\epsilon_{ijk} u_{j}v_{k}w_{i}=0
+\end{aligned}
+$$
+
+2.
+$$
+\begin{aligned}
+\text{LHS:}\quad \det(\bsf{A}) &=\begin{vmatrix}
+    A_{11}&A_{12}&A_{13}\\
+    A_{21}&A_{22}&A_{23}\\
+    A_{31}&A_{32}&A_{33}
+    \end{vmatrix}\\
+    &=A_{11}(A_{22}A_{33}-A_{23}A_{32})-A_{12}(A_{21}A_{33}-A_{31}A_{23})+A_{13}(A_{21}A_{32}-A_{31}A_{22})\\
+    &=A_{11}A_{22}A_{33}+A_{31}A_{12}A_{23}+A_{21}A_{32}A_{13}-(A_{11}A_{32}A_{23}+A_{21}A_{12}A_{33}+A_{31}A_{22}A_{13})\\[1em]
+\text{RHS:}\quad \epsilon_{ijk}A_{i1}A_{j2}A_{k3} &= A_{11}A_{22}A_{33}+A_{31}A_{12}A_{23}+A_{21}A_{32}A_{13}-(A_{11}A_{32}A_{23}+A_{21}A_{12}A_{33}+A_{31}A_{22}A_{13})
+\end{aligned}
+$$
+Hence,
+$$\det(\bsf{A})=\epsilon_{ijk}A_{i1}A_{j2}A_{k3}$$
+
+3.
+$$
+\begin{aligned}
+\bsf{a}\times(\bsf{b}\times\bsf{c}) &= \epsilon_{ijk}b_{j}c_{k}\epsilon_{mni}a_{n}\\
+    &=\epsilon_{ijk}\epsilon_{imn}b_{j}c_{k}a_{n}\\
+    &=(\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km})a_{n}b_{j}c_{k}\\
+    &=\delta_{jm}\delta_{kn}a_{n}b_{j}c_{k}-\delta_{jn}\delta_{km}a_{n}b_{j}c_{k}\\
+    &=a_{n}b_{m}c_{n}-a_{n}b_{n}c_{m}\\
+    &=(\bsf{a}\cdot\bsf{c})\bsf{b}-(\bsf{a}\cdot\bsf{b})\bsf{c}
+\end{aligned}
+$$
+
+## Problem 6 (20 pts) {-}
+
+1. True
+2. False
+3. False
+4. False
+5. False
+6. False
+7. True
+8. True
