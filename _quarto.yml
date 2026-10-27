@@ -62,13 +62,16 @@ website:
         - section: "HW1"
           contents:
             - homework/HW1/Problems.qmd
-          # - homework/HW1/Solutions.qmd
+            - homework/HW1/Solutions.qmd
         - section: "HW2"
           contents:
             - homework/HW2/Problems.qmd
         - section: "HW3"
           contents:
             - homework/HW3/Problems.qmd
+        - section: "HW4"
+          contents:
+            - homework/HW4/Problems.qmd
 
 crossref:
   eq-prefix: "Eq."
