@@ -1,0 +1,89 @@
+---
+title: Square root theorem 
+---
+
+## Statement and proof {-}
+
+$\mc{M}^{n \times n}$ denotes the set of $n \times n$ matrices. $\mc{P}^{n \times n} \subset \mc{P}^{n \times n} \subset \mc{M}^{n \times n}$ denotes the set of *symmetric positive semidefinite* real valued $n \times n$ matrices.
+
+::: {#def-positive-semidefinite}
+**[Positive semidefinite matrices]{style="color: black;"}**
+
+A matrix $\bsf{C} \in \mc{M}^{n \times n}$ is positive semidefinite if
+$$
+    \bsf{v} \cdot \bsf{C} \bsf{v} \geq 0
+$$
+for all $\bsf{v} \in \mbb{R}^n$. 
+:::
+
+::: {#exm-positive-semi-definite-matrix}
+Check that the following matrix is positive semidefinite:
+$$
+    \begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & 1 & 1 \\
+    1 & 1 & 1
+    \end{bmatrix}
+$$
+:::
+
+
+::: {#def-square-root}
+**[Square root of a matrix]{style="color: black;"}**
+
+The matrix $\bsf{U}$ is called the square root of the matrix $\bsf{C}$ if 
+$$
+\bsf{U} \bsf{U} = \bsf{U}^{2} = \bsf{C}.
+$$
+:::
+
+::: {#thm-equivalent-characterizations-positive-semidefinite}
+**[Equivalent characterizations of positive semidefinite matrices]{style="color: red;"}**
+
+Let $\bsf{C} \in \mc{P}^{n \times n}$. Then the following are true:  
+1. $\bsf{C}$ is symmetric.
+1. All the eigenvalues of $\bsf{C}$ are nonnegative.  
+1. $\bsf{C}$ has a positive definite square root.  
+1. There exists a matrix $\bsf{F} \in \mc{M}^{n \times n}$ such that $\bsf{C} = \bsf{F}^{\msf{T}} \bsf{F}$.
+:::
+
+::: {#prf-equivalent-characterization-positive-semidefinite}
+**[Proof of equivalent characterizations]{style="color: blue;"}**
+
+To be filled.
+:::
+
+Now, we can state the square root theorem.
+
+::: {#thm-square-root-theorem}
+**[Square root theorem]{style="color: red;"}**
+
+Let $\bsf{C} \in \mc{P}^{n \times n}$. Then $\bsf{C}$ has a *unique* positive definite square root $\bsf{U}$.
+:::
+
+::: {#prf-square-root-theorem}
+**[Proof of the square-root theorem]{style="color: blue;"}**
+
+To be filled.
+:::
+
+::: {#exm-square-root-theorem}
+
+:::
+
+## Spectral and square root theorems {-}
+
+Let $\bsf{C} \in \mc{P}^{n \times n}$. Since $\mc{P}^{n \times n} \subset \mc{S}^{n \times n}$, the spectral theorem can be invoked and $\bsf{C}$ can be written in terms of its spectral decomposition
+$$
+    \bsf{C} = \sum_{i = 1}^{n} \lambda_{i}^{2} \, {^{i}\bsf{N}} \otimes {^{i}\bsf{N}}
+$$
+where $\lambda_{i}^{2}$ is the $i$-th eigenvalues of $\bsf{C}$ and $^{n}\bsf{N}$ is the $n$-th eigenvector of $\bsf{C}$. Next, since $\bsf{C}$ is positive semidefinite, the square root theorem can be invoked. $^{n}\bsf{N}$ form an orthoromal basis, the square root is given simply by taking the square root of the scalar coefficients:
+$$
+    \sqrt{\bsf{C}} = \sum_{i = 1}^{n} \lambda_{i} \, {^{i}\bsf{N}} \otimes {^{i}\bsf{N}}
+$$
+Finally, the square root is unique, so we can designate it with a unique name:
+$$
+    \bsf{U} = \sum_{i = 1}^{n} \lambda_{i} \, {^{i}\bsf{N}} \otimes {^{i}\bsf{N}}
+$$
+
+Note, the square root $\bsf{U}$ is written as the sum of the scalars $\lambda_{i}$ multiplying the dyad product of orthonormal vectors. This implies that this is the spectral decomposition of $\bsf{U}$ and therefore, $\lambda_{i}$ are the eigenvalues of $\bsf{U}$ and ${^{i}\bsf{N}}$ are the eigenvectors of $\bsf{U}$. Note that $\bsf{C}$ and $\bsf{U}$ share the same eigenvectors but not the same eigenvalues, although they are related.

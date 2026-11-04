@@ -46,11 +46,17 @@ website:
               - notes/Kinematics/Motion/MotionDeformation.qmd
               - notes/Kinematics/Motion/DeformationMapExamples.qmd
               - notes/Kinematics/Motion/SimpleShear.qmd
-              - notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.qmd
+              # - notes/Kinematics/Motion/ContinuousBijectionNotHomeomorphism.qmd
           - section: "Material and spatial fields"
             href: notes/Kinematics/MaterialSpatialFields/index.qmd
             contents:
               - notes/Kinematics/MaterialSpatialFields/CouetteFlow.qmd
+          - section: "Theorems for operators on inner product spaces"
+            href: notes/Kinematics/OperatorTheorems/index.qmd
+            contents:
+              - notes/Kinematics/OperatorTheorems/RealSpectralTheorem.qmd
+              - notes/Kinematics/OperatorTheorems/SquareRootTheorem.qmd
+              - notes/Kinematics/OperatorTheorems/PolarDecompositionTheorem.qmd
           # - notes/Kinematics/Deformation.qmd
       # - section: "Stress"
       #   contents:
@@ -72,6 +78,10 @@ website:
         - section: "HW4"
           contents:
             - homework/HW4/Problems.qmd
+        
+      # - section: "Midterm"
+      #   contents:
+      #       - midterm/Problems.qmd
 
 crossref:
   eq-prefix: "Eq."

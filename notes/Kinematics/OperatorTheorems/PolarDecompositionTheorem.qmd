@@ -1,0 +1,66 @@
+---
+title: Polar decomposition theorem 
+---
+
+## Statement and proof {-}
+
+As before, $\mc{M}^{n \times n}, \mc{P}^{n \times n}$ denote the sets of $n \times n$ matrices and $n \times n$ symmetric positive semidefinite matrices.
+
+::: {#def-orthogonal-matrices}
+**[Orthogonal matrices]{style="color: black;"}**
+
+A matrix $\bsf{R} \in \mc{M}^{n \times n}$ is *orthogonal* if the column vectors and row vectors are orthonormal vectors.
+:::
+
+::: {#exm-orthogonal-matrix}
+Verify that the following matrix is orthogonal:
+$$
+    \begin{bmatrix}
+    1/\sqrt{2} & -1/\sqrt{2} & 0 \\
+    1/\sqrt{2} & 1/\sqrt{2} & 0 \\
+    0 & 0 & 1
+    \end{bmatrix}
+$$
+:::
+
+::: {#thm-characterizations-orthogonal}
+**[Characterizations of orthogonal matrices]{style="color: red;"}**
+
+Let $\bsf{R}$ be an orthogonal matrix. Then the following are true:  
+1. $\norm{\bsf{R}\bsf{v}} = \norm{\bsf{v}}$ for all $\bsf{v} \in \mbb{R}^{n}$.  
+1. $\bsf{R} \bsf{u} \cdot \bsf{R} \bsf{v} = \bsf{u} \cdot \bsf{v}$ for all $\bsf{u}, \bsf{v} \in \mbb{R}^n$.  
+1. $\bsf{R}^{\msf{T}} \bsf{R} = \bsf{I}$ and $\bsf{R} \bsf{R}^{\msf{T}} = \bsf{I}$.  
+1. $\bsf{R}^{\msf T}$ is orthogonal.  
+1. $\bsf{R}$ is invertible and $\bsf{R}^{-1} = \bsf{R}^{\msf T}$.
+:::
+
+::: {#prf-characterizations-orthogonal}
+**[Proof of the characterizations of orthogonal matrices]{style="color: blue;"}**
+
+To be completed.
+:::
+
+::: {#def-special-orthogonal-group}
+**[Special orthogonal group]{style="color: black;"}**
+
+The *special orthogonal group*, denoted by $SO(n)$ is the set of orthogonal matrices whose determinant is +1.
+:::
+
+By group, is meant a very specific structure for a set. Namely, there is an operation that acts of two elements of the set to give another element in the set. The operation must be associative, there must exist and identity element, and there must exist a unique inverse element for every element of the set. For $SO(n)$, the operation is matrix multiplication.
+
+We are now ready to state the polar decomposition theorem.
+
+::: {#thm-polar-decomposition-theorem}
+**[Polar decomposition theorem]{style="color: red;"}**
+
+Let $\bsf{F} \in \mc{M}^{n \times n}$. Then there exists a matrix $\bsf{R} \in SO(n)$ and matrices $\bsf{U}, \bsf{V} \in \mc{P}^{n \times n}$ such that
+$$
+    \bsf{F} = \bsf{R} \bsf{U} = \bsf{V} \bsf{R}
+$$
+:::
+
+::: {#prf-polar-decomposition-theorem}
+**[Proof of the polar decomposition theorem]{style="color: blue;"}**
+:::
+
+## Applications of polar decomposition {-}

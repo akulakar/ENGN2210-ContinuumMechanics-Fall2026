@@ -1,0 +1,8 @@
+---
+title: Operators on Inner Product Spaces 
+---
+
+Theorems covered here:
+- Real spectral theorem
+- Square root theorem 
+- Polar decomposition theorem
