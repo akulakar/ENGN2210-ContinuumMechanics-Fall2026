@@ -53,7 +53,7 @@ We are now ready to state the polar decomposition theorem.
 ::: {#thm-polar-decomposition-theorem}
 **[Polar decomposition theorem]{style="color: red;"}**
 
-Let $\bsf{F} \in \mc{M}^{n \times n}$. Then there exists a matrix $\bsf{R} \in SO(n)$ and matrices $\bsf{U}, \bsf{V} \in \mc{P}^{n \times n}$ such that
+Let $\bsf{F} \in \mc{M}^{n \times n}$ be *injective*. Then there exists a unique matrix $\bsf{R} \in SO(n)$ and matrices $\bsf{U}, \bsf{V} \in \mc{P}^{n \times n}$ such that
 $$
     \bsf{F} = \bsf{R} \bsf{U} = \bsf{V} \bsf{R}
 $$
@@ -61,6 +61,11 @@ $$
 
 ::: {#prf-polar-decomposition-theorem}
 **[Proof of the polar decomposition theorem]{style="color: blue;"}**
+
+To be written.
 :::
+
+<!-- First, we assume $\bsf{R} \in SO(n)$ and show that $\bsf{U} \in \mc{P}^{n \times n}$.  
+$\bsf{F}^{\msf{T}} \bsf{F} = \bsf{U}^\msf{T} \bsf{R}^\msf{T} \bsf{R} \bsf{U} = \bsf{U}^\msf{T} \bsf{U}$. -->
 
 ## Applications of polar decomposition {-}
