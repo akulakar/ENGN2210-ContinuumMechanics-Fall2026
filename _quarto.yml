@@ -78,10 +78,13 @@ website:
         - section: "HW4"
           contents:
             - homework/HW4/Problems.qmd
+        - section: "HW5"
+          contents:
+            - homework/HW5/Problems.qmd
         
-      # - section: "Midterm"
-      #   contents:
-      #       - midterm/Problems.qmd
+      - section: "Midterm"
+        contents:
+            - midterm/Problems.qmd
 
 crossref:
   eq-prefix: "Eq."
