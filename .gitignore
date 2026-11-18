@@ -1,5 +1,5 @@
 # Quarto
-# /_book/ # now committing built files
+/_book/
 /.quarto/
 /_freeze/
 

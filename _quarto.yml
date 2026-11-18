@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _book          # kept so your deploy path doesn't change
+  output-dir: _book          # rendered by GitHub Actions and deployed to gh-pages (not tracked)
 
 execute:
   freeze: auto
